@@ -11,12 +11,36 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const images = [
-    { src: groceries, alt: "Wide selection of authentic Latino groceries" },
-    { src: vegetables, alt: "Fresh vegetables and produce" },
-    { src: fruits1, alt: "Fresh citrus fruits" },
-    { src: spices, alt: "Authentic spices and seasonings" },
-    { src: snacks, alt: "Latino snacks and cookies" },
-    { src: produce, alt: "Fresh produce display" },
+    { 
+      src: groceries, 
+      alt: "Wide selection of authentic Latino groceries",
+      objectPosition: "center" 
+    },
+    { 
+      src: vegetables, 
+      alt: "Fresh vegetables and produce",
+      objectPosition: "center 30%" // Focus more on the variety of vegetables
+    },
+    { 
+      src: fruits1, 
+      alt: "Fresh citrus fruits",
+      objectPosition: "center 40%" // Highlight the colorful fruits
+    },
+    { 
+      src: spices, 
+      alt: "Authentic spices and seasonings",
+      objectPosition: "center" 
+    },
+    { 
+      src: snacks, 
+      alt: "Latino snacks and cookies",
+      objectPosition: "center 35%" // Show better view of the snack variety
+    },
+    { 
+      src: produce, 
+      alt: "Fresh produce display",
+      objectPosition: "center 25%" // Focus on the produce arrangement
+    },
   ];
 
   const openModal = (src: string) => {
@@ -51,6 +75,7 @@ const Gallery = () => {
                   src={image.src} 
                   alt={image.alt}
                   className="absolute inset-0 w-full h-full object-cover"
+                  style={{ objectPosition: image.objectPosition }}
                 />
               </div>
               <div className="p-4 bg-[#F8FDF9]">
@@ -73,7 +98,7 @@ const Gallery = () => {
               <img 
                 src={selectedImage} 
                 alt="Enlarged view" 
-                className="w-full rounded-lg"
+                className="w-full rounded-lg max-h-[80vh] object-contain"
                 onClick={(e) => e.stopPropagation()}
               />
             </div>

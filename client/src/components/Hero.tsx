@@ -10,10 +10,22 @@ const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   const images = [
-    exterior1,
-    exterior2,
-    exterior3,
-    sign
+    { 
+      src: exterior1,
+      position: 'center 30%' // Focus more on the storefront
+    },
+    { 
+      src: exterior2,
+      position: 'center 40%' // Show more of the entrance area
+    },
+    { 
+      src: exterior3,
+      position: 'center 25%' // Highlight the store signage
+    },
+    { 
+      src: sign,
+      position: 'center 20%' // Focus on the sign details
+    }
   ];
 
   useEffect(() => {
@@ -29,9 +41,9 @@ const Hero = () => {
       id="home" 
       className="flex items-center justify-center pt-16"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${images[currentImageIndex]})`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${images[currentImageIndex].src})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: images[currentImageIndex].position,
         height: '80vh',
         transition: 'background-image 0.5s ease-in-out'
       }}
