@@ -29,9 +29,10 @@ const Hero = () => {
   ];
 
   useEffect(() => {
+    // Add a longer interval to allow for full transition animation
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000);
+    }, 6500); // Slightly longer interval for smoother perception
     
     return () => clearInterval(interval);
   }, [images.length]);
@@ -39,13 +40,13 @@ const Hero = () => {
   return (
     <section 
       id="home" 
-      className="flex items-center justify-center pt-16"
+      className="flex items-center justify-center pt-16 slideshow-transition"
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${images[currentImageIndex].src})`,
         backgroundSize: 'cover',
         backgroundPosition: images[currentImageIndex].position,
         height: '80vh',
-        transition: 'background-image 0.5s ease-in-out'
+        transition: 'background-image 1.2s ease-in-out, background-position 1.2s ease-in-out'
       }}
     >
       <div className="container mx-auto px-4 text-center">

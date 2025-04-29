@@ -152,3 +152,20 @@ html {
   height: 2px;
   background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.6), transparent);
 }
+
+/* Slideshow transition enhancements */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.slideshow-transition {
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+section[id="home"] {
+  animation: fadeIn 1.2s ease-in-out;
+  background-blend-mode: overlay;
+  transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
