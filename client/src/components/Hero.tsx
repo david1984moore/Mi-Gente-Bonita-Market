@@ -4,12 +4,15 @@ import { Button } from "@/components/ui/button";
 import groceryAisle from "../assets/store-photos/grocery-aisle.png";
 import freshProduce from "../assets/store-photos/fresh-produce.png";
 import freshLemons from "../assets/store-photos/fresh-lemons.png";
+import storefront from "../assets/store-photos/storefront.png"; // Adding storefront image
+import HeroImage from "../assets/attached/heroImage";
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [nextImageIndex, setNextImageIndex] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [showFallback, setShowFallback] = useState(false);
   
   const images = [
     { 
@@ -23,6 +26,10 @@ const Hero = () => {
     { 
       src: freshLemons,
       position: 'center' // Highlight the fresh citrus fruits
+    },
+    {
+      src: storefront,
+      position: 'center' // Storefront view
     }
   ];
   

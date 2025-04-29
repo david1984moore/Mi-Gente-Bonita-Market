@@ -7,17 +7,37 @@ import freshTomatoesPeppers from "../assets/store-photos/fresh-tomatoes-peppers.
 import cactusPaddles from "../assets/store-photos/cactus-paddles-display.png";
 import tajinSeasoning from "../assets/store-photos/tajin-seasoning-bottles.png";
 import produceSection from "../assets/store-photos/produce-section-colorful.png";
-import pinatasAndFruits from "../assets/store-photos/pinatas-and-fruits.png";
-import snacksAisle from "../assets/store-photos/snacks-aisle.png";
+import fruits1 from "../assets/store-photos/fruits1.png"; // Replacement for pinatasAndFruits
+import snacks from "../assets/store-photos/snacks.png"; // Replacement for snacksAisle
+import GroceryGalleryImage from "../assets/attached/groceryGallery";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
-  const [isLoaded, setIsLoaded] = useState<boolean[]>(Array(7).fill(false));
+  const [isLoaded, setIsLoaded] = useState<boolean[]>(Array(9).fill(false));
+  const [showFallbackImage, setShowFallbackImage] = useState<boolean>(false);
   
   // Refs for intersection observer
   const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
 
+  // Load image as SVG component as a fallback
+  useEffect(() => {
+    // Check if any imported images are broken
+    const checkImagesExist = async () => {
+      try {
+        // Set fallback if needed
+        if (!fruits1 || !snacks) {
+          setShowFallbackImage(true);
+        }
+      } catch (error) {
+        console.error("Error checking images:", error);
+        setShowFallbackImage(true);
+      }
+    };
+    
+    checkImagesExist();
+  }, []);
+  
   const images = [
     { 
       src: groceryAisle, 
@@ -50,7 +70,7 @@ const Gallery = () => {
       span: "col-span-1"
     },
     { 
-      src: pinatasAndFruits, 
+      src: fruits1, 
       alt: "Colorful piñatas, fresh fruits and Latino products", 
       objectPosition: "center",
       span: "col-span-2"
@@ -62,7 +82,7 @@ const Gallery = () => {
       span: "col-span-1"
     },
     { 
-      src: snacksAisle, 
+      src: snacks, 
       alt: "Latino snacks aisle with popular chips and treats",
       objectPosition: "center",
       span: "col-span-2"
@@ -139,31 +159,39 @@ const Gallery = () => {
           </p>
         </div>
 
-        {/* Gallery grid layout */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 mx-auto max-w-full">
-          {images.map((image, index) => (
-            <div 
-              key={index} 
-              ref={(el) => { imageRefs.current[index] = el }}
-              className={`${image.span} ${index === 0 || index === 6 ? 'h-56 md:h-64' : 'h-44 md:h-56'} overflow-hidden rounded-xl cursor-pointer group relative 
+        {showFallbackImage ? (
+          // Fallback SVG when images are not loading
+          <div className="w-full max-w-5xl mx-auto bg-white p-4 rounded-lg shadow-md">
+            <GroceryGalleryImage />
+          </div>
+        ) : (
+          // Regular image gallery
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 mx-auto max-w-full">
+            {images.map((image, index) => (
+              <div 
+                key={index} 
+                ref={(el) => { imageRefs.current[index] = el }}
+                className={`${image.span} ${index === 0 || index === 6 ? 'h-56 md:h-64' : 'h-44 md:h-56'} overflow-hidden rounded-xl cursor-pointer group relative 
                          transform transition-all duration-500 ease-out hover:z-10 hover:scale-[1.02] 
                          ${isLoaded[index] ? 'translate-y-0 opacity-100 shadow-lg' : 'translate-y-8 opacity-0'}`}
-              onClick={() => openModal(image.src, index)}
-              style={{ transitionDelay: `${index * 70}ms` }}
-            >
-              <div className="w-full h-full relative bg-gray-100">
-                <img 
-                  src={image.src} 
-                  alt={image.alt}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  style={{ objectPosition: image.objectPosition }}
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                onClick={() => openModal(image.src, index)}
+                style={{ transitionDelay: `${index * 70}ms` }}
+              >
+                <div className="w-full h-full relative bg-gray-100">
+                  <img 
+                    src={image.src} 
+                    alt={image.alt}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    style={{ objectPosition: image.objectPosition }}
+                    loading="lazy"
+                    onError={() => setShowFallbackImage(true)}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
 
         {/* Enhanced modal with navigation */}
         {selectedImage && (
