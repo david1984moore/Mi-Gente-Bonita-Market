@@ -21,43 +21,43 @@ const Gallery = () => {
       src: groceryAisle, 
       alt: "Selection of authentic Latino groceries and Goya products",
       objectPosition: "center",
-      span: "col-span-1 row-span-1 md:col-span-2"
+      span: "col-span-2 md:h-72"
     },
     { 
       src: freshProduce, 
       alt: "Fresh vegetables and produce from our market",
       objectPosition: "center",
-      span: "col-span-1 row-span-1"
+      span: "col-span-1"
     },
     { 
       src: freshLemons, 
       alt: "Fresh lemons and citrus fruits",
       objectPosition: "center",
-      span: "col-span-1 row-span-1"
+      span: "col-span-1"
     },
     { 
       src: freshTomatoesPeppers, 
       alt: "Fresh tomatoes and peppers in crates",
       objectPosition: "center",
-      span: "col-span-1 row-span-1 md:row-span-2"
+      span: "col-span-1"
     },
     { 
       src: cactusPaddles, 
       alt: "Fresh cactus paddles (nopales) display",
       objectPosition: "center",
-      span: "col-span-1 row-span-1"
+      span: "col-span-1"
     },
     { 
       src: tajinSeasoning, 
       alt: "Tajin seasoning bottles - popular Mexican seasoning",
       objectPosition: "center",
-      span: "col-span-1 row-span-1"
+      span: "col-span-1"
     },
     { 
       src: produceSection, 
       alt: "Colorful produce section with festive decorations",
       objectPosition: "center",
-      span: "col-span-1 md:col-span-2 row-span-1"
+      span: "col-span-2 md:h-72"
     },
   ];
 
@@ -126,23 +126,23 @@ const Gallery = () => {
           </p>
         </div>
 
-        {/* Masonry-style grid layout */}
-        <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-fr gap-3 md:gap-5">
+        {/* Gallery grid layout */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
           {images.map((image, index) => (
             <div 
               key={index} 
               ref={(el) => { imageRefs.current[index] = el }}
-              className={`${image.span} overflow-hidden rounded-xl cursor-pointer group relative 
+              className={`${image.span} ${index === 0 || index === 6 ? 'h-60 md:h-72' : 'h-48 md:h-64'} overflow-hidden rounded-xl cursor-pointer group relative 
                          transform transition-all duration-500 ease-out hover:z-10 hover:scale-[1.02] 
                          ${isLoaded[index] ? 'translate-y-0 opacity-100 shadow-lg' : 'translate-y-8 opacity-0'}`}
               onClick={() => openModal(image.src, index)}
               style={{ transitionDelay: `${index * 70}ms` }}
             >
-              <div className="relative pb-[85%] md:pb-[95%] overflow-hidden bg-gray-100">
+              <div className="w-full h-full relative bg-gray-100">
                 <img 
                   src={image.src} 
                   alt={image.alt}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   style={{ objectPosition: image.objectPosition }}
                   loading="lazy"
                 />
