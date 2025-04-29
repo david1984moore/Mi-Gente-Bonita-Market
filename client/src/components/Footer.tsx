@@ -83,19 +83,7 @@ const Footer = () => {
                     Home
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    to="features"
-                    spy={true}
-                    smooth={true}
-                    offset={-70}
-                    duration={500}
-                    className="text-white/90 hover:text-white hover:translate-x-1 transition-all duration-300 cursor-pointer flex items-center"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#FFD700] mr-2"></span>
-                    Features
-                  </Link>
-                </li>
+                
                 <li>
                   <Link
                     to="about"
