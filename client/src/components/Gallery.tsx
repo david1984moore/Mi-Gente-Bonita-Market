@@ -7,8 +7,8 @@ import freshTomatoesPeppers from "../assets/store-photos/fresh-tomatoes-peppers.
 import cactusPaddles from "../assets/store-photos/cactus-paddles-display.png";
 import tajinSeasoning from "../assets/store-photos/tajin-seasoning-bottles.png";
 import produceSection from "../assets/store-photos/produce-section-colorful.png";
-import pinatasAndFruits from "../assets/store-photos/pinatas-and-fruits.png";
 import snacksAisle from "../assets/store-photos/snacks-aisle.png";
+import storefront from "../assets/store-photos/storefront.png";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
