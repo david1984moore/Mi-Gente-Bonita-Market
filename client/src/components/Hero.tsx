@@ -8,6 +8,8 @@ import sign from "../assets/store-photos/sign.png";
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [nextImageIndex, setNextImageIndex] = useState(1);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   
   const images = [
     { 
@@ -29,26 +31,54 @@ const Hero = () => {
   ];
 
   useEffect(() => {
-    // Add a longer interval to allow for full transition animation
+    const transitionInterval = 8000; // Total time between transitions
+    const fadeTime = 2000; // Time for crossfade effect
+    
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 6500); // Slightly longer interval for smoother perception
+      // Start transition
+      setIsTransitioning(true);
+      
+      // After fadeTime, complete the transition
+      const timer = setTimeout(() => {
+        setCurrentImageIndex(nextImageIndex);
+        setNextImageIndex((nextImageIndex + 1) % images.length);
+        setIsTransitioning(false);
+      }, fadeTime);
+      
+      return () => clearTimeout(timer);
+    }, transitionInterval);
     
     return () => clearInterval(interval);
-  }, [images.length]);
+  }, [nextImageIndex, images.length]);
 
   return (
-    <section 
-      id="home" 
-      className="flex items-center justify-center pt-16 slideshow-transition"
-      style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${images[currentImageIndex].src})`,
-        backgroundSize: 'cover',
-        backgroundPosition: images[currentImageIndex].position,
-        height: '80vh',
-        transition: 'background-image 1.2s ease-in-out, background-position 1.2s ease-in-out'
-      }}
-    >
+    <div className="relative overflow-hidden" style={{ height: '80vh' }}>
+      {/* Current image */}
+      <div 
+        className="absolute inset-0 z-10"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${images[currentImageIndex].src})`,
+          backgroundSize: 'cover',
+          backgroundPosition: images[currentImageIndex].position,
+          opacity: isTransitioning ? 0 : 1,
+          transition: 'opacity 2s ease-in-out',
+        }}
+      />
+      
+      {/* Next image (for crossfade) */}
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${images[nextImageIndex].src})`,
+          backgroundSize: 'cover',
+          backgroundPosition: images[nextImageIndex].position,
+        }}
+      />
+      
+      <section 
+        id="home" 
+        className="relative z-20 flex items-center justify-center pt-16 h-full"
+      >
       <div className="container mx-auto px-4 text-center">
         <div className="max-w-3xl mx-auto bg-black/30 p-8 rounded-lg backdrop-blur-sm border border-white/10 shadow-2xl">
           <h1 className="text-4xl md:text-6xl font-['Poppins'] font-bold text-white mb-6 tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] elegant-text hero-text-primary">
@@ -74,6 +104,7 @@ const Hero = () => {
         </div>
       </div>
     </section>
+  </div>
   );
 };
 
