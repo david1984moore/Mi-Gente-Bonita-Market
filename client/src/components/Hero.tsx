@@ -78,7 +78,7 @@ const Hero = () => {
           key={index}
           className="absolute inset-0 hero-slide"
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url(${image.src})`,
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url(${image.src})`,
             backgroundSize: 'cover',
             backgroundPosition: image.position,
             opacity: index === currentImageIndex ? (isTransitioning ? 0 : 1) : (index === nextImageIndex ? 1 : 0),
@@ -95,12 +95,12 @@ const Hero = () => {
       <div className="container mx-auto px-4 text-center">
         <div className="max-w-2xl mx-auto relative z-10">
           {/* Modern glass effect container */}
-          <div className="bg-black/40 p-8 rounded-xl backdrop-blur-sm border border-white/10 shadow-2xl animate-in slide-in-from-bottom duration-700">
-            <h1 className="text-3xl md:text-5xl font-['Poppins'] font-bold text-white mb-4 tracking-wide drop-shadow-[0_1px_3px_rgba(0,0,0,1)] elegant-text hero-text-primary">
+          <div className="bg-black/30 p-8 rounded-xl backdrop-blur-sm border border-white/10 shadow-2xl animate-in slide-in-from-bottom duration-700">
+            <h1 className="text-3xl md:text-5xl font-['Poppins'] font-bold text-white mb-4 tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,1)] elegant-text hero-text-primary">
               Bienvenidos a<br /> 
-              <span className="text-[#FFD700] inline-block mt-2 hero-title-highlight text-shadow-lg">Mi Gente Bonita Market</span>
+              <span className="text-[#FFD700] inline-block mt-2 hero-title-highlight drop-shadow-[0_2px_5px_rgba(0,0,0,1)]">Mi Gente Bonita Market</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/95 mb-8 tracking-wider font-light drop-shadow-[0_2px_4px_rgba(0,0,0,1)] elegant-text hero-text-secondary max-w-xl mx-auto">
+            <p className="text-lg md:text-xl text-white/95 mb-8 tracking-wider font-medium drop-shadow-[0_2px_5px_rgba(0,0,0,1)] elegant-text hero-text-secondary max-w-xl mx-auto">
               Your trusted source for authentic Latino products
             </p>
             <div className="flex gap-4 justify-center">
