@@ -103,13 +103,7 @@ const Navbar = () => {
             </Link>
           ))}
           
-          <a
-            href="tel:3026913048"
-            className="ml-1 bg-[#3D9C42] hover:bg-[#2A6D2E] text-white px-4 py-2 rounded-full transition-colors duration-300 text-sm font-medium shadow-md flex items-center"
-          >
-            <Phone className="h-4 w-4 mr-1" />
-            <span className="hidden lg:inline">Call Us</span>
-          </a>
+          
         </div>
       </nav>
       
