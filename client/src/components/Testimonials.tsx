@@ -38,18 +38,18 @@ const Testimonials = () => {
   const testimonials = [
     {
       rating: 5,
-      text: "\"I finally found a place that has all the ingredients I need for my traditional recipes. The staff is always friendly and helpful!\"",
-      name: "- Maria G."
+      text: "\"They have fresh produce, I could not believe they had mamoncillos ready to eat or really chew and ruda plants. Very nice crew and very helpful. They need more space indoors and in the parking area. Variable in everything. I love it....\"",
+      name: "- Gloria Forero Chaves"
     },
     {
       rating: 5,
-      text: "\"Their fresh bread and pastries are amazing! It's like having a piece of home. This market is a treasure in our neighborhood.\"",
-      name: "- Carlos R."
+      text: "\"Buen ambiente sempre te atienden de marabilla tiene las 3 B: Bueno, Bonito, Barato\"",
+      name: "- Elida Ramirez"
     },
     {
-      rating: 4.5,
-      text: "\"Great selection of products from all over Latin America. The prepared foods are delicious and authentic. Highly recommend!\"",
-      name: "- Elena T."
+      rating: 5,
+      text: "\"Son personas amables muy serviciales puedes encontrará gran variedad de productos 100%mexicanos me gusta aparte de shaver envios pagar con tarjeta\"",
+      name: "- Jesus heriberto Rios ramirez"
     }
   ];
 
