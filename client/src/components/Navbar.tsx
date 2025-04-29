@@ -83,7 +83,7 @@ const Navbar = () => {
         </button>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-1 lg:space-x-2 bg-white/50 backdrop-blur-sm px-4 py-2 rounded-full shadow-md">
+        <div className="hidden md:flex items-center space-x-1 lg:space-x-2 bg-white/50 backdrop-blur-sm px-4 py-2 rounded-full">
           {navItems.map((item) => (
             <Link
               key={item.to}
