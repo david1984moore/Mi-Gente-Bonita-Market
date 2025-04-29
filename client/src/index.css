@@ -22,7 +22,7 @@
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 60 9.1% 97.8%;
   --ring: 20 14.3% 4.1%;
-  --radius: 0.5rem;
+  --radius: 0.75rem; /* Increased radius for softer appearance */
   --chart-1: var(--primary);
   --chart-2: var(--secondary);
   --chart-3: var(--accent);
@@ -222,5 +222,15 @@ html {
   height: 0;
   overflow: hidden;
   z-index: -1;
+}
+
+/* Hide scrollbar but allow scrolling */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
