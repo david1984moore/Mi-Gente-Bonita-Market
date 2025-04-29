@@ -101,12 +101,7 @@ const Navbar = () => {
               <div className={`flex items-center justify-center ${activeSection === item.to ? 'text-white' : 'text-[#D41414] group-hover:text-[#D41414]'} transition-all duration-300`}>
                 {item.icon}
               </div>
-              <span className="relative">
-                {item.label}
-                {activeSection !== item.to && (
-                  <span className="absolute bottom-[-2px] left-0 w-0 h-0.5 bg-[#D41414] group-hover:w-full transition-all duration-300"></span>
-                )}
-              </span>
+              <span>{item.label}</span>
             </Link>
           ))}
         </div>
