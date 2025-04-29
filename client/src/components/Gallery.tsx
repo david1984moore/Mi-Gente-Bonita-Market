@@ -57,12 +57,6 @@ const Gallery = () => {
       span: "col-span-1"
     },
     { 
-      src: snacksAisle, 
-      alt: "Latino snacks aisle with popular chips and treats",
-      objectPosition: "center",
-      span: "col-span-2"
-    },
-    { 
       src: produceSection, 
       alt: "Colorful produce section with festive decorations",
       objectPosition: "center",
