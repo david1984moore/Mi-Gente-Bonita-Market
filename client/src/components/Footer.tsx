@@ -147,7 +147,17 @@ const Footer = () => {
               <ul className="space-y-4 mt-6">
                 <li className="flex">
                   <MapPin className="h-5 w-5 mr-3 flex-shrink-0 mt-1" />
-                  <span className="text-white/90">2125 W Newport Pike, Wilmington, DE 19804</span>
+                  <div>
+                    <div className="font-medium text-white mb-0.5">Wilmington:</div>
+                    <span className="text-white/90">2125 W Newport Pike, Wilmington, DE 19804</span>
+                  </div>
+                </li>
+                <li className="flex">
+                  <MapPin className="h-5 w-5 mr-3 flex-shrink-0 mt-1" />
+                  <div>
+                    <div className="font-medium text-white mb-0.5">Newark:</div>
+                    <span className="text-white/90">1300 Capitol Tr, Newark, DE 19711</span>
+                  </div>
                 </li>
                 <li className="flex">
                   <Phone className="h-5 w-5 mr-3 flex-shrink-0 mt-0.5" />

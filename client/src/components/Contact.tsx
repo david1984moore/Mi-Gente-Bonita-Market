@@ -27,16 +27,32 @@ const Contact = () => {
                   <MapPin className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-lg mb-1 text-gray-800">Address</h4>
-                  <p className="text-gray-700">2125 W Newport Pike, Wilmington, DE 19804</p>
-                  <a 
-                    href="https://maps.google.com/?q=2125+W+Newport+Pike,+Wilmington,+DE+19804" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-[#D41414] hover:text-[#891414] mt-2 transition-colors duration-300 text-sm font-medium"
-                  >
-                    Get directions <ExternalLink className="ml-1 h-3 w-3" />
-                  </a>
+                  <h4 className="font-bold text-lg mb-1 text-gray-800">Locations</h4>
+                  <div className="mb-3">
+                    <p className="text-gray-700 font-semibold">Wilmington Location:</p>
+                    <p className="text-gray-700">2125 W Newport Pike, Wilmington, DE 19804</p>
+                    <a 
+                      href="https://maps.google.com/?q=2125+W+Newport+Pike,+Wilmington,+DE+19804" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-[#D41414] hover:text-[#891414] mt-1 transition-colors duration-300 text-sm font-medium"
+                    >
+                      Get directions <ExternalLink className="ml-1 h-3 w-3" />
+                    </a>
+                  </div>
+                  
+                  <div>
+                    <p className="text-gray-700 font-semibold">Newark Location:</p>
+                    <p className="text-gray-700">1300 Capitol Tr, Newark, DE 19711</p>
+                    <a 
+                      href="https://maps.google.com/?q=1300+Capitol+Tr,+Newark,+DE+19711" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-[#D41414] hover:text-[#891414] mt-1 transition-colors duration-300 text-sm font-medium"
+                    >
+                      Get directions <ExternalLink className="ml-1 h-3 w-3" />
+                    </a>
+                  </div>
                 </div>
               </div>
               
@@ -92,22 +108,28 @@ const Contact = () => {
           
           <div className="rounded-2xl overflow-hidden shadow-xl lg:col-span-3 border border-gray-100 relative h-[500px] md:h-[600px]">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3071.9114830891197!2d-75.64307432343083!3d39.71590777919882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c701bc530d17ef%3A0xef3ea0bcab10e321!2sMi%20Gente%20Bonita%20Market!5e0!3m2!1sen!2sus!4v1708378293407!5m2!1sen!2sus" 
+              src="https://www.google.com/maps/embed?pb=!1m29!1m12!1m3!1d195934.44908852762!2d-75.81290316953031!3d39.66748087558598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m14!1i0!3e6!4m5!1s0x89c701bc530d17ef%3A0xef3ea0bcab10e321!2sMi%20Gente%20Bonita%20Market%2C%202125%20W%20Newport%20Pike%2C%20Wilmington%2C%20DE%2019804!3m2!1d39.7159077!2d-75.6408856!4m5!1s0x89c77b2216a62197%3A0x78f4d98311afba03!2s1300%20Capitol%20Trail%2C%20Newark%2C%20DE%2019711!3m2!1d39.7052825!2d-75.75975139999999!5e0!3m2!1sen!2sus!4v1714495683583!5m2!1sen!2sus" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
               allowFullScreen 
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Mi Gente Bonita Market Location"
+              title="Mi Gente Bonita Market Locations"
               className="absolute inset-0"
             ></iframe>
             
-            {/* Map overlay with a call-to-action button */}
-            <div className="absolute bottom-6 right-6 z-10">
+            {/* Map overlay with buttons for both locations */}
+            <div className="absolute bottom-6 right-6 z-10 flex flex-col space-y-2">
               <a href="https://maps.google.com/?q=2125+W+Newport+Pike,+Wilmington,+DE+19804" target="_blank" rel="noopener noreferrer">
-                <Button className="bg-white text-[#1D3557] hover:bg-[#D41414] hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 group">
-                  Get Directions
+                <Button className="bg-white text-[#1D3557] hover:bg-[#D41414] hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 group w-full">
+                  Wilmington Location
+                  <MapPin className="ml-2 h-4 w-4 group-hover:animate-bounce" />
+                </Button>
+              </a>
+              <a href="https://maps.google.com/?q=1300+Capitol+Tr,+Newark,+DE+19711" target="_blank" rel="noopener noreferrer">
+                <Button className="bg-white text-[#1D3557] hover:bg-[#D41414] hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 group w-full">
+                  Newark Location
                   <MapPin className="ml-2 h-4 w-4 group-hover:animate-bounce" />
                 </Button>
               </a>
