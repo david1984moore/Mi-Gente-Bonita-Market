@@ -33,24 +33,24 @@
 
 /* Enhanced text shadow for hero */
 .text-shadow-lg {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7), 
-               0 8px 16px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 
+               0 3px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Enhanced hero content */
 @keyframes subtle-glow {
   0%, 100% {
-    text-shadow: 0 0 5px rgba(255, 215, 0, 0.3),
-                 0 0 10px rgba(255, 215, 0, 0.2);
+    text-shadow: 0 0 3px rgba(255, 215, 0, 0.2),
+                 0 0 6px rgba(255, 215, 0, 0.1);
   }
   50% {
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5),
-                 0 0 20px rgba(255, 215, 0, 0.3);
+    text-shadow: 0 0 6px rgba(255, 215, 0, 0.3),
+                 0 0 10px rgba(255, 215, 0, 0.2);
   }
 }
 
 .hero-title-highlight {
-  animation: subtle-glow 3s ease-in-out infinite;
+  animation: subtle-glow 4s ease-in-out infinite;
 }
 
   --sidebar-primary: 235 14% 41%;
@@ -130,7 +130,7 @@ html {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(15px);
   }
   to {
     opacity: 1;
@@ -143,22 +143,22 @@ html {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
   }
 }
 
 /* Text enhancements */
 .elegant-text {
-  letter-spacing: 0.03em;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .hero-text-primary {
-  animation: fadeInUp 1.2s ease-out forwards;
+  animation: fadeInUp 1s ease-out forwards;
 }
 
 .hero-text-secondary {
-  animation: fadeInUp 1.5s ease-out forwards;
+  animation: fadeInUp 1.2s ease-out forwards;
 }
 
 .hero-title-highlight {
@@ -169,11 +169,11 @@ html {
 .hero-title-highlight::after {
   content: '';
   position: absolute;
-  bottom: -5px;
+  bottom: -3px;
   left: 0;
   width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.6), transparent);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.5), transparent);
 }
 
 /* Slideshow transition enhancements */
