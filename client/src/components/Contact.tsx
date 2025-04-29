@@ -32,7 +32,7 @@ const Contact = () => {
                 <div>
                   <h4 className="font-bold text-lg mb-1 text-gray-800">Locations</h4>
                   <div className="mb-3">
-                    <p className="text-gray-700 font-semibold">Wilmington Location:</p>
+                    <p className="text-gray-700 font-semibold">Wilmington:</p>
                     <p className="text-gray-700">2125 W Newport Pike, Wilmington, DE 19804</p>
                     <a 
                       href="https://maps.google.com/?q=2125+W+Newport+Pike,+Wilmington,+DE+19804" 
