@@ -49,12 +49,7 @@ const Gallery = () => {
       objectPosition: "center",
       span: "col-span-1"
     },
-    { 
-      src: pinatasAndFruits, 
-      alt: "Colorful piñatas, fresh fruits and Latino products", 
-      objectPosition: "center",
-      span: "col-span-2"
-    },
+    
     { 
       src: tajinSeasoning, 
       alt: "Tajin seasoning bottles - popular Mexican seasoning",
