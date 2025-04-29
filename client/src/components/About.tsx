@@ -83,13 +83,7 @@ const About = () => {
                   We take pride in offering a wide variety of products imported directly from Latin America, along with freshly prepared foods that remind our customers of home. Our market serves as both a grocery store and a cultural hub where our community can connect.
                 </p>
                 
-                <div className="flex items-center mb-6 p-4 bg-gray-50 rounded-lg border-l-4 border-[#3D9C42]">
-                  <Clock className="h-5 w-5 text-[#3D9C42] mr-3 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-bold text-sm text-gray-800">Store Hours:</h4>
-                    <p className="text-gray-600 text-sm">Monday-Saturday: 8:00 AM - 8:00 PM | Sunday: 9:00 AM - 6:00 PM</p>
-                  </div>
-                </div>
+                
                 
                 <div className="flex flex-wrap items-center gap-4">
                   <Link
