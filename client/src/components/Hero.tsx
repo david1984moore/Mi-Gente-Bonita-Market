@@ -36,24 +36,31 @@ const Hero = () => {
   // Preload images for smoother transitions
   useEffect(() => {
     const imagePromises = images.map((image) => {
-      return new Promise((resolve) => {
+      return new Promise((resolve, reject) => {
+        if (!image.src) {
+          setShowFallback(true);
+          reject("Image source missing");
+          return;
+        }
+        
         const img = new Image();
         img.src = image.src;
         img.onload = () => resolve(img);
+        img.onerror = () => {
+          setShowFallback(true);
+          reject("Image failed to load");
+        };
       });
     });
     
-    Promise.all(imagePromises).then(() => {
-      setImagesLoaded(true);
-    });
-  }, []);
-
-  // Preload images for smoother transitions
-  useEffect(() => {
-    images.forEach(image => {
-      const img = new Image();
-      img.src = image.src;
-    });
+    Promise.all(imagePromises)
+      .then(() => {
+        setImagesLoaded(true);
+      })
+      .catch(() => {
+        // If any image fails to load, enable fallback
+        setShowFallback(true);
+      });
   }, []);
 
   useEffect(() => {
@@ -79,21 +86,28 @@ const Hero = () => {
 
   return (
     <div className="relative overflow-hidden" style={{ height: '90vh' }}>
-      {/* Active images layer - both visible during transition */}
-      {images.map((image, index) => (
-        <div 
-          key={index}
-          className="absolute inset-0 hero-slide"
-          style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url(${image.src})`,
-            backgroundSize: 'cover',
-            backgroundPosition: image.position,
-            opacity: index === currentImageIndex ? (isTransitioning ? 0 : 1) : (index === nextImageIndex ? 1 : 0),
-            zIndex: index === currentImageIndex ? 10 : (index === nextImageIndex ? 5 : 0),
-            transition: 'opacity 3s cubic-bezier(0.4, 0.0, 0.2, 1)', // Smooth cubic-bezier transition
-          }}
-        />
-      ))}
+      {showFallback ? (
+        // SVG Fallback when images fail to load
+        <div className="absolute inset-0 z-5">
+          <HeroImage />
+        </div>
+      ) : (
+        // Regular slideshow when images load properly
+        images.map((image, index) => (
+          <div 
+            key={index}
+            className="absolute inset-0 hero-slide"
+            style={{
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url(${image.src})`,
+              backgroundSize: 'cover',
+              backgroundPosition: image.position,
+              opacity: index === currentImageIndex ? (isTransitioning ? 0 : 1) : (index === nextImageIndex ? 1 : 0),
+              zIndex: index === currentImageIndex ? 10 : (index === nextImageIndex ? 5 : 0),
+              transition: 'opacity 3s cubic-bezier(0.4, 0.0, 0.2, 1)', // Smooth cubic-bezier transition
+            }}
+          />
+        ))
+      )}
       
       <section 
         id="home" 

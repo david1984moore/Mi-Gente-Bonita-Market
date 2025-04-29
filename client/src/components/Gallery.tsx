@@ -10,6 +10,8 @@ import produceSection from "../assets/store-photos/produce-section-colorful.png"
 import fruits1 from "../assets/store-photos/fruits1.png"; // Replacement for pinatasAndFruits
 import snacks from "../assets/store-photos/snacks.png"; // Replacement for snacksAisle
 import GroceryGalleryImage from "../assets/attached/groceryGallery";
+// Import extracted images from the attached content
+import { GroceryAisleImage, PinatasImage, SnacksImage } from "../assets/attached/extractedImages";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -20,22 +22,39 @@ const Gallery = () => {
   // Refs for intersection observer
   const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  // Load image as SVG component as a fallback
+  // Create references to our SVG components
+  const svgRefs = useRef({
+    groceryAisle: <GroceryAisleImage />,
+    pinatas: <PinatasImage />,
+    snacks: <SnacksImage />
+  });
+  
+  // State for tracking which images have SVG fallbacks
+  const [svgFallbacks, setSvgFallbacks] = useState<Record<number, JSX.Element | null>>({});
+  
+  // Check if images need to be replaced with SVG fallbacks
   useEffect(() => {
-    // Check if any imported images are broken
-    const checkImagesExist = async () => {
-      try {
-        // Set fallback if needed
-        if (!fruits1 || !snacks) {
-          setShowFallbackImage(true);
-        }
-      } catch (error) {
-        console.error("Error checking images:", error);
-        setShowFallbackImage(true);
-      }
-    };
+    // Check each image and replace problematic ones
+    const imagesToCheck = [
+      { index: 5, testImage: fruits1, fallback: svgRefs.current.pinatas },
+      { index: 7, testImage: snacks, fallback: svgRefs.current.snacks }
+    ];
     
-    checkImagesExist();
+    const newFallbacks: Record<number, JSX.Element | null> = {};
+    
+    imagesToCheck.forEach(item => {
+      if (!item.testImage || typeof item.testImage !== 'string' || 
+          (typeof item.testImage === 'string' && item.testImage.length < 100)) {
+        newFallbacks[item.index] = item.fallback;
+      }
+    });
+    
+    setSvgFallbacks(newFallbacks);
+    
+    // If we have any fallbacks, check if we need to show the main fallback
+    if (Object.keys(newFallbacks).length > 3) {
+      setShowFallbackImage(true);
+    }
   }, []);
   
   const images = [
@@ -69,6 +88,7 @@ const Gallery = () => {
       objectPosition: "center",
       span: "col-span-1"
     },
+    // Use fruits1 but have PinatasImage as a fallback
     { 
       src: fruits1, 
       alt: "Colorful piñatas, fresh fruits and Latino products", 
@@ -81,6 +101,7 @@ const Gallery = () => {
       objectPosition: "center",
       span: "col-span-1"
     },
+    // Use snacks but have SnacksImage as a fallback
     { 
       src: snacks, 
       alt: "Latino snacks aisle with popular chips and treats",
@@ -125,24 +146,41 @@ const Gallery = () => {
     };
   }, []);
 
+  const [selectedSvgIndex, setSelectedSvgIndex] = useState<number | null>(null);
+
   const openModal = (src: string, index: number) => {
-    setSelectedImage(src);
+    if (svgFallbacks[index]) {
+      // If we're using an SVG fallback for this image
+      setSelectedSvgIndex(index);
+      setSelectedImage(null);
+    } else {
+      setSelectedSvgIndex(null);
+      setSelectedImage(src);
+    }
     setSelectedIndex(index);
   };
 
   const closeModal = () => {
     setSelectedImage(null);
+    setSelectedSvgIndex(null);
   };
 
   const navigateImage = (direction: 'next' | 'prev') => {
+    let nextIdx: number;
     if (direction === 'next') {
-      const nextIndex = (selectedIndex + 1) % images.length;
-      setSelectedIndex(nextIndex);
-      setSelectedImage(images[nextIndex].src);
+      nextIdx = (selectedIndex + 1) % images.length;
     } else {
-      const prevIndex = (selectedIndex - 1 + images.length) % images.length;
-      setSelectedIndex(prevIndex);
-      setSelectedImage(images[prevIndex].src);
+      nextIdx = (selectedIndex - 1 + images.length) % images.length;
+    }
+    
+    setSelectedIndex(nextIdx);
+    
+    if (svgFallbacks[nextIdx]) {
+      setSelectedSvgIndex(nextIdx);
+      setSelectedImage(null);
+    } else {
+      setSelectedSvgIndex(null);
+      setSelectedImage(images[nextIdx].src);
     }
   };
 
@@ -178,14 +216,28 @@ const Gallery = () => {
                 style={{ transitionDelay: `${index * 70}ms` }}
               >
                 <div className="w-full h-full relative bg-gray-100">
-                  <img 
-                    src={image.src} 
-                    alt={image.alt}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    style={{ objectPosition: image.objectPosition }}
-                    loading="lazy"
-                    onError={() => setShowFallbackImage(true)}
-                  />
+                  {svgFallbacks[index] ? (
+                    // Show SVG fallback for specific image
+                    <div className="w-full h-full flex items-center justify-center bg-gray-100">
+                      {svgFallbacks[index]}
+                    </div>
+                  ) : (
+                    // Show regular image
+                    <img 
+                      src={image.src} 
+                      alt={image.alt}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      style={{ objectPosition: image.objectPosition }}
+                      loading="lazy"
+                      onError={() => {
+                        const newFallbacks = {...svgFallbacks};
+                        if (index === 5) newFallbacks[index] = svgRefs.current.pinatas;
+                        else if (index === 7) newFallbacks[index] = svgRefs.current.snacks;
+                        else setShowFallbackImage(true);
+                        setSvgFallbacks(newFallbacks);
+                      }}
+                    />
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
               </div>
@@ -194,7 +246,7 @@ const Gallery = () => {
         )}
 
         {/* Enhanced modal with navigation */}
-        {selectedImage && (
+        {(selectedImage || selectedSvgIndex !== null) && (
           <div 
             className="fixed inset-0 bg-black/90 backdrop-blur-md flex items-center justify-center z-50 p-4 animate-in fade-in duration-300" 
             onClick={closeModal}
@@ -239,12 +291,23 @@ const Gallery = () => {
               </div>
               
               <div className="p-2 rounded-xl overflow-hidden border border-white/20 bg-black/40 shadow-2xl">
-                <img 
-                  src={selectedImage} 
-                  alt={images[selectedIndex].alt} 
-                  className="w-full rounded-lg max-h-[85vh] object-contain shadow-2xl"
-                  onClick={(e) => e.stopPropagation()}
-                />
+                {selectedSvgIndex !== null && svgFallbacks[selectedSvgIndex] ? (
+                  // Render SVG component in modal
+                  <div 
+                    className="w-full h-96 bg-white rounded-lg flex items-center justify-center" 
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {svgFallbacks[selectedSvgIndex]}
+                  </div>
+                ) : (
+                  // Render image in modal
+                  <img 
+                    src={selectedImage} 
+                    alt={images[selectedIndex].alt} 
+                    className="w-full rounded-lg max-h-[85vh] object-contain shadow-2xl"
+                    onClick={(e) => e.stopPropagation()}
+                  />
+                )}
               </div>
               
               {/* Image counter indicator */}
