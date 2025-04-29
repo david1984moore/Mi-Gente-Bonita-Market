@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 bg-gradient-to-b from-white to-gray-100">
+    <section id="contact" className="pt-24 pb-0 bg-gradient-to-b from-white to-gray-100">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-4 relative inline-block">
