@@ -93,15 +93,15 @@ const Navbar = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              className={`nav-link relative text-base font-medium transition-all duration-300 cursor-pointer ${
+              className={`nav-link relative text-base font-semibold tracking-wide transition-all duration-300 cursor-pointer ${
                 activeSection === item.to
-                  ? 'text-[#D41414] font-semibold' 
+                  ? 'text-[#D41414]' 
                   : 'text-[#1D3557] hover:text-[#D41414]'
               }`}
             >
-              <span>{item.label}</span>
+              <span className="uppercase">{item.label}</span>
               {activeSection === item.to && (
-                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#D41414] rounded-full"></span>
+                <span className="absolute -bottom-1.5 left-0 w-full h-[2.5px] bg-gradient-to-r from-[#D41414]/30 via-[#D41414] to-[#D41414]/30 rounded-full"></span>
               )}
             </Link>
           ))}
@@ -113,16 +113,16 @@ const Navbar = () => {
             smooth={true}
             offset={-70}
             duration={500}
-            className={`flex items-center space-x-1 nav-link relative text-base font-medium transition-all duration-300 cursor-pointer ${
+            className={`flex items-center space-x-1 nav-link relative text-base font-semibold tracking-wide transition-all duration-300 cursor-pointer ${
               activeSection === "contact"
-                ? 'text-[#D41414] font-semibold' 
+                ? 'text-[#D41414]' 
                 : 'text-[#1D3557] hover:text-[#D41414]'
             }`}
           >
             <Phone className="h-4 w-4 mr-1" />
-            <span>Contact</span>
+            <span className="uppercase">Contact</span>
             {activeSection === "contact" && (
-              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#D41414] rounded-full"></span>
+              <span className="absolute -bottom-1.5 left-0 w-full h-[2.5px] bg-gradient-to-r from-[#D41414]/30 via-[#D41414] to-[#D41414]/30 rounded-full"></span>
             )}
           </Link>
         </div>
@@ -156,15 +156,15 @@ const Navbar = () => {
               duration={500}
               className={`block p-3 transition-all duration-300 relative ${
                 activeSection === item.to
-                  ? 'text-[#D41414] font-semibold pl-5' 
-                  : 'text-[#1D3557] hover:text-[#D41414] hover:pl-5'
+                  ? 'text-[#D41414] font-bold pl-5' 
+                  : 'text-[#1D3557] hover:text-[#D41414] hover:pl-5 font-semibold'
               }`}
               onClick={toggleMenu}
             >
               {activeSection === item.to && (
-                <span className="absolute left-0 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#D41414]"></span>
+                <span className="absolute left-0 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#D41414] shadow-sm shadow-[#D41414]/20"></span>
               )}
-              <span className="text-lg">{item.label}</span>
+              <span className="text-lg tracking-wide uppercase">{item.label}</span>
             </Link>
           ))}
           
