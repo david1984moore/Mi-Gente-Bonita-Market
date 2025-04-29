@@ -13,7 +13,7 @@ const Footer = () => {
             <div className="font-['Poppins'] font-bold text-2xl mb-2 flex justify-center md:justify-start">
               <Logo className="h-12 w-auto bg-white rounded-lg p-1" />
             </div>
-            <p className="text-white">Your authentic Latino market in Newark, DE</p>
+            <p className="text-white">Your authentic Latino market in Stanton, DE</p>
           </div>
           
           <div className="flex space-x-6">
