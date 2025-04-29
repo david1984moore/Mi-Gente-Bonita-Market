@@ -56,12 +56,6 @@ const Gallery = () => {
       objectPosition: "center",
       span: "col-span-1"
     },
-    { 
-      src: produceSection, 
-      alt: "Colorful produce section with festive decorations",
-      objectPosition: "center",
-      span: "col-span-2"
-    },
   ];
 
   // Set up intersection observer for animation
