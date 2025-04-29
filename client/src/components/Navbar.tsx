@@ -48,7 +48,7 @@ const Navbar = () => {
     { to: "features", label: "Features", icon: <Store className="h-4 w-4" /> },
     { to: "about", label: "About", icon: null },
     { to: "gallery", label: "Products", icon: null },
-    { to: "testimonials", label: "Reviews", icon: <Heart className="h-4 w-4" /> },
+    { to: "testimonials", label: "Reviews", icon: null },
     { to: "contact", label: "Contact", icon: <Phone className="h-4 w-4" /> },
   ];
 
