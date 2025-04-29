@@ -36,7 +36,7 @@ const Features = () => {
     {
       icon: <Heart className="h-8 w-8" />,
       title: "Community Focus",
-      description: "We're proud to serve our local community with products that celebrate our rich Latino culture and traditions.",
+      description: "We're proud to serve our fellow Delawareans with products that celebrate our rich Latino culture and traditions.",
       color: "bg-[#FFB100]"
     },
     {
