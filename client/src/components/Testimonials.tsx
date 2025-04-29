@@ -1,35 +1,56 @@
-import { Star, StarHalf } from "lucide-react";
+import { Star, StarHalf, Quote } from "lucide-react";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 interface TestimonialProps {
   rating: number;
   text: string;
   name: string;
+  initials: string;
+  backgroundColor: string;
 }
 
-const Testimonial = ({ rating, text, name }: TestimonialProps) => {
+const Testimonial = ({ rating, text, name, initials, backgroundColor }: TestimonialProps) => {
   const renderStars = () => {
     const stars = [];
     const fullStars = Math.floor(rating);
     const hasHalfStar = rating % 1 !== 0;
 
     for (let i = 0; i < fullStars; i++) {
-      stars.push(<Star key={`star-${i}`} className="fill-[#FFD700] text-[#FFD700] inline" />);
+      stars.push(<Star key={`star-${i}`} className="fill-[#FFD700] text-[#FFD700] inline h-5 w-5" />);
     }
 
     if (hasHalfStar) {
-      stars.push(<StarHalf key="half-star" className="fill-[#FFD700] text-[#FFD700] inline" />);
+      stars.push(<StarHalf key="half-star" className="fill-[#FFD700] text-[#FFD700] inline h-5 w-5" />);
     }
 
     return stars;
   };
 
   return (
-    <div className="bg-[#F8FDF9] p-6 rounded-lg shadow-md border-l-4 border-[#D41414]">
-      <div className="text-[#FFD700] mb-4 flex">
-        {renderStars()}
+    <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 relative">
+      {/* Decorative quote icon */}
+      <div className="absolute top-0 right-0 transform translate-x-[-20px] translate-y-[-15px]">
+        <Quote className="h-14 w-14 text-gray-100 transform rotate-180" />
       </div>
-      <p className="italic text-gray-700 mb-4">{text}</p>
-      <div className="font-bold">{name}</div>
+      
+      <div className="flex items-center mb-6">
+        <Avatar className={`h-14 w-14 ${backgroundColor} mr-4 border-2 border-white shadow`}>
+          <AvatarFallback className="text-white font-medium">{initials}</AvatarFallback>
+        </Avatar>
+        <div>
+          <div className="font-bold text-[#1D3557]">{name}</div>
+          <div className="flex mt-1">
+            {renderStars()}
+          </div>
+        </div>
+      </div>
+      
+      <p className="text-gray-700 mb-3 relative z-10 leading-relaxed">
+        {text}
+      </p>
+      
+      {/* Accent bar at bottom of card */}
+      <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#D41414] via-[#3D9C42] to-[#FFD700] rounded-b-2xl"></div>
     </div>
   );
 };
@@ -38,36 +59,49 @@ const Testimonials = () => {
   const testimonials = [
     {
       rating: 5,
-      text: "\"They have fresh produce, I could not believe they had mamoncillos ready to eat or really chew and ruda plants. Very nice crew and very helpful. They need more space indoors and in the parking area. Variable in everything. I love it....\"",
-      name: "- Gloria Forero Chaves"
+      text: "They have fresh produce, I could not believe they had mamoncillos ready to eat or really chew and ruda plants. Very nice crew and very helpful. They need more space indoors and in the parking area. Variable in everything. I love it....",
+      name: "Gloria Forero Chaves",
+      initials: "GF",
+      backgroundColor: "bg-[#D41414]"
     },
     {
       rating: 5,
-      text: "\"Buen ambiente sempre te atienden de marabilla tiene las 3 B: Bueno, Bonito, Barato\"",
-      name: "- Elida Ramirez"
+      text: "Buen ambiente sempre te atienden de marabilla tiene las 3 B: Bueno, Bonito, Barato",
+      name: "Elida Ramirez",
+      initials: "ER",
+      backgroundColor: "bg-[#3D9C42]"
     },
     {
       rating: 5,
-      text: "\"Son personas amables muy serviciales puedes encontrará gran variedad de productos 100%mexicanos me gusta aparte de shaver envios pagar con tarjeta\"",
-      name: "- Jesus heriberto Rios ramirez"
+      text: "Son personas amables muy serviciales puedes encontrará gran variedad de productos 100%mexicanos me gusta aparte de shaver envios pagar con tarjeta",
+      name: "Jesus Heriberto Rios",
+      initials: "JH",
+      backgroundColor: "bg-[#1D3557]"
     }
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section id="testimonials" className="py-24 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-4">What Our Customers Say</h2>
-          <div className="w-20 h-1 bg-[#D41414] mx-auto mb-6"></div>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-4 relative inline-block">
+            What Our Customers Say
+            <span className="absolute left-0 right-0 bottom-[-10px] h-1 bg-gradient-to-r from-transparent via-[#3D9C42] to-transparent"></span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto mt-8">
+            Our customers love shopping with us. Here's what they have to say about their experiences.
+          </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
           {testimonials.map((testimonial, index) => (
             <Testimonial
               key={index}
               rating={testimonial.rating}
               text={testimonial.text}
               name={testimonial.name}
+              initials={testimonial.initials}
+              backgroundColor={testimonial.backgroundColor}
             />
           ))}
         </div>

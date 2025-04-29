@@ -76,14 +76,14 @@ const Hero = () => {
   }, [nextImageIndex, images.length]);
 
   return (
-    <div className="relative overflow-hidden" style={{ height: '80vh' }}>
+    <div className="relative overflow-hidden" style={{ height: '90vh' }}>
       {/* Active images layer - both visible during transition */}
       {images.map((image, index) => (
         <div 
           key={index}
           className="absolute inset-0 hero-slide"
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(${image.src})`,
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url(${image.src})`,
             backgroundSize: 'cover',
             backgroundPosition: image.position,
             opacity: index === currentImageIndex ? (isTransitioning ? 0 : 1) : (index === nextImageIndex ? 1 : 0),
@@ -98,29 +98,46 @@ const Hero = () => {
         className="relative z-20 flex items-center justify-center pt-16 h-full"
       >
       <div className="container mx-auto px-4 text-center">
-        <div className="max-w-lg mx-auto relative z-10">
-          {/* Extremely minimal container to maximize image visibility */}
-          <div className="bg-black/20 p-4 rounded-sm backdrop-blur-[0.5px]">
-            <h1 className="text-2xl md:text-4xl font-['Poppins'] font-bold text-white mb-2 tracking-wide drop-shadow-[0_1px_3px_rgba(0,0,0,1)] elegant-text hero-text-primary">
+        <div className="max-w-2xl mx-auto relative z-10">
+          {/* Modern glass effect container */}
+          <div className="bg-black/30 p-8 rounded-xl backdrop-blur-sm border border-white/10 shadow-2xl animate-in slide-in-from-bottom duration-700">
+            <h1 className="text-3xl md:text-5xl font-['Poppins'] font-bold text-white mb-4 tracking-wide drop-shadow-[0_1px_3px_rgba(0,0,0,1)] elegant-text hero-text-primary">
               Bienvenidos a<br /> 
-              <span className="text-[#FFD700] inline-block mt-1 hero-title-highlight text-shadow-lg">Mi Gente Bonita Market</span>
+              <span className="text-[#FFD700] inline-block mt-2 hero-title-highlight text-shadow-lg">Mi Gente Bonita Market</span>
             </h1>
-            <p className="text-base md:text-lg text-white/95 mb-4 tracking-wider font-light drop-shadow-[0_2px_4px_rgba(0,0,0,1)] elegant-text hero-text-secondary">
+            <p className="text-lg md:text-xl text-white/95 mb-8 tracking-wider font-light drop-shadow-[0_2px_4px_rgba(0,0,0,1)] elegant-text hero-text-secondary max-w-xl mx-auto">
               Your trusted source for authentic Latino products
             </p>
-            <Link
-              to="about"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              <Button 
-                className="bg-[#D41414]/80 hover:bg-[#3D9C42]/90 text-white font-medium py-1.5 px-5 rounded-full transition duration-300 text-sm tracking-wider"
+            <div className="flex gap-4 justify-center">
+              <Link
+                to="about"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                className="group"
               >
-                Discover More
-              </Button>
-            </Link>
+                <Button 
+                  className="bg-[#D41414]/90 hover:bg-[#D41414] text-white font-medium py-2.5 px-6 rounded-lg transition duration-300 text-base tracking-wider shadow-lg hover:shadow-xl group-hover:translate-y-[-2px]"
+                >
+                  Discover More
+                </Button>
+              </Link>
+              <Link
+                to="gallery"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                className="group"
+              >
+                <Button 
+                  className="bg-transparent border-2 border-white/80 hover:bg-white/10 text-white font-medium py-2.5 px-6 rounded-lg transition duration-300 text-base tracking-wider shadow-lg hover:shadow-xl group-hover:translate-y-[-2px]"
+                >
+                  View Products
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

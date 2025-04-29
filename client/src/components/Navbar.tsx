@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Home, Store, Phone, Facebook, MapPin } from "lucide-react";
 import { Logo } from "../assets/logo";
+import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -18,6 +20,21 @@ const Navbar = () => {
       } else {
         setScrolled(false);
       }
+
+      // Determine active section for highlight nav item
+      const sections = ["home", "features", "about", "gallery", "testimonials", "contact"];
+      const currentSection = sections.find(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
+        }
+        return false;
+      });
+
+      if (currentSection) {
+        setActiveSection(currentSection);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -27,8 +44,19 @@ const Navbar = () => {
     };
   }, []);
 
+  const navItems = [
+    { to: "home", label: "Home", icon: <Home className="h-4 w-4" /> },
+    { to: "features", label: "Features", icon: <Store className="h-4 w-4" /> },
+    { to: "about", label: "About", icon: <Store className="h-4 w-4" /> },
+    { to: "gallery", label: "Products", icon: <Store className="h-4 w-4" /> },
+    { to: "testimonials", label: "Reviews", icon: <Store className="h-4 w-4" /> },
+    { to: "contact", label: "Contact", icon: <Phone className="h-4 w-4" /> },
+  ];
+
   return (
-    <header className={`fixed w-full bg-white shadow-md z-50 transition-all duration-300 ${scrolled ? 'py-2' : 'py-3'}`}>
+    <header 
+      className={`fixed w-full ${scrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg py-2' : 'bg-white py-3'} z-50 transition-all duration-300`}
+    >
       <nav className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
         <Link
@@ -39,13 +67,13 @@ const Navbar = () => {
           duration={500}
           className="flex items-center cursor-pointer"
         >
-          <Logo className="h-16 w-auto" />
+          <Logo className={`transition-all duration-300 ${scrolled ? 'h-14' : 'h-16'} w-auto`} />
         </Link>
         
         {/* Mobile menu button */}
         <button 
           onClick={toggleMenu} 
-          className="md:hidden text-[#1D3557] focus:outline-none"
+          className="md:hidden bg-white/90 p-2 rounded-full shadow-md text-[#1D3557] hover:text-[#D41414] transition-colors duration-300 focus:outline-none"
           aria-label="Toggle navigation menu"
         >
           {isOpen ? (
@@ -56,101 +84,119 @@ const Navbar = () => {
         </button>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-8">
-          <Link
-            to="home"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            className="nav-link text-[#1D3557] hover:text-[#D41414] font-medium transition duration-300 cursor-pointer"
-          >
-            Home
-          </Link>
-          <Link
-            to="about"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            className="nav-link text-[#1D3557] hover:text-[#D41414] font-medium transition duration-300 cursor-pointer"
-          >
-            About
-          </Link>
-          <Link
-            to="contact"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            className="nav-link text-[#1D3557] hover:text-[#D41414] font-medium transition duration-300 cursor-pointer"
-          >
-            Contact
-          </Link>
+        <div className="hidden md:flex items-center space-x-1 lg:space-x-2 bg-white/50 backdrop-blur-sm px-4 py-2 rounded-full shadow-md">
+          {navItems.map((item) => (
+            <Link
+              key={item.to}
+              to={item.to}
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              className={`nav-link relative px-3 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer flex items-center space-x-1
+                ${activeSection === item.to 
+                  ? 'text-white bg-[#D41414] shadow-md' 
+                  : 'text-[#1D3557] hover:text-[#D41414] hover:bg-gray-100'}`}
+            >
+              {item.icon}
+              <span>{item.label}</span>
+            </Link>
+          ))}
+          
           <a
-            href="https://www.facebook.com/people/Mi-Gente-Bonita-Market/100078536995749/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[#1877F2] hover:text-[#3D9C42] transition duration-300"
-            aria-label="Facebook"
+            href="tel:3026913048"
+            className="ml-1 bg-[#3D9C42] hover:bg-[#2A6D2E] text-white px-4 py-2 rounded-full transition-colors duration-300 text-sm font-medium shadow-md flex items-center"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-5 w-5 fill-current">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-            </svg>
+            <Phone className="h-4 w-4 mr-1" />
+            <span className="hidden lg:inline">Call Us</span>
           </a>
         </div>
       </nav>
       
-      {/* Mobile Navigation */}
-      <div className={`md:hidden bg-white ${isOpen ? "block" : "hidden"}`}>
-        <div className="px-4 pt-2 pb-4 space-y-4">
-          <Link
-            to="home"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            className="block text-[#1D3557] hover:text-[#D41414] font-medium p-2 cursor-pointer"
+      {/* Mobile Navigation - Modern slide-in menu */}
+      <div 
+        className={`fixed inset-y-0 right-0 z-50 w-64 bg-white shadow-2xl transform transition-transform duration-300 ease-in-out ${
+          isOpen ? 'translate-x-0' : 'translate-x-full'
+        } md:hidden`}
+      >
+        <div className="flex justify-between items-center p-4 border-b">
+          <h3 className="font-bold text-lg text-[#D41414]">Menu</h3>
+          <button 
             onClick={toggleMenu}
+            className="text-gray-500 hover:text-[#D41414] focus:outline-none"
+            aria-label="Close navigation menu"
           >
-            Home
-          </Link>
-          <Link
-            to="about"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            className="block text-[#1D3557] hover:text-[#D41414] font-medium p-2 cursor-pointer"
-            onClick={toggleMenu}
-          >
-            About
-          </Link>
-          <Link
-            to="contact"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            className="block text-[#1D3557] hover:text-[#D41414] font-medium p-2 cursor-pointer"
-            onClick={toggleMenu}
-          >
-            Contact
-          </Link>
-          <a
-            href="https://www.facebook.com/people/Mi-Gente-Bonita-Market/100078536995749/"
-            className="block text-[#1877F2] hover:text-[#3D9C42] p-2 flex items-center"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={toggleMenu}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-5 w-5 mr-2 fill-current">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-            </svg>
-            Facebook
-          </a>
+            <X className="h-6 w-6" />
+          </button>
+        </div>
+        
+        <div className="px-4 py-6 space-y-6">
+          {navItems.map((item) => (
+            <Link
+              key={item.to}
+              to={item.to}
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              className={`flex items-center space-x-3 p-2 rounded-lg ${
+                activeSection === item.to
+                  ? 'bg-[#D41414]/10 text-[#D41414] font-medium'
+                  : 'text-[#1D3557] hover:bg-gray-100'
+              }`}
+              onClick={toggleMenu}
+            >
+              <div className={`p-2 rounded-lg ${
+                activeSection === item.to ? 'bg-[#D41414] text-white' : 'bg-gray-100'
+              }`}>
+                {item.icon}
+              </div>
+              <span>{item.label}</span>
+            </Link>
+          ))}
+          
+          <div className="pt-6 space-y-4">
+            <a
+              href="tel:3026913048"
+              className="flex items-center justify-center w-full bg-[#3D9C42] hover:bg-[#2A6D2E] text-white p-3 rounded-lg shadow-md transition-colors duration-300"
+              onClick={toggleMenu}
+            >
+              <Phone className="h-5 w-5 mr-2" />
+              <span>Call Us</span>
+            </a>
+            
+            <a
+              href="https://maps.google.com/?q=2125+W+Newport+Pike,+Wilmington,+DE+19804"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-full bg-[#1D3557] hover:bg-[#152538] text-white p-3 rounded-lg shadow-md transition-colors duration-300"
+              onClick={toggleMenu}
+            >
+              <MapPin className="h-5 w-5 mr-2" />
+              <span>Get Directions</span>
+            </a>
+            
+            <a
+              href="https://www.facebook.com/people/Mi-Gente-Bonita-Market/100078536995749/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-full bg-[#1877F2] hover:bg-[#0A59C0] text-white p-3 rounded-lg shadow-md transition-colors duration-300"
+              onClick={toggleMenu}
+            >
+              <Facebook className="h-5 w-5 mr-2" />
+              <span>Facebook</span>
+            </a>
+          </div>
         </div>
       </div>
+      
+      {/* Overlay for mobile menu */}
+      {isOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"
+          onClick={toggleMenu}
+        ></div>
+      )}
     </header>
   );
 };
