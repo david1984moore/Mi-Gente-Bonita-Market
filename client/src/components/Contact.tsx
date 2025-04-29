@@ -108,7 +108,7 @@ const Contact = () => {
           
           <div className="rounded-2xl overflow-hidden shadow-xl lg:col-span-3 border border-gray-100 relative h-[500px] md:h-[600px]">
             <iframe 
-              src="https://maps.google.com/maps?q=2125+W+Newport+Pike,+Wilmington,+DE+19804&1300+Capitol+Tr,+Newark,+DE+19711&output=embed" 
+              src="https://www.google.com/maps/d/embed?mid=1EsgkI6nMGFTx6NKNulQvF25ChlX8Bw0&ehbc=2E312F&z=11" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
