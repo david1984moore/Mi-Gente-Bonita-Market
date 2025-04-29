@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
-import { Menu, X, Home, Store, Phone, Facebook, MapPin } from "lucide-react";
+import { Menu, X, Home, Store, Phone, Facebook, MapPin, Heart } from "lucide-react";
 import { Logo } from "../assets/logo";
 import { Button } from "@/components/ui/button";
 
@@ -46,9 +46,9 @@ const Navbar = () => {
 
   const navItems = [
     { to: "features", label: "Features", icon: <Store className="h-4 w-4" /> },
-    { to: "about", label: "About", icon: <Store className="h-4 w-4" /> },
+    { to: "about", label: "About", icon: <Home className="h-4 w-4" /> },
     { to: "gallery", label: "Products", icon: <Store className="h-4 w-4" /> },
-    { to: "testimonials", label: "Reviews", icon: <Store className="h-4 w-4" /> },
+    { to: "testimonials", label: "Reviews", icon: <Heart className="h-4 w-4" /> },
     { to: "contact", label: "Contact", icon: <Phone className="h-4 w-4" /> },
   ];
 
@@ -92,14 +92,21 @@ const Navbar = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              className={`nav-link relative px-4 py-2 text-sm font-medium transition-all duration-300 cursor-pointer flex items-center space-x-2 border-b-2 ${
+              className={`nav-link relative px-4 py-2 text-sm font-medium transition-all duration-300 cursor-pointer flex items-center space-x-2 rounded-lg group ${
                 activeSection === item.to
-                  ? 'text-[#D41414] border-[#D41414] font-semibold' 
-                  : 'text-[#1D3557] border-transparent hover:text-[#D41414] hover:border-[#D41414]/50'
+                  ? 'text-white bg-gradient-to-br from-[#D41414] to-[#B01111] shadow-md font-semibold' 
+                  : 'text-[#1D3557] hover:text-[#D41414] hover:bg-gray-100'
               }`}
             >
-              {item.icon}
-              <span>{item.label}</span>
+              <div className={`flex items-center justify-center ${activeSection === item.to ? 'text-white' : 'text-[#D41414] group-hover:text-[#D41414]'} transition-all duration-300`}>
+                {item.icon}
+              </div>
+              <span className="relative">
+                {item.label}
+                {activeSection !== item.to && (
+                  <span className="absolute bottom-[-2px] left-0 w-0 h-0.5 bg-[#D41414] group-hover:w-full transition-all duration-300"></span>
+                )}
+              </span>
             </Link>
           ))}
         </div>
@@ -131,19 +138,21 @@ const Navbar = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              className={`flex items-center space-x-3 p-2 border-l-4 ${
+              className={`flex items-center space-x-3 p-3 rounded-lg transition-all duration-300 ${
                 activeSection === item.to
-                  ? 'border-[#D41414] text-[#D41414] font-medium bg-[#D41414]/5'
-                  : 'border-transparent text-[#1D3557] hover:border-[#D41414]/30 hover:bg-gray-50'
+                  ? 'bg-gradient-to-r from-[#D41414]/10 to-transparent text-[#D41414] font-medium shadow-sm'
+                  : 'text-[#1D3557] hover:bg-gray-50 hover:text-[#D41414]'
               }`}
               onClick={toggleMenu}
             >
-              <div className={`p-2 ${
-                activeSection === item.to ? 'text-[#D41414]' : 'text-[#1D3557]'
-              }`}>
+              <div className={`flex items-center justify-center rounded-md p-2 ${
+                activeSection === item.to 
+                ? 'bg-[#D41414]/10 text-[#D41414]' 
+                : 'bg-gray-100 text-[#1D3557]'
+              } transition-all duration-300`}>
                 {item.icon}
               </div>
-              <span>{item.label}</span>
+              <span className="font-medium">{item.label}</span>
             </Link>
           ))}
           
