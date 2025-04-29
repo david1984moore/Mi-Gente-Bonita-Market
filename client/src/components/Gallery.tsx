@@ -50,8 +50,7 @@ const Gallery = () => {
           {images.map((image, index) => (
             <div 
               key={index} 
-              className="overflow-hidden rounded-xl shadow-xl cursor-pointer transform transition-all duration-500 
-                hover:shadow-2xl hover:scale-[1.02] hover:brightness-105 hover:rotate-1 group relative"
+              className="overflow-hidden rounded-xl shadow-xl cursor-pointer group relative"
               onClick={() => openModal(image.src)}
             >
               <div className="relative pb-[75%]">
@@ -61,8 +60,8 @@ const Gallery = () => {
                   className="absolute inset-0 w-full h-full object-cover"
                   style={{ objectPosition: image.objectPosition }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-4">
                   <div className="bg-white/90 backdrop-blur-sm py-3 px-4 rounded-lg shadow-lg">
                     <p className="text-sm font-medium text-gray-800">{image.alt}</p>
                   </div>
