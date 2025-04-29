@@ -55,9 +55,9 @@ const Contact = () => {
                   href="https://www.facebook.com/people/Mi-Gente-Bonita-Market/100078536995749/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-[#3D9C42] hover:text-[#D41414] transition duration-300 flex items-center"
+                  className="text-[#1877F2] hover:text-[#D41414] transition duration-300 flex items-center"
                 >
-                  <Facebook className="h-4 w-4 mr-2" /> Follow us on Facebook
+                  <Facebook className="h-5 w-5 mr-2 text-[#1877F2] bg-white rounded-full p-0.5" /> Follow us on Facebook
                 </a>
               </div>
             </div>
