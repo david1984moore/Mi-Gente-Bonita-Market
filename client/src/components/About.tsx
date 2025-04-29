@@ -44,6 +44,7 @@ const About = () => {
                     src={customerTomatoes} 
                     alt="Customer selecting fresh tomatoes at Mi Gente Bonita Market" 
                     className="w-full h-auto object-cover"
+                    style={{ maxHeight: "300px" }}
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
                     <p className="text-white text-sm font-medium">Our customers enjoy selecting from our fresh produce</p>
