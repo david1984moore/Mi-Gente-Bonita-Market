@@ -27,7 +27,7 @@ const About = () => {
               <h3 className="text-2xl font-['Poppins'] font-bold mb-4 text-[#3D9C42]">Our Story</h3>
               
               <p className="mb-4 text-gray-700">
-                Mi Gente Bonita Market was founded with a simple mission: to bring authentic Latino products to our community in Newark. What started as a small family business has grown into a beloved neighborhood market.
+                Mi Gente Bonita Market was founded with a simple mission: to bring authentic Latino products to our community in Stanton, Delaware. What started as a small family business has grown into a beloved neighborhood market.
               </p>
               
               <p className="mb-6 text-gray-700">
