@@ -21,7 +21,7 @@ const Gallery = () => {
       src: groceryAisle, 
       alt: "Selection of authentic Latino groceries and Goya products",
       objectPosition: "center",
-      span: "col-span-2 md:h-72"
+      span: "col-span-2"
     },
     { 
       src: freshProduce, 
@@ -57,7 +57,7 @@ const Gallery = () => {
       src: produceSection, 
       alt: "Colorful produce section with festive decorations",
       objectPosition: "center",
-      span: "col-span-2 md:h-72"
+      span: "col-span-2"
     },
   ];
 
@@ -113,8 +113,8 @@ const Gallery = () => {
   };
 
   return (
-    <section id="gallery" className="py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden w-full">
-      <div className="container mx-auto px-4 w-full">
+    <section id="gallery" className="py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white w-full">
+      <div className="w-full px-0 sm:px-4">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 relative inline-block">
             Our Products
@@ -126,12 +126,12 @@ const Gallery = () => {
         </div>
 
         {/* Gallery grid layout */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 w-full max-w-full">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 mx-auto max-w-full">
           {images.map((image, index) => (
             <div 
               key={index} 
               ref={(el) => { imageRefs.current[index] = el }}
-              className={`${image.span} ${index === 0 || index === 6 ? 'h-56 md:h-68' : 'h-44 md:h-60'} overflow-hidden rounded-xl cursor-pointer group relative 
+              className={`${image.span} ${index === 0 || index === 6 ? 'h-56 md:h-64' : 'h-44 md:h-56'} overflow-hidden rounded-xl cursor-pointer group relative 
                          transform transition-all duration-500 ease-out hover:z-10 hover:scale-[1.02] 
                          ${isLoaded[index] ? 'translate-y-0 opacity-100 shadow-lg' : 'translate-y-8 opacity-0'}`}
               onClick={() => openModal(image.src, index)}
