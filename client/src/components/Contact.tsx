@@ -1,16 +1,5 @@
 import { MapPin, Phone, Clock, Globe, Facebook, ExternalLink, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
-import L from "leaflet";
-
-// Fix for Leaflet marker icon issue in React
-delete (L.Icon.Default.prototype as any)._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png",
-  iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png",
-});
 
 const Contact = () => {
   return (
@@ -118,38 +107,20 @@ const Contact = () => {
           </div>
           
           <div className="rounded-2xl overflow-hidden shadow-xl lg:col-span-3 border border-gray-100 relative h-[500px] md:h-[600px]">
-            <MapContainer 
-              center={[39.7, -75.7]} 
-              zoom={10} 
-              style={{ height: "100%", width: "100%" }}
-              zoomControl={false}
-            >
-              <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              />
-              <Marker position={[39.7159077, -75.6408856]}>
-                <Popup>
-                  <div className="text-center p-1">
-                    <strong>Wilmington Location</strong><br />
-                    2125 W Newport Pike<br />
-                    Wilmington, DE 19804
-                  </div>
-                </Popup>
-              </Marker>
-              <Marker position={[39.7052825, -75.75975139999999]}>
-                <Popup>
-                  <div className="text-center p-1">
-                    <strong>Newark Location</strong><br />
-                    1300 Capitol Tr<br />
-                    Newark, DE 19711
-                  </div>
-                </Popup>
-              </Marker>
-            </MapContainer>
+            <iframe 
+              src="https://maps.google.com/maps?q=2125+W+Newport+Pike,+Wilmington,+DE+19804&1300+Capitol+Tr,+Newark,+DE+19711&output=embed" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen 
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Mi Gente Bonita Market Locations"
+              className="absolute inset-0"
+            ></iframe>
             
             {/* Map overlay with buttons for both locations */}
-            <div className="absolute bottom-6 right-6 z-[1000] flex flex-col space-y-2">
+            <div className="absolute bottom-6 right-6 z-10 flex flex-col space-y-2">
               <a href="https://maps.google.com/?q=2125+W+Newport+Pike,+Wilmington,+DE+19804" target="_blank" rel="noopener noreferrer">
                 <Button className="bg-white text-[#1D3557] hover:bg-[#D41414] hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 group w-full">
                   Wilmington Location
