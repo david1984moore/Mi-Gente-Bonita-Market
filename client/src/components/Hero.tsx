@@ -49,12 +49,12 @@ const Hero = () => {
       }}
     >
       <div className="container mx-auto px-4 text-center">
-        <div className="max-w-3xl mx-auto bg-black/30 p-6 rounded-lg backdrop-blur-sm">
-          <h1 className="text-4xl md:text-6xl font-['Poppins'] font-bold text-white mb-6">
+        <div className="max-w-3xl mx-auto bg-black/30 p-8 rounded-lg backdrop-blur-sm border border-white/10 shadow-2xl">
+          <h1 className="text-4xl md:text-6xl font-['Poppins'] font-bold text-white mb-6 tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] elegant-text hero-text-primary">
             Bienvenidos a<br /> 
-            <span className="text-[#FFD700]">Mi Gente Bonita Market</span>
+            <span className="text-[#FFD700] inline-block mt-2 transform hover:scale-[1.01] transition-transform duration-700 hero-title-highlight">Mi Gente Bonita Market</span>
           </h1>
-          <p className="text-xl md:text-2xl text-white mb-8">
+          <p className="text-xl md:text-2xl text-white mb-8 tracking-wider font-light drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)] elegant-text hero-text-secondary">
             Your trusted source for authentic Latino products
           </p>
           <Link
@@ -65,7 +65,7 @@ const Hero = () => {
             duration={500}
           >
             <Button 
-              className="bg-[#D41414] hover:bg-[#3D9C42] text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 text-base"
+              className="bg-[#D41414] hover:bg-[#3D9C42] text-white font-bold py-3 px-8 rounded-full shadow-xl transition duration-300 text-base tracking-wider transform hover:-translate-y-1"
             >
               Discover More
             </Button>
