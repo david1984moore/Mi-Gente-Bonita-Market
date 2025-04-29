@@ -1,45 +1,27 @@
 import { useState } from "react";
 import { X } from "lucide-react";
-import groceries from "../assets/store-photos/groceries.png";
-import vegetables from "../assets/store-photos/vegetables.png";
-import fruits1 from "../assets/store-photos/fruits1.png";
-import spices from "../assets/store-photos/spices.png";
-import snacks from "../assets/store-photos/snacks.png";
-import produce from "../assets/store-photos/produce.png";
+import groceryAisle from "../assets/store-photos/grocery-aisle.png";
+import freshProduce from "../assets/store-photos/fresh-produce.png";
+import freshLemons from "../assets/store-photos/fresh-lemons.png";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const images = [
     { 
-      src: groceries, 
-      alt: "Wide selection of authentic Latino groceries",
+      src: groceryAisle, 
+      alt: "Selection of authentic Latino groceries and Goya products",
       objectPosition: "center" 
     },
     { 
-      src: vegetables, 
-      alt: "Fresh vegetables and produce",
-      objectPosition: "center 30%" // Focus more on the variety of vegetables
-    },
-    { 
-      src: fruits1, 
-      alt: "Fresh citrus fruits",
-      objectPosition: "center 40%" // Highlight the colorful fruits
-    },
-    { 
-      src: spices, 
-      alt: "Authentic spices and seasonings",
+      src: freshProduce, 
+      alt: "Fresh vegetables and produce from our market",
       objectPosition: "center" 
     },
     { 
-      src: snacks, 
-      alt: "Latino snacks and cookies",
-      objectPosition: "center 35%" // Show better view of the snack variety
-    },
-    { 
-      src: produce, 
-      alt: "Fresh produce display",
-      objectPosition: "center 25%" // Focus on the produce arrangement
+      src: freshLemons, 
+      alt: "Fresh lemons and citrus fruits",
+      objectPosition: "center" 
     },
   ];
 
