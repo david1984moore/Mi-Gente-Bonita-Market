@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { X } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import groceryAisle from "../assets/store-photos/grocery-aisle.png";
 import freshProduce from "../assets/store-photos/fresh-produce.png";
 import freshLemons from "../assets/store-photos/fresh-lemons.png";
@@ -10,59 +10,115 @@ import produceSection from "../assets/store-photos/produce-section-colorful.png"
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number>(0);
+  const [isLoaded, setIsLoaded] = useState<boolean[]>(Array(7).fill(false));
+  
+  // Refs for intersection observer
+  const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const images = [
     { 
       src: groceryAisle, 
       alt: "Selection of authentic Latino groceries and Goya products",
-      objectPosition: "center" 
+      objectPosition: "center",
+      span: "col-span-1 row-span-1 md:col-span-2"
     },
     { 
       src: freshProduce, 
       alt: "Fresh vegetables and produce from our market",
-      objectPosition: "center" 
+      objectPosition: "center",
+      span: "col-span-1 row-span-1"
     },
     { 
       src: freshLemons, 
       alt: "Fresh lemons and citrus fruits",
-      objectPosition: "center" 
+      objectPosition: "center",
+      span: "col-span-1 row-span-1"
     },
     { 
       src: freshTomatoesPeppers, 
       alt: "Fresh tomatoes and peppers in crates",
-      objectPosition: "center" 
+      objectPosition: "center",
+      span: "col-span-1 row-span-1 md:row-span-2"
     },
     { 
       src: cactusPaddles, 
       alt: "Fresh cactus paddles (nopales) display",
-      objectPosition: "center" 
+      objectPosition: "center",
+      span: "col-span-1 row-span-1"
     },
     { 
       src: tajinSeasoning, 
       alt: "Tajin seasoning bottles - popular Mexican seasoning",
-      objectPosition: "center" 
+      objectPosition: "center",
+      span: "col-span-1 row-span-1"
     },
     { 
       src: produceSection, 
       alt: "Colorful produce section with festive decorations",
-      objectPosition: "center" 
+      objectPosition: "center",
+      span: "col-span-1 md:col-span-2 row-span-1"
     },
   ];
 
-  const openModal = (src: string) => {
+  // Set up intersection observer for animation
+  useEffect(() => {
+    const observers = imageRefs.current.map((ref, index) => {
+      if (!ref) return null;
+      
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            // Mark this image as loaded with a slight delay for staggered effect
+            setTimeout(() => {
+              setIsLoaded(prev => {
+                const newState = [...prev];
+                newState[index] = true;
+                return newState;
+              });
+            }, index * 100);
+          }
+        },
+        { threshold: 0.1 }
+      );
+      
+      observer.observe(ref);
+      return observer;
+    });
+    
+    return () => {
+      observers.forEach((observer) => observer?.disconnect());
+    };
+  }, []);
+
+  const openModal = (src: string, index: number) => {
     setSelectedImage(src);
+    setSelectedIndex(index);
   };
 
   const closeModal = () => {
     setSelectedImage(null);
   };
 
+  const navigateImage = (direction: 'next' | 'prev') => {
+    if (direction === 'next') {
+      const nextIndex = (selectedIndex + 1) % images.length;
+      setSelectedIndex(nextIndex);
+      setSelectedImage(images[nextIndex].src);
+    } else {
+      const prevIndex = (selectedIndex - 1 + images.length) % images.length;
+      setSelectedIndex(prevIndex);
+      setSelectedImage(images[prevIndex].src);
+    }
+  };
+
   return (
-    <section id="gallery" className="py-24 bg-gradient-to-b from-gray-50 to-white">
+    <section id="gallery" className="py-24 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-4 relative inline-block">
             Our Products
+            <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-400 via-red-500 to-orange-500 transform -translate-y-2"></span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-8">
             We offer a wide variety of authentic Latino foods, produce, and specialty items 
@@ -70,46 +126,89 @@ const Gallery = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Masonry-style grid layout */}
+        <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-fr gap-3 md:gap-5">
           {images.map((image, index) => (
             <div 
               key={index} 
-              className="overflow-hidden rounded-xl shadow-xl cursor-pointer group relative"
-              onClick={() => openModal(image.src)}
+              ref={(el) => { imageRefs.current[index] = el }}
+              className={`${image.span} overflow-hidden rounded-xl cursor-pointer group relative 
+                         transform transition-all duration-500 ease-out hover:z-10 hover:scale-[1.02] 
+                         ${isLoaded[index] ? 'translate-y-0 opacity-100 shadow-lg' : 'translate-y-8 opacity-0'}`}
+              onClick={() => openModal(image.src, index)}
+              style={{ transitionDelay: `${index * 70}ms` }}
             >
-              <div className="relative pb-[75%]">
+              <div className="relative pb-[85%] md:pb-[95%] overflow-hidden bg-gray-100">
                 <img 
                   src={image.src} 
                   alt={image.alt}
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   style={{ objectPosition: image.objectPosition }}
+                  loading="lazy"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Modal for enlarged image - more modern styling */}
+        {/* Enhanced modal with navigation */}
         {selectedImage && (
           <div 
-            className="fixed inset-0 bg-black/90 backdrop-blur-md flex items-center justify-center z-50 p-4 animate-in fade-in duration-500" 
+            className="fixed inset-0 bg-black/90 backdrop-blur-md flex items-center justify-center z-50 p-4 animate-in fade-in duration-300" 
             onClick={closeModal}
           >
-            <div className="relative max-w-6xl w-full animate-in zoom-in-95 duration-300">
+            <div className="relative max-w-7xl w-full animate-in zoom-in-95 duration-300">
               <button 
-                onClick={closeModal}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  closeModal();
+                }}
                 className="absolute -top-14 right-0 text-white/80 hover:text-white focus:outline-none transition-colors p-2 rounded-full hover:bg-white/10"
                 aria-label="Close"
               >
                 <X className="h-8 w-8" />
               </button>
+              
+              {/* Navigation buttons */}
+              <div className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-16 md:-translate-x-12">
+                <button 
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigateImage('prev');
+                  }}
+                  className="p-3 rounded-full bg-black/40 text-white/90 hover:bg-black/70 hover:text-white transition-all focus:outline-none border border-white/20"
+                  aria-label="Previous image"
+                >
+                  <ChevronLeft className="h-6 w-6" />
+                </button>
+              </div>
+              
+              <div className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-16 md:translate-x-12">
+                <button 
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigateImage('next');
+                  }}
+                  className="p-3 rounded-full bg-black/40 text-white/90 hover:bg-black/70 hover:text-white transition-all focus:outline-none border border-white/20"
+                  aria-label="Next image"
+                >
+                  <ChevronRight className="h-6 w-6" />
+                </button>
+              </div>
+              
               <div className="p-2 rounded-xl overflow-hidden border border-white/20 bg-black/40 shadow-2xl">
                 <img 
                   src={selectedImage} 
-                  alt="Enlarged view" 
+                  alt={images[selectedIndex].alt} 
                   className="w-full rounded-lg max-h-[85vh] object-contain shadow-2xl"
                   onClick={(e) => e.stopPropagation()}
                 />
+              </div>
+              
+              {/* Image counter indicator */}
+              <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-black/60 px-4 py-2 rounded-full text-white/90 text-sm font-medium border border-white/20">
+                {selectedIndex + 1} of {images.length}
               </div>
             </div>
           </div>
