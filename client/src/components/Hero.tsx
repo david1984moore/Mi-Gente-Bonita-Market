@@ -123,20 +123,6 @@ const Hero = () => {
                   Discover More
                 </Button>
               </Link>
-              <Link
-                to="gallery"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                className="group"
-              >
-                <Button 
-                  className="bg-transparent border-2 border-white/80 hover:bg-white/10 text-white font-medium py-2.5 px-6 rounded-lg transition duration-300 text-base tracking-wider shadow-lg hover:shadow-xl group-hover:translate-y-[-2px]"
-                >
-                  View Products
-                </Button>
-              </Link>
             </div>
           </div>
         </div>
