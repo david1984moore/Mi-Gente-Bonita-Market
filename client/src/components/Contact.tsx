@@ -46,7 +46,7 @@ const Contact = () => {
                   
                   <div>
                     <p className="text-gray-700 font-semibold">Newark Location:</p>
-                    <p className="text-gray-700">1300 Capitol Tr, Newark, DE 19711</p>
+                    <p className="text-gray-700">1300 Capitol Trail, Newark, DE 19711</p>
                     <a 
                       href="https://maps.google.com/?q=1300+Capitol+Tr,+Newark,+DE+19711" 
                       target="_blank" 
