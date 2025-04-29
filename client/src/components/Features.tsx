@@ -55,7 +55,7 @@ const Features = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-4">Why Choose Us</h2>
-          <div className="w-20 h-1 bg-[#D41414] mx-auto mb-6"></div>
+          <div className="w-20 h-1 bg-gradient-to-r from-[#D41414] via-white to-[#3D9C42] mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Our store offers the finest selection of Latino products in Newark.
           </p>

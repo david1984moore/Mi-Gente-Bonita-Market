@@ -50,7 +50,7 @@ const Testimonial = ({ rating, text, name, initials, backgroundColor }: Testimon
       </p>
       
       {/* Accent bar at bottom of card */}
-      <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#D41414] via-[#3D9C42] to-[#FFD700] rounded-b-2xl"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#D41414] via-white to-[#3D9C42] rounded-b-2xl"></div>
     </div>
   );
 };

@@ -8,7 +8,7 @@ const Contact = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-4 relative inline-block">
             Visit Our Market
-            <span className="absolute left-0 right-0 bottom-[-10px] h-1 bg-gradient-to-r from-transparent via-[#D41414] to-transparent"></span>
+            <span className="absolute left-0 right-0 bottom-[-10px] h-1 bg-gradient-to-r from-[#D41414] via-white to-[#3D9C42]"></span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mt-8">
             We'd love to see you in person! Stop by and discover our wide selection of authentic products.
