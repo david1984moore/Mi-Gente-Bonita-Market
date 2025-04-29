@@ -49,7 +49,7 @@ const About = () => {
                 </h3>
                 
                 <p className="mb-6 text-gray-700 leading-relaxed">
-                  Mi Gente Bonita Market was founded with a simple mission: to bring authentic Latino products to our community in Delaware. What started as a small family business has grown into a beloved neighborhood market.
+                  Mi Gente Bonita Market in two locations was founded with a simple mission: to bring authentic Latino products to our community in Delaware. What started as a small family business has grown into a beloved neighborhood market.
                 </p>
                 
                 <p className="mb-8 text-gray-700 leading-relaxed">
