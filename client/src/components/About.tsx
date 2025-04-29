@@ -38,21 +38,7 @@ const About = () => {
               {/* Quick stats */}
               
               
-              {/* Quick stats */}
-              <div className="grid grid-cols-3 gap-4 mt-6">
-                <div className="bg-white p-4 rounded-xl shadow-md text-center">
-                  <ShoppingCart className="h-6 w-6 mx-auto text-[#D41414] mb-2" />
-                  <p className="text-sm text-gray-600">1000+ Products</p>
-                </div>
-                <div className="bg-white p-4 rounded-xl shadow-md text-center">
-                  <Users className="h-6 w-6 mx-auto text-[#3D9C42] mb-2" />
-                  <p className="text-sm text-gray-600">Community Focused</p>
-                </div>
-                <div className="bg-white p-4 rounded-xl shadow-md text-center">
-                  <Flag className="h-6 w-6 mx-auto text-[#FFD700] mb-2" />
-                  <p className="text-sm text-gray-600">Latino Owned</p>
-                </div>
-              </div>
+              {/* Quick stats removed */}
             </div>
             
             <div className="order-1 lg:order-2">
