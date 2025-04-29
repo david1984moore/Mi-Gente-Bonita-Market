@@ -6,7 +6,6 @@ import groceryAisle from "../assets/store-photos/grocery-aisle.png";
 import freshProduce from "../assets/store-photos/fresh-produce.png";
 import freshLemons from "../assets/store-photos/fresh-lemons.png";
 import citrusFruitsDisplay from "../assets/store-photos/citrus-fruits-display.png";
-import marketSign from "../assets/image_1745965931473.png";
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -15,10 +14,6 @@ const Hero = () => {
   const [imagesLoaded, setImagesLoaded] = useState(false);
   
   const images = [
-    { 
-      src: marketSign,
-      position: 'top' // Showcase the Mi Gente Bonita Market sign
-    },
     { 
       src: freshNopales,
       position: 'center' // Showcase fresh cactus paddles (nopales)
