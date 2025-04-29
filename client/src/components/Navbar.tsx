@@ -83,7 +83,7 @@ const Navbar = () => {
         </button>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-1 lg:space-x-2 bg-white/50 backdrop-blur-sm px-4 py-2 rounded-full">
+        <div className="hidden md:flex items-center space-x-2 lg:space-x-3">
           {navItems.filter(item => item.to !== "features").map((item) => (
             <Link
               key={item.to}
@@ -92,17 +92,16 @@ const Navbar = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              className={`nav-link relative px-3 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer flex items-center space-x-1
-                ${activeSection === item.to 
-                  ? 'text-white bg-[#D41414] shadow-md' 
-                  : 'text-[#1D3557] hover:text-[#D41414] hover:bg-gray-100'}`}
+              className={`nav-link relative px-4 py-2 text-sm font-medium transition-all duration-300 cursor-pointer flex items-center space-x-2 border-b-2 ${
+                activeSection === item.to
+                  ? 'text-[#D41414] border-[#D41414] font-semibold' 
+                  : 'text-[#1D3557] border-transparent hover:text-[#D41414] hover:border-[#D41414]/50'
+              }`}
             >
               {item.icon}
               <span>{item.label}</span>
             </Link>
           ))}
-          
-          
         </div>
       </nav>
       
@@ -132,15 +131,15 @@ const Navbar = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              className={`flex items-center space-x-3 p-2 rounded-lg ${
+              className={`flex items-center space-x-3 p-2 border-l-4 ${
                 activeSection === item.to
-                  ? 'bg-[#D41414]/10 text-[#D41414] font-medium'
-                  : 'text-[#1D3557] hover:bg-gray-100'
+                  ? 'border-[#D41414] text-[#D41414] font-medium bg-[#D41414]/5'
+                  : 'border-transparent text-[#1D3557] hover:border-[#D41414]/30 hover:bg-gray-50'
               }`}
               onClick={toggleMenu}
             >
-              <div className={`p-2 rounded-lg ${
-                activeSection === item.to ? 'bg-[#D41414] text-white' : 'bg-gray-100'
+              <div className={`p-2 ${
+                activeSection === item.to ? 'text-[#D41414]' : 'text-[#1D3557]'
               }`}>
                 {item.icon}
               </div>
