@@ -10,9 +10,6 @@ interface FeatureProps {
 const FeatureCard = ({ icon, title, description, color }: FeatureProps) => {
   return (
     <div className="relative p-8 rounded-xl bg-white border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-y-[-5px] overflow-hidden group">
-      {/* Decorative corner accent */}
-      <div className={`absolute top-0 right-0 w-24 h-24 ${color} opacity-10 rounded-bl-full transform translate-x-8 -translate-y-8 group-hover:opacity-20 transition-opacity duration-300`}></div>
-      
       <div className={`${color} text-white p-4 rounded-xl w-16 h-16 flex items-center justify-center mb-6 shadow-md`}>
         {icon}
       </div>
