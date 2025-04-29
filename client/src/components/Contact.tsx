@@ -108,7 +108,7 @@ const Contact = () => {
           
           <div className="rounded-2xl overflow-hidden shadow-xl lg:col-span-3 border border-gray-100 relative h-[500px] md:h-[600px]">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m29!1m12!1m3!1d195934.44908852762!2d-75.81290316953031!3d39.66748087558598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m14!1i0!3e6!4m5!1s0x89c701bc530d17ef%3A0xef3ea0bcab10e321!2sMi%20Gente%20Bonita%20Market%2C%202125%20W%20Newport%20Pike%2C%20Wilmington%2C%20DE%2019804!3m2!1d39.7159077!2d-75.6408856!4m5!1s0x89c77b2216a62197%3A0x78f4d98311afba03!2s1300%20Capitol%20Trail%2C%20Newark%2C%20DE%2019711!3m2!1d39.7052825!2d-75.75975139999999!5e0!3m2!1sen!2sus!4v1714495683583!5m2!1sen!2sus" 
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d195934.44908852762!2d-75.70032!3d39.71060!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1714495683583!5m2!1sen!2sus&markers=color:red%7Clabel:A%7C39.7159077,-75.6408856&markers=color:red%7Clabel:B%7C39.7052825,-75.75975139999999" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
