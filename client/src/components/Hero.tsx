@@ -46,17 +46,17 @@ const Hero = () => {
     }
   ];
 
+  // Preload images for smoother transitions
+  useEffect(() => {
+    images.forEach(image => {
+      const img = new Image();
+      img.src = image.src;
+    });
+  }, []);
+
   useEffect(() => {
     const transitionInterval = 8000; // Total time between transitions
     const fadeTime = 3000; // Longer crossfade for smoother transition
-    
-    // Preload all images for smoother transitions
-    useEffect(() => {
-      images.forEach(image => {
-        const img = new Image();
-        img.src = image.src;
-      });
-    }, []);
     
     const interval = setInterval(() => {
       // Start transition
