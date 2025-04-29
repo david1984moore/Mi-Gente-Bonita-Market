@@ -33,24 +33,25 @@
 
 /* Enhanced text shadow for hero */
 .text-shadow-lg {
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 
-               0 3px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9), 
+               0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-/* Enhanced hero content */
+/* Enhanced hero content - more subtle glow effect */
 @keyframes subtle-glow {
   0%, 100% {
-    text-shadow: 0 0 3px rgba(255, 215, 0, 0.2),
-                 0 0 6px rgba(255, 215, 0, 0.1);
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.9),
+                 0 0 4px rgba(0, 0, 0, 0.7);
   }
   50% {
-    text-shadow: 0 0 6px rgba(255, 215, 0, 0.3),
-                 0 0 10px rgba(255, 215, 0, 0.2);
+    text-shadow: 0 0 3px rgba(0, 0, 0, 1),
+                 0 0 5px rgba(0, 0, 0, 0.8);
   }
 }
 
 .hero-title-highlight {
-  animation: subtle-glow 4s ease-in-out infinite;
+  /* No animation to keep it cleaner and less distracting */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
 }
 
   --sidebar-primary: 235 14% 41%;
