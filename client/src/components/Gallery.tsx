@@ -118,7 +118,6 @@ const Gallery = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-4 relative inline-block">
             Our Products
-            <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-400 via-red-500 to-orange-500 transform -translate-y-2"></span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-8">
             We offer a wide variety of authentic Latino foods, produce, and specialty items 
