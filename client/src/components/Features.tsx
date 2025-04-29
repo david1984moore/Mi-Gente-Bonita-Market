@@ -13,7 +13,7 @@ const FeatureCard = ({ icon, title, description, color }: FeatureProps) => {
       <div className={`${color} text-white p-4 rounded-xl w-16 h-16 flex items-center justify-center mb-6 shadow-md`}>
         {icon}
       </div>
-      <h3 className="text-xl font-['Poppins'] font-bold mb-3 group-hover:text-[#D41414] transition-colors duration-300">{title}</h3>
+      <h3 className="text-xl font-['Poppins'] font-bold mb-3">{title}</h3>
       <p className="text-gray-600 leading-relaxed">{description}</p>
     </div>
   );
