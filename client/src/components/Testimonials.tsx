@@ -83,7 +83,6 @@ const Testimonials = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-4 relative inline-block">
             What Our Customers Say
-            <span className="absolute left-0 right-0 bottom-[-10px] h-1 bg-gradient-to-r from-transparent via-[#3D9C42] to-transparent"></span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mt-8">
             Our customers love shopping with us. Here's what they have to say about their experiences.
