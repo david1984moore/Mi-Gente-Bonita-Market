@@ -42,7 +42,7 @@ const Features = () => {
     {
       icon: <MapPin className="h-8 w-8" />,
       title: "Convenient Location",
-      description: "Two easily accessible locations in Newark, DE and Stanton, DE with friendly staff ready to help you find exactly what you're looking for.",
+      description: "Two easily accessible locations in Wilmington, DE and Newark, DE. Our friendly staff are ready to help you find exactly what you're looking for.",
       color: "bg-[#1D3557]"
     }
   ];
