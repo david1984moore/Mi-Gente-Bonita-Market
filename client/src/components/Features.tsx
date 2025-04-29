@@ -1,4 +1,4 @@
-import { Store, Utensils, Heart, MapPin } from "lucide-react";
+import { ShoppingBasket, Utensils, Heart, MapPin } from "lucide-react";
 
 interface FeatureProps {
   icon: React.ReactNode;
@@ -22,7 +22,7 @@ const FeatureCard = ({ icon, title, description, color }: FeatureProps) => {
 const Features = () => {
   const features = [
     {
-      icon: <Store className="h-8 w-8" />,
+      icon: <ShoppingBasket className="h-8 w-8" />,
       title: "Authentic Products",
       description: "Enjoy a wide selection of authentic Latino groceries, spices, and specialty items imported directly from Latin America.",
       color: "bg-[#D41414]"
