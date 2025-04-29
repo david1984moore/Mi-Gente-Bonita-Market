@@ -11,7 +11,7 @@ const About = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-4">About Our Market</h2>
             <div className="w-20 h-1 bg-[#D41414] mx-auto mb-6"></div>
-            <p className="text-xl text-gray-600">Serving our community with pride since 2010</p>
+            <p className="text-xl text-gray-600">Serving our community with pride since 2020</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
