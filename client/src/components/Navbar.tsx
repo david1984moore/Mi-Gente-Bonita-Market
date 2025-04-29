@@ -39,7 +39,7 @@ const Navbar = () => {
           duration={500}
           className="flex items-center cursor-pointer"
         >
-          <Logo className="h-10 w-auto" />
+          <Logo className="h-16 w-auto" />
         </Link>
         
         {/* Mobile menu button */}
@@ -63,7 +63,7 @@ const Navbar = () => {
             smooth={true}
             offset={-70}
             duration={500}
-            className="nav-link text-[#1D3557] hover:text-[#E63946] font-medium transition duration-300 cursor-pointer"
+            className="nav-link text-[#1D3557] hover:text-[#D41414] font-medium transition duration-300 cursor-pointer"
           >
             Home
           </Link>
@@ -73,7 +73,7 @@ const Navbar = () => {
             smooth={true}
             offset={-70}
             duration={500}
-            className="nav-link text-[#1D3557] hover:text-[#E63946] font-medium transition duration-300 cursor-pointer"
+            className="nav-link text-[#1D3557] hover:text-[#D41414] font-medium transition duration-300 cursor-pointer"
           >
             About
           </Link>
@@ -83,7 +83,7 @@ const Navbar = () => {
             smooth={true}
             offset={-70}
             duration={500}
-            className="nav-link text-[#1D3557] hover:text-[#E63946] font-medium transition duration-300 cursor-pointer"
+            className="nav-link text-[#1D3557] hover:text-[#D41414] font-medium transition duration-300 cursor-pointer"
           >
             Contact
           </Link>
@@ -91,7 +91,7 @@ const Navbar = () => {
             href="https://www.facebook.com/people/Mi-Gente-Bonita-Market/100078536995749/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#E63946] hover:text-[#457B9D] transition duration-300"
+            className="text-[#D41414] hover:text-[#3D9C42] transition duration-300"
             aria-label="Facebook"
           >
             <Facebook className="h-5 w-5" />
@@ -108,7 +108,7 @@ const Navbar = () => {
             smooth={true}
             offset={-70}
             duration={500}
-            className="block text-[#1D3557] hover:text-[#E63946] font-medium p-2 cursor-pointer"
+            className="block text-[#1D3557] hover:text-[#D41414] font-medium p-2 cursor-pointer"
             onClick={toggleMenu}
           >
             Home
@@ -119,7 +119,7 @@ const Navbar = () => {
             smooth={true}
             offset={-70}
             duration={500}
-            className="block text-[#1D3557] hover:text-[#E63946] font-medium p-2 cursor-pointer"
+            className="block text-[#1D3557] hover:text-[#D41414] font-medium p-2 cursor-pointer"
             onClick={toggleMenu}
           >
             About
@@ -130,14 +130,14 @@ const Navbar = () => {
             smooth={true}
             offset={-70}
             duration={500}
-            className="block text-[#1D3557] hover:text-[#E63946] font-medium p-2 cursor-pointer"
+            className="block text-[#1D3557] hover:text-[#D41414] font-medium p-2 cursor-pointer"
             onClick={toggleMenu}
           >
             Contact
           </Link>
           <a
             href="https://www.facebook.com/people/Mi-Gente-Bonita-Market/100078536995749/"
-            className="block text-[#E63946] hover:text-[#457B9D] p-2 flex items-center"
+            className="block text-[#D41414] hover:text-[#3D9C42] p-2 flex items-center"
             target="_blank"
             rel="noopener noreferrer"
             onClick={toggleMenu}

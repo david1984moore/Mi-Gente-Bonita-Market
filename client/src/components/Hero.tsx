@@ -35,7 +35,7 @@ const Hero = () => {
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-['Poppins'] font-bold text-white mb-6">
             Bienvenidos a<br /> 
-            <span className="text-[#FFB703]">Mi Gente Bonita Market</span>
+            <span className="text-[#FFD700]">Mi Gente Bonita Market</span>
           </h1>
           <p className="text-xl md:text-2xl text-white mb-8">
             Your trusted source for authentic Latino products
@@ -48,7 +48,7 @@ const Hero = () => {
             duration={500}
           >
             <Button 
-              className="bg-[#E63946] hover:bg-[#457B9D] text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 text-base"
+              className="bg-[#D41414] hover:bg-[#3D9C42] text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 text-base"
             >
               Discover More
             </Button>

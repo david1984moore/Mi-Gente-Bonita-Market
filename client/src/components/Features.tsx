@@ -9,7 +9,7 @@ interface FeatureProps {
 const FeatureCard = ({ icon, title, description }: FeatureProps) => {
   return (
     <div className="text-center p-6 transition-transform hover:scale-105">
-      <div className="text-[#E63946] text-4xl mb-4 flex justify-center">
+      <div className="text-[#D41414] text-4xl mb-4 flex justify-center">
         {icon}
       </div>
       <h3 className="text-xl font-['Poppins'] font-bold mb-3">{title}</h3>
