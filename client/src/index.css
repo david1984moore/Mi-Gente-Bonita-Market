@@ -151,6 +151,30 @@ html {
     transform: translateX(-20px);
   }
   to {
+
+/* Wave design with no white space */
+.wave-container {
+  position: relative;
+  width: 100%;
+  margin-top: 0;
+  padding-top: 0;
+  overflow: hidden;
+}
+
+.wave {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: -5px; /* Remove any potential gap */
+}
+
+/* Make sure the wave connects seamlessly with content */
+.wave-section {
+  position: relative;
+  margin-top: 0;
+  padding-top: 0;
+}
+
     opacity: 1;
     transform: translateX(0);
   }
