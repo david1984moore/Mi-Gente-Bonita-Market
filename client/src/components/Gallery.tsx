@@ -60,12 +60,6 @@ const Gallery = () => {
                   className="absolute inset-0 w-full h-full object-cover"
                   style={{ objectPosition: image.objectPosition }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <div className="bg-white/90 backdrop-blur-sm py-3 px-4 rounded-lg shadow-lg">
-                    <p className="text-sm font-medium text-gray-800">{image.alt}</p>
-                  </div>
-                </div>
               </div>
             </div>
           ))}
