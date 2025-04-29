@@ -1,6 +1,7 @@
 import { MapPin, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-scroll";
+import interior1 from "../assets/store-photos/interior1.png";
 
 const About = () => {
   return (
@@ -16,8 +17,8 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                alt="Market interior" 
+                src={interior1} 
+                alt="Market interior with colorful products and piñatas" 
                 className="rounded-lg shadow-lg w-full h-auto"
               />
             </div>
