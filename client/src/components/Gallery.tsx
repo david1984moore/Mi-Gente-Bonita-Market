@@ -113,25 +113,25 @@ const Gallery = () => {
   };
 
   return (
-    <section id="gallery" className="py-24 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+    <section id="gallery" className="py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-4 relative inline-block">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 relative inline-block">
             Our Products
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-8">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-5">
             We offer a wide variety of authentic Latino foods, produce, and specialty items 
             imported from all over Latin America.
           </p>
         </div>
 
         {/* Gallery grid layout */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3">
           {images.map((image, index) => (
             <div 
               key={index} 
               ref={(el) => { imageRefs.current[index] = el }}
-              className={`${image.span} ${index === 0 || index === 6 ? 'h-60 md:h-72' : 'h-48 md:h-64'} overflow-hidden rounded-xl cursor-pointer group relative 
+              className={`${image.span} ${index === 0 || index === 6 ? 'h-56 md:h-68' : 'h-44 md:h-60'} overflow-hidden rounded-xl cursor-pointer group relative 
                          transform transition-all duration-500 ease-out hover:z-10 hover:scale-[1.02] 
                          ${isLoaded[index] ? 'translate-y-0 opacity-100 shadow-lg' : 'translate-y-8 opacity-0'}`}
               onClick={() => openModal(image.src, index)}
