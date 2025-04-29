@@ -6,16 +6,16 @@ const Contact = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-4">Visit Our Market</h2>
-          <div className="w-20 h-1 bg-[#E63946] mx-auto mb-6"></div>
+          <div className="w-20 h-1 bg-[#D41414] mx-auto mb-6"></div>
           <p className="text-xl text-gray-600">We'd love to see you in person!</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <div className="bg-white rounded-lg shadow-lg p-6">
-            <h3 className="text-2xl font-['Poppins'] font-bold mb-6 text-[#457B9D]">Contact Information</h3>
+            <h3 className="text-2xl font-['Poppins'] font-bold mb-6 text-[#3D9C42]">Contact Information</h3>
             
             <div className="mb-6 flex items-start">
-              <div className="text-[#E63946] text-2xl mr-4 mt-1">
+              <div className="text-[#D41414] text-2xl mr-4 mt-1">
                 <MapPin className="h-6 w-6" />
               </div>
               <div>
@@ -25,7 +25,7 @@ const Contact = () => {
             </div>
             
             <div className="mb-6 flex items-start">
-              <div className="text-[#E63946] text-2xl mr-4 mt-1">
+              <div className="text-[#D41414] text-2xl mr-4 mt-1">
                 <Phone className="h-6 w-6" />
               </div>
               <div>
@@ -35,7 +35,7 @@ const Contact = () => {
             </div>
             
             <div className="mb-6 flex items-start">
-              <div className="text-[#E63946] text-2xl mr-4 mt-1">
+              <div className="text-[#D41414] text-2xl mr-4 mt-1">
                 <Clock className="h-6 w-6" />
               </div>
               <div>
@@ -46,7 +46,7 @@ const Contact = () => {
             </div>
             
             <div className="flex items-start">
-              <div className="text-[#E63946] text-2xl mr-4 mt-1">
+              <div className="text-[#D41414] text-2xl mr-4 mt-1">
                 <Globe className="h-6 w-6" />
               </div>
               <div>
@@ -55,7 +55,7 @@ const Contact = () => {
                   href="https://www.facebook.com/people/Mi-Gente-Bonita-Market/100078536995749/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-[#457B9D] hover:text-[#E63946] transition duration-300 flex items-center"
+                  className="text-[#3D9C42] hover:text-[#D41414] transition duration-300 flex items-center"
                 >
                   <Facebook className="h-4 w-4 mr-2" /> Follow us on Facebook
                 </a>
