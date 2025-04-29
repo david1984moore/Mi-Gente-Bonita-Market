@@ -7,6 +7,8 @@ import freshTomatoesPeppers from "../assets/store-photos/fresh-tomatoes-peppers.
 import cactusPaddles from "../assets/store-photos/cactus-paddles-display.png";
 import tajinSeasoning from "../assets/store-photos/tajin-seasoning-bottles.png";
 import produceSection from "../assets/store-photos/produce-section-colorful.png";
+import pinatasAndFruits from "../assets/store-photos/pinatas-and-fruits.png";
+import snacksAisle from "../assets/store-photos/snacks-aisle.png";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -48,10 +50,22 @@ const Gallery = () => {
       span: "col-span-1"
     },
     { 
+      src: pinatasAndFruits, 
+      alt: "Colorful piñatas, fresh fruits and Latino products", 
+      objectPosition: "center",
+      span: "col-span-2"
+    },
+    { 
       src: tajinSeasoning, 
       alt: "Tajin seasoning bottles - popular Mexican seasoning",
       objectPosition: "center",
       span: "col-span-1"
+    },
+    { 
+      src: snacksAisle, 
+      alt: "Latino snacks aisle with popular chips and treats",
+      objectPosition: "center",
+      span: "col-span-2"
     },
     { 
       src: produceSection, 
