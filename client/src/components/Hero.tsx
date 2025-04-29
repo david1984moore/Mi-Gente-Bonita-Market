@@ -6,6 +6,7 @@ import groceryAisle from "../assets/store-photos/grocery-aisle.png";
 import freshProduce from "../assets/store-photos/fresh-produce.png";
 import freshLemons from "../assets/store-photos/fresh-lemons.png";
 import citrusFruitsDisplay from "../assets/store-photos/citrus-fruits-display.png";
+import snackShelves from "../assets/store-photos/snack-shelves.png";
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -25,6 +26,10 @@ const Hero = () => {
     { 
       src: groceryAisle,
       position: 'center' // Showcase the grocery aisle
+    },
+    { 
+      src: snackShelves,
+      position: 'center' // Display colorful snack selection shelves
     },
     { 
       src: freshProduce,
