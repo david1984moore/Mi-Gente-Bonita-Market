@@ -159,13 +159,16 @@ html {
   to { opacity: 1; }
 }
 
+/* Enhanced crossfade animation for smoother transitions */
 @keyframes crossfade {
-  0%, 20% { opacity: 1; }
-  80%, 100% { opacity: 0; }
+  0% { opacity: 1; }
+  45% { opacity: 0.5; } /* Slower fade for middle portion */
+  100% { opacity: 0; }
 }
 
 .hero-slideshow {
   position: relative;
+  overflow: hidden;
 }
 
 .hero-slide {
@@ -176,7 +179,9 @@ html {
   height: 100%;
   background-size: cover;
   background-position: center;
-  transition: opacity 2s cubic-bezier(0.4, 0.0, 0.2, 1);
+  will-change: opacity; /* Performance optimization */
+  transition: opacity 3s cubic-bezier(0.4, 0.0, 0.2, 1); /* Smoother cubic bezier curve */
+  transform: translateZ(0); /* Force GPU acceleration for smoother transitions */
 }
 
 /* Make sure hero content has a smooth appearance */
@@ -184,5 +189,14 @@ html {
   animation: fadeIn 1s ease-out forwards;
   position: relative;
   z-index: 30;
+}
+
+/* Preload helper class to improve transition smoothness */
+.preload-images {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
 }
 

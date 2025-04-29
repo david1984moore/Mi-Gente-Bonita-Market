@@ -10,6 +10,22 @@ const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [nextImageIndex, setNextImageIndex] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+  
+  // Preload images for smoother transitions
+  useEffect(() => {
+    const imagePromises = images.map((image) => {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.src = image.src;
+        img.onload = () => resolve(img);
+      });
+    });
+    
+    Promise.all(imagePromises).then(() => {
+      setImagesLoaded(true);
+    });
+  }, []);
   
   const images = [
     { 
@@ -32,7 +48,15 @@ const Hero = () => {
 
   useEffect(() => {
     const transitionInterval = 8000; // Total time between transitions
-    const fadeTime = 2000; // Time for crossfade effect
+    const fadeTime = 3000; // Longer crossfade for smoother transition
+    
+    // Preload all images for smoother transitions
+    useEffect(() => {
+      images.forEach(image => {
+        const img = new Image();
+        img.src = image.src;
+      });
+    }, []);
     
     const interval = setInterval(() => {
       // Start transition
@@ -53,27 +77,21 @@ const Hero = () => {
 
   return (
     <div className="relative overflow-hidden" style={{ height: '80vh' }}>
-      {/* Current image */}
-      <div 
-        className="absolute inset-0 z-10"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${images[currentImageIndex].src})`,
-          backgroundSize: 'cover',
-          backgroundPosition: images[currentImageIndex].position,
-          opacity: isTransitioning ? 0 : 1,
-          transition: 'opacity 2s ease-in-out',
-        }}
-      />
-      
-      {/* Next image (for crossfade) */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${images[nextImageIndex].src})`,
-          backgroundSize: 'cover',
-          backgroundPosition: images[nextImageIndex].position,
-        }}
-      />
+      {/* Active images layer - both visible during transition */}
+      {images.map((image, index) => (
+        <div 
+          key={index}
+          className="absolute inset-0 hero-slide"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${image.src})`,
+            backgroundSize: 'cover',
+            backgroundPosition: image.position,
+            opacity: index === currentImageIndex ? (isTransitioning ? 0 : 1) : (index === nextImageIndex ? 1 : 0),
+            zIndex: index === currentImageIndex ? 10 : (index === nextImageIndex ? 5 : 0),
+            transition: 'opacity 3s cubic-bezier(0.4, 0.0, 0.2, 1)', // Smooth cubic-bezier transition
+          }}
+        />
+      ))}
       
       <section 
         id="home" 
