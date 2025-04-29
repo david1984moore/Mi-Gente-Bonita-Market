@@ -3,6 +3,10 @@ import { X } from "lucide-react";
 import groceryAisle from "../assets/store-photos/grocery-aisle.png";
 import freshProduce from "../assets/store-photos/fresh-produce.png";
 import freshLemons from "../assets/store-photos/fresh-lemons.png";
+import freshTomatoesPeppers from "../assets/store-photos/fresh-tomatoes-peppers.png";
+import cactusPaddles from "../assets/store-photos/cactus-paddles-display.png";
+import tajinSeasoning from "../assets/store-photos/tajin-seasoning-bottles.png";
+import produceSection from "../assets/store-photos/produce-section-colorful.png";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -21,6 +25,26 @@ const Gallery = () => {
     { 
       src: freshLemons, 
       alt: "Fresh lemons and citrus fruits",
+      objectPosition: "center" 
+    },
+    { 
+      src: freshTomatoesPeppers, 
+      alt: "Fresh tomatoes and peppers in crates",
+      objectPosition: "center" 
+    },
+    { 
+      src: cactusPaddles, 
+      alt: "Fresh cactus paddles (nopales) display",
+      objectPosition: "center" 
+    },
+    { 
+      src: tajinSeasoning, 
+      alt: "Tajin seasoning bottles - popular Mexican seasoning",
+      objectPosition: "center" 
+    },
+    { 
+      src: produceSection, 
+      alt: "Colorful produce section with festive decorations",
       objectPosition: "center" 
     },
   ];
