@@ -63,11 +63,11 @@ const Gallery = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {images.map((image, index) => (
             <div 
               key={index} 
-              className="overflow-hidden rounded-lg shadow-md cursor-pointer transition-transform hover:scale-[1.02]"
+              className="overflow-hidden rounded-lg shadow-lg cursor-pointer transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:brightness-105 group relative"
               onClick={() => openModal(image.src)}
             >
               <div className="relative pb-[75%]">
@@ -77,30 +77,34 @@ const Gallery = () => {
                   className="absolute inset-0 w-full h-full object-cover"
                   style={{ objectPosition: image.objectPosition }}
                 />
-              </div>
-              <div className="p-4 bg-[#F8FDF9]">
-                <p className="text-gray-700 font-medium">{image.alt}</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Modal for enlarged image */}
+        {/* Modal for enlarged image - more elegant styling */}
         {selectedImage && (
-          <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4" onClick={closeModal}>
-            <div className="relative max-w-4xl w-full">
+          <div 
+            className="fixed inset-0 bg-black/85 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-in fade-in duration-300" 
+            onClick={closeModal}
+          >
+            <div className="relative max-w-5xl w-full">
               <button 
                 onClick={closeModal}
-                className="absolute -top-10 right-0 text-white hover:text-gray-300 focus:outline-none"
+                className="absolute -top-12 right-0 text-white/80 hover:text-white focus:outline-none transition-colors"
+                aria-label="Close"
               >
                 <X className="h-8 w-8" />
               </button>
-              <img 
-                src={selectedImage} 
-                alt="Enlarged view" 
-                className="w-full rounded-lg max-h-[80vh] object-contain"
-                onClick={(e) => e.stopPropagation()}
-              />
+              <div className="p-1 rounded-lg overflow-hidden border border-white/10">
+                <img 
+                  src={selectedImage} 
+                  alt="Enlarged view" 
+                  className="w-full rounded-lg max-h-[80vh] object-contain shadow-2xl"
+                  onClick={(e) => e.stopPropagation()}
+                />
+              </div>
             </div>
           </div>
         )}
