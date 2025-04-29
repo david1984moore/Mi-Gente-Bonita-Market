@@ -84,7 +84,7 @@ const Navbar = () => {
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-1 lg:space-x-2 bg-white/50 backdrop-blur-sm px-4 py-2 rounded-full">
-          {navItems.map((item) => (
+          {navItems.filter(item => item.to !== "features").map((item) => (
             <Link
               key={item.to}
               to={item.to}
