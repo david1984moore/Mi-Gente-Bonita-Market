@@ -7,13 +7,12 @@ import freshTomatoesPeppers from "../assets/store-photos/fresh-tomatoes-peppers.
 import cactusPaddles from "../assets/store-photos/cactus-paddles-display.png";
 import tajinSeasoning from "../assets/store-photos/tajin-seasoning-bottles.png";
 import produceSection from "../assets/store-photos/produce-section-colorful.png";
-import pinatasAndFruits from "../assets/store-photos/pinatas-and-fruits.png";
-import snacksAisle from "../assets/store-photos/snacks-aisle.png";
+import groceryCollage from "../assets/attached_images/image_1745961134090.png";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
-  const [isLoaded, setIsLoaded] = useState<boolean[]>(Array(7).fill(false));
+  const [isLoaded, setIsLoaded] = useState<boolean[]>(Array(8).fill(false));
   
   // Refs for intersection observer
   const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -50,28 +49,22 @@ const Gallery = () => {
       span: "col-span-1"
     },
     { 
-      src: pinatasAndFruits, 
-      alt: "Colorful piñatas, fresh fruits and Latino products", 
-      objectPosition: "center",
-      span: "col-span-2"
-    },
-    { 
       src: tajinSeasoning, 
       alt: "Tajin seasoning bottles - popular Mexican seasoning",
       objectPosition: "center",
       span: "col-span-1"
     },
     { 
-      src: snacksAisle, 
-      alt: "Latino snacks aisle with popular chips and treats",
-      objectPosition: "center",
-      span: "col-span-2"
-    },
-    { 
       src: produceSection, 
       alt: "Colorful produce section with festive decorations",
       objectPosition: "center",
       span: "col-span-2"
+    },
+    { 
+      src: groceryCollage, 
+      alt: "Collage of authentic Latino market products and produce",
+      objectPosition: "center",
+      span: "col-span-4"
     },
   ];
 
