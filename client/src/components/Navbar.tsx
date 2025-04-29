@@ -45,7 +45,6 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { to: "home", label: "Home", icon: <Home className="h-4 w-4" /> },
     { to: "features", label: "Features", icon: <Store className="h-4 w-4" /> },
     { to: "about", label: "About", icon: <Store className="h-4 w-4" /> },
     { to: "gallery", label: "Products", icon: <Store className="h-4 w-4" /> },
