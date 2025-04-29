@@ -34,15 +34,11 @@ const Contact = () => {
                   <div className="mb-3">
                     <p className="text-gray-700 font-semibold">Wilmington:</p>
                     <p className="text-gray-700">2125 W Newport Pike, Wilmington, DE 19804</p>
-                    <div className="text-gray-700 text-sm mt-1 mb-2">
-                      <div><span className="font-medium">Monday - Saturday:</span> 8:30 AM - 9:00 PM</div>
-                      <div><span className="font-medium">Sunday:</span> 8:30 AM - 8:00 PM</div>
-                    </div>
                     <a 
                       href="https://maps.google.com/?q=2125+W+Newport+Pike,+Wilmington,+DE+19804" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-[#D41414] hover:text-[#891414] transition-colors duration-300 text-sm font-medium"
+                      className="inline-flex items-center text-[#D41414] hover:text-[#891414] mt-1 transition-colors duration-300 text-sm font-medium"
                     >
                       Get directions <ExternalLink className="ml-1 h-3 w-3" />
                     </a>
