@@ -36,20 +36,7 @@ const About = () => {
               </div>
               
               {/* Quick stats */}
-              {/* Customer photo */}
-              <div className="mt-8 mb-6">
-                <div className="relative overflow-hidden rounded-2xl shadow-xl">
-                  <img 
-                    src={customerTomatoes} 
-                    alt="Customer selecting fresh tomatoes at Mi Gente Bonita Market" 
-                    className="w-full h-auto object-cover"
-                    style={{ maxHeight: "300px" }}
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                    <p className="text-white text-sm font-medium">Our customers enjoy selecting from our fresh produce</p>
-                  </div>
-                </div>
-              </div>
+              
               
               {/* Quick stats */}
               <div className="grid grid-cols-3 gap-4 mt-6">
