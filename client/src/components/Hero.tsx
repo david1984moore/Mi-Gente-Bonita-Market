@@ -5,7 +5,7 @@ import freshNopales from "../assets/store-photos/fresh-nopales.png";
 import groceryAisle from "../assets/store-photos/grocery-aisle.png";
 import freshProduce from "../assets/store-photos/fresh-produce.png";
 import freshLemons from "../assets/store-photos/fresh-lemons.png";
-import storefront from "../assets/store-photos/storefront.png";
+import citrusFruitsDisplay from "../assets/store-photos/citrus-fruits-display.png";
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -19,8 +19,8 @@ const Hero = () => {
       position: 'center' // Showcase fresh cactus paddles (nopales)
     },
     { 
-      src: storefront,
-      position: 'center' // Showcase the market storefront
+      src: citrusFruitsDisplay,
+      position: 'center' // Showcase colorful citrus fruits display
     },
     { 
       src: groceryAisle,

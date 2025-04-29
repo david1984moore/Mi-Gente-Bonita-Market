@@ -8,12 +8,12 @@ import cactusPaddles from "../assets/store-photos/cactus-paddles-display.png";
 import tajinSeasoning from "../assets/store-photos/tajin-seasoning-bottles.png";
 import produceSection from "../assets/store-photos/produce-section-colorful.png";
 import snacksAisle from "../assets/store-photos/snacks-aisle.png";
-import storefront from "../assets/store-photos/storefront.png";
+import citrusFruitsDisplay from "../assets/store-photos/citrus-fruits-display.png";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
-  const [isLoaded, setIsLoaded] = useState<boolean[]>(Array(7).fill(false));
+  const [isLoaded, setIsLoaded] = useState<boolean[]>(Array(8).fill(false));
   
   // Refs for intersection observer
   const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -24,6 +24,12 @@ const Gallery = () => {
       alt: "Selection of authentic Latino groceries and Goya products",
       objectPosition: "center",
       span: "col-span-2"
+    },
+    { 
+      src: citrusFruitsDisplay, 
+      alt: "Fresh oranges and limes display",
+      objectPosition: "center",
+      span: "col-span-1"
     },
     { 
       src: freshProduce, 
