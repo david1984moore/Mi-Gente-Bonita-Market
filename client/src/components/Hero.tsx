@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import { Button } from "@/components/ui/button";
+import freshNopales from "../assets/store-photos/fresh-nopales.png";
 import pinatasAndFruits from "../assets/store-photos/pinatas-and-fruits.png";
 import groceryAisle from "../assets/store-photos/grocery-aisle.png";
 import freshProduce from "../assets/store-photos/fresh-produce.png";
@@ -13,6 +14,10 @@ const Hero = () => {
   const [imagesLoaded, setImagesLoaded] = useState(false);
   
   const images = [
+    { 
+      src: freshNopales,
+      position: 'center' // Showcase fresh cactus paddles (nopales)
+    },
     { 
       src: pinatasAndFruits,
       position: 'center' // Showcase colorful piñatas and fruits display
