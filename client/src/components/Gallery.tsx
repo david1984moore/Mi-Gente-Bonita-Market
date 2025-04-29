@@ -113,8 +113,8 @@ const Gallery = () => {
   };
 
   return (
-    <section id="gallery" className="py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
-      <div className="container mx-auto px-4">
+    <section id="gallery" className="py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden w-full">
+      <div className="container mx-auto px-4 w-full">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 relative inline-block">
             Our Products
@@ -126,7 +126,7 @@ const Gallery = () => {
         </div>
 
         {/* Gallery grid layout */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 w-full max-w-full">
           {images.map((image, index) => (
             <div 
               key={index} 
