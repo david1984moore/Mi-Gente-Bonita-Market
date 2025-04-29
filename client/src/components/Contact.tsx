@@ -15,7 +15,7 @@ const Contact = () => {
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
-          <div className="bg-white rounded-2xl shadow-xl lg:col-span-2 overflow-hidden transform transition-all duration-300 hover:shadow-2xl border border-gray-100">
+          <div className="bg-white rounded-2xl shadow-xl lg:col-span-2 overflow-hidden transform transition-all duration-300 hover:shadow-2xl border border-gray-100 flex flex-col h-[500px] md:h-[600px]">
             <div className="bg-gradient-to-r from-[#E24949] to-[#B83434] text-white p-6 flex justify-center items-center">
               <img 
                 src="/src/assets/logo.png"
@@ -24,86 +24,88 @@ const Contact = () => {
               />
             </div>
             
-            <div className="p-8">
-              <div className="mb-8 flex items-start group">
-                <div className="bg-[#D41414]/10 text-[#D41414] p-3 rounded-lg mr-4">
-                  <MapPin className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-lg mb-1 text-gray-800">Locations</h4>
-                  <div className="mb-3">
-                    <p className="text-gray-700 font-semibold">Wilmington:</p>
-                    <p className="text-gray-700">2125 W Newport Pike, Wilmington, DE 19804</p>
-                    <a 
-                      href="https://maps.google.com/?q=2125+W+Newport+Pike,+Wilmington,+DE+19804" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-[#D41414] hover:text-[#891414] mt-1 transition-colors duration-300 text-sm font-medium"
-                    >
-                      Get directions <ExternalLink className="ml-1 h-3 w-3" />
-                    </a>
+            <div className="p-8 flex-1 flex flex-col justify-between">
+              <div className="space-y-6">
+                <div className="flex items-start group">
+                  <div className="bg-[#D41414]/10 text-[#D41414] p-3 rounded-lg mr-4">
+                    <MapPin className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
                   </div>
-                  
                   <div>
-                    <p className="text-gray-700 font-semibold">Newark:</p>
-                    <p className="text-gray-700">1300 Capitol Trail, Newark, DE 19711</p>
+                    <h4 className="font-bold text-lg mb-1 text-gray-800">Locations</h4>
+                    <div className="mb-3">
+                      <p className="text-gray-700 font-semibold">Wilmington:</p>
+                      <p className="text-gray-700">2125 W Newport Pike, Wilmington, DE 19804</p>
+                      <a 
+                        href="https://maps.google.com/?q=2125+W+Newport+Pike,+Wilmington,+DE+19804" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-[#D41414] hover:text-[#891414] mt-1 transition-colors duration-300 text-sm font-medium"
+                      >
+                        Get directions <ExternalLink className="ml-1 h-3 w-3" />
+                      </a>
+                    </div>
+                    
+                    <div>
+                      <p className="text-gray-700 font-semibold">Newark:</p>
+                      <p className="text-gray-700">1300 Capitol Trail, Newark, DE 19711</p>
+                      <a 
+                        href="https://maps.google.com/?q=1300+Capitol+Tr,+Newark,+DE+19711" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-[#D41414] hover:text-[#891414] mt-1 transition-colors duration-300 text-sm font-medium"
+                      >
+                        Get directions <ExternalLink className="ml-1 h-3 w-3" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="flex items-start group">
+                  <div className="bg-[#3D9C42]/10 text-[#3D9C42] p-3 rounded-lg mr-4">
+                    <Phone className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg mb-1 text-gray-800">Phone</h4>
+                    <p className="text-gray-700">(302) 691-3048</p>
                     <a 
-                      href="https://maps.google.com/?q=1300+Capitol+Tr,+Newark,+DE+19711" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-[#D41414] hover:text-[#891414] mt-1 transition-colors duration-300 text-sm font-medium"
+                      href="tel:3026913048" 
+                      className="inline-flex items-center text-[#3D9C42] hover:text-[#2A6D2E] mt-2 transition-colors duration-300 text-sm font-medium"
                     >
-                      Get directions <ExternalLink className="ml-1 h-3 w-3" />
+                      Call now
                     </a>
                   </div>
                 </div>
-              </div>
-              
-              <div className="mb-8 flex items-start group">
-                <div className="bg-[#3D9C42]/10 text-[#3D9C42] p-3 rounded-lg mr-4">
-                  <Phone className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-lg mb-1 text-gray-800">Phone</h4>
-                  <p className="text-gray-700">(302) 691-3048</p>
-                  <a 
-                    href="tel:3026913048" 
-                    className="inline-flex items-center text-[#3D9C42] hover:text-[#2A6D2E] mt-2 transition-colors duration-300 text-sm font-medium"
-                  >
-                    Call now
-                  </a>
-                </div>
-              </div>
-              
-              <div className="mb-8 flex items-start group">
-                <div className="bg-[#FFD700]/10 text-[#C7A500] p-3 rounded-lg mr-4">
-                  <Clock className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-lg mb-1 text-gray-800">Hours</h4>
-                  <div className="text-gray-700 grid grid-cols-3 gap-2">
-                    <span className="font-medium">Monday - Saturday:</span>
-                    <span className="col-span-2">8:30 AM - 9:00 PM</span>
-                    <span className="font-medium">Sunday:</span>
-                    <span className="col-span-2">8:30 AM - 8:00 PM</span>
+                
+                <div className="flex items-start group">
+                  <div className="bg-[#FFD700]/10 text-[#C7A500] p-3 rounded-lg mr-4">
+                    <Clock className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg mb-1 text-gray-800">Hours</h4>
+                    <div className="text-gray-700 grid grid-cols-3 gap-2">
+                      <span className="font-medium">Monday - Saturday:</span>
+                      <span className="col-span-2">8:30 AM - 9:00 PM</span>
+                      <span className="font-medium">Sunday:</span>
+                      <span className="col-span-2">8:30 AM - 8:00 PM</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              
-              <div className="flex items-start group">
-                <div className="bg-[#1877F2]/10 text-[#1877F2] p-3 rounded-lg mr-4">
-                  <Facebook className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-lg mb-1 text-gray-800">Social Media</h4>
-                  <a 
-                    href="https://www.facebook.com/people/Mi-Gente-Bonita-Market/100078536995749/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-[#1877F2] hover:text-[#0A59C0] transition-colors duration-300"
-                  >
-                    <span className="font-medium">Follow us on Facebook</span> <ExternalLink className="ml-1 h-3 w-3" />
-                  </a>
+                
+                <div className="flex items-start group">
+                  <div className="bg-[#1877F2]/10 text-[#1877F2] p-3 rounded-lg mr-4">
+                    <Facebook className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg mb-1 text-gray-800">Social Media</h4>
+                    <a 
+                      href="https://www.facebook.com/people/Mi-Gente-Bonita-Market/100078536995749/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-[#1877F2] hover:text-[#0A59C0] transition-colors duration-300"
+                    >
+                      <span className="font-medium">Follow us on Facebook</span> <ExternalLink className="ml-1 h-3 w-3" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -142,7 +144,7 @@ const Contact = () => {
       </div>
       
       {/* Full green background extension that matches footer */}
-      <div className="absolute bottom-0 left-0 w-full h-full bg-[#3D9C42]" style={{height: '150px', transform: 'translateY(70px)'}}></div>
+      <div className="absolute bottom-0 left-0 w-full bg-[#3D9C42]" style={{height: '80px', transform: 'translateY(80px)'}}></div>
     </section>
   );
 };
