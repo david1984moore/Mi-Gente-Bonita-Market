@@ -13,19 +13,19 @@ const Testimonial = ({ rating, text, name }: TestimonialProps) => {
     const hasHalfStar = rating % 1 !== 0;
 
     for (let i = 0; i < fullStars; i++) {
-      stars.push(<Star key={`star-${i}`} className="fill-[#FFB703] text-[#FFB703] inline" />);
+      stars.push(<Star key={`star-${i}`} className="fill-[#FFD700] text-[#FFD700] inline" />);
     }
 
     if (hasHalfStar) {
-      stars.push(<StarHalf key="half-star" className="fill-[#FFB703] text-[#FFB703] inline" />);
+      stars.push(<StarHalf key="half-star" className="fill-[#FFD700] text-[#FFD700] inline" />);
     }
 
     return stars;
   };
 
   return (
-    <div className="bg-[#F1FAEE] p-6 rounded-lg shadow-md border-l-4 border-[#E63946]">
-      <div className="text-[#FFB703] mb-4 flex">
+    <div className="bg-[#F8FDF9] p-6 rounded-lg shadow-md border-l-4 border-[#D41414]">
+      <div className="text-[#FFD700] mb-4 flex">
         {renderStars()}
       </div>
       <p className="italic text-gray-700 mb-4">{text}</p>
@@ -58,7 +58,7 @@ const Testimonials = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-4">What Our Customers Say</h2>
-          <div className="w-20 h-1 bg-[#E63946] mx-auto mb-6"></div>
+          <div className="w-20 h-1 bg-[#D41414] mx-auto mb-6"></div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

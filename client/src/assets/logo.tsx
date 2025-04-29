@@ -1,7 +1,9 @@
+import logoImage from './logo.png';
+
 export const Logo = ({ className }: { className?: string }) => {
   return (
     <img 
-      src="/src/assets/logo.svg" 
+      src={logoImage} 
       alt="Mi Gente Bonita Market"
       className={className}
     />
