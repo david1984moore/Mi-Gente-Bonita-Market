@@ -83,8 +83,9 @@ const Navbar = () => {
         </button>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-2 lg:space-x-3">
-          {navItems.filter(item => item.to !== "features").map((item) => (
+        <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+          {/* Regular nav items */}
+          {navItems.filter(item => item.to !== "features" && item.to !== "contact").map((item) => (
             <Link
               key={item.to}
               to={item.to}
@@ -92,18 +93,38 @@ const Navbar = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              className={`nav-link relative px-4 py-2 text-sm font-medium transition-all duration-300 cursor-pointer flex items-center space-x-2 rounded-lg group ${
+              className={`nav-link relative text-base font-medium transition-all duration-300 cursor-pointer ${
                 activeSection === item.to
-                  ? 'text-white bg-gradient-to-br from-[#D41414] to-[#B01111] shadow-md font-semibold' 
-                  : 'text-[#1D3557] hover:text-[#D41414] hover:bg-gray-100'
+                  ? 'text-[#D41414] font-semibold' 
+                  : 'text-[#1D3557] hover:text-[#D41414]'
               }`}
             >
-              <div className={`flex items-center justify-center ${activeSection === item.to ? 'text-white' : 'text-[#D41414] group-hover:text-[#D41414]'} transition-all duration-300`}>
-                {item.icon}
-              </div>
               <span>{item.label}</span>
+              {activeSection === item.to && (
+                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#D41414] rounded-full"></span>
+              )}
             </Link>
           ))}
+          
+          {/* Contact link with icon */}
+          <Link
+            to="contact"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className={`flex items-center space-x-1 nav-link relative text-base font-medium transition-all duration-300 cursor-pointer ${
+              activeSection === "contact"
+                ? 'text-[#D41414] font-semibold' 
+                : 'text-[#1D3557] hover:text-[#D41414]'
+            }`}
+          >
+            <Phone className="h-4 w-4 mr-1" />
+            <span>Contact</span>
+            {activeSection === "contact" && (
+              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#D41414] rounded-full"></span>
+            )}
+          </Link>
         </div>
       </nav>
       
@@ -133,21 +154,17 @@ const Navbar = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              className={`flex items-center space-x-3 p-3 rounded-lg transition-all duration-300 ${
+              className={`block p-3 transition-all duration-300 relative ${
                 activeSection === item.to
-                  ? 'bg-gradient-to-r from-[#D41414]/10 to-transparent text-[#D41414] font-medium shadow-sm'
-                  : 'text-[#1D3557] hover:bg-gray-50 hover:text-[#D41414]'
+                  ? 'text-[#D41414] font-semibold pl-5' 
+                  : 'text-[#1D3557] hover:text-[#D41414] hover:pl-5'
               }`}
               onClick={toggleMenu}
             >
-              <div className={`flex items-center justify-center rounded-md p-2 ${
-                activeSection === item.to 
-                ? 'bg-[#D41414]/10 text-[#D41414]' 
-                : 'bg-gray-100 text-[#1D3557]'
-              } transition-all duration-300`}>
-                {item.icon}
-              </div>
-              <span className="font-medium">{item.label}</span>
+              {activeSection === item.to && (
+                <span className="absolute left-0 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#D41414]"></span>
+              )}
+              <span className="text-lg">{item.label}</span>
             </Link>
           ))}
           
