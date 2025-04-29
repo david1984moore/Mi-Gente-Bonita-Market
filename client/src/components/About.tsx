@@ -1,7 +1,7 @@
 import { MapPin, Facebook, Clock, ShoppingCart, Users, Flag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-scroll";
-import interior1 from "../assets/store-photos/interior1.png";
+import storefront from "../assets/store-photos/storefront.png";
 
 const About = () => {
   return (
@@ -27,8 +27,8 @@ const About = () => {
                 
                 <div className="relative z-10 overflow-hidden rounded-2xl shadow-2xl transform transition-transform duration-500 hover:scale-[1.01] group">
                   <img 
-                    src={interior1} 
-                    alt="Market interior with colorful products and piñatas" 
+                    src={storefront} 
+                    alt="Mi Gente Bonita Market storefront with owners" 
                     className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
