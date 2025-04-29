@@ -16,7 +16,7 @@ const Contact = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
           <div className="bg-white rounded-2xl shadow-xl lg:col-span-2 overflow-hidden transform transition-all duration-300 hover:shadow-2xl border border-gray-100">
-            <div className="bg-gradient-to-r from-[#D41414] to-[#891414] text-white p-6 flex justify-center items-center">
+            <div className="bg-gradient-to-r from-[#E24949] to-[#B83434] text-white p-6 flex justify-center items-center">
               <img 
                 src="/src/assets/logo.png"
                 alt="Mi Gente Bonita Market"
