@@ -106,17 +106,42 @@ const Contact = () => {
             </div>
           </div>
           
-          <div className="rounded-2xl overflow-hidden shadow-xl lg:col-span-3 border border-gray-100 relative h-[500px] md:h-[600px]">
-            <iframe 
-              src="https://www.openstreetmap.org/export/embed.html?bbox=-75.8566%2C39.6388%2C-75.5834%2C39.7830&amp;layer=mapnik&amp;marker=39.7159%2C-75.6408;39.7052%2C-75.7597" 
-              width="100%" 
-              height="100%" 
-              style={{ border: 0 }} 
-              allowFullScreen 
-              loading="lazy"
-              title="Mi Gente Bonita Market Locations"
-              className="absolute inset-0"
-            ></iframe>
+          <div className="rounded-2xl overflow-hidden shadow-xl lg:col-span-3 border border-gray-100 relative h-[500px] md:h-[600px] bg-gray-100">
+            <div className="absolute inset-0 bg-gray-100 flex flex-col">
+              {/* Static Map Display */}
+              <div className="flex-1 p-4 relative">
+                {/* Delaware Map Background */}
+                <div className="absolute inset-0 bg-blue-50 rounded-lg">
+                  {/* Map content - simplified Delaware state outline */}
+                  <svg viewBox="0 0 100 100" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
+                    {/* Simplified Delaware outline */}
+                    <path 
+                      d="M40,10 L45,10 L55,90 L40,90 Z" 
+                      fill="#e9f5ff" 
+                      stroke="#b3d1ff" 
+                      strokeWidth="0.5"
+                    />
+                    {/* Main roads */}
+                    <path 
+                      d="M30,40 L70,40 M30,60 L70,60 M45,10 L45,90" 
+                      stroke="#d4d4d4" 
+                      strokeWidth="0.8"
+                      strokeLinecap="round"
+                    />
+                    {/* Wilmington Location Pin */}
+                    <g transform="translate(48, 30)">
+                      <circle cx="0" cy="0" r="3" fill="#D41414" />
+                      <text x="5" y="1" fontSize="3" fill="#1D3557" fontWeight="bold">Wilmington Location</text>
+                    </g>
+                    {/* Newark Location Pin */}
+                    <g transform="translate(42, 65)">
+                      <circle cx="0" cy="0" r="3" fill="#D41414" />
+                      <text x="5" y="1" fontSize="3" fill="#1D3557" fontWeight="bold">Newark Location</text>
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
             
             {/* Map overlay with buttons for both locations */}
             <div className="absolute bottom-6 right-6 z-10 flex flex-col space-y-2">
