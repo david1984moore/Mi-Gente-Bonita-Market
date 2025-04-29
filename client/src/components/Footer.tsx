@@ -50,7 +50,7 @@ const Footer = () => {
               href="https://www.facebook.com/people/Mi-Gente-Bonita-Market/100078536995749/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#FFD700] hover:text-white transition duration-300"
+              className="text-[#1877F2] hover:text-white transition duration-300"
               aria-label="Facebook"
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-5 w-5 fill-current">
