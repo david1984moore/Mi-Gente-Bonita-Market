@@ -20,7 +20,7 @@ const Contact = () => {
               </div>
               <div>
                 <h4 className="font-bold mb-1">Address:</h4>
-                <p className="text-gray-700">126 E Main St, Newark, DE 19711</p>
+                <p className="text-gray-700">2125 W Newport Pike, Wilmington, DE 19804</p>
               </div>
             </div>
             
