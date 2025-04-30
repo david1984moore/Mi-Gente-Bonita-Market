@@ -45,7 +45,6 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { to: "features", label: "Features", icon: <Store className="h-4 w-4" /> },
     { to: "about", label: "About", icon: null },
     { to: "gallery", label: "Products", icon: null },
     { to: "testimonials", label: "Reviews", icon: null },
