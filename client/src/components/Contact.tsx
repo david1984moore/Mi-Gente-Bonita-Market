@@ -15,7 +15,7 @@ const Contact = () => {
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
-          <div className="bg-white rounded-2xl shadow-xl lg:col-span-2 overflow-hidden transform transition-all duration-300 hover:shadow-2xl border border-gray-100 flex flex-col h-[500px] md:h-[600px]">
+          <div className="bg-white rounded-2xl shadow-xl lg:col-span-2 overflow-hidden transform transition-all duration-300 hover:shadow-2xl border border-gray-100 flex flex-col h-auto min-h-[500px] md:min-h-[600px]">
             <div className="bg-gradient-to-r from-[#E24949] to-[#B83434] text-white p-6 flex justify-center items-center">
               <img 
                 src="/src/assets/logo.png"
@@ -24,7 +24,7 @@ const Contact = () => {
               />
             </div>
             
-            <div className="p-8 flex-1 flex flex-col justify-between">
+            <div className="p-8 flex-1 flex flex-col">
               <div className="space-y-8">
                 <div className="flex items-start">
                   <div className="bg-[#FEE8E8] text-[#D41414] p-2 rounded-lg mr-4 flex-shrink-0 w-14 h-14 flex items-center justify-center">
@@ -109,7 +109,7 @@ const Contact = () => {
             </div>
           </div>
           
-          <div className="rounded-2xl overflow-hidden shadow-xl lg:col-span-3 border border-gray-100 relative h-[500px] md:h-[600px]">
+          <div className="rounded-2xl overflow-hidden shadow-xl lg:col-span-3 border border-gray-100 relative h-auto min-h-[500px] md:min-h-[600px]">
             <iframe 
               src="https://maps.google.com/maps?q=2125+W+Newport+Pike,+Wilmington,+DE+19804&t=&z=11&ie=UTF8&iwloc=&output=embed" 
               width="100%" 
