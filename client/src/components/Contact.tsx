@@ -104,7 +104,7 @@ const Contact = () => {
           
           <div className="rounded-2xl overflow-hidden shadow-xl lg:col-span-3 border border-gray-100 relative h-[400px] sm:h-[500px] md:h-[600px]">
             <iframe 
-              src="https://maps.google.com/maps?q=2125+W+Newport+Pike,+Wilmington,+DE+19804&t=&z=11&ie=UTF8&iwloc=&output=embed" 
+              src="https://maps.google.com/maps?q=2125+W+Newport+Pike,+Wilmington,+DE+19804&t=&z=13&ie=UTF8&iwloc=&output=embed" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
@@ -115,8 +115,8 @@ const Contact = () => {
               className="absolute inset-0"
             ></iframe>
             
-            {/* Map overlay with buttons for both locations */}
-            <div className="absolute bottom-6 right-4 sm:right-6 z-10 flex flex-col space-y-3 w-[160px] sm:w-auto">
+            {/* Map overlay with buttons for both locations - moved to left side to avoid zoom controls */}
+            <div className="absolute bottom-6 left-4 sm:left-6 z-10 flex flex-col space-y-3 w-[160px] sm:w-auto">
               <a href="https://maps.google.com/?q=2125+W+Newport+Pike,+Wilmington,+DE+19804" target="_blank" rel="noopener noreferrer">
                 <Button className="bg-white text-[#1D3557] hover:bg-[#D41414] hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 group w-full">
                   Wilmington Location
