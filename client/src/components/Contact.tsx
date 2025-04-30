@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const Contact = () => {
   return (
-    <section id="contact" className="pt-24 pb-24 bg-gradient-to-b from-white to-gray-100 relative">
+    <section id="contact" className="pt-24 pb-16 bg-gradient-to-b from-white to-gray-100 relative">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-4 relative inline-block">
@@ -24,8 +24,8 @@ const Contact = () => {
               />
             </div>
             
-            <div className="px-6 py-4 flex-1">
-              <div className="space-y-3">
+            <div className="px-6 py-6 flex-1">
+              <div className="space-y-5">
                 <div className="flex items-start">
                   <div className="bg-[#FEE8E8] text-[#D41414] p-2 rounded-lg mr-3 flex-shrink-0 w-10 h-10 flex items-center justify-center">
                     <MapPin className="h-5 w-5" />
@@ -33,8 +33,8 @@ const Contact = () => {
                   <div>
                     <h4 className="font-bold text-lg mb-2 text-gray-800">Locations</h4>
                     <div className="mb-3">
-                      <p className="text-gray-700 font-semibold text-sm">Wilmington:</p>
-                      <p className="text-gray-700 text-sm leading-tight">2125 W Newport Pike, Wilmington, DE 19804</p>
+                      <p className="text-gray-700 font-semibold text-base">Wilmington:</p>
+                      <p className="text-gray-700 text-base leading-tight">2125 W Newport Pike, Wilmington, DE 19804</p>
                       <a 
                         href="https://maps.google.com/?q=2125+W+Newport+Pike,+Wilmington,+DE+19804" 
                         target="_blank" 
@@ -46,8 +46,8 @@ const Contact = () => {
                     </div>
                     
                     <div>
-                      <p className="text-gray-700 font-semibold text-sm">Newark:</p>
-                      <p className="text-gray-700 text-sm leading-tight">1300 Capitol Trail, Newark, DE 19711</p>
+                      <p className="text-gray-700 font-semibold text-base">Newark:</p>
+                      <p className="text-gray-700 text-base leading-tight">1300 Capitol Trail, Newark, DE 19711</p>
                       <a 
                         href="https://maps.google.com/?q=1300+Capitol+Tr,+Newark,+DE+19711" 
                         target="_blank" 
@@ -66,7 +66,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-lg mb-2 text-gray-800">Phone</h4>
-                    <p className="text-gray-700 text-sm">(302) 691-3048</p>
+                    <p className="text-gray-700 text-base">(302) 691-3048</p>
                     <a 
                       href="tel:3026913048" 
                       className="inline-flex items-center text-[#3D9C42] hover:text-[#2A6D2E] mt-1 transition-colors duration-300 text-sm"
@@ -83,8 +83,8 @@ const Contact = () => {
                   <div>
                     <h4 className="font-bold text-lg mb-2 text-gray-800">Hours</h4>
                     <div>
-                      <p className="text-gray-700 text-sm leading-tight">Monday - Saturday: 8:30 AM - 9:00 PM</p>
-                      <p className="text-gray-700 text-sm leading-tight">Sunday: 8:30 AM - 8:00 PM</p>
+                      <p className="text-gray-700 text-base leading-tight">Monday - Saturday: 8:30 AM - 9:00 PM</p>
+                      <p className="text-gray-700 text-base leading-tight">Sunday: 8:30 AM - 8:00 PM</p>
                     </div>
                   </div>
                 </div>
@@ -125,7 +125,7 @@ const Contact = () => {
       </div>
       
       {/* Full green background extension that matches footer */}
-      <div className="absolute bottom-0 left-0 w-full bg-[#3D9C42]" style={{height: '80px', transform: 'translateY(80px)'}}></div>
+      <div className="absolute bottom-0 left-0 w-full bg-[#3D9C42]" style={{height: '80px', transform: 'translateY(79px)'}}></div>
     </section>
   );
 };
