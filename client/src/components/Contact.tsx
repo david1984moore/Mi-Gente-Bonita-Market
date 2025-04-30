@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const Contact = () => {
   return (
-    <section id="contact" className="pt-8 pb-16 md:pt-10 bg-gradient-to-b from-gray-50 to-gray-100 relative section-connector">
+    <section id="contact" className="pt-8 pb-24 md:pb-16 md:pt-10 bg-gradient-to-b from-gray-50 to-gray-100 relative section-connector">
       {/* Add a wave divider at the top of the section */}
       <div className="w-full overflow-hidden">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" 
@@ -25,7 +25,7 @@ const Contact = () => {
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
-          <div className="bg-white rounded-2xl shadow-xl lg:col-span-2 overflow-hidden transform transition-all duration-300 hover:shadow-2xl border border-gray-100 flex flex-col h-[500px] md:h-[600px]">
+          <div className="bg-white rounded-2xl shadow-xl lg:col-span-2 overflow-hidden transform transition-all duration-300 hover:shadow-2xl border border-gray-100 flex flex-col h-auto min-h-[500px] md:h-[600px]">
             <div className="bg-gradient-to-r from-[#E24949] to-[#B83434] text-white p-4 flex justify-center items-center">
               <img 
                 src="/src/assets/logo.png"
@@ -102,7 +102,7 @@ const Contact = () => {
             </div>
           </div>
           
-          <div className="rounded-2xl overflow-hidden shadow-xl lg:col-span-3 border border-gray-100 relative h-[500px] md:h-[600px]">
+          <div className="rounded-2xl overflow-hidden shadow-xl lg:col-span-3 border border-gray-100 relative h-[400px] sm:h-[500px] md:h-[600px]">
             <iframe 
               src="https://maps.google.com/maps?q=2125+W+Newport+Pike,+Wilmington,+DE+19804&t=&z=11&ie=UTF8&iwloc=&output=embed" 
               width="100%" 
@@ -116,7 +116,7 @@ const Contact = () => {
             ></iframe>
             
             {/* Map overlay with buttons for both locations */}
-            <div className="absolute bottom-6 right-6 z-10 flex flex-col space-y-2">
+            <div className="absolute bottom-6 right-4 sm:right-6 z-10 flex flex-col space-y-3 w-[160px] sm:w-auto">
               <a href="https://maps.google.com/?q=2125+W+Newport+Pike,+Wilmington,+DE+19804" target="_blank" rel="noopener noreferrer">
                 <Button className="bg-white text-[#1D3557] hover:bg-[#D41414] hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 group w-full">
                   Wilmington Location
