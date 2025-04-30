@@ -40,10 +40,10 @@ const Footer = () => {
                   href="https://www.facebook.com/people/Mi-Gente-Bonita-Market/100078536995749/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg transition-colors duration-300 group"
+                  className="inline-flex items-center bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg transition-all duration-300 group"
                 >
-                  <Facebook className="h-5 w-5 mr-2 text-[#1877F2]" />
-                  <span className="font-medium">Follow us</span>
+                  <Facebook className="h-6 w-6 text-white group-hover:text-[#1877F2] transition-colors duration-300" />
+                  <span className="font-medium ml-2">Follow us</span>
                 </a>
               </div>
             </div>
