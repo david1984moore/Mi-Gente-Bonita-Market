@@ -86,7 +86,7 @@ const Hero = () => {
   }, [nextImageIndex, images.length]);
 
   return (
-    <div className="relative overflow-hidden" style={{ height: '92vh', paddingTop: '10px' }}>
+    <div className="relative overflow-hidden" style={{ height: '92vh', paddingTop: '0' }}>
       {/* Active images layer - both visible during transition */}
       {images.map((image, index) => (
         <div 
@@ -105,7 +105,7 @@ const Hero = () => {
       
       <section 
         id="home" 
-        className="relative z-20 flex items-center justify-center pt-8 md:pt-16 h-full mb-none"
+        className="relative z-20 flex items-center justify-center pt-20 sm:pt-24 md:pt-28 h-full mb-none"
       >
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-2xl mx-auto relative z-10">
