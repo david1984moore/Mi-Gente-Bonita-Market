@@ -105,40 +105,53 @@ const Hero = () => {
       
       <section 
         id="home" 
-        className="relative z-20 flex items-center justify-center pt-16 h-full"
+        className="relative z-20 flex items-center justify-center pt-16 h-full mb-none"
       >
-      <div className="container mx-auto px-4 text-center">
-        <div className="max-w-2xl mx-auto relative z-10">
-          {/* Modern glass effect container */}
-          <div className="bg-black/30 p-8 rounded-xl backdrop-blur-sm border border-white/10 shadow-2xl animate-in slide-in-from-bottom duration-700">
-            <h1 className="text-3xl md:text-5xl font-['Poppins'] font-bold text-white mb-4 tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,1)] elegant-text hero-text-primary">
-              Bienvenidos a<br /> 
-              <span className="text-[#FFD700] inline-block mt-2 hero-title-highlight drop-shadow-[0_2px_5px_rgba(0,0,0,1)]">Mi Gente Bonita Market</span>
-            </h1>
-            <p className="text-lg md:text-xl text-white/95 mb-8 tracking-wider font-medium drop-shadow-[0_2px_5px_rgba(0,0,0,1)] elegant-text hero-text-secondary max-w-xl mx-auto">
-              Your trusted source for authentic Latino products
-            </p>
-            <div className="flex gap-4 justify-center">
-              <Link
-                to="about"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                className="group"
-              >
-                <Button 
-                  className="bg-[#D41414]/90 hover:bg-[#D41414] text-white font-medium py-2.5 px-6 rounded-lg transition duration-300 text-base tracking-wider shadow-lg hover:shadow-xl group-hover:translate-y-[-2px]"
+        <div className="container mx-auto px-4 text-center">
+          <div className="max-w-2xl mx-auto relative z-10">
+            {/* Modern glass effect container */}
+            <div className="bg-black/30 p-8 rounded-xl backdrop-blur-sm border border-white/10 shadow-2xl animate-in slide-in-from-bottom duration-700">
+              <h1 className="text-3xl md:text-5xl font-['Poppins'] font-bold text-white mb-4 tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,1)] elegant-text hero-text-primary">
+                Bienvenidos a<br /> 
+                <span className="text-[#FFD700] inline-block mt-2 hero-title-highlight drop-shadow-[0_2px_5px_rgba(0,0,0,1)]">Mi Gente Bonita Market</span>
+              </h1>
+              <p className="text-lg md:text-xl text-white/95 mb-8 tracking-wider font-medium drop-shadow-[0_2px_5px_rgba(0,0,0,1)] elegant-text hero-text-secondary max-w-xl mx-auto">
+                Your trusted source for authentic Latino products
+              </p>
+              <div className="flex gap-4 justify-center">
+                <Link
+                  to="about"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                  className="group"
                 >
-                  Discover More
-                </Button>
-              </Link>
+                  <Button 
+                    className="bg-[#D41414]/90 hover:bg-[#D41414] text-white font-medium py-2.5 px-6 rounded-lg transition duration-300 text-base tracking-wider shadow-lg hover:shadow-xl group-hover:translate-y-[-2px]"
+                  >
+                    Discover More
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
+      </section>
+      
+      {/* Triangular shape divider to connect with next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-20 overflow-hidden text-[#F8FDF9] z-10 section-connector">
+        <svg
+          className="absolute bottom-0 w-full h-full"
+          preserveAspectRatio="none"
+          viewBox="0 0 1200 120"
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M600 0L0 120H1200L600 0Z"></path>
+        </svg>
       </div>
-    </section>
-  </div>
+    </div>
   );
 };
 

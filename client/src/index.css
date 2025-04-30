@@ -80,7 +80,7 @@
   
   /* Common section styles */
   section {
-    @apply py-24;
+    @apply py-12 md:py-16;
   }
   
   /* Section heading styles */
@@ -173,6 +173,33 @@ html {
   position: relative;
   margin-top: 0;
   padding-top: 0;
+}
+
+/* Section connectors and dividers for eliminating white space */
+.section-connector {
+  position: relative;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  z-index: 1;
+}
+
+.section-divider {
+  height: 60px;
+  position: relative;
+  margin-top: -30px;
+  margin-bottom: -30px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.section-divider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(to right bottom, currentColor 49%, transparent 50%);
 }
 
     opacity: 1;
@@ -372,7 +399,7 @@ html {
 
 /* Utility classes for common patterns */
 .section-padding {
-  @apply py-16 md:py-24;
+  @apply py-8 md:py-14;
 }
 
 .container-padding {
@@ -380,11 +407,41 @@ html {
 }
 
 .divider {
-  @apply w-full h-px bg-gray-200 my-8;
+  @apply w-full h-px bg-gray-200 my-6;
 }
 
 .divider-gradient {
-  @apply w-full h-px my-8;
+  @apply w-full h-px my-6;
   background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
+}
+
+/* Spacing utilities for reducing whitespace */
+.mt-none {
+  margin-top: 0 !important;
+}
+
+.mb-none {
+  margin-bottom: 0 !important;
+}
+
+.negative-mt {
+  margin-top: -1px;
+}
+
+.negative-mb {
+  margin-bottom: -1px;
+}
+
+/* Section transition effects */
+.section-overlap-top {
+  margin-top: -3rem;
+  position: relative;
+  z-index: 10;
+}
+
+.section-overlap-bottom {
+  margin-bottom: -3rem;
+  position: relative;
+  z-index: 10;
 }
 
