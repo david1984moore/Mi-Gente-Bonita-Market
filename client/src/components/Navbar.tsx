@@ -15,9 +15,12 @@ const Navbar = () => {
     
     // Prevent background scrolling when menu is open
     if (newState) {
-      document.body.classList.add('overflow-hidden');
+      // Allow scrolling within the menu while preventing body scrolling
+      document.body.style.overflow = 'hidden';
+      document.body.style.height = '100%';
     } else {
-      document.body.classList.remove('overflow-hidden');
+      document.body.style.overflow = '';
+      document.body.style.height = '';
     }
   };
 
@@ -49,8 +52,9 @@ const Navbar = () => {
     
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      // Make sure to remove overflow-hidden class when component unmounts
-      document.body.classList.remove('overflow-hidden');
+      // Make sure to reset body styles when component unmounts
+      document.body.style.overflow = '';
+      document.body.style.height = '';
     };
   }, []);
 
@@ -141,7 +145,7 @@ const Navbar = () => {
       <div 
         className={`fixed inset-y-0 right-0 z-[60] w-64 bg-white shadow-2xl transform transition-transform duration-300 ease-in-out ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
-        } md:hidden`}
+        } md:hidden flex flex-col`}
       >
         <div className="flex justify-between items-center p-4 border-b">
           <h3 className="font-bold text-lg text-[#D41414]">Menu</h3>
@@ -154,7 +158,7 @@ const Navbar = () => {
           </button>
         </div>
         
-        <div className="px-4 py-6 space-y-6">
+        <div className="px-4 py-6 space-y-6 flex-1 overflow-y-auto pb-20">
           {navItems.map((item) => (
             <Link
               key={item.to}
@@ -217,7 +221,6 @@ const Navbar = () => {
         <div 
           className="fixed inset-0 bg-black/70 backdrop-blur-md z-50 md:hidden"
           onClick={toggleMenu}
-          style={{ touchAction: 'none' }}
         ></div>
       )}
     </header>
