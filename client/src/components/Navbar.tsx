@@ -10,7 +10,15 @@ const Navbar = () => {
   const [activeSection, setActiveSection] = useState("home");
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    const newState = !isOpen;
+    setIsOpen(newState);
+    
+    // Prevent background scrolling when menu is open
+    if (newState) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
   };
 
   useEffect(() => {
@@ -41,6 +49,8 @@ const Navbar = () => {
     
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      // Make sure to remove overflow-hidden class when component unmounts
+      document.body.classList.remove('overflow-hidden');
     };
   }, []);
 
@@ -53,7 +63,7 @@ const Navbar = () => {
 
   return (
     <header 
-      className={`fixed w-full ${scrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg py-2' : 'bg-white py-3'} z-50 transition-all duration-300`}
+      className={`fixed w-full ${scrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg py-2' : 'bg-white py-3'} z-[55] transition-all duration-300`}
     >
       <nav className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
@@ -129,7 +139,7 @@ const Navbar = () => {
       
       {/* Mobile Navigation - Modern slide-in menu */}
       <div 
-        className={`fixed inset-y-0 right-0 z-50 w-64 bg-white shadow-2xl transform transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-y-0 right-0 z-[60] w-64 bg-white shadow-2xl transform transition-transform duration-300 ease-in-out ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         } md:hidden`}
       >
@@ -205,8 +215,9 @@ const Navbar = () => {
       {/* Overlay for mobile menu */}
       {isOpen && (
         <div 
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"
+          className="fixed inset-0 bg-black/70 backdrop-blur-md z-50 md:hidden"
           onClick={toggleMenu}
+          style={{ touchAction: 'none' }}
         ></div>
       )}
     </header>
