@@ -78,13 +78,23 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-24 bg-gray-50">
+    <section id="testimonials" className="py-10 bg-gray-50 section-connector">
+      {/* Add a visual divider at the top of the section */}
+      <div className="w-full overflow-hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" 
+             className="text-white relative block h-8 w-full">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
+                fill="currentColor"></path>
+        </svg>
+      </div>
+      
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-4 relative inline-block">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 relative inline-block">
             What Our Customers Say
+            <span className="absolute left-0 right-0 bottom-[-4px] h-0.5 bg-[#3D9C42]/30"></span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto mt-8">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto mt-4">
             Our customers love shopping with us. Here's what they have to say about their experiences.
           </p>
         </div>

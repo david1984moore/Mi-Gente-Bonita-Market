@@ -6,14 +6,14 @@ import customerTomatoes from "../assets/store-photos/customer-tomatoes.png";
 
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-gradient-to-b from-gray-50 to-white">
+    <section id="about" className="pt-8 pb-10 md:pt-10 md:pb-12 bg-gradient-to-b from-[#F8FDF9] to-white section-connector">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-4 relative inline-block">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 relative inline-block">
               About Our Market
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto mt-8">
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto mt-4">
               Serving our community with pride since 2020
             </p>
           </div>

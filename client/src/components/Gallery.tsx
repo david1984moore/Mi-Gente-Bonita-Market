@@ -116,13 +116,14 @@ const Gallery = () => {
   };
 
   return (
-    <section id="gallery" className="py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white w-full">
+    <section id="gallery" className="pt-4 pb-12 md:pt-6 md:pb-14 bg-gradient-to-b from-white to-gray-50 w-full section-connector">
       <div className="w-full px-0 sm:px-4">
-        <div className="text-center mb-10">
+        <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 relative inline-block">
             Our Products
+            <span className="absolute left-0 right-0 bottom-[-4px] h-0.5 bg-[#D41414]/30"></span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-5">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-3">
             We offer a wide variety of authentic Latino foods, produce, and specialty items 
             imported from all over Latin America.
           </p>
