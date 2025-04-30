@@ -25,21 +25,21 @@ const Contact = () => {
             </div>
             
             <div className="p-8 flex-1 flex flex-col justify-between">
-              <div className="space-y-6">
-                <div className="flex items-start group">
-                  <div className="bg-[#D41414]/10 text-[#D41414] p-3 rounded-lg mr-4">
-                    <MapPin className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
+              <div className="space-y-8">
+                <div className="flex items-start">
+                  <div className="bg-[#FEE8E8] text-[#D41414] p-2 rounded-lg mr-4 flex-shrink-0 w-14 h-14 flex items-center justify-center">
+                    <MapPin className="h-6 w-6" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-xl mb-2 text-gray-800">Locations</h4>
-                    <div className="mb-4">
+                    <h4 className="font-bold text-xl mb-3 text-gray-800">Locations</h4>
+                    <div className="mb-5">
                       <p className="text-gray-700 font-semibold text-base">Wilmington:</p>
-                      <p className="text-gray-700 text-base">2125 W Newport Pike, Wilmington, DE 19804</p>
+                      <p className="text-gray-700 text-base leading-relaxed">2125 W Newport Pike, Wilmington, DE 19804</p>
                       <a 
                         href="https://maps.google.com/?q=2125+W+Newport+Pike,+Wilmington,+DE+19804" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center text-[#D41414] hover:text-[#891414] mt-1 transition-colors duration-300 text-sm font-medium"
+                        className="inline-flex items-center text-[#D41414] hover:text-[#891414] mt-1 transition-colors duration-300 text-sm"
                       >
                         Get directions <ExternalLink className="ml-1 h-3 w-3" />
                       </a>
@@ -47,12 +47,12 @@ const Contact = () => {
                     
                     <div>
                       <p className="text-gray-700 font-semibold text-base">Newark:</p>
-                      <p className="text-gray-700 text-base">1300 Capitol Trail, Newark, DE 19711</p>
+                      <p className="text-gray-700 text-base leading-relaxed">1300 Capitol Trail, Newark, DE 19711</p>
                       <a 
                         href="https://maps.google.com/?q=1300+Capitol+Tr,+Newark,+DE+19711" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center text-[#D41414] hover:text-[#891414] mt-1 transition-colors duration-300 text-sm font-medium"
+                        className="inline-flex items-center text-[#D41414] hover:text-[#891414] mt-1 transition-colors duration-300 text-sm"
                       >
                         Get directions <ExternalLink className="ml-1 h-3 w-3" />
                       </a>
@@ -60,50 +60,48 @@ const Contact = () => {
                   </div>
                 </div>
                 
-                <div className="flex items-start group">
-                  <div className="bg-[#3D9C42]/10 text-[#3D9C42] p-3 rounded-lg mr-4">
-                    <Phone className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
+                <div className="flex items-start">
+                  <div className="bg-[#EDF9EE] text-[#3D9C42] p-2 rounded-lg mr-4 flex-shrink-0 w-14 h-14 flex items-center justify-center">
+                    <Phone className="h-6 w-6" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-xl mb-2 text-gray-800">Phone</h4>
+                    <h4 className="font-bold text-xl mb-3 text-gray-800">Phone</h4>
                     <p className="text-gray-700 text-base">(302) 691-3048</p>
                     <a 
                       href="tel:3026913048" 
-                      className="inline-flex items-center text-[#3D9C42] hover:text-[#2A6D2E] mt-2 transition-colors duration-300 text-sm font-medium"
+                      className="inline-flex items-center text-[#3D9C42] hover:text-[#2A6D2E] mt-2 transition-colors duration-300 text-sm"
                     >
                       Call now
                     </a>
                   </div>
                 </div>
                 
-                <div className="flex items-start group">
-                  <div className="bg-[#FFD700]/10 text-[#C7A500] p-3 rounded-lg mr-4">
-                    <Clock className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
+                <div className="flex items-start">
+                  <div className="bg-[#FFF9E6] text-[#C7A500] p-2 rounded-lg mr-4 flex-shrink-0 w-14 h-14 flex items-center justify-center">
+                    <Clock className="h-6 w-6" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-xl mb-2 text-gray-800">Hours</h4>
-                    <div className="text-gray-700 grid grid-cols-3 gap-2 text-base">
-                      <span className="font-medium">Monday - Saturday:</span>
-                      <span className="col-span-2">8:30 AM - 9:00 PM</span>
-                      <span className="font-medium">Sunday:</span>
-                      <span className="col-span-2">8:30 AM - 8:00 PM</span>
+                    <h4 className="font-bold text-xl mb-3 text-gray-800">Hours</h4>
+                    <div>
+                      <p className="text-gray-700 text-base mb-1">Monday - Saturday: 8:30 AM - 9:00 PM</p>
+                      <p className="text-gray-700 text-base">Sunday: 8:30 AM - 8:00 PM</p>
                     </div>
                   </div>
                 </div>
                 
-                <div className="flex items-start group">
-                  <div className="bg-[#1877F2]/10 text-[#1877F2] p-3 rounded-lg mr-4">
-                    <Facebook className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
+                <div className="flex items-start">
+                  <div className="bg-[#E7F3FF] text-[#1877F2] p-2 rounded-lg mr-4 flex-shrink-0 w-14 h-14 flex items-center justify-center">
+                    <Facebook className="h-6 w-6" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-xl mb-2 text-gray-800">Social Media</h4>
+                    <h4 className="font-bold text-xl mb-3 text-gray-800">Social Media</h4>
                     <a 
                       href="https://www.facebook.com/people/Mi-Gente-Bonita-Market/100078536995749/" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-[#1877F2] hover:text-[#0A59C0] transition-colors duration-300 text-base"
                     >
-                      <span className="font-medium">Follow us on Facebook</span> <ExternalLink className="ml-1 h-3 w-3" />
+                      Follow us on Facebook <ExternalLink className="ml-1 h-3 w-3" />
                     </a>
                   </div>
                 </div>
