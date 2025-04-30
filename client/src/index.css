@@ -335,6 +335,20 @@ html {
   @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
 }
 
+/* Mobile menu fixes */
+.menu-open {
+  overflow: hidden !important;
+  position: relative;
+}
+
+/* Force mobile menu to be rendered on top of everything */
+.mobile-menu,
+.mobile-menu-backdrop {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
 /* Image hover effect classes */
 .img-hover-zoom {
   @apply overflow-hidden;
