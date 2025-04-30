@@ -31,10 +31,10 @@ const Contact = () => {
                     <MapPin className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg mb-1 text-gray-800">Locations</h4>
-                    <div className="mb-3">
-                      <p className="text-gray-700 font-semibold">Wilmington:</p>
-                      <p className="text-gray-700">2125 W Newport Pike, Wilmington, DE 19804</p>
+                    <h4 className="font-bold text-xl mb-2 text-gray-800">Locations</h4>
+                    <div className="mb-4">
+                      <p className="text-gray-700 font-semibold text-base">Wilmington:</p>
+                      <p className="text-gray-700 text-base">2125 W Newport Pike, Wilmington, DE 19804</p>
                       <a 
                         href="https://maps.google.com/?q=2125+W+Newport+Pike,+Wilmington,+DE+19804" 
                         target="_blank" 
@@ -46,8 +46,8 @@ const Contact = () => {
                     </div>
                     
                     <div>
-                      <p className="text-gray-700 font-semibold">Newark:</p>
-                      <p className="text-gray-700">1300 Capitol Trail, Newark, DE 19711</p>
+                      <p className="text-gray-700 font-semibold text-base">Newark:</p>
+                      <p className="text-gray-700 text-base">1300 Capitol Trail, Newark, DE 19711</p>
                       <a 
                         href="https://maps.google.com/?q=1300+Capitol+Tr,+Newark,+DE+19711" 
                         target="_blank" 
@@ -65,8 +65,8 @@ const Contact = () => {
                     <Phone className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg mb-1 text-gray-800">Phone</h4>
-                    <p className="text-gray-700">(302) 691-3048</p>
+                    <h4 className="font-bold text-xl mb-2 text-gray-800">Phone</h4>
+                    <p className="text-gray-700 text-base">(302) 691-3048</p>
                     <a 
                       href="tel:3026913048" 
                       className="inline-flex items-center text-[#3D9C42] hover:text-[#2A6D2E] mt-2 transition-colors duration-300 text-sm font-medium"
@@ -81,8 +81,8 @@ const Contact = () => {
                     <Clock className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg mb-1 text-gray-800">Hours</h4>
-                    <div className="text-gray-700 grid grid-cols-3 gap-2">
+                    <h4 className="font-bold text-xl mb-2 text-gray-800">Hours</h4>
+                    <div className="text-gray-700 grid grid-cols-3 gap-2 text-base">
                       <span className="font-medium">Monday - Saturday:</span>
                       <span className="col-span-2">8:30 AM - 9:00 PM</span>
                       <span className="font-medium">Sunday:</span>
@@ -96,12 +96,12 @@ const Contact = () => {
                     <Facebook className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg mb-1 text-gray-800">Social Media</h4>
+                    <h4 className="font-bold text-xl mb-2 text-gray-800">Social Media</h4>
                     <a 
                       href="https://www.facebook.com/people/Mi-Gente-Bonita-Market/100078536995749/" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-[#1877F2] hover:text-[#0A59C0] transition-colors duration-300"
+                      className="inline-flex items-center text-[#1877F2] hover:text-[#0A59C0] transition-colors duration-300 text-base"
                     >
                       <span className="font-medium">Follow us on Facebook</span> <ExternalLink className="ml-1 h-3 w-3" />
                     </a>
