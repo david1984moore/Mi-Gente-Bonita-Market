@@ -14,7 +14,7 @@ const About = () => {
               About Our Market
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto mt-4">
-              Serving our community with pride since 2020
+              Serving our community with pride since 2023
             </p>
           </div>
           
