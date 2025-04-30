@@ -71,16 +71,6 @@ const About = () => {
                       <MapPin className="h-4 w-4 mr-2" /> Visit Us
                     </Button>
                   </Link>
-                  <a
-                    href="https://www.facebook.com/people/Mi-Gente-Bonita-Market/100078536995749/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group"
-                  >
-                    <Button className="bg-[#1877F2] hover:bg-[#0A59C0] text-white py-2 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 inline-flex items-center group-hover:translate-y-[-2px]">
-                      <Facebook className="h-4 w-4 mr-2" /> Follow Us
-                    </Button>
-                  </a>
                 </div>
               </div>
             </div>
