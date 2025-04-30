@@ -67,7 +67,7 @@ const Navbar = () => {
 
   return (
     <header 
-      className={`fixed w-full ${scrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg py-2' : 'bg-white py-3'} z-[55] transition-all duration-300`}
+      className={`fixed w-full ${scrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg py-2' : 'bg-white py-3'} z-[60] transition-all duration-300`}
     >
       <nav className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
@@ -82,10 +82,10 @@ const Navbar = () => {
           <Logo className={`transition-all duration-300 ${scrolled ? 'h-14' : 'h-16'} w-auto`} />
         </Link>
         
-        {/* Mobile menu button */}
+        {/* Mobile menu button - Increased z-index to ensure it's always clickable */}
         <button 
           onClick={toggleMenu} 
-          className="md:hidden bg-white/90 p-2 rounded-full shadow-md text-[#1D3557] hover:text-[#D41414] transition-colors duration-300 focus:outline-none"
+          className="md:hidden bg-white/90 p-2 rounded-full shadow-md text-[#1D3557] hover:text-[#D41414] transition-colors duration-300 focus:outline-none relative z-[70]"
           aria-label="Toggle navigation menu"
         >
           {isOpen ? (
@@ -141,13 +141,13 @@ const Navbar = () => {
         </div>
       </nav>
       
-      {/* Mobile Navigation - Modern slide-in menu */}
+      {/* Mobile Navigation - Updated z-index to be higher than any other content */}
       <div 
-        className={`fixed inset-y-0 right-0 z-[60] w-64 bg-white shadow-2xl transform transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-y-0 right-0 z-[90] w-64 bg-white shadow-2xl transform transition-transform duration-300 ease-in-out ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         } md:hidden flex flex-col`}
       >
-        <div className="flex justify-between items-center p-4 border-b">
+        <div className="flex justify-between items-center p-4 border-b sticky top-0 bg-white z-10">
           <h3 className="font-bold text-lg text-[#D41414]">Menu</h3>
           <button 
             onClick={toggleMenu}
@@ -216,10 +216,10 @@ const Navbar = () => {
         </div>
       </div>
       
-      {/* Overlay for mobile menu */}
+      {/* Overlay for mobile menu - Updated z-index to be higher */}
       {isOpen && (
         <div 
-          className="fixed inset-0 bg-black/70 backdrop-blur-md z-50 md:hidden"
+          className="fixed inset-0 bg-black/70 backdrop-blur-md z-[80] md:hidden"
           onClick={toggleMenu}
         ></div>
       )}
