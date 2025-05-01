@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-scroll";
-import { Menu, X, Home, Store, Phone, Facebook, MapPin, Heart } from "lucide-react";
+import { Menu, X, Phone, Facebook, MapPin, Globe } from "lucide-react";
 import { Logo } from "../assets/logo";
 import { Button } from "@/components/ui/button";
 import Portal from "@/components/ui/portal";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
