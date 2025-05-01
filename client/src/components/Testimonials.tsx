@@ -132,22 +132,22 @@ const Testimonials = () => {
                 aria-expanded="false"
                 aria-controls="testimonials-content"
               >
-                <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 relative inline-block">
+                <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 tracking-tight text-[#1D1D1F]">
                   {t("testimonials.title")}
-                  <span className="absolute left-0 right-0 bottom-[-4px] h-0.5 bg-[#3D9C42]/30"></span>
                 </h2>
                 <ChevronDown className="h-6 w-6 text-[#3D9C42]" />
               </button>
+              <div className="h-1 w-16 bg-[#D41414] mx-auto my-4 rounded-full"></div>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto mt-4">
                 {t("testimonials.subtitle")}
               </p>
             </>
           ) : (
             <>
-              <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 relative inline-block">
+              <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 tracking-tight text-[#1D1D1F]">
                 {t("testimonials.title")}
-                <span className="absolute left-0 right-0 bottom-[-4px] h-0.5 bg-[#3D9C42]/30"></span>
               </h2>
+              <div className="h-1 w-16 bg-[#D41414] mx-auto my-4 rounded-full"></div>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto mt-4">
                 {t("testimonials.subtitle")}
               </p>
