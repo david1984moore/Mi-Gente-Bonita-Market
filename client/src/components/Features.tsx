@@ -1,7 +1,6 @@
-import { ShoppingBasket, Utensils, Heart, MapPin } from "lucide-react";
+import { ShoppingBasket, Utensils, Heart, MapPin, ChevronDown } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { MobileToggle } from "@/components/ui/mobile-toggle";
 import { useState, useEffect } from "react";
 
 interface FeatureProps {
@@ -85,9 +84,24 @@ const Features = () => {
         </div>
         
         {mounted && isMobile ? (
-          <MobileToggle title={t("common.showContent")} defaultOpen={true}>
-            {featuresContent}
-          </MobileToggle>
+          <div className="w-full">
+            <button
+              onClick={() => {
+                const contentDiv = document.getElementById('features-content');
+                if (contentDiv) {
+                  contentDiv.style.display = contentDiv.style.display === 'none' ? 'block' : 'none';
+                }
+              }}
+              className="w-full py-3 flex items-center justify-center gap-1 text-base font-semibold bg-[#F8F8F8] hover:bg-[#F0F0F0] rounded-md text-[#1D1D1F]"
+            >
+              <span>{t("common.showContent")}</span>
+              <ChevronDown className="h-4 w-4" />
+            </button>
+            
+            <div id="features-content" className="pt-6 w-full" style={{ display: 'none' }}>
+              {featuresContent}
+            </div>
+          </div>
         ) : (
           featuresContent
         )}

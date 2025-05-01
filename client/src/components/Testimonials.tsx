@@ -1,8 +1,7 @@
-import { Star, StarHalf, Quote } from "lucide-react";
+import { Star, StarHalf, Quote, ChevronDown } from "lucide-react";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { MobileToggle } from "@/components/ui/mobile-toggle";
 import { useState, useEffect } from "react";
 
 interface TestimonialProps {
@@ -130,9 +129,24 @@ const Testimonials = () => {
         
         {/* Conditionally render collapsible content on mobile */}
         {mounted && isMobile ? (
-          <MobileToggle title={t("common.showContent")} defaultOpen={true}>
-            {testimonialsGrid}
-          </MobileToggle>
+          <div className="w-full">
+            <button
+              onClick={() => {
+                const contentDiv = document.getElementById('testimonials-content');
+                if (contentDiv) {
+                  contentDiv.style.display = contentDiv.style.display === 'none' ? 'block' : 'none';
+                }
+              }}
+              className="w-full py-3 flex items-center justify-center gap-1 text-base font-semibold bg-[#F8F8F8] hover:bg-[#F0F0F0] rounded-md text-[#1D1D1F]"
+            >
+              <span>{t("common.showContent")}</span>
+              <ChevronDown className="h-4 w-4" />
+            </button>
+            
+            <div id="testimonials-content" className="pt-6 w-full" style={{ display: 'none' }}>
+              {testimonialsGrid}
+            </div>
+          </div>
         ) : (
           testimonialsGrid
         )}
