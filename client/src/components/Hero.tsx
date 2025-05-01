@@ -126,32 +126,25 @@ const Hero = () => {
               {/* Content layout with Welcome to visible - no background */}
               <div className="relative z-10 flex flex-col items-center py-6 px-6 mb-10 -mt-12">
                 <div className="overflow-hidden w-full mb-1">
-                  <h1 className="text-xl sm:text-2xl md:text-4xl font-['Inter'] font-black text-white tracking-tight animate-fade-in-down"
-                      style={{ 
-                        textShadow: '0 2px 2px black, 0 4px 6px rgba(0,0,0,0.9), 0 6px 8px rgba(0,0,0,0.8)', 
-                        letterSpacing: '0.05em',
-                        filter: 'drop-shadow(0 0 15px rgba(255, 255, 255, 0.5))'
-                      }}>
-                    <span className="relative inline-block">
-                      <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-200">{t("hero.welcome")}</span>
-                      <span className="absolute top-[1px] left-[1px] z-0 blur-[2px] text-white/70 opacity-50">{t("hero.welcome")}</span>
-                    </span>
+                  <h1 className="text-xl sm:text-2xl md:text-4xl font-['Inter'] font-extrabold text-white tracking-tight animate-fade-in-down"
+                      style={{ textShadow: '0 1px 1px black, 0 2px 3px black, 0 3px 5px black', letterSpacing: '0.03em' }}>
+                    {t("hero.welcome")}
                   </h1>
                 </div>
                 
                 <div className="overflow-hidden mb-4 md:mb-6 w-full">
                   <div className="relative inline-block">
-                    <h2 className="text-shimmer text-3xl sm:text-5xl md:text-7xl font-['Inter'] font-black tracking-tight animate-fade-in-up text-3d"
+                    <h2 className="text-[#FFE970] text-3xl sm:text-4xl md:text-6xl font-['Inter'] font-extrabold tracking-tight animate-fade-in-up"
                         style={{ 
-                          letterSpacing: '0.02em',
+                          textShadow: '0 1px 1px black, 0 2px 2px black, 0 4px 4px rgba(0,0,0,0.9), 0 6px 8px rgba(0,0,0,0.8)', 
+                          letterSpacing: '0.02em'
                         }}>
                       Mi Gente Bonita Market
                     </h2>
                     
-                    {/* Enhanced modern underline effect with increased glow */}
-                    <div className="absolute -bottom-3 left-0 w-full h-[4px] animate-pulse-slow">
-                      <div className="h-full w-full bg-gradient-to-r from-transparent via-[#FFD700] to-transparent rounded-full text-golden-glow" 
-                           style={{ filter: 'drop-shadow(0 0 8px rgba(255, 215, 0, 0.7))' }}></div>
+                    {/* Modern underline effect */}
+                    <div className="absolute -bottom-2 left-0 w-full h-[3px] animate-pulse-slow">
+                      <div className="h-full w-full bg-gradient-to-r from-transparent via-[#FFDE59] to-transparent rounded-full"></div>
                     </div>
                   </div>
                 </div>
