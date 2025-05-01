@@ -76,23 +76,29 @@ const About = () => {
           <div className="text-center mb-6 md:mb-10">
             {mounted && isMobile ? (
               <>
-                <button
+                <Button 
                   onClick={() => {
                     const contentDiv = document.getElementById('about-content');
                     if (contentDiv) {
                       const isCurrentlyHidden = contentDiv.style.display === 'none' || !contentDiv.style.display;
                       contentDiv.style.display = isCurrentlyHidden ? 'block' : 'none';
                     }
+                    // Tactile feedback on click
+                    if (window.navigator.vibrate) {
+                      window.navigator.vibrate(50);
+                    }
                   }}
-                  className="flex items-center justify-center gap-2 mx-auto"
+                  className="flex items-center justify-center gap-2 mx-auto group relative overflow-hidden"
+                  variant="ghost"
                   aria-expanded="false"
                   aria-controls="about-content"
                 >
-                  <h2 className="text-3xl md:text-4xl font-['Inter'] font-bold mb-3 tracking-tight text-[#1D1D1F]">
+                  <h2 className="text-3xl md:text-4xl font-['Inter'] font-bold mb-3 tracking-tight text-[#1D1D1F] group-hover:scale-105 transition-transform duration-300 ease-in-out">
                     {t("about.title")}
                   </h2>
                   <ChevronDown className="h-6 w-6 text-[#D41414]" />
-                </button>
+                  <span className="absolute inset-0 bg-radial-gradient from-[#FFD700]/40 via-[#D41414]/0 to-[#D41414]/0 opacity-0 group-hover:opacity-100 scale-0 group-hover:scale-100 transition-all duration-500 ease-out"></span>
+                </Button>
                 <div className="h-1 w-16 bg-[#D41414] mx-auto my-4 rounded-full"></div>
                 <p className="text-xl text-[#4B5563] max-w-2xl mx-auto mt-4 font-light">
                   {t("about.subtitle")}
