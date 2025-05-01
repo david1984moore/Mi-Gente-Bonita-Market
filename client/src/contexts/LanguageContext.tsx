@@ -67,8 +67,8 @@ const translations = {
     en: "About Our Market"
   },
   "about.subtitle": {
-    es: "Sirviendo a nuestra comunidad con orgullo desde 2023",
-    en: "Serving our community with pride since 2023"
+    es: "",
+    en: ""
   },
   "about.storyTitle": {
     es: "Nuestra Historia",
@@ -221,8 +221,8 @@ const translations = {
     en: "love for our community"
   },
   "footer.serving": {
-    es: "Sirviendo a Wilmington y Newark desde 2023.",
-    en: "Serving Wilmington and Newark since 2023."
+    es: "Sirviendo a Wilmington y Newark.",
+    en: "Serving Wilmington and Newark."
   },
   
   // Common UI elements
