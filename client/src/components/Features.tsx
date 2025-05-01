@@ -77,14 +77,7 @@ const Features = () => {
     <section id="features" className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 md:mb-12">
-          <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-4">Why Choose Us</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Our store offers the finest selection of Latino products in Delaware.
-          </p>
-        </div>
-        
-        {mounted && isMobile ? (
-          <div className="w-full">
+          {mounted && isMobile ? (
             <button
               onClick={() => {
                 const contentDiv = document.getElementById('features-content');
@@ -92,13 +85,22 @@ const Features = () => {
                   contentDiv.style.display = contentDiv.style.display === 'none' ? 'block' : 'none';
                 }
               }}
-              className="w-full py-3 flex items-center justify-center gap-1 text-base font-semibold bg-[#F8F8F8] hover:bg-[#F0F0F0] rounded-md text-[#1D1D1F]"
+              className="flex items-center justify-center gap-2 mx-auto"
             >
-              <span>{t("common.showContent")}</span>
-              <ChevronDown className="h-4 w-4" />
+              <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-4">Why Choose Us</h2>
+              <ChevronDown className="h-6 w-6 text-[#FFB100]" />
             </button>
-            
-            <div id="features-content" className="pt-6 w-full" style={{ display: 'none' }}>
+          ) : (
+            <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-4">Why Choose Us</h2>
+          )}
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Our store offers the finest selection of Latino products in Delaware.
+          </p>
+        </div>
+        
+        {mounted && isMobile ? (
+          <div className="w-full">
+            <div id="features-content" className="pt-6 w-full">
               {featuresContent}
             </div>
           </div>
