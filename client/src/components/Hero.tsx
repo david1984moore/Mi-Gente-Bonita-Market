@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-scroll";
-import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ChevronDown } from "lucide-react";
 import freshNopales from "../assets/store-photos/fresh-nopales.png";
@@ -166,13 +165,14 @@ const Hero = () => {
                   smooth={true}
                   offset={-70}
                   duration={800}
+                  className="inline-block"
                 >
-                  <Button 
-                    className="animate-fade-in-up animation-delay-500 cta-button bg-[#D41414]/90 text-white hover:bg-[#D41414] px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-500 group"
+                  <button 
+                    className="animate-fade-in-up animation-delay-500 cta-button bg-[#D41414]/90 text-white hover:bg-[#D41414] px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-500 group font-medium tracking-wide"
                   >
                     {t("hero.exploreBtn")}
-                    <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
-                  </Button>
+                    <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300 inline-block">→</span>
+                  </button>
                 </Link>
               </div>
             </div>
