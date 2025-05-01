@@ -1,5 +1,6 @@
 import { Star, StarHalf, Quote } from "lucide-react";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface TestimonialProps {
   rating: number;
@@ -53,6 +54,8 @@ const Testimonial = ({ rating, text, name, initials, backgroundColor }: Testimon
 };
 
 const Testimonials = () => {
+  const { t } = useLanguage();
+  
   const testimonials = [
     {
       rating: 5,

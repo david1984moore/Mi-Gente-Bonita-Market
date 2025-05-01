@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import groceryAisle from "../assets/store-photos/grocery-aisle.png";
 import freshProduce from "../assets/store-photos/fresh-produce.png";
 import freshLemons from "../assets/store-photos/fresh-lemons.png";
@@ -14,6 +15,7 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const [isLoaded, setIsLoaded] = useState<boolean[]>(Array(8).fill(false));
+  const { t } = useLanguage();
   
   // Refs for intersection observer
   const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -142,12 +144,11 @@ const Gallery = () => {
       <div className="w-full px-0 sm:px-4">
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 relative inline-block">
-            Our Products
+            {t("gallery.title")}
             <span className="absolute left-0 right-0 bottom-[-4px] h-0.5 bg-[#D41414]/30"></span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-3">
-            We offer a wide variety of authentic Latino foods, produce, and specialty items 
-            imported from all over Latin America.
+            {t("gallery.subtitle")}
           </p>
         </div>
 
@@ -192,7 +193,7 @@ const Gallery = () => {
                 onClick={closeModal}
                 className="bg-black hover:bg-gray-900 text-white px-4 py-2 rounded-md shadow-lg border border-white/50 flex items-center gap-2"
               >
-                <X className="h-4 w-4" /> <span>Close</span>
+                <X className="h-4 w-4" /> <span>{t("gallery.close")}</span>
               </button>
             </div>
             
@@ -241,7 +242,7 @@ const Gallery = () => {
                 onClick={closeModal}
                 className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md shadow-lg border border-white/50"
               >
-                Close
+                {t("gallery.close")}
               </button>
             </div>
           </div>
