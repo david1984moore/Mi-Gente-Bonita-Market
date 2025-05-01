@@ -49,12 +49,12 @@ const translations = {
   
   // Hero
   "hero.welcome": {
-    es: "Bienvenidos a",
-    en: "Welcome to"
+    es: "Descubre la Auténtica",
+    en: "Discover Authentic"
   },
   "hero.tagline": {
-    es: "Tu fuente confiable para productos latinos auténticos",
-    en: "Your trusted source for authentic Latino products"
+    es: "Conectando comunidades con sabores auténticos y tradiciones latinoamericanas desde nuestro corazón a tu hogar",
+    en: "Bringing authentic flavors and Latin American traditions from our heart to your home"
   },
   "hero.discoverMore": {
     es: "Descubre Más",
@@ -63,6 +63,10 @@ const translations = {
   "hero.exploreBtn": {
     es: "Explora Nuestro Mercado",
     en: "Explore Our Market"
+  },
+  "hero.hoursBtn": {
+    es: "Horario de Atención",
+    en: "Hours of Operation"
   },
   
   // About

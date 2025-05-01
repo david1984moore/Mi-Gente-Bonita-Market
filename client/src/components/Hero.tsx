@@ -119,43 +119,55 @@ const Hero = () => {
               {/* Modern, animated reveal content */}
               <div className="relative z-10 flex flex-col items-center">
                 <div className="overflow-hidden mb-3 md:mb-5 w-full">
-                  <h1 className="text-2xl sm:text-3xl md:text-5xl font-['Inter'] font-bold text-white tracking-tight animate-fade-in-down">
-                    {t("hero.welcome")}
+                  <h1 className="text-2xl sm:text-3xl md:text-5xl font-['Inter'] font-bold tracking-tight animate-fade-in-down relative inline-block">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-gray-100 shadow-text">
+                      {t("hero.welcome")}
+                    </span>
+                    <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-white to-transparent animate-pulse-slow"></span>
                   </h1>
                 </div>
                 
                 <div className="overflow-hidden mb-6 md:mb-8 w-full">
                   <div className="relative inline-block">
                     <h2 className="text-[#FFDE59] text-3xl sm:text-4xl md:text-7xl font-['Inter'] font-bold tracking-tight text-shadow-lg animate-fade-in-up drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
-                      Mi Gente Bonita Market
+                      <span className="relative inline-block">
+                        <span className="bg-gradient-to-r from-[#FFDE59] via-[#FFDE59] to-[#FFE980] bg-clip-text text-transparent">Mi Gente Bonita</span>
+                      </span>
+                      <span className="relative inline-block ml-2">
+                        <span className="bg-gradient-to-r from-[#FFDE59] via-white to-[#FFDE59] bg-clip-text text-transparent">Market</span>
+                      </span>
                     </h2>
                     
-                    {/* Modern underline effect */}
-                    <div className="absolute -bottom-2 left-0 w-full h-[3px] animate-pulse-slow">
-                      <div className="h-full w-full bg-gradient-to-r from-transparent via-[#FFDE59] to-transparent rounded-full"></div>
+                    {/* Enhanced modern underline effect */}
+                    <div className="absolute -bottom-3 left-0 w-full h-[4px] animate-pulse-slow">
+                      <div className="h-full w-full bg-gradient-to-r from-[#D41414]/80 via-[#FFDE59] to-[#D41414]/80 rounded-full shadow-lg"></div>
                     </div>
                   </div>
                 </div>
                 
                 <div className="overflow-hidden mb-10 md:mb-12 w-full">
-                  <p className="text-base sm:text-xl md:text-2xl text-white tracking-tight font-light animate-fade-in-up animation-delay-300 max-w-2xl mx-auto leading-relaxed">
-                    {t("hero.tagline")}
-                  </p>
+                  <div className="relative inline-block">
+                    <p className="text-base sm:text-xl md:text-2xl text-white tracking-tight font-light animate-fade-in-up animation-delay-300 max-w-3xl mx-auto leading-relaxed shadow-text px-4 py-2">
+                      <span className="relative z-10">{t("hero.tagline")}</span>
+                    </p>
+                    <div className="absolute inset-0 bg-black/20 backdrop-blur-sm rounded-lg -z-0 transform scale-105 glow-subtle"></div>
+                  </div>
                 </div>
                 
-                {/* Stylish CTA button */}
+                {/* Stylish CTA button with enhanced hover effect */}
                 <Link
                   to="contact"
                   spy={true}
                   smooth={true}
                   offset={-70}
                   duration={800}
-                  className="inline-block"
+                  className="inline-block group"
                 >
                   <button 
-                    className="animate-fade-in-up animation-delay-500 cta-button bg-[#D41414]/90 text-white hover:bg-[#D41414] px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-500 group font-medium tracking-wide"
+                    className="animate-fade-in-up animation-delay-500 bg-[#D41414]/90 text-white hover:bg-[#D41414] px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 font-medium tracking-wide border-2 border-transparent hover:border-[#FFDE59]/50 relative overflow-hidden"
                   >
-                    Hours of Operation
+                    <span className="relative z-10">{t("hero.hoursBtn")}</span>
+                    <span className="absolute inset-0 bg-gradient-to-r from-[#D41414] to-[#D41414]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
                   </button>
                 </Link>
               </div>
