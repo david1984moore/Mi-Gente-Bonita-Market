@@ -116,19 +116,13 @@ const Hero = () => {
         <div className="w-full max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             <div className="md:col-span-8 md:col-start-3 text-center relative">
-              {/* Modern, animated reveal content with background */}
-              <div className="relative z-10 flex flex-col items-center bg-black/30 py-6 px-6 rounded-xl mb-10">
-                <div className="overflow-hidden w-full mb-0">
-                  <h1 className="text-xl sm:text-2xl md:text-4xl font-['Inter'] font-bold text-white tracking-tight animate-fade-in-down text-shadow-md">
-                    {t("hero.welcome")}
-                  </h1>
-                </div>
-                
+              {/* Simplified content layout without Welcome to */}
+              <div className="relative z-10 flex flex-col items-center bg-black/30 py-6 px-6 rounded-xl mb-10">                
                 <div className="overflow-hidden mb-4 md:mb-6 w-full">
                   <div className="relative inline-block">
-                    <h2 className="text-[#FFDE59] text-3xl sm:text-4xl md:text-6xl font-['Inter'] font-bold tracking-tight text-shadow-lg animate-fade-in-up drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
+                    <h1 className="text-[#FFDE59] text-3xl sm:text-4xl md:text-6xl font-['Inter'] font-bold tracking-tight text-shadow-lg animate-fade-in-up drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
                       Mi Gente Bonita Market
-                    </h2>
+                    </h1>
                     
                     {/* Modern underline effect */}
                     <div className="absolute -bottom-2 left-0 w-full h-[3px] animate-pulse-slow">
