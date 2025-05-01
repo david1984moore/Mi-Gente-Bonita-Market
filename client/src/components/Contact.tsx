@@ -1,7 +1,9 @@
 import { MapPin, Phone, Clock, Globe, Facebook, ExternalLink, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contact = () => {
+  const { t } = useLanguage();
   return (
     <section id="contact" className="pt-8 pb-24 md:pb-16 md:pt-10 bg-gradient-to-b from-gray-50 to-gray-100 relative section-connector">
       {/* Add a wave divider at the top of the section */}
@@ -16,11 +18,11 @@ const Contact = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 relative inline-block">
-            Visit Our Market
+            {t("contact.title")}
             <span className="absolute left-0 right-0 bottom-[-4px] h-0.5 bg-[#D41414]/30"></span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mt-4">
-            We'd love to see you in person! Stop by and discover our wide selection of authentic products.
+            {t("contact.subtitle")}
           </p>
         </div>
         
@@ -41,7 +43,7 @@ const Contact = () => {
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg mb-2 text-gray-800">Locations</h4>
+                    <h4 className="font-bold text-lg mb-2 text-gray-800">{t("contact.location1.title")}</h4>
                     <div className="mb-3">
                       <p className="text-gray-700 font-semibold text-base">Wilmington:</p>
                       <p className="text-gray-700 text-base leading-tight">2125 W Newport Pike, Wilmington, DE 19804</p>
@@ -51,7 +53,7 @@ const Contact = () => {
                         rel="noopener noreferrer"
                         className="inline-flex items-center text-[#D41414] hover:text-[#891414] mt-1 transition-colors duration-300 text-sm"
                       >
-                        Get directions <ExternalLink className="ml-1 h-3 w-3" />
+                        {t("contact.getDirections")} <ExternalLink className="ml-1 h-3 w-3" />
                       </a>
                     </div>
                     
@@ -64,7 +66,7 @@ const Contact = () => {
                         rel="noopener noreferrer"
                         className="inline-flex items-center text-[#D41414] hover:text-[#891414] mt-1 transition-colors duration-300 text-sm"
                       >
-                        Get directions <ExternalLink className="ml-1 h-3 w-3" />
+                        {t("contact.getDirections")} <ExternalLink className="ml-1 h-3 w-3" />
                       </a>
                     </div>
                   </div>
@@ -75,13 +77,13 @@ const Contact = () => {
                     <Phone className="h-5 w-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg mb-2 text-gray-800">Phone</h4>
+                    <h4 className="font-bold text-lg mb-2 text-gray-800">{t("contact.callUs")}</h4>
                     <p className="text-gray-700 text-base">(302) 691-3048</p>
                     <a 
                       href="tel:3026913048" 
                       className="inline-flex items-center text-[#3D9C42] hover:text-[#2A6D2E] mt-1 transition-colors duration-300 text-sm"
                     >
-                      Call now
+                      {t("contact.callUs")}
                     </a>
                   </div>
                 </div>
@@ -91,10 +93,10 @@ const Contact = () => {
                     <Clock className="h-5 w-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg mb-2 text-gray-800">Hours</h4>
+                    <h4 className="font-bold text-lg mb-2 text-gray-800">{t("contact.hours.title")}</h4>
                     <div>
-                      <p className="text-gray-700 text-base leading-tight">Monday - Saturday: 8:30 AM - 9:00 PM</p>
-                      <p className="text-gray-700 text-base leading-tight">Sunday: 8:30 AM - 8:00 PM</p>
+                      <p className="text-gray-700 text-base leading-tight">{t("contact.hours.everyday")}: 8:30 AM - 9:00 PM</p>
+                      <p className="text-gray-700 text-base leading-tight">{t("contact.hours.everyday")}: 8:30 AM - 8:00 PM</p>
                     </div>
                   </div>
                 </div>
@@ -119,13 +121,13 @@ const Contact = () => {
             <div className="absolute bottom-6 left-0 right-0 z-10 flex flex-col items-center space-y-3 mx-auto w-auto px-4">
               <a href="https://maps.google.com/?q=2125+W+Newport+Pike,+Wilmington,+DE+19804" target="_blank" rel="noopener noreferrer" className="w-full max-w-[200px]">
                 <Button className="bg-white text-[#1D3557] hover:bg-[#D41414] hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 group w-full px-2 truncate">
-                  <span className="whitespace-nowrap">Wilmington Location</span>
+                  <span className="whitespace-nowrap">{t("contact.location1.title")}</span>
                   <MapPin className="ml-1 h-4 w-4 flex-shrink-0 group-hover:animate-bounce" />
                 </Button>
               </a>
               <a href="https://maps.google.com/?q=1300+Capitol+Tr,+Newark,+DE+19711" target="_blank" rel="noopener noreferrer" className="w-full max-w-[200px]">
                 <Button className="bg-white text-[#1D3557] hover:bg-[#D41414] hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 group w-full px-2 truncate">
-                  <span className="whitespace-nowrap">Newark Location</span>
+                  <span className="whitespace-nowrap">{t("contact.location2.title")}</span>
                   <MapPin className="ml-1 h-4 w-4 flex-shrink-0 group-hover:animate-bounce" />
                 </Button>
               </a>

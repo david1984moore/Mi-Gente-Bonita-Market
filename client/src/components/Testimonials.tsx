@@ -94,11 +94,11 @@ const Testimonials = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 relative inline-block">
-            What Our Customers Say
+            {t("testimonials.title")}
             <span className="absolute left-0 right-0 bottom-[-4px] h-0.5 bg-[#3D9C42]/30"></span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mt-4">
-            Our customers love shopping with us. Here's what they have to say about their experiences.
+            {t("testimonials.subtitle")}
           </p>
         </div>
         
