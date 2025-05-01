@@ -36,7 +36,7 @@ const Footer = () => {
                   <Logo className="h-14 w-auto bg-white rounded-lg p-1.5 shadow-lg hover:shadow-xl transition-all duration-300" />
                 </div>
                 <p className="text-white/90 leading-relaxed mb-4">
-                  Serving Wilmington and Newark since 2023.
+                  {t("footer.serving")}
                 </p>
                 <a
                   href="https://www.facebook.com/people/Mi-Gente-Bonita-Market/100078536995749/"
@@ -122,14 +122,14 @@ const Footer = () => {
                 <li className="flex">
                   <MapPin className="h-5 w-5 mr-3 flex-shrink-0 mt-1" />
                   <div>
-                    <div className="font-medium text-white mb-0.5">Wilmington:</div>
+                    <div className="font-medium text-white mb-0.5">{t("contact.location.wilmington")}:</div>
                     <span className="text-white/90">2125 W Newport Pike, Wilmington, DE 19804</span>
                   </div>
                 </li>
                 <li className="flex">
                   <MapPin className="h-5 w-5 mr-3 flex-shrink-0 mt-1" />
                   <div>
-                    <div className="font-medium text-white mb-0.5">Newark:</div>
+                    <div className="font-medium text-white mb-0.5">{t("contact.location.newark")}:</div>
                     <span className="text-white/90">1300 Capitol Tr, Newark, DE 19711</span>
                   </div>
                 </li>

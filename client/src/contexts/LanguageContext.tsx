@@ -170,6 +170,14 @@ const translations = {
     es: "Ubicación de Newark",
     en: "Newark Location"
   },
+  "contact.location.wilmington": {
+    es: "Wilmington",
+    en: "Wilmington"
+  },
+  "contact.location.newark": {
+    es: "Newark",
+    en: "Newark"
+  },
   "contact.hours.title": {
     es: "Horario de Atención",
     en: "Business Hours"
@@ -211,6 +219,10 @@ const translations = {
   "footer.community": {
     es: "amor para nuestra comunidad",
     en: "love for our community"
+  },
+  "footer.serving": {
+    es: "Sirviendo a Wilmington y Newark desde 2023.",
+    en: "Serving Wilmington and Newark since 2023."
   }
 };
 
