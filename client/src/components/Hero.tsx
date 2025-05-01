@@ -95,7 +95,7 @@ const Hero = () => {
           key={index}
           className="absolute inset-0 hero-slide"
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.4)), url(${image.src})`,
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.35)), url(${image.src})`,
             backgroundSize: 'cover',
             backgroundPosition: image.position,
             opacity: index === currentImageIndex ? (isTransitioning ? 0 : 1) : (index === nextImageIndex ? 1 : 0),
@@ -111,15 +111,17 @@ const Hero = () => {
       >
         <div className="container mx-auto px-6 text-center">
           <div className="max-w-3xl mx-auto relative z-10 animate-in slide-in-from-bottom duration-700">
+            <div className="bg-black/25 backdrop-blur-md p-8 rounded-2xl border border-white/15 shadow-2xl max-w-3xl mx-auto glass-effect-hero">
               <h1 className="text-2xl sm:text-3xl md:text-5xl font-['Inter'] font-bold text-white mb-2 md:mb-3 tracking-tight text-shadow-md hero-text-primary">
                 {t("hero.welcome")}
               </h1>
               <h2 className="text-[#FFDE59] text-3xl sm:text-4xl md:text-6xl font-['Inter'] font-bold mb-5 md:mb-6 tracking-tight text-shadow-md hero-title-highlight drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">
                 Mi Gente Bonita Market
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-white mb-8 sm:mb-10 tracking-tight font-normal text-shadow-md hero-text-secondary max-w-xl mx-auto">
+              <p className="text-base sm:text-lg md:text-xl text-white mb-4 tracking-tight font-normal text-shadow-md hero-text-secondary max-w-xl mx-auto">
                 {t("hero.tagline")}
               </p>
+            </div>
 
           </div>
         </div>
