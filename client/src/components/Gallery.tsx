@@ -157,7 +157,7 @@ const Gallery = () => {
           ref={(el) => { imageRefs.current[index] = el }}
           className={`${image.span} ${index === 0 || index === 6 ? 'h-56 md:h-64' : 'h-44 md:h-56'} overflow-hidden rounded-xl cursor-pointer group relative 
                      transform transition-all duration-500 ease-out hover:z-10 hover:scale-[1.02] 
-                     ${isLoaded[index] ? 'translate-y-0 opacity-100 shadow-lg' : 'translate-y-8 opacity-0'}`}
+                     ${isLoaded[index] ? 'translate-y-0 opacity-100 shadow-lg' : 'translate-y-0 opacity-100 shadow-lg'}`}
           onClick={() => openModal(image.src, index)}
           style={{ transitionDelay: `${index * 70}ms` }}
         >
@@ -167,7 +167,7 @@ const Gallery = () => {
               alt={image.alt}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               style={{ objectPosition: image.objectPosition }}
-              loading="lazy"
+              loading="eager" // Changed from lazy to eager to ensure images load immediately
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>
@@ -188,6 +188,14 @@ const Gallery = () => {
                   if (contentDiv) {
                     const isCurrentlyHidden = contentDiv.style.display === 'none' || !contentDiv.style.display;
                     contentDiv.style.display = isCurrentlyHidden ? 'block' : 'none';
+                    
+                    // If we're showing the content, force a refresh of the images
+                    if (isCurrentlyHidden) {
+                      setTimeout(() => {
+                        // Reset the isLoaded state to trigger animations
+                        setIsLoaded(Array(images.length).fill(true));
+                      }, 50);
+                    }
                   }
                 }}
                 className="flex items-center justify-center gap-2 mx-auto"
