@@ -161,56 +161,53 @@ const Gallery = () => {
             className="fixed inset-0 bg-black/90 backdrop-blur-md flex items-center justify-center z-50 p-4 animate-in fade-in duration-300" 
             onClick={closeModal}
           >
-            <div className="relative max-w-7xl w-full animate-in zoom-in-95 duration-300">
+            <div className="relative max-w-7xl w-full h-full flex items-center justify-center animate-in zoom-in-95 duration-300">
+              {/* Close button - now positioned top-right of the viewport */}
               <button 
                 onClick={(e) => {
                   e.stopPropagation();
                   closeModal();
                 }}
-                className="absolute -top-14 right-0 text-white/80 hover:text-white focus:outline-none transition-colors p-2 rounded-full hover:bg-white/10"
+                className="fixed top-4 right-4 text-white hover:text-white bg-black/50 hover:bg-black/70 focus:outline-none transition-colors p-2 rounded-full border border-white/20 z-[60]"
                 aria-label="Close"
               >
-                <X className="h-8 w-8" />
+                <X className="h-6 w-6" />
               </button>
               
-              {/* Navigation buttons */}
-              <div className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-16 md:-translate-x-12">
-                <button 
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    navigateImage('prev');
-                  }}
-                  className="p-3 rounded-full bg-black/40 text-white/90 hover:bg-black/70 hover:text-white transition-all focus:outline-none border border-white/20"
-                  aria-label="Previous image"
-                >
-                  <ChevronLeft className="h-6 w-6" />
-                </button>
-              </div>
+              {/* Navigation buttons - positioned relative to the image container */}
+              <button 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  navigateImage('prev');
+                }}
+                className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 p-2 sm:p-3 rounded-full bg-black/50 text-white hover:bg-black/70 transition-all focus:outline-none border border-white/20 z-[60]"
+                aria-label="Previous image"
+              >
+                <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
+              </button>
               
-              <div className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-16 md:translate-x-12">
-                <button 
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    navigateImage('next');
-                  }}
-                  className="p-3 rounded-full bg-black/40 text-white/90 hover:bg-black/70 hover:text-white transition-all focus:outline-none border border-white/20"
-                  aria-label="Next image"
-                >
-                  <ChevronRight className="h-6 w-6" />
-                </button>
-              </div>
+              <button 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  navigateImage('next');
+                }}
+                className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 p-2 sm:p-3 rounded-full bg-black/50 text-white hover:bg-black/70 transition-all focus:outline-none border border-white/20 z-[60]"
+                aria-label="Next image"
+              >
+                <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
+              </button>
               
-              <div className="p-2 rounded-xl overflow-hidden border border-white/20 bg-black/40 shadow-2xl">
+              <div className="p-2 rounded-xl overflow-hidden w-full max-w-[90vw] sm:max-w-[85vw] md:max-w-[80vw] border border-white/20 bg-black/40 shadow-2xl">
                 <img 
                   src={selectedImage} 
                   alt={images[selectedIndex].alt} 
-                  className="w-full rounded-lg max-h-[85vh] object-contain shadow-2xl"
+                  className="w-full rounded-lg max-h-[80vh] object-contain shadow-2xl"
                   onClick={(e) => e.stopPropagation()}
                 />
               </div>
               
               {/* Image counter indicator */}
-              <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-black/60 px-4 py-2 rounded-full text-white/90 text-sm font-medium border border-white/20">
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/60 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-white/90 text-xs sm:text-sm font-medium border border-white/20 z-[60]">
                 {selectedIndex + 1} of {images.length}
               </div>
             </div>
