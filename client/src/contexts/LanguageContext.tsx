@@ -223,6 +223,16 @@ const translations = {
   "footer.serving": {
     es: "Sirviendo a Wilmington y Newark desde 2023.",
     en: "Serving Wilmington and Newark since 2023."
+  },
+  
+  // Common UI elements
+  "common.showContent": {
+    es: "Mostrar Contenido",
+    en: "Show Content"
+  },
+  "common.hideContent": {
+    es: "Ocultar Contenido",
+    en: "Hide Content"
   }
 };
 
