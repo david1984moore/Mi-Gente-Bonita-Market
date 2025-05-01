@@ -26,6 +26,10 @@ const translations = {
     es: "Reseñas",
     en: "Reviews"
   },
+  "navbar.testimonials": {
+    es: "Testimonios",
+    en: "Testimonials"
+  },
   "navbar.contact": {
     es: "Contacto",
     en: "Contact"
@@ -174,6 +178,14 @@ const translations = {
     es: "Todos los días",
     en: "Everyday"
   },
+  "contact.hours.weekdays": {
+    es: "Lunes - Sábado",
+    en: "Monday - Saturday"
+  },
+  "contact.hours.sunday": {
+    es: "Domingo",
+    en: "Sunday"
+  },
   "contact.getDirections": {
     es: "Cómo Llegar",
     en: "Get Directions"
@@ -195,6 +207,10 @@ const translations = {
   "footer.developed": {
     es: "Desarrollado con",
     en: "Developed with"
+  },
+  "footer.community": {
+    es: "amor para nuestra comunidad",
+    en: "love for our community"
   }
 };
 

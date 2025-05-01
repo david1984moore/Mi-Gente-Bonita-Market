@@ -106,7 +106,7 @@ const Footer = () => {
                     className="text-white/90 hover:text-white hover:translate-x-1 transition-all duration-300 cursor-pointer flex items-center"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-[#FFD700] mr-2"></span>
-                    Testimonials
+                    {t("navbar.testimonials")}
                   </Link>
                 </li>
               </ul>
@@ -115,7 +115,7 @@ const Footer = () => {
             {/* Contact Info */}
             <div>
               <h3 className="text-lg font-bold mb-4 relative inline-block">
-                Contact Info
+                {t("navbar.contact")}
                 <span className="absolute left-0 bottom-[-6px] w-12 h-0.5 bg-white/30"></span>
               </h3>
               <ul className="space-y-4 mt-6">
@@ -145,16 +145,16 @@ const Footer = () => {
             {/* Business Hours */}
             <div>
               <h3 className="text-lg font-bold mb-4 relative inline-block">
-                Business Hours
+                {t("contact.hours.title")}
                 <span className="absolute left-0 bottom-[-6px] w-12 h-0.5 bg-white/30"></span>
               </h3>
               <ul className="space-y-2 mt-6">
                 <li className="flex justify-between">
-                  <span className="text-white/90">Monday - Saturday:</span>
+                  <span className="text-white/90">{t("contact.hours.weekdays")}:</span>
                   <span className="text-white font-medium">8:30 AM - 9:00 PM</span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-white/90">Sunday:</span>
+                  <span className="text-white/90">{t("contact.hours.sunday")}:</span>
                   <span className="text-white font-medium">8:30 AM - 8:00 PM</span>
                 </li>
               </ul>
@@ -163,9 +163,9 @@ const Footer = () => {
           
           <div className="border-t border-[#2a7a2e] mt-12 pt-8 text-center">
             <p className="text-white/80 flex items-center justify-center text-sm">
-              &copy; {year} Mi Gente Bonita Market. All rights reserved. 
+              &copy; {year} Mi Gente Bonita Market. {t("footer.rights")}. 
               <Heart className="h-4 w-4 mx-1 text-[#D41414] inline animate-pulse" /> 
-              Made with love for our community
+              {t("footer.developed")} {t("footer.community")}
             </p>
           </div>
         </div>
