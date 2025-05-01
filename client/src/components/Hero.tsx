@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-scroll";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { ChevronDown } from "lucide-react";
 import freshNopales from "../assets/store-photos/fresh-nopales.png";
 import groceryAisle from "../assets/store-photos/grocery-aisle.png";
 import freshProduce from "../assets/store-photos/fresh-produce.png";
@@ -14,7 +13,6 @@ const Hero = () => {
   const [nextImageIndex, setNextImageIndex] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [imagesLoaded, setImagesLoaded] = useState(false);
-  const [scrollIndicatorVisible, setScrollIndicatorVisible] = useState(true);
   const { t } = useLanguage();
   
   const heroRef = useRef<HTMLDivElement>(null);
@@ -61,20 +59,7 @@ const Hero = () => {
     });
   }, []);
 
-  // Hide scroll indicator when user scrolls down
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setScrollIndicatorVisible(false);
-      } else {
-        setScrollIndicatorVisible(true);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
+  // Image transition effect
   useEffect(() => {
     const transitionInterval = 8000; // Total time between transitions
     const fadeTime = 3000; // Longer crossfade for smoother transition
@@ -178,22 +163,6 @@ const Hero = () => {
           </div>
         </div>
       </section>
-      
-      {/* Modern scroll indicator */}
-      {scrollIndicatorVisible && (
-        <div className="absolute bottom-16 left-0 right-0 z-20 flex justify-center animate-bounce transition-opacity duration-500">
-          <Link
-            to="about"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={800}
-            className="text-white hover:text-[#FFDE59] transition-colors duration-300 cursor-pointer p-2"
-          >
-            <ChevronDown className="h-8 w-8" />
-          </Link>
-        </div>
-      )}
       
       {/* Modern wave divider */}
       <div className="absolute bottom-0 left-0 right-0 z-10 text-white">
