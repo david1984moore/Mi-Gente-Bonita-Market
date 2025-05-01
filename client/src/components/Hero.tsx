@@ -111,13 +111,13 @@ const Hero = () => {
       
       <section 
         id="home" 
-        className="relative z-20 flex items-center justify-center h-full mb-none px-4 pt-20 sm:pt-24 md:pt-16"
+        className="relative z-20 flex items-center justify-center h-[calc(100%-80px)] mb-none px-4 pt-20 sm:pt-24 md:pt-16"
       >
         <div className="w-full max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             <div className="md:col-span-8 md:col-start-3 text-center relative">
               {/* Modern, animated reveal content with background */}
-              <div className="relative z-10 flex flex-col items-center bg-black/30 py-8 px-6 rounded-xl">
+              <div className="relative z-10 flex flex-col items-center bg-black/30 py-8 px-6 rounded-xl mb-10">
                 <div className="overflow-hidden mb-3 md:mb-5 w-full">
                   <h1 className="text-2xl sm:text-3xl md:text-5xl font-['Inter'] font-bold text-white tracking-tight animate-fade-in-down text-shadow-md">
                     {t("hero.welcome")}
@@ -164,15 +164,19 @@ const Hero = () => {
         </div>
       </section>
       
-      {/* Modern wave divider */}
-      <div className="absolute bottom-0 left-0 right-0 z-10 text-white">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 180" preserveAspectRatio="none" className="w-full h-auto">
-          <path 
-            fill="currentColor" 
-            fillOpacity="1" 
-            d="M0,128L48,122.7C96,117,192,107,288,96C384,85,480,75,576,90.7C672,107,768,149,864,154.7C960,160,1056,128,1152,112C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-          ></path>
-        </svg>
+      {/* Modern wave divider - increased z-index and height to fully cover content */}
+      <div className="absolute bottom-0 left-0 right-0 z-30 text-white pointer-events-none">
+        <div className="relative">
+          {/* Extra padding space to ensure wave fully covers any content */}
+          <div className="absolute bottom-0 left-0 right-0 h-10 bg-white z-10"></div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220" preserveAspectRatio="none" className="w-full h-auto relative z-20">
+            <path 
+              fill="currentColor" 
+              fillOpacity="1" 
+              d="M0,128L48,122.7C96,117,192,107,288,96C384,85,480,75,576,90.7C672,107,768,149,864,154.7C960,160,1056,128,1152,112C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+            ></path>
+          </svg>
+        </div>
       </div>
     </div>
   );
