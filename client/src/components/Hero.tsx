@@ -82,7 +82,7 @@ const Hero = () => {
   }, [nextImageIndex, images.length]);
 
   return (
-    <div ref={heroRef} className="relative overflow-hidden" style={{ height: '100vh', paddingTop: '0' }}>
+    <div ref={heroRef} className="relative overflow-hidden" style={{ height: '100vh', paddingTop: '3rem' }}>
       {/* Enhanced gradient overlay for better text visibility */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70 z-5"></div>
       
@@ -111,7 +111,7 @@ const Hero = () => {
       
       <section 
         id="home" 
-        className="relative z-20 flex items-center justify-center h-full mb-none px-4"
+        className="relative z-20 flex items-center justify-center h-full mb-none px-4 pt-20 sm:pt-24 md:pt-16"
       >
         <div className="w-full max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
