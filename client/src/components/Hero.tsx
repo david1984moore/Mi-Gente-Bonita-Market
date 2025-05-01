@@ -93,7 +93,7 @@ const Hero = () => {
           key={index}
           className="absolute inset-0 hero-slide"
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url(${image.src})`,
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url(${image.src})`,
             backgroundSize: 'cover',
             backgroundPosition: image.position,
             opacity: index === currentImageIndex ? (isTransitioning ? 0 : 1) : (index === nextImageIndex ? 1 : 0),
@@ -108,16 +108,14 @@ const Hero = () => {
         className="relative z-20 flex items-center justify-center pt-20 sm:pt-24 md:pt-28 h-full mb-none"
       >
         <div className="container mx-auto px-4 text-center">
-          <div className="max-w-2xl mx-auto relative z-10">
-            {/* Modern glass effect container */}
-            <div className="bg-black/25 p-6 sm:p-8 rounded-xl backdrop-blur-md border border-white/15 shadow-2xl animate-in slide-in-from-bottom duration-700">
+          <div className="max-w-2xl mx-auto relative z-10 animate-in slide-in-from-bottom duration-700">
               <h1 className="text-2xl sm:text-3xl md:text-5xl font-['Poppins'] font-bold text-white mb-2 md:mb-3 tracking-wide text-shadow-lg hero-text-primary">
-                <span className="inline-block">Bienvenidos a</span>
+                Bienvenidos a
               </h1>
-              <h2 className="text-[#FFD700] text-3xl sm:text-4xl md:text-6xl font-['Poppins'] font-bold mb-4 md:mb-5 tracking-wider text-shadow-lg hero-title-highlight">
+              <h2 className="text-[#FFD700] text-3xl sm:text-4xl md:text-6xl font-['Poppins'] font-bold mb-5 md:mb-6 tracking-wider text-shadow-lg hero-title-highlight drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]">
                 Mi Gente Bonita Market
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-white/95 mb-6 sm:mb-8 tracking-wide font-medium text-shadow-md hero-text-secondary max-w-xl mx-auto">
+              <p className="text-base sm:text-lg md:text-xl text-white mb-8 sm:mb-10 tracking-wide font-medium text-shadow-lg hero-text-secondary max-w-xl mx-auto">
                 Your trusted source for authentic Latino products
               </p>
               <div className="flex gap-4 justify-center">
@@ -130,13 +128,12 @@ const Hero = () => {
                   className="group"
                 >
                   <Button 
-                    className="bg-[#D41414]/90 hover:bg-[#D41414] text-white font-medium py-3 px-8 rounded-lg transition duration-300 text-base tracking-wider shadow-lg hover:shadow-xl group-hover:translate-y-[-2px] animate-in fade-in duration-1000 delay-150"
+                    className="bg-[#D41414] hover:bg-[#D41414]/90 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 text-base tracking-wider shadow-lg hover:shadow-xl group-hover:translate-y-[-2px] animate-in fade-in duration-700 delay-150"
                   >
                     Discover More
                   </Button>
                 </Link>
               </div>
-            </div>
           </div>
         </div>
       </section>
