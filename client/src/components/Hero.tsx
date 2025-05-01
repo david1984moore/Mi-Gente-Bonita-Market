@@ -126,52 +126,25 @@ const Hero = () => {
               {/* Content layout with Welcome to visible - no background */}
               <div className="relative z-10 flex flex-col items-center py-6 px-6 mb-10 -mt-12">
                 <div className="overflow-hidden w-full mb-1">
-                  <h1 className="text-xl sm:text-2xl md:text-4xl font-['Arial'] font-black text-white tracking-wide animate-fade-in-down"
-                      style={{ 
-                        textShadow: '0 1px 1px black, 0 2px 3px black, 0 3px 5px black', 
-                        letterSpacing: '0.03em',
-                        transform: 'scaleY(1.1)'
-                      }}>
+                  <h1 className="text-xl sm:text-2xl md:text-4xl font-['Inter'] font-extrabold text-white tracking-tight animate-fade-in-down"
+                      style={{ textShadow: '0 1px 1px black, 0 2px 3px black, 0 3px 5px black', letterSpacing: '0.03em' }}>
                     {t("hero.welcome")}
                   </h1>
                 </div>
                 
                 <div className="overflow-hidden mb-4 md:mb-6 w-full">
                   <div className="relative inline-block">
-                    {/* Main title with traditional Mexican store styling */}
-                    <div className="relative py-2 px-4 my-1">
-                      {/* Red background with perspective and border like traditional signs */}
-                      <div className="absolute inset-0 bg-[#D41414] transform skew-x-1 rounded-sm border-[3px] border-black"></div>
-                      
-                      {/* Decorative corner stars - like old Mexican signage */}
-                      <div className="absolute -top-1 -left-1 text-[#FFE970] font-bold text-xl">★</div>
-                      <div className="absolute -top-1 -right-1 text-[#FFE970] font-bold text-xl">★</div>
-                      <div className="absolute -bottom-1 -left-1 text-[#FFE970] font-bold text-xl">★</div>
-                      <div className="absolute -bottom-1 -right-1 text-[#FFE970] font-bold text-xl">★</div>
-                      
-                      {/* Main text with retro styling */}
-                      <h2 className="relative text-3xl sm:text-4xl md:text-6xl font-['Impact'] font-bold tracking-wide animate-fade-in-up"
-                          style={{ 
-                            color: '#FFE970',
-                            textShadow: '2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 3px 3px 6px rgba(0,0,0,0.6)',
-                            letterSpacing: '0.03em',
-                            transform: 'scaleY(1.15)',
-                            WebkitTextStroke: '1px #000'
-                          }}>
-                        Mi Gente Bonita Market
-                      </h2>
-                      
-                      {/* Small decorative stars under text - common in hand-painted signs */}
-                      <div className="absolute -bottom-2 w-full flex justify-center text-[#48A83B] space-x-8">
-                        <span className="text-sm">✦</span>
-                        <span className="text-sm">✦</span>
-                        <span className="text-sm">✦</span>
-                      </div>
-                    </div>
+                    <h2 className="text-[#FFE970] text-3xl sm:text-4xl md:text-6xl font-['Inter'] font-extrabold tracking-tight animate-fade-in-up"
+                        style={{ 
+                          textShadow: '0 1px 1px black, 0 2px 2px black, 0 4px 4px rgba(0,0,0,0.9), 0 6px 8px rgba(0,0,0,0.8)', 
+                          letterSpacing: '0.02em'
+                        }}>
+                      Mi Gente Bonita Market
+                    </h2>
                     
-                    {/* Hand-painted style decorative underline */}
-                    <div className="absolute -bottom-2 left-0 w-full h-[4px] animate-pulse-slow">
-                      <div className="h-full w-full bg-gradient-to-r from-[#48A83B] via-[#FFDE59] to-[#48A83B] rounded-sm"></div>
+                    {/* Modern underline effect */}
+                    <div className="absolute -bottom-2 left-0 w-full h-[3px] animate-pulse-slow">
+                      <div className="h-full w-full bg-gradient-to-r from-transparent via-[#FFDE59] to-transparent rounded-full"></div>
                     </div>
                   </div>
                 </div>
@@ -179,7 +152,7 @@ const Hero = () => {
                 <div className="overflow-hidden mb-6 md:mb-8 w-full">
                 </div>
                 
-                {/* Traditional Mexican styled CTA button */}
+                {/* Stylish CTA button */}
                 <Link
                   to="contact"
                   spy={true}
@@ -189,15 +162,7 @@ const Hero = () => {
                   className="inline-block"
                 >
                   <button 
-                    className="animate-fade-in-up animation-delay-500 cta-button bg-[#F1C232] hover:bg-[#F1B000] px-6 py-3 text-base shadow-lg hover:shadow-xl transition-all duration-500 group font-bold tracking-wide border-2 border-black"
-                    style={{ 
-                      color: '#D41414',
-                      textShadow: '0.5px 0.5px 0 #000',
-                      letterSpacing: '0.05em',
-                      transform: 'skew(-2deg)', 
-                      fontFamily: 'Arial',
-                      WebkitTextStroke: '0.3px #000'
-                    }}
+                    className="animate-fade-in-up animation-delay-500 cta-button bg-[#D41414]/90 text-white hover:bg-[#D41414] px-6 py-3 text-base rounded-full shadow-lg hover:shadow-xl transition-all duration-500 group font-medium tracking-wide"
                   >
                     {t("contact.hours.title")}
                   </button>
