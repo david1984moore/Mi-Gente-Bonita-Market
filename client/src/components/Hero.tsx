@@ -82,7 +82,7 @@ const Hero = () => {
   }, [nextImageIndex, images.length]);
 
   return (
-    <div ref={heroRef} className="relative overflow-hidden" style={{ height: '100vh', paddingTop: '3rem' }}>
+    <div ref={heroRef} className="relative overflow-hidden" style={{ height: '100vh', paddingTop: '1rem' }}>
       {/* Enhanced gradient overlay for better text visibility */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70 z-5"></div>
       
@@ -111,22 +111,22 @@ const Hero = () => {
       
       <section 
         id="home" 
-        className="relative z-20 flex items-center justify-center h-[calc(100%-80px)] mb-none px-4 pt-20 sm:pt-24 md:pt-16"
+        className="relative z-20 flex items-center justify-center h-[calc(100%-80px)] mb-none px-4 pt-16 sm:pt-20 md:pt-12"
       >
         <div className="w-full max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             <div className="md:col-span-8 md:col-start-3 text-center relative">
               {/* Modern, animated reveal content with background */}
-              <div className="relative z-10 flex flex-col items-center bg-black/30 py-8 px-6 rounded-xl mb-10">
-                <div className="overflow-hidden mb-3 md:mb-5 w-full">
-                  <h1 className="text-2xl sm:text-3xl md:text-5xl font-['Inter'] font-bold text-white tracking-tight animate-fade-in-down text-shadow-md">
+              <div className="relative z-10 flex flex-col items-center bg-black/30 py-6 px-6 rounded-xl mb-10">
+                <div className="overflow-hidden w-full mb-0">
+                  <h1 className="text-xl sm:text-2xl md:text-4xl font-['Inter'] font-bold text-white tracking-tight animate-fade-in-down text-shadow-md">
                     {t("hero.welcome")}
                   </h1>
                 </div>
                 
-                <div className="overflow-hidden mb-6 md:mb-8 w-full">
+                <div className="overflow-hidden mb-4 md:mb-6 w-full">
                   <div className="relative inline-block">
-                    <h2 className="text-[#FFDE59] text-3xl sm:text-4xl md:text-7xl font-['Inter'] font-bold tracking-tight text-shadow-lg animate-fade-in-up drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
+                    <h2 className="text-[#FFDE59] text-3xl sm:text-4xl md:text-6xl font-['Inter'] font-bold tracking-tight text-shadow-lg animate-fade-in-up drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
                       Mi Gente Bonita Market
                     </h2>
                     
@@ -137,7 +137,7 @@ const Hero = () => {
                   </div>
                 </div>
                 
-                <div className="overflow-hidden mb-10 md:mb-12 w-full">
+                <div className="overflow-hidden mb-6 md:mb-8 w-full">
                   <p className="text-base sm:text-xl md:text-2xl text-white tracking-tight font-medium animate-fade-in-up animation-delay-300 max-w-2xl mx-auto leading-relaxed text-shadow-md">
                     {t("hero.tagline")}
                   </p>
