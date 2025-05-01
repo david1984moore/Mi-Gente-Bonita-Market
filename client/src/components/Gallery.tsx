@@ -202,22 +202,22 @@ const Gallery = () => {
                 aria-expanded="false"
                 aria-controls="gallery-content"
               >
-                <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 relative inline-block">
+                <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 tracking-tight text-[#1D1D1F]">
                   {t("gallery.title")}
-                  <span className="absolute left-0 right-0 bottom-[-4px] h-0.5 bg-[#D41414]/30"></span>
                 </h2>
                 <ChevronDown className="h-6 w-6 text-[#D41414]" />
               </button>
+              <div className="h-1 w-16 bg-[#D41414] mx-auto my-4 rounded-full"></div>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-3">
                 {t("gallery.subtitle")}
               </p>
             </>
           ) : (
             <>
-              <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 relative inline-block">
+              <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 tracking-tight text-[#1D1D1F]">
                 {t("gallery.title")}
-                <span className="absolute left-0 right-0 bottom-[-4px] h-0.5 bg-[#D41414]/30"></span>
               </h2>
+              <div className="h-1 w-16 bg-[#D41414] mx-auto my-4 rounded-full"></div>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-3">
                 {t("gallery.subtitle")}
               </p>
