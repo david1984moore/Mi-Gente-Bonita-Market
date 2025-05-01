@@ -110,12 +110,14 @@ const Hero = () => {
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-2xl mx-auto relative z-10">
             {/* Modern glass effect container */}
-            <div className="bg-black/30 p-6 sm:p-8 rounded-xl backdrop-blur-sm border border-white/10 shadow-2xl animate-in slide-in-from-bottom duration-700">
-              <h1 className="text-2xl sm:text-3xl md:text-5xl font-['Poppins'] font-bold text-white mb-3 md:mb-4 tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,1)] elegant-text hero-text-primary">
-                <span className="inline-block mt-1">Bienvenidos a</span><br /> 
-                <span className="text-[#FFD700] inline-block mt-1 md:mt-2 hero-title-highlight drop-shadow-[0_2px_5px_rgba(0,0,0,1)]">Mi Gente Bonita Market</span>
+            <div className="bg-black/25 p-6 sm:p-8 rounded-xl backdrop-blur-md border border-white/15 shadow-2xl animate-in slide-in-from-bottom duration-700">
+              <h1 className="text-2xl sm:text-3xl md:text-5xl font-['Poppins'] font-bold text-white mb-2 md:mb-3 tracking-wide text-shadow-lg hero-text-primary">
+                <span className="inline-block">Bienvenidos a</span>
               </h1>
-              <p className="text-base sm:text-lg md:text-xl text-white/95 mb-6 sm:mb-8 tracking-wider font-medium drop-shadow-[0_2px_5px_rgba(0,0,0,1)] elegant-text hero-text-secondary max-w-xl mx-auto">
+              <h2 className="text-[#FFD700] text-3xl sm:text-4xl md:text-6xl font-['Poppins'] font-bold mb-4 md:mb-5 tracking-wider text-shadow-lg hero-title-highlight">
+                Mi Gente Bonita Market
+              </h2>
+              <p className="text-base sm:text-lg md:text-xl text-white/95 mb-6 sm:mb-8 tracking-wide font-medium text-shadow-md hero-text-secondary max-w-xl mx-auto">
                 Your trusted source for authentic Latino products
               </p>
               <div className="flex gap-4 justify-center">
@@ -128,7 +130,7 @@ const Hero = () => {
                   className="group"
                 >
                   <Button 
-                    className="bg-[#D41414]/90 hover:bg-[#D41414] text-white font-medium py-2.5 px-6 rounded-lg transition duration-300 text-base tracking-wider shadow-lg hover:shadow-xl group-hover:translate-y-[-2px]"
+                    className="bg-[#D41414]/90 hover:bg-[#D41414] text-white font-medium py-3 px-8 rounded-lg transition duration-300 text-base tracking-wider shadow-lg hover:shadow-xl group-hover:translate-y-[-2px] animate-in fade-in duration-1000 delay-150"
                   >
                     Discover More
                   </Button>
