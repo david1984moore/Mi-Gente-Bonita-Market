@@ -576,6 +576,40 @@ html {
   animation-delay: 1000ms;
 }
 
+/* Premium text effects */
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.gold-gradient-text {
+  background: linear-gradient(90deg, 
+    #FFEF80, 
+    #FFD700, 
+    #FFC107, 
+    #FFD700, 
+    #FFEF80
+  );
+  background-size: 200% 100%;
+  animation: shimmer 5s infinite linear;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+  position: relative;
+  text-shadow: 
+    0 0 1px rgba(255,222,89,0.1),
+    0 1px 0 rgba(0,0,0,0.7);
+  /* Subtle outline for more definition */
+  -webkit-text-stroke: 0.5px rgba(0,0,0,0.1);
+}
+
 /* Modern hero glass effect */
 .glass-hero {
   @apply bg-white/5 backdrop-blur-sm border border-white/10 shadow-lg;
