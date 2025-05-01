@@ -225,8 +225,8 @@ const translations = {
     en: "love for our community"
   },
   "footer.serving": {
-    es: "Sirviendo a Wilmington y Newark.",
-    en: "Serving Wilmington and Newark."
+    es: "Sirviendo a Wilmington y Newark con orgullo desde 2023.",
+    en: "Serving Wilmington and Newark with pride since 2023."
   },
   
   // Common UI elements

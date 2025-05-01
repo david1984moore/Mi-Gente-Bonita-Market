@@ -36,7 +36,7 @@ const Footer = () => {
                   <Logo className="h-12 w-auto bg-white rounded-md p-1.5 shadow-md" />
                 </div>
                 <p className="text-gray-300 leading-relaxed mb-5 text-sm">
-                  Serving Wilmington and Newark with pride since 2023.
+                  {t("footer.serving")}
                 </p>
                 <a
                   href="https://www.facebook.com/people/Mi-Gente-Bonita-Market/100078536995749/"
