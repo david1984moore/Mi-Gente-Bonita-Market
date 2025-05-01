@@ -130,16 +130,9 @@ const Testimonials = () => {
         
         {/* Conditionally render collapsible content on mobile */}
         {mounted && isMobile ? (
-          <Accordion type="single" collapsible defaultValue="testimonials-content">
-            <AccordionItem value="testimonials-content" className="border-b-0">
-              <AccordionTrigger className="py-3 text-center justify-center text-base font-semibold bg-[#F8F8F8] hover:bg-[#F0F0F0] rounded-md text-[#1D1D1F]">
-                {t("common.showContent")}
-              </AccordionTrigger>
-              <AccordionContent className="pt-6">
-                {testimonialsGrid}
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+          <MobileToggle title={t("common.showContent")} defaultOpen={true}>
+            {testimonialsGrid}
+          </MobileToggle>
         ) : (
           testimonialsGrid
         )}
