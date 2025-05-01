@@ -130,7 +130,7 @@ const Hero = () => {
                   <div className="relative group animate-in fade-in duration-700 delay-150">
                     <div className="absolute -inset-0.5 bg-gradient-to-r from-[#FFD700] to-[#D41414] rounded-full blur opacity-30 group-hover:opacity-100 transition duration-500 group-hover:duration-200"></div>
                     <button 
-                      className="relative bg-[#D41414] text-white font-medium py-3 px-8 rounded-full shadow-md transition-all duration-300 text-base tracking-wider group-hover:bg-[#D41414]/90 flex items-center justify-center"
+                      className="relative bg-[#D41414] text-white font-medium py-3 px-8 rounded-full shadow-md hover:shadow-[0_0_10px_rgba(212,20,20,0.5)] transition-all duration-300 text-base tracking-wider group-hover:bg-[#D41414]/90 flex items-center justify-center"
                     >
                       <span>Discover More</span>
                     </button>
