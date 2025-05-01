@@ -95,7 +95,7 @@ const About = () => {
                 <AccordionTrigger className="py-3 text-center justify-center text-base font-semibold bg-[#F8F8F8] hover:bg-[#F0F0F0] rounded-md text-[#1D1D1F]">
                   {t("common.showContent")}
                 </AccordionTrigger>
-                <AccordionContent className="pt-6">
+                <AccordionContent className="pt-6 max-h-[2000px]">
                   {aboutContent}
                 </AccordionContent>
               </AccordionItem>
