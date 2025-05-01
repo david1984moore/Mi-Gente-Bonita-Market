@@ -79,21 +79,27 @@ const Features = () => {
         <div className="text-center mb-8 md:mb-12">
           {mounted && isMobile ? (
             <>
-              <button
+              <Button
                 onClick={() => {
                   const contentDiv = document.getElementById('features-content');
                   if (contentDiv) {
                     const isCurrentlyHidden = contentDiv.style.display === 'none' || !contentDiv.style.display;
                     contentDiv.style.display = isCurrentlyHidden ? 'block' : 'none';
                   }
+                  // Tactile feedback on click
+                  if (window.navigator.vibrate) {
+                    window.navigator.vibrate(50);
+                  }
                 }}
-                className="flex items-center justify-center gap-2 mx-auto"
+                className="flex items-center justify-center gap-2 mx-auto group relative overflow-hidden"
+                variant="ghost"
                 aria-expanded="false"
                 aria-controls="features-content"
               >
-                <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-4">Why Choose Us</h2>
+                <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-4 group-hover:scale-105 transition-transform duration-300 ease-in-out">Why Choose Us</h2>
                 <ChevronDown className="h-6 w-6 text-[#FFB100]" />
-              </button>
+                <span className="absolute inset-0 bg-radial-gradient from-[#FFD700]/40 via-[#D41414]/0 to-[#D41414]/0 opacity-0 group-hover:opacity-100 scale-0 group-hover:scale-100 transition-all duration-500 ease-out"></span>
+              </Button>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 Our store offers the finest selection of Latino products in Delaware.
               </p>
