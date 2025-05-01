@@ -131,7 +131,7 @@ const Hero = () => {
                 >
                   <div className="animate-in fade-in duration-700 delay-150">
                     <Button 
-                      className="bg-[#D41414] text-white font-medium py-3 px-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 text-base tracking-tight hover:bg-[#B01212] flex items-center justify-center group relative overflow-hidden"
+                      className="bg-gradient-to-r from-[#D41414] to-[#F1340F] text-white font-medium py-3 px-8 rounded-md shadow-lg hover:shadow-xl transition-all duration-300 text-base tracking-tight flex items-center justify-center group relative border-none hover:brightness-110 cta-button"
                       onClick={() => {
                         // Tactile feedback on click
                         if (window.navigator.vibrate) {
@@ -139,7 +139,7 @@ const Hero = () => {
                         }
                       }}
                     >
-                      <span className="relative z-10 group-hover:translate-x-0.5 transition-transform duration-300 ease-in-out">
+                      <span className="relative z-10 group-hover:translate-x-1 transition-transform duration-300 ease-in-out font-semibold">
                         {t("hero.discoverMore")}
                       </span>
                     </Button>
