@@ -126,7 +126,7 @@ const Hero = () => {
                 
                 <div className="overflow-hidden mb-4 md:mb-6 w-full">
                   <div className="relative inline-block">
-                    <h2 className="text-[#FFDE59] text-3xl sm:text-4xl md:text-6xl font-['Inter'] font-bold tracking-tight text-shadow-lg animate-fade-in-up drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
+                    <h2 className="text-[#FFDE59] text-3xl sm:text-4xl md:text-6xl font-['Inter'] font-bold tracking-tight text-shadow-lg animate-fade-in-up drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] animate-gold-glow">
                       <span className="relative inline-block">
                         <span className="relative z-10 bg-clip-text">Mi</span>
                         <span className="absolute -top-1 -left-1 text-[#FF8C00] opacity-40 blur-[2px] z-0">Mi</span>
