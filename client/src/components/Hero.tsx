@@ -116,22 +116,17 @@ const Hero = () => {
         <div className="w-full max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             <div className="md:col-span-8 md:col-start-3 text-center relative">
-              {/* Modern, animated reveal content with faded glass effect */}
-              <div className="relative z-10 flex flex-col items-center py-8 px-6">
-                {/* Faded glass effect backdrop */}
-                <div className="absolute inset-0 w-full h-full pointer-events-none">
-                  <div className="absolute inset-0 faded-glass rounded-3xl"></div>
-                </div>
-                
+              {/* Modern, animated reveal content */}
+              <div className="relative z-10 flex flex-col items-center">
                 <div className="overflow-hidden mb-3 md:mb-5 w-full">
-                  <h1 className="text-2xl sm:text-3xl md:text-5xl font-['Inter'] font-bold text-white tracking-tight animate-fade-in-down px-4 py-2">
+                  <h1 className="text-2xl sm:text-3xl md:text-5xl font-['Inter'] font-bold text-white tracking-tight animate-fade-in-down">
                     {t("hero.welcome")}
                   </h1>
                 </div>
                 
                 <div className="overflow-hidden mb-6 md:mb-8 w-full">
                   <div className="relative inline-block">
-                    <h2 className="text-[#FFDE59] text-3xl sm:text-4xl md:text-7xl font-['Inter'] font-bold tracking-tight text-shadow-lg animate-fade-in-up drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)] px-4">
+                    <h2 className="text-[#FFDE59] text-3xl sm:text-4xl md:text-7xl font-['Inter'] font-bold tracking-tight text-shadow-lg animate-fade-in-up drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
                       Mi Gente Bonita Market
                     </h2>
                     
@@ -142,7 +137,7 @@ const Hero = () => {
                   </div>
                 </div>
                 
-                <div className="overflow-hidden mb-10 md:mb-12 w-full px-4">
+                <div className="overflow-hidden mb-10 md:mb-12 w-full">
                   <p className="text-base sm:text-xl md:text-2xl text-white tracking-tight font-light animate-fade-in-up animation-delay-300 max-w-2xl mx-auto leading-relaxed">
                     {t("hero.tagline")}
                   </p>
