@@ -177,35 +177,33 @@ const Gallery = () => {
           ))}
         </div>
 
-        {/* Enhanced modal with navigation */}
+        {/* Modal with navigation */}
         {selectedImage && (
           <div 
-            className="fixed inset-0 bg-black/90 backdrop-blur-md flex items-center justify-center z-50 pt-16 pb-4 px-4 animate-in fade-in duration-300 cursor-pointer" 
+            className="fixed inset-0 bg-black/90 backdrop-blur-md flex flex-col z-50 pt-16 pb-8 px-4 animate-in fade-in duration-300 cursor-pointer"
             onClick={closeModal}
             role="dialog"
             aria-modal="true"
             aria-label="Image gallery view"
           >
-            <div className="relative max-w-7xl w-full h-full flex items-center justify-center animate-in zoom-in-95 duration-300">
-              {/* Close button - positioned in the top right corner */}
+            {/* Close button */}
+            <div className="fixed top-4 right-4 z-50">
               <button 
-                onClick={(e) => {
-                  e.stopPropagation();
-                  closeModal();
-                }}
-                className="fixed top-4 right-4 text-white hover:text-white bg-black/80 hover:bg-black focus:outline-none transition-colors px-4 py-2 rounded-full border border-white/40 z-[60] shadow-lg flex items-center gap-1.5"
-                aria-label="Close"
+                onClick={closeModal}
+                className="bg-black hover:bg-gray-900 text-white px-4 py-2 rounded-md shadow-lg border border-white/50 flex items-center gap-2"
               >
-                <X className="h-4 w-4" /> <span className="text-sm font-medium">Close</span>
+                <X className="h-4 w-4" /> <span>Close</span>
               </button>
-              
-              {/* Navigation buttons - positioned relative to the image container */}
+            </div>
+            
+            <div className="flex-1 relative flex items-center justify-center">
+              {/* Navigation buttons */}
               <button 
                 onClick={(e) => {
                   e.stopPropagation();
                   navigateImage('prev');
                 }}
-                className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 p-2 sm:p-3 rounded-full bg-black/50 text-white hover:bg-black/70 transition-all focus:outline-none border border-white/20 z-[60]"
+                className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 p-2 sm:p-3 rounded-full bg-black/60 text-white hover:bg-black/80 transition-all focus:outline-none border border-white/20 z-10"
                 aria-label="Previous image"
               >
                 <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
@@ -216,25 +214,35 @@ const Gallery = () => {
                   e.stopPropagation();
                   navigateImage('next');
                 }}
-                className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 p-2 sm:p-3 rounded-full bg-black/50 text-white hover:bg-black/70 transition-all focus:outline-none border border-white/20 z-[60]"
+                className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 p-2 sm:p-3 rounded-full bg-black/60 text-white hover:bg-black/80 transition-all focus:outline-none border border-white/20 z-10"
                 aria-label="Next image"
               >
                 <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
               </button>
               
-              <div className="p-2 rounded-xl overflow-hidden w-full max-w-[90vw] sm:max-w-[85vw] md:max-w-[80vw] border border-white/20 bg-black/40 shadow-2xl my-auto">
+              {/* Image container */}
+              <div className="p-2 rounded-xl overflow-hidden w-full max-w-[90vw] sm:max-w-[85vw] md:max-w-[80vw] border border-white/20 bg-black/40 shadow-2xl">
                 <img 
                   src={selectedImage} 
                   alt={images[selectedIndex].alt} 
-                  className="w-full rounded-lg max-h-[70vh] object-contain shadow-2xl"
+                  className="w-full rounded-lg max-h-[65vh] object-contain shadow-xl"
                   onClick={(e) => e.stopPropagation()}
                 />
               </div>
-              
-              {/* Image counter indicator */}
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/60 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-white/90 text-xs sm:text-sm font-medium border border-white/20 z-[60]">
+            </div>
+            
+            {/* Footer with counter */}
+            <div className="flex justify-between items-center mt-4 px-2">
+              <div className="bg-black/60 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-white/90 text-xs sm:text-sm font-medium border border-white/20">
                 {selectedIndex + 1} of {images.length}
               </div>
+              
+              <button
+                onClick={closeModal}
+                className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md shadow-lg border border-white/50"
+              >
+                Close
+              </button>
             </div>
           </div>
         )}
