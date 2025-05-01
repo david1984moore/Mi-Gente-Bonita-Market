@@ -152,7 +152,7 @@ const Hero = () => {
                   <button 
                     className="animate-fade-in-up animation-delay-500 cta-button bg-[#D41414]/90 text-white hover:bg-[#D41414] px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-500 group font-medium tracking-wide"
                   >
-                    Hours of Operation
+                    {t("contact.hours.title")}
                   </button>
                 </Link>
               </div>
