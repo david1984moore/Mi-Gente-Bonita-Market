@@ -149,8 +149,8 @@ const translations = {
     en: "What Our Customers Say"
   },
   "testimonials.subtitle": {
-    es: "Reseñas de nuestros clientes satisfechos",
-    en: "Reviews from our satisfied customers"
+    es: "",
+    en: ""
   },
   
   // Contact
