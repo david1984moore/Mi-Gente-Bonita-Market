@@ -114,19 +114,7 @@ const Contact = () => {
               className="absolute inset-0"
             ></iframe>
             
-            {/* Map overlay with buttons for both locations - centered at the bottom */}
-            <div className="absolute bottom-6 left-0 right-0 z-10 flex flex-col items-center space-y-3 mx-auto w-auto px-4">
-              <a href="https://maps.google.com/?q=2125+W+Newport+Pike,+Wilmington,+DE+19804" target="_blank" rel="noopener noreferrer" className="w-full max-w-[200px]">
-                <Button className="bg-white text-[#1D3557] hover:bg-[#D41414] hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 group w-full px-2 truncate">
-                  <MapPin className="mr-1 h-4 w-4 flex-shrink-0 group-hover:animate-bounce" />
-                </Button>
-              </a>
-              <a href="https://maps.google.com/?q=1300+Capitol+Tr,+Newark,+DE+19711" target="_blank" rel="noopener noreferrer" className="w-full max-w-[200px]">
-                <Button className="bg-white text-[#1D3557] hover:bg-[#D41414] hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 group w-full px-2 truncate">
-                  <MapPin className="mr-1 h-4 w-4 flex-shrink-0 group-hover:animate-bounce" />
-                </Button>
-              </a>
-            </div>
+            {/* Map overlay - removed buttons as requested */}
           </div>
         </div>
       </div>
