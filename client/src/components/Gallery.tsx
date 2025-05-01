@@ -180,35 +180,23 @@ const Gallery = () => {
         {/* Enhanced modal with navigation */}
         {selectedImage && (
           <div 
-            className="fixed inset-0 bg-black/90 backdrop-blur-md flex items-center justify-center z-50 p-4 animate-in fade-in duration-300 cursor-pointer" 
+            className="fixed inset-0 bg-black/90 backdrop-blur-md flex items-center justify-center z-50 pt-16 pb-4 px-4 animate-in fade-in duration-300 cursor-pointer" 
             onClick={closeModal}
             role="dialog"
             aria-modal="true"
             aria-label="Image gallery view"
           >
             <div className="relative max-w-7xl w-full h-full flex items-center justify-center animate-in zoom-in-95 duration-300">
-              {/* Close button - more visible and prominent */}
+              {/* Close button - positioned in the top right corner */}
               <button 
                 onClick={(e) => {
                   e.stopPropagation();
                   closeModal();
                 }}
-                className="fixed top-4 right-4 text-white hover:text-white bg-red-600 hover:bg-red-700 focus:outline-none transition-colors p-3 rounded-full border-2 border-white z-[60] shadow-lg"
+                className="fixed top-4 right-4 text-white hover:text-white bg-black/80 hover:bg-black focus:outline-none transition-colors px-4 py-2 rounded-full border border-white/40 z-[60] shadow-lg flex items-center gap-1.5"
                 aria-label="Close"
               >
-                <X className="h-6 w-6" />
-              </button>
-              
-              {/* Additional close text button at the bottom for better visibility */}
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  closeModal();
-                }}
-                className="fixed bottom-4 right-4 bg-black/70 hover:bg-black text-white px-4 py-2 rounded-full border border-white/40 text-sm font-medium z-[60] shadow-lg flex items-center gap-2"
-                aria-label="Close view"
-              >
-                <X className="h-4 w-4" /> Close
+                <X className="h-4 w-4" /> <span className="text-sm font-medium">Close</span>
               </button>
               
               {/* Navigation buttons - positioned relative to the image container */}
@@ -234,11 +222,11 @@ const Gallery = () => {
                 <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
               </button>
               
-              <div className="p-2 rounded-xl overflow-hidden w-full max-w-[90vw] sm:max-w-[85vw] md:max-w-[80vw] border border-white/20 bg-black/40 shadow-2xl">
+              <div className="p-2 rounded-xl overflow-hidden w-full max-w-[90vw] sm:max-w-[85vw] md:max-w-[80vw] border border-white/20 bg-black/40 shadow-2xl my-auto">
                 <img 
                   src={selectedImage} 
                   alt={images[selectedIndex].alt} 
-                  className="w-full rounded-lg max-h-[80vh] object-contain shadow-2xl"
+                  className="w-full rounded-lg max-h-[70vh] object-contain shadow-2xl"
                   onClick={(e) => e.stopPropagation()}
                 />
               </div>
