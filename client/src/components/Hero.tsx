@@ -126,35 +126,14 @@ const Hero = () => {
                 
                 <div className="overflow-hidden mb-4 md:mb-6 w-full">
                   <div className="relative inline-block">
-                    <h2 className="text-[#FFDE59] text-3xl sm:text-4xl md:text-6xl font-['Inter'] font-bold tracking-tight text-shadow-lg animate-fade-in-up drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] animate-gold-glow">
-                      <span className="relative inline-block">
-                        <span className="relative z-10 bg-clip-text">Mi</span>
-                        <span className="absolute -top-1 -left-1 text-[#FF8C00] opacity-40 blur-[2px] z-0">Mi</span>
-                      </span>{" "}
-                      <span className="relative inline-block mx-1">
-                        <span className="relative z-10 bg-clip-text">Gente</span>
-                        <span className="absolute -top-1 -left-1 text-[#FF8C00] opacity-40 blur-[2px] z-0">Gente</span>
-                      </span>{" "}
-                      <span className="relative inline-block mx-1">
-                        <span className="relative z-10 bg-clip-text">Bonita</span>
-                        <span className="absolute -top-1 -left-1 text-[#FF8C00] opacity-40 blur-[2px] z-0">Bonita</span>
-                      </span>{" "}
-                      <span className="relative inline-block">
-                        <span className="relative z-10 bg-clip-text">Market</span>
-                        <span className="absolute -top-1 -left-1 text-[#FF8C00] opacity-40 blur-[2px] z-0">Market</span>
-                      </span>
+                    <h2 className="text-[#FFDE59] text-3xl sm:text-4xl md:text-6xl font-['Inter'] font-bold tracking-tight text-shadow-lg animate-fade-in-up drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
+                      Mi Gente Bonita Market
                     </h2>
                     
-                    {/* Enhanced modern underline effect */}
+                    {/* Modern underline effect */}
                     <div className="absolute -bottom-2 left-0 w-full h-[3px] animate-pulse-slow">
                       <div className="h-full w-full bg-gradient-to-r from-transparent via-[#FFDE59] to-transparent rounded-full"></div>
                     </div>
-                    
-                    {/* Decorative elements */}
-                    <div className="absolute -left-6 top-1/2 transform -translate-y-1/2 w-4 h-4 rounded-full bg-[#FF8C00] opacity-80 animate-ping-slow"></div>
-                    <div className="absolute -right-6 top-1/2 transform -translate-y-1/2 w-4 h-4 rounded-full bg-[#FF8C00] opacity-80 animate-ping-slow animation-delay-500"></div>
-                    <div className="absolute -top-4 left-1/4 w-3 h-3 rounded-full bg-[#FFDE59] opacity-70 animate-ping-slow animation-delay-700"></div>
-                    <div className="absolute -bottom-3 right-1/4 w-3 h-3 rounded-full bg-[#FFDE59] opacity-70 animate-ping-slow animation-delay-200"></div>
                   </div>
                 </div>
                 
