@@ -8,26 +8,27 @@ import customerTomatoes from "../assets/store-photos/customer-tomatoes.png";
 const About = () => {
   const { t } = useLanguage();
   return (
-    <section id="about" className="pt-8 pb-10 md:pt-10 md:pb-12 bg-gradient-to-b from-[#F8FDF9] to-white section-connector">
-      <div className="container mx-auto px-4">
+    <section id="about" className="pt-16 pb-20 md:pt-20 md:pb-24 bg-white section-connector">
+      <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 relative inline-block">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-['Inter'] font-bold mb-3 tracking-tight text-[#1D1D1F]">
               {t("about.title")}
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto mt-4">
+            <div className="h-1 w-16 bg-[#D41414] mx-auto my-4 rounded-full"></div>
+            <p className="text-xl text-[#4B5563] max-w-2xl mx-auto mt-4 font-light">
               {t("about.subtitle")}
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
               <div className="relative">
-                {/* Decorative elements */}
-                <div className="absolute -top-4 -left-4 w-24 h-24 bg-[#D41414]/10 rounded-full -z-10"></div>
-                <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-[#3D9C42]/10 rounded-full -z-10"></div>
+                {/* Modern decorative elements */}
+                <div className="absolute -top-5 -left-5 w-24 h-24 bg-[#D41414]/5 rounded-2xl -z-10 rotate-6"></div>
+                <div className="absolute -bottom-5 -right-5 w-32 h-32 bg-[#FFDE59]/10 rounded-2xl -z-10 -rotate-3"></div>
                 
-                <div className="relative z-10 overflow-hidden rounded-2xl shadow-2xl transform transition-transform duration-500 hover:scale-[1.01] group">
+                <div className="relative z-10 overflow-hidden rounded-md shadow-sm transform transition-all duration-500 hover:shadow-xl group">
                   <img 
                     src={storefront} 
                     alt="Mi Gente Bonita Market storefront with owners" 
@@ -36,31 +37,23 @@ const About = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
               </div>
-              
-              {/* Quick stats */}
-              
-              
-              {/* Quick stats removed */}
             </div>
             
             <div className="order-1 lg:order-2">
-              <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
-                <h3 className="text-2xl font-['Poppins'] font-bold mb-6 text-[#3D9C42] relative inline-block">
+              <div className="bg-white p-0 sm:p-2">
+                <h3 className="text-2xl font-['Inter'] font-bold mb-6 text-[#1D1D1F] relative">
                   {t("about.storyTitle")}
-                  <span className="absolute left-0 right-0 bottom-[-4px] h-0.5 bg-[#3D9C42]/30"></span>
                 </h3>
                 
-                <p className="mb-6 text-gray-700 leading-relaxed">
+                <p className="mb-6 text-[#4B5563] leading-relaxed text-base">
                   {t("about.storyPart1")}
                 </p>
                 
-                <p className="mb-8 text-gray-700 leading-relaxed">
+                <p className="mb-8 text-[#4B5563] leading-relaxed text-base">
                   {t("about.storyPart2")}
                 </p>
                 
-                
-                
-                <div className="flex flex-wrap items-center justify-center gap-4">
+                <div className="flex flex-wrap items-center gap-4">
                   <Link
                     to="contact"
                     spy={true}
@@ -69,7 +62,7 @@ const About = () => {
                     duration={500}
                     className="group"
                   >
-                    <Button className="bg-[#D41414] hover:bg-[#B51212] text-white py-2 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 inline-flex items-center group-hover:translate-y-[-2px]">
+                    <Button className="bg-[#D41414] hover:bg-[#B01212] text-white py-2 px-6 rounded-md shadow-sm hover:shadow-md transition-all duration-300 inline-flex items-center">
                       <MapPin className="h-4 w-4 mr-2" /> {t("about.visitUs")}
                     </Button>
                   </Link>

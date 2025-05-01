@@ -14,7 +14,7 @@ function App() {
     <TooltipProvider>
       <Toaster />
       <LanguageProvider>
-        <div className="font-['Open_Sans'] bg-[#F8FDF9] text-[#1D3557]">
+        <div className="font-['Inter'] bg-white text-[#1D1D1F]">
           <Navbar />
           <Hero />
           <About />

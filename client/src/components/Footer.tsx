@@ -19,43 +19,42 @@ const Footer = () => {
       {/* Scroll to top button */}
       <button 
         onClick={scrollToTop}
-        className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white text-[#3D9C42] hover:text-[#D41414] p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 focus:outline-none group z-10"
+        className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white text-[#1D1D1F] hover:text-[#D41414] p-2.5 rounded-md shadow-md hover:shadow-lg transition-all duration-300 focus:outline-none group z-10"
         aria-label="Scroll to top"
       >
-        <ArrowUp className="h-6 w-6 group-hover:animate-bounce" />
+        <ArrowUp className="h-5 w-5 group-hover:translate-y-[-2px] transition-transform duration-300" />
       </button>
       
-      {/* Seamless connection to green footer */}
-      <div className="bg-[#3D9C42] text-white pt-16 pb-8">
-        <div className="container mx-auto px-4">
+      {/* Modern footer with subtle gradient */}
+      <div className="bg-gradient-to-br from-[#1D1D1F] to-[#2D2D2F] text-white pt-16 pb-10">
+        <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             {/* Logo and About */}
             <div>
               <div className="mb-6">
-                <div className="font-['Poppins'] font-bold text-2xl mb-4 flex items-center">
-                  <Logo className="h-14 w-auto bg-white rounded-lg p-1.5 shadow-lg hover:shadow-xl transition-all duration-300" />
+                <div className="font-['Inter'] font-medium text-xl mb-5 flex items-center">
+                  <Logo className="h-12 w-auto bg-white rounded-md p-1.5 shadow-md" />
                 </div>
-                <p className="text-white/90 leading-relaxed mb-4">
+                <p className="text-gray-300 leading-relaxed mb-5 text-sm">
                   {t("footer.serving")}
                 </p>
                 <a
                   href="https://www.facebook.com/people/Mi-Gente-Bonita-Market/100078536995749/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all duration-300 group"
+                  className="inline-flex items-center justify-center bg-white/10 hover:bg-white/15 p-2.5 rounded-md transition-all duration-300 group"
                 >
-                  <Facebook className="h-7 w-7 text-white group-hover:text-[#1877F2] transition-colors duration-300" />
+                  <Facebook className="h-5 w-5 text-white group-hover:text-[#1877F2] transition-colors duration-300" />
                 </a>
               </div>
             </div>
             
             {/* Quick Links */}
             <div>
-              <h3 className="text-lg font-bold mb-4 relative inline-block">
+              <h3 className="text-base font-medium mb-5 text-white/90">
                 {t("navbar.menu")}
-                <span className="absolute left-0 bottom-[-6px] w-12 h-0.5 bg-white/30"></span>
               </h3>
-              <ul className="space-y-3 mt-6">
+              <ul className="space-y-3">
                 <li>
                   <Link
                     to="home"
@@ -63,9 +62,9 @@ const Footer = () => {
                     smooth={true}
                     offset={-70}
                     duration={500}
-                    className="text-white/90 hover:text-white hover:translate-x-1 transition-all duration-300 cursor-pointer flex items-center"
+                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer flex items-center text-sm"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#FFD700] mr-2"></span>
+                    <span className="w-1 h-1 rounded-full bg-[#FFDE59] mr-2"></span>
                     {t("navbar.home")}
                   </Link>
                 </li>
@@ -77,9 +76,9 @@ const Footer = () => {
                     smooth={true}
                     offset={-70}
                     duration={500}
-                    className="text-white/90 hover:text-white hover:translate-x-1 transition-all duration-300 cursor-pointer flex items-center"
+                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer flex items-center text-sm"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#FFD700] mr-2"></span>
+                    <span className="w-1 h-1 rounded-full bg-[#FFDE59] mr-2"></span>
                     {t("navbar.about")}
                   </Link>
                 </li>
@@ -90,9 +89,9 @@ const Footer = () => {
                     smooth={true}
                     offset={-70}
                     duration={500}
-                    className="text-white/90 hover:text-white hover:translate-x-1 transition-all duration-300 cursor-pointer flex items-center"
+                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer flex items-center text-sm"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#FFD700] mr-2"></span>
+                    <span className="w-1 h-1 rounded-full bg-[#FFDE59] mr-2"></span>
                     {t("navbar.products")}
                   </Link>
                 </li>
@@ -103,9 +102,9 @@ const Footer = () => {
                     smooth={true}
                     offset={-70}
                     duration={500}
-                    className="text-white/90 hover:text-white hover:translate-x-1 transition-all duration-300 cursor-pointer flex items-center"
+                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer flex items-center text-sm"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#FFD700] mr-2"></span>
+                    <span className="w-1 h-1 rounded-full bg-[#FFDE59] mr-2"></span>
                     {t("navbar.testimonials")}
                   </Link>
                 </li>
@@ -114,28 +113,27 @@ const Footer = () => {
             
             {/* Contact Info */}
             <div>
-              <h3 className="text-lg font-bold mb-4 relative inline-block">
+              <h3 className="text-base font-medium mb-5 text-white/90">
                 {t("navbar.contact")}
-                <span className="absolute left-0 bottom-[-6px] w-12 h-0.5 bg-white/30"></span>
               </h3>
-              <ul className="space-y-4 mt-6">
+              <ul className="space-y-4">
                 <li className="flex">
-                  <MapPin className="h-5 w-5 mr-3 flex-shrink-0 mt-1" />
-                  <div>
-                    <div className="font-medium text-white mb-0.5">{t("contact.location.wilmington")}:</div>
-                    <span className="text-white/90">2125 W Newport Pike, Wilmington, DE 19804</span>
+                  <MapPin className="h-4 w-4 mr-3 flex-shrink-0 mt-0.5 text-[#D41414]" />
+                  <div className="text-sm">
+                    <div className="font-medium text-white/90 mb-0.5">{t("contact.location.wilmington")}:</div>
+                    <span className="text-gray-300">2125 W Newport Pike, Wilmington, DE 19804</span>
                   </div>
                 </li>
                 <li className="flex">
-                  <MapPin className="h-5 w-5 mr-3 flex-shrink-0 mt-1" />
-                  <div>
-                    <div className="font-medium text-white mb-0.5">{t("contact.location.newark")}:</div>
-                    <span className="text-white/90">1300 Capitol Tr, Newark, DE 19711</span>
+                  <MapPin className="h-4 w-4 mr-3 flex-shrink-0 mt-0.5 text-[#D41414]" />
+                  <div className="text-sm">
+                    <div className="font-medium text-white/90 mb-0.5">{t("contact.location.newark")}:</div>
+                    <span className="text-gray-300">1300 Capitol Tr, Newark, DE 19711</span>
                   </div>
                 </li>
-                <li className="flex">
-                  <Phone className="h-5 w-5 mr-3 flex-shrink-0 mt-0.5" />
-                  <a href="tel:3026913048" className="text-white/90 hover:text-white transition-colors duration-300">
+                <li className="flex items-center">
+                  <Phone className="h-4 w-4 mr-3 flex-shrink-0 text-[#D41414]" />
+                  <a href="tel:3026913048" className="text-gray-300 hover:text-white transition-colors duration-300 text-sm">
                     (302) 691-3048
                   </a>
                 </li>
@@ -144,27 +142,26 @@ const Footer = () => {
             
             {/* Business Hours */}
             <div>
-              <h3 className="text-lg font-bold mb-4 relative inline-block">
+              <h3 className="text-base font-medium mb-5 text-white/90">
                 {t("contact.hours.title")}
-                <span className="absolute left-0 bottom-[-6px] w-12 h-0.5 bg-white/30"></span>
               </h3>
-              <ul className="space-y-2 mt-6">
-                <li className="flex justify-between">
-                  <span className="text-white/90">{t("contact.hours.weekdays")}:</span>
+              <ul className="space-y-2">
+                <li className="flex justify-between text-sm">
+                  <span className="text-gray-300">{t("contact.hours.weekdays")}:</span>
                   <span className="text-white font-medium">8:30 AM - 9:00 PM</span>
                 </li>
-                <li className="flex justify-between">
-                  <span className="text-white/90">{t("contact.hours.sunday")}:</span>
+                <li className="flex justify-between text-sm">
+                  <span className="text-gray-300">{t("contact.hours.sunday")}:</span>
                   <span className="text-white font-medium">8:30 AM - 8:00 PM</span>
                 </li>
               </ul>
             </div>
           </div>
           
-          <div className="border-t border-[#2a7a2e] mt-12 pt-8 text-center">
-            <p className="text-white/80 flex items-center justify-center text-sm">
+          <div className="border-t border-gray-800 mt-12 pt-8 text-center">
+            <p className="text-gray-400 flex items-center justify-center text-xs">
               &copy; {year} Mi Gente Bonita Market. {t("footer.rights")}. 
-              <Heart className="h-4 w-4 mx-1 text-[#D41414] inline animate-pulse" /> 
+              <Heart className="h-3 w-3 mx-1.5 text-[#D41414] inline" /> 
               {t("footer.developed")} {t("footer.community")}
             </p>
           </div>

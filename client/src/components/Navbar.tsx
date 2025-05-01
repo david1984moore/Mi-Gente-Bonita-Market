@@ -79,9 +79,9 @@ const Navbar = () => {
 
   return (
     <header 
-      className={`fixed w-full ${scrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg py-2' : 'bg-white py-3'} z-[60] transition-all duration-300`}
+      className={`fixed w-full ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-3' : 'bg-white/80 backdrop-blur-sm py-4'} z-[60] transition-all duration-300`}
     >
-      <nav className="container mx-auto px-4 flex items-center justify-between">
+      <nav className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <Link
           to="home"
@@ -91,27 +91,27 @@ const Navbar = () => {
           duration={500}
           className="flex items-center cursor-pointer"
         >
-          <Logo className={`transition-all duration-300 ${scrolled ? 'h-14' : 'h-16'} w-auto`} />
+          <Logo className={`transition-all duration-300 ${scrolled ? 'h-12' : 'h-14'} w-auto`} />
         </Link>
         
         {/* Mobile menu button - Using the highest z-index to be always clickable */}
         <button 
           ref={menuButtonRef}
           onClick={toggleMenu} 
-          className="md:hidden bg-white/90 p-2 rounded-full shadow-md text-[#1D3557] hover:text-[#D41414] transition-colors duration-300 focus:outline-none relative z-[10000]"
+          className="md:hidden p-2 rounded-md text-[#1D1D1F] hover:text-[#D41414] transition-colors duration-300 focus:outline-none relative z-[10000]"
           aria-label="Toggle navigation menu"
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
         >
           {isOpen ? (
-            <X className="h-6 w-6" />
+            <X className="h-5 w-5" />
           ) : (
-            <Menu className="h-6 w-6" />
+            <Menu className="h-5 w-5" />
           )}
         </button>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+        <div className="hidden md:flex items-center space-x-7 lg:space-x-9">
           {/* Regular nav items */}
           {navItems.filter(item => item.to !== "features" && item.to !== "contact").map((item) => (
             <Link
@@ -121,15 +121,15 @@ const Navbar = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              className={`nav-link relative text-base font-semibold tracking-wide transition-all duration-300 cursor-pointer ${
+              className={`nav-link relative text-sm tracking-wide transition-all duration-300 cursor-pointer ${
                 activeSection === item.to
-                  ? 'text-[#D41414]' 
-                  : 'text-[#1D3557] hover:text-[#D41414]'
+                  ? 'text-[#D41414] font-medium' 
+                  : 'text-[#1D1D1F] hover:text-[#D41414] font-normal'
               }`}
             >
-              <span className="uppercase">{item.label}</span>
+              <span>{item.label}</span>
               {activeSection === item.to && (
-                <span className="absolute -bottom-1.5 left-0 w-full h-[2.5px] bg-gradient-to-r from-[#D41414]/30 via-[#D41414] to-[#D41414]/30 rounded-full"></span>
+                <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-[#D41414] rounded-full"></span>
               )}
             </Link>
           ))}
@@ -141,28 +141,28 @@ const Navbar = () => {
             smooth={true}
             offset={-70}
             duration={500}
-            className={`flex items-center space-x-1 nav-link relative text-base font-semibold tracking-wide transition-all duration-300 cursor-pointer ${
+            className={`flex items-center nav-link relative text-sm tracking-wide transition-all duration-300 cursor-pointer ${
               activeSection === "contact"
-                ? 'text-[#D41414]' 
-                : 'text-[#1D3557] hover:text-[#D41414]'
+                ? 'text-[#D41414] font-medium' 
+                : 'text-[#1D1D1F] hover:text-[#D41414] font-normal'
             }`}
           >
-            <Phone className="h-4 w-4 mr-1" />
-            <span className="uppercase">{t("navbar.contact")}</span>
+            <Phone className="h-3.5 w-3.5 mr-1.5" />
+            <span>{t("navbar.contact")}</span>
             {activeSection === "contact" && (
-              <span className="absolute -bottom-1.5 left-0 w-full h-[2.5px] bg-gradient-to-r from-[#D41414]/30 via-[#D41414] to-[#D41414]/30 rounded-full"></span>
+              <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-[#D41414] rounded-full"></span>
             )}
           </Link>
 
           {/* Language toggle button */}
           <button
             onClick={toggleLanguage}
-            className="flex items-center justify-center p-2 bg-[#1D3557] hover:bg-[#152538] text-white rounded-full transition-colors duration-300 ml-2"
+            className="flex items-center justify-center p-1.5 bg-[#1D1D1F] hover:bg-[#333] text-white rounded-md transition-colors duration-300 ml-2"
             title={language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
             aria-label={language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
           >
-            <Globe className="h-4 w-4" />
-            <span className="ml-1 text-xs font-bold">{language === 'es' ? 'EN' : 'ES'}</span>
+            <Globe className="h-3.5 w-3.5" />
+            <span className="ml-1 text-xs font-medium">{language === 'es' ? 'EN' : 'ES'}</span>
           </button>
         </div>
       </nav>
@@ -183,35 +183,35 @@ const Navbar = () => {
             <div 
               id="mobile-menu"
               ref={mobileMenuRef}
-              className="fixed inset-y-0 right-0 z-[10000] w-64 bg-white shadow-2xl md:hidden flex flex-col mobile-menu"
+              className="fixed inset-y-0 right-0 z-[10000] w-72 bg-white/95 backdrop-blur-md shadow-xl md:hidden flex flex-col mobile-menu"
               role="dialog"
               aria-modal="true"
               style={{ position: 'fixed' }}
             >
-              <div className="flex justify-between items-center p-4 border-b sticky top-0 bg-white z-10">
-                <h3 className="font-bold text-lg text-[#D41414]">{t("navbar.menu")}</h3>
-                <div className="flex items-center gap-2">
+              <div className="flex justify-between items-center p-5 sticky top-0 bg-white/90 backdrop-blur-md z-10 border-b border-gray-100">
+                <h3 className="font-medium text-base text-[#1D1D1F]">{t("navbar.menu")}</h3>
+                <div className="flex items-center gap-3">
                   {/* Language toggle for mobile */}
                   <button
                     onClick={toggleLanguage}
-                    className="flex items-center justify-center p-2 bg-[#1D3557] hover:bg-[#152538] text-white rounded-full transition-colors duration-300"
+                    className="flex items-center justify-center p-1.5 bg-[#1D1D1F] hover:bg-[#333] text-white rounded-md transition-colors duration-300"
                     title={language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
                     aria-label={language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
                   >
-                    <Globe className="h-4 w-4" />
-                    <span className="ml-1 text-xs font-bold">{language === 'es' ? 'EN' : 'ES'}</span>
+                    <Globe className="h-3.5 w-3.5" />
+                    <span className="ml-1 text-xs font-medium">{language === 'es' ? 'EN' : 'ES'}</span>
                   </button>
                   <button 
                     onClick={toggleMenu}
-                    className="text-gray-500 hover:text-[#D41414] focus:outline-none"
+                    className="text-[#1D1D1F] hover:text-[#D41414] focus:outline-none"
                     aria-label="Close navigation menu"
                   >
-                    <X className="h-6 w-6" />
+                    <X className="h-5 w-5" />
                   </button>
                 </div>
               </div>
               
-              <div className="px-4 py-6 space-y-6 flex-1 overflow-y-auto pb-20">
+              <div className="px-5 py-6 space-y-5 flex-1 overflow-y-auto pb-20">
                 {navItems.map((item) => (
                   <Link
                     key={item.to}
@@ -220,50 +220,50 @@ const Navbar = () => {
                     smooth={true}
                     offset={-70}
                     duration={500}
-                    className={`block p-3 transition-all duration-300 relative ${
+                    className={`block p-2.5 transition-all duration-300 relative rounded-md ${
                       activeSection === item.to
-                        ? 'text-[#D41414] font-bold pl-5' 
-                        : 'text-[#1D3557] hover:text-[#D41414] hover:pl-5 font-semibold'
+                        ? 'text-[#D41414] font-medium bg-[#FEF2F2] pl-4' 
+                        : 'text-[#1D1D1F] hover:text-[#D41414] hover:pl-4 font-normal hover:bg-gray-50'
                     }`}
                     onClick={toggleMenu}
                   >
                     {activeSection === item.to && (
-                      <span className="absolute left-0 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#D41414] shadow-sm shadow-[#D41414]/20"></span>
+                      <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-10 bg-[#D41414] rounded-r-md"></span>
                     )}
-                    <span className="text-lg tracking-wide uppercase">{item.label}</span>
+                    <span className="text-base">{item.label}</span>
                   </Link>
                 ))}
                 
-                <div className="pt-6 space-y-4">
+                <div className="pt-5 space-y-3">
                   <a
                     href="tel:3026913048"
-                    className="flex items-center justify-center w-full bg-[#3D9C42] hover:bg-[#2A6D2E] text-white p-3 rounded-lg shadow-md transition-colors duration-300"
+                    className="flex items-center justify-center w-full bg-[#D41414] hover:bg-[#B01212] text-white py-2.5 px-4 rounded-lg transition-colors duration-300"
                     onClick={toggleMenu}
                   >
-                    <Phone className="h-5 w-5 mr-2" />
-                    <span>{t("navbar.callUs")}</span>
+                    <Phone className="h-4 w-4 mr-2" />
+                    <span className="font-medium">{t("navbar.callUs")}</span>
                   </a>
                   
                   <a
                     href="https://maps.google.com/?q=2125+W+Newport+Pike,+Wilmington,+DE+19804"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center w-full bg-[#1D3557] hover:bg-[#152538] text-white p-3 rounded-lg shadow-md transition-colors duration-300"
+                    className="flex items-center justify-center w-full bg-[#1D1D1F] hover:bg-[#333] text-white py-2.5 px-4 rounded-lg transition-colors duration-300"
                     onClick={toggleMenu}
                   >
-                    <MapPin className="h-5 w-5 mr-2" />
-                    <span>{t("navbar.getDirections")}</span>
+                    <MapPin className="h-4 w-4 mr-2" />
+                    <span className="font-medium">{t("navbar.getDirections")}</span>
                   </a>
                   
                   <a
                     href="https://www.facebook.com/people/Mi-Gente-Bonita-Market/100078536995749/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center w-full bg-[#1877F2] hover:bg-[#0A59C0] text-white p-3 rounded-lg shadow-md transition-colors duration-300"
+                    className="flex items-center justify-center w-full bg-[#1877F2] hover:bg-[#0A59C0] text-white py-2.5 px-4 rounded-lg transition-colors duration-300"
                     onClick={toggleMenu}
                   >
-                    <Facebook className="h-5 w-5 mr-2" />
-                    <span>Facebook</span>
+                    <Facebook className="h-4 w-4 mr-2" />
+                    <span className="font-medium">Facebook</span>
                   </a>
                 </div>
               </div>
