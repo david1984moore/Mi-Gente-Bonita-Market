@@ -111,13 +111,13 @@ const Hero = () => {
       
       <section 
         id="home" 
-        className="relative z-20 flex items-center justify-center h-[calc(100%-80px)] mb-none px-4 pt-24 sm:pt-28 md:pt-20"
+        className="relative z-20 flex items-center justify-center h-[calc(100%-80px)] mb-none px-4 pt-32 sm:pt-36 md:pt-28"
       >
         <div className="w-full max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             <div className="md:col-span-8 md:col-start-3 text-center relative">
               {/* Content layout with Welcome to visible */}
-              <div className="relative z-10 flex flex-col items-center bg-black/30 py-6 px-6 rounded-xl mb-10 -mt-8">
+              <div className="relative z-10 flex flex-col items-center bg-black/30 py-6 px-6 rounded-xl mb-10 -mt-12">
                 <div className="overflow-hidden w-full mb-1">
                   <h1 className="text-xl sm:text-2xl md:text-4xl font-['Inter'] font-bold text-white tracking-tight animate-fade-in-down text-shadow-md">
                     {t("hero.welcome")}
