@@ -180,10 +180,28 @@ const Gallery = () => {
     <section id="gallery" className="pt-4 pb-12 md:pt-6 md:pb-14 bg-gradient-to-b from-white to-gray-50 w-full section-connector">
       <div className="w-full px-0 sm:px-4">
         <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 relative inline-block">
-            {t("gallery.title")}
-            <span className="absolute left-0 right-0 bottom-[-4px] h-0.5 bg-[#D41414]/30"></span>
-          </h2>
+          {mounted && isMobile ? (
+            <button
+              onClick={() => {
+                const contentDiv = document.getElementById('gallery-content');
+                if (contentDiv) {
+                  contentDiv.style.display = contentDiv.style.display === 'none' ? 'block' : 'none';
+                }
+              }}
+              className="flex items-center justify-center gap-2 mx-auto"
+            >
+              <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 relative inline-block">
+                {t("gallery.title")}
+                <span className="absolute left-0 right-0 bottom-[-4px] h-0.5 bg-[#D41414]/30"></span>
+              </h2>
+              <ChevronDown className="h-6 w-6 text-[#D41414]" />
+            </button>
+          ) : (
+            <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 relative inline-block">
+              {t("gallery.title")}
+              <span className="absolute left-0 right-0 bottom-[-4px] h-0.5 bg-[#D41414]/30"></span>
+            </h2>
+          )}
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-3">
             {t("gallery.subtitle")}
           </p>
@@ -192,20 +210,7 @@ const Gallery = () => {
         {/* Conditionally render collapsible content on mobile */}
         {mounted && isMobile ? (
           <div className="w-full">
-            <button
-              onClick={() => {
-                const contentDiv = document.getElementById('gallery-content');
-                if (contentDiv) {
-                  contentDiv.style.display = contentDiv.style.display === 'none' ? 'block' : 'none';
-                }
-              }}
-              className="w-full py-3 flex items-center justify-center gap-1 text-base font-semibold bg-[#F8F8F8] hover:bg-[#F0F0F0] rounded-md text-[#1D1D1F]"
-            >
-              <span>{t("common.showContent")}</span>
-              <ChevronDown className="h-4 w-4" />
-            </button>
-            
-            <div id="gallery-content" className="pt-6 w-full" style={{ display: 'none' }}>
+            <div id="gallery-content" className="pt-6 w-full">
               {galleryGrid}
             </div>
           </div>

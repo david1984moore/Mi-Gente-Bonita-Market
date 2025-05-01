@@ -118,10 +118,28 @@ const Testimonials = () => {
       
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 md:mb-10">
-          <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 relative inline-block">
-            {t("testimonials.title")}
-            <span className="absolute left-0 right-0 bottom-[-4px] h-0.5 bg-[#3D9C42]/30"></span>
-          </h2>
+          {mounted && isMobile ? (
+            <button
+              onClick={() => {
+                const contentDiv = document.getElementById('testimonials-content');
+                if (contentDiv) {
+                  contentDiv.style.display = contentDiv.style.display === 'none' ? 'block' : 'none';
+                }
+              }}
+              className="flex items-center justify-center gap-2 mx-auto"
+            >
+              <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 relative inline-block">
+                {t("testimonials.title")}
+                <span className="absolute left-0 right-0 bottom-[-4px] h-0.5 bg-[#3D9C42]/30"></span>
+              </h2>
+              <ChevronDown className="h-6 w-6 text-[#3D9C42]" />
+            </button>
+          ) : (
+            <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 relative inline-block">
+              {t("testimonials.title")}
+              <span className="absolute left-0 right-0 bottom-[-4px] h-0.5 bg-[#3D9C42]/30"></span>
+            </h2>
+          )}
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mt-4">
             {t("testimonials.subtitle")}
           </p>
@@ -130,20 +148,7 @@ const Testimonials = () => {
         {/* Conditionally render collapsible content on mobile */}
         {mounted && isMobile ? (
           <div className="w-full">
-            <button
-              onClick={() => {
-                const contentDiv = document.getElementById('testimonials-content');
-                if (contentDiv) {
-                  contentDiv.style.display = contentDiv.style.display === 'none' ? 'block' : 'none';
-                }
-              }}
-              className="w-full py-3 flex items-center justify-center gap-1 text-base font-semibold bg-[#F8F8F8] hover:bg-[#F0F0F0] rounded-md text-[#1D1D1F]"
-            >
-              <span>{t("common.showContent")}</span>
-              <ChevronDown className="h-4 w-4" />
-            </button>
-            
-            <div id="testimonials-content" className="pt-6 w-full" style={{ display: 'none' }}>
+            <div id="testimonials-content" className="pt-6 w-full">
               {testimonialsGrid}
             </div>
           </div>

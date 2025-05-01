@@ -74,9 +74,26 @@ const About = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-6 md:mb-10">
-            <h2 className="text-3xl md:text-4xl font-['Inter'] font-bold mb-3 tracking-tight text-[#1D1D1F]">
-              {t("about.title")}
-            </h2>
+            {mounted && isMobile ? (
+              <button
+                onClick={() => {
+                  const contentDiv = document.getElementById('about-content');
+                  if (contentDiv) {
+                    contentDiv.style.display = contentDiv.style.display === 'none' ? 'block' : 'none';
+                  }
+                }}
+                className="flex items-center justify-center gap-2 mx-auto"
+              >
+                <h2 className="text-3xl md:text-4xl font-['Inter'] font-bold mb-3 tracking-tight text-[#1D1D1F]">
+                  {t("about.title")}
+                </h2>
+                <ChevronDown className="h-6 w-6 text-[#D41414]" />
+              </button>
+            ) : (
+              <h2 className="text-3xl md:text-4xl font-['Inter'] font-bold mb-3 tracking-tight text-[#1D1D1F]">
+                {t("about.title")}
+              </h2>
+            )}
             <div className="h-1 w-16 bg-[#D41414] mx-auto my-4 rounded-full"></div>
             <p className="text-xl text-[#4B5563] max-w-2xl mx-auto mt-4 font-light">
               {t("about.subtitle")}
@@ -85,20 +102,7 @@ const About = () => {
           
           {mounted && isMobile ? (
             <div className="w-full">
-              <button
-                onClick={() => {
-                  const contentDiv = document.getElementById('about-content');
-                  if (contentDiv) {
-                    contentDiv.style.display = contentDiv.style.display === 'none' ? 'block' : 'none';
-                  }
-                }}
-                className="w-full py-3 flex items-center justify-center gap-1 text-base font-semibold bg-[#F8F8F8] hover:bg-[#F0F0F0] rounded-md text-[#1D1D1F]"
-              >
-                <span>{t("common.showContent")}</span>
-                <ChevronDown className="h-4 w-4" />
-              </button>
-              
-              <div id="about-content" className="pt-6 w-full" style={{ display: 'none' }}>
+              <div id="about-content" className="pt-6 w-full">
                 {aboutContent}
               </div>
             </div>
