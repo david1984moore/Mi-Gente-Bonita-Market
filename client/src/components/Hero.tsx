@@ -138,9 +138,6 @@ const Hero = () => {
                 </div>
                 
                 <div className="overflow-hidden mb-6 md:mb-8 w-full">
-                  <p className="text-base sm:text-xl md:text-2xl text-white tracking-tight font-medium animate-fade-in-up animation-delay-300 max-w-2xl mx-auto leading-relaxed text-shadow-md">
-                    {t("hero.tagline")}
-                  </p>
                 </div>
                 
                 {/* Stylish CTA button */}
