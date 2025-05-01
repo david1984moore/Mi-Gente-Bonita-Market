@@ -83,8 +83,8 @@ const Hero = () => {
 
   return (
     <div ref={heroRef} className="relative overflow-hidden" style={{ height: '100vh', paddingTop: '0' }}>
-      {/* Modern gradient overlay for images */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60 z-5"></div>
+      {/* Enhanced gradient overlay for better text visibility */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70 z-5"></div>
       
       {/* Active images layer - both visible during transition */}
       {images.map((image, index) => (
@@ -102,10 +102,10 @@ const Hero = () => {
         />
       ))}
       
-      {/* Cinematic dark vignette for depth */}
-      <div className="absolute inset-0 z-15 opacity-50 pointer-events-none" 
+      {/* Enhanced cinematic dark vignette for better text visibility */}
+      <div className="absolute inset-0 z-15 opacity-70 pointer-events-none" 
            style={{ 
-             background: 'radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.4) 85%, rgba(0,0,0,0.6) 100%)'
+             background: 'radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.5) 65%, rgba(0,0,0,0.7) 100%)'
            }}>
       </div>
       
@@ -116,17 +116,17 @@ const Hero = () => {
         <div className="w-full max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             <div className="md:col-span-8 md:col-start-3 text-center relative">
-              {/* Modern, animated reveal content */}
-              <div className="relative z-10 flex flex-col items-center">
+              {/* Modern, animated reveal content with background */}
+              <div className="relative z-10 flex flex-col items-center bg-black/30 py-8 px-6 rounded-xl">
                 <div className="overflow-hidden mb-3 md:mb-5 w-full">
-                  <h1 className="text-2xl sm:text-3xl md:text-5xl font-['Inter'] font-bold text-white tracking-tight animate-fade-in-down">
+                  <h1 className="text-2xl sm:text-3xl md:text-5xl font-['Inter'] font-bold text-white tracking-tight animate-fade-in-down text-shadow-md">
                     {t("hero.welcome")}
                   </h1>
                 </div>
                 
                 <div className="overflow-hidden mb-6 md:mb-8 w-full">
                   <div className="relative inline-block">
-                    <h2 className="text-[#FFDE59] text-3xl sm:text-4xl md:text-7xl font-['Inter'] font-bold tracking-tight text-shadow-lg animate-fade-in-up drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+                    <h2 className="text-[#FFDE59] text-3xl sm:text-4xl md:text-7xl font-['Inter'] font-bold tracking-tight text-shadow-lg animate-fade-in-up drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
                       Mi Gente Bonita Market
                     </h2>
                     
@@ -138,7 +138,7 @@ const Hero = () => {
                 </div>
                 
                 <div className="overflow-hidden mb-10 md:mb-12 w-full">
-                  <p className="text-base sm:text-xl md:text-2xl text-white tracking-tight font-light animate-fade-in-up animation-delay-300 max-w-2xl mx-auto leading-relaxed">
+                  <p className="text-base sm:text-xl md:text-2xl text-white tracking-tight font-medium animate-fade-in-up animation-delay-300 max-w-2xl mx-auto leading-relaxed text-shadow-md">
                     {t("hero.tagline")}
                   </p>
                 </div>
