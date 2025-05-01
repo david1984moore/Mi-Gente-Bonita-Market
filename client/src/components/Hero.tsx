@@ -139,7 +139,8 @@ const Hero = () => {
                       style={{ 
                         textShadow: '0 1px 1px black, 0 2px 3px black, 0 3px 5px black', 
                         letterSpacing: '0.04em',
-                        fontWeight: '600'
+                        fontWeight: '800',
+                        WebkitTextStroke: '0.2px white'
                       }}>
                     {t("hero.welcome")}
                   </h1>
@@ -151,9 +152,10 @@ const Hero = () => {
                         style={{ 
                           textShadow: '0 1px 1px black, 0 2px 2px black, 0 4px 4px rgba(0,0,0,0.9), 0 6px 8px rgba(0,0,0,0.8)', 
                           letterSpacing: '0.03em',
-                          fontWeight: '700',
+                          fontWeight: '900',
                           color: '#FFE057',
-                          fontVariationSettings: '"wght" 700',
+                          WebkitTextStroke: '0.5px #D41414',
+                          fontVariationSettings: '"wght" 900',
                           transform: 'scaleY(1.05)'
                         }}>
                       Mi Gente Bonita Market
@@ -191,9 +193,10 @@ const Hero = () => {
                   className="inline-block mt-2"
                 >
                   <button 
-                    className="animate-fade-in-up animation-delay-500 cta-button bg-[#D41414]/90 text-white hover:bg-[#D41414] px-7 py-3 text-base font-['Libre_Baskerville'] border-[1px] border-[#FFDE59]/70 rounded-sm shadow-lg hover:shadow-xl transition-all duration-500 group font-medium tracking-wide"
+                    className="animate-fade-in-up animation-delay-500 cta-button bg-[#D41414]/90 text-white hover:bg-[#D41414] px-7 py-3 text-base font-['Libre_Baskerville'] border-[1px] border-[#FFDE59]/70 rounded-sm shadow-lg hover:shadow-xl transition-all duration-500 group tracking-wide"
                     style={{
                       letterSpacing: '0.06em',
+                      fontWeight: '700',
                       boxShadow: '0 4px 8px rgba(0,0,0,0.3)'
                     }}
                   >
