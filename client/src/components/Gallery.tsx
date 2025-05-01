@@ -114,6 +114,28 @@ const Gallery = () => {
       setSelectedImage(images[prevIndex].src);
     }
   };
+  
+  // Add keyboard support for navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!selectedImage) return;
+      
+      switch (e.key) {
+        case 'ArrowRight':
+          navigateImage('next');
+          break;
+        case 'ArrowLeft':
+          navigateImage('prev');
+          break;
+        case 'Escape':
+          closeModal();
+          break;
+      }
+    };
+    
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedImage, selectedIndex]);
 
   return (
     <section id="gallery" className="pt-4 pb-12 md:pt-6 md:pb-14 bg-gradient-to-b from-white to-gray-50 w-full section-connector">
@@ -158,20 +180,35 @@ const Gallery = () => {
         {/* Enhanced modal with navigation */}
         {selectedImage && (
           <div 
-            className="fixed inset-0 bg-black/90 backdrop-blur-md flex items-center justify-center z-50 p-4 animate-in fade-in duration-300" 
+            className="fixed inset-0 bg-black/90 backdrop-blur-md flex items-center justify-center z-50 p-4 animate-in fade-in duration-300 cursor-pointer" 
             onClick={closeModal}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Image gallery view"
           >
             <div className="relative max-w-7xl w-full h-full flex items-center justify-center animate-in zoom-in-95 duration-300">
-              {/* Close button - now positioned top-right of the viewport */}
+              {/* Close button - more visible and prominent */}
               <button 
                 onClick={(e) => {
                   e.stopPropagation();
                   closeModal();
                 }}
-                className="fixed top-4 right-4 text-white hover:text-white bg-black/50 hover:bg-black/70 focus:outline-none transition-colors p-2 rounded-full border border-white/20 z-[60]"
+                className="fixed top-4 right-4 text-white hover:text-white bg-red-600 hover:bg-red-700 focus:outline-none transition-colors p-3 rounded-full border-2 border-white z-[60] shadow-lg"
                 aria-label="Close"
               >
                 <X className="h-6 w-6" />
+              </button>
+              
+              {/* Additional close text button at the bottom for better visibility */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  closeModal();
+                }}
+                className="fixed bottom-4 right-4 bg-black/70 hover:bg-black text-white px-4 py-2 rounded-full border border-white/40 text-sm font-medium z-[60] shadow-lg flex items-center gap-2"
+                aria-label="Close view"
+              >
+                <X className="h-4 w-4" /> Close
               </button>
               
               {/* Navigation buttons - positioned relative to the image container */}
