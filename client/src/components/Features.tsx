@@ -78,29 +78,39 @@ const Features = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 md:mb-12">
           {mounted && isMobile ? (
-            <button
-              onClick={() => {
-                const contentDiv = document.getElementById('features-content');
-                if (contentDiv) {
-                  contentDiv.style.display = contentDiv.style.display === 'none' ? 'block' : 'none';
-                }
-              }}
-              className="flex items-center justify-center gap-2 mx-auto"
-            >
-              <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-4">Why Choose Us</h2>
-              <ChevronDown className="h-6 w-6 text-[#FFB100]" />
-            </button>
+            <>
+              <button
+                onClick={() => {
+                  const contentDiv = document.getElementById('features-content');
+                  if (contentDiv) {
+                    const isCurrentlyHidden = contentDiv.style.display === 'none' || !contentDiv.style.display;
+                    contentDiv.style.display = isCurrentlyHidden ? 'block' : 'none';
+                  }
+                }}
+                className="flex items-center justify-center gap-2 mx-auto"
+                aria-expanded="false"
+                aria-controls="features-content"
+              >
+                <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-4">Why Choose Us</h2>
+                <ChevronDown className="h-6 w-6 text-[#FFB100]" />
+              </button>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                Our store offers the finest selection of Latino products in Delaware.
+              </p>
+            </>
           ) : (
-            <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-4">Why Choose Us</h2>
+            <>
+              <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-4">Why Choose Us</h2>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                Our store offers the finest selection of Latino products in Delaware.
+              </p>
+            </>
           )}
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Our store offers the finest selection of Latino products in Delaware.
-          </p>
         </div>
         
         {mounted && isMobile ? (
           <div className="w-full">
-            <div id="features-content" className="pt-6 w-full">
+            <div id="features-content" className="pt-6 w-full" style={{ display: 'none' }}>
               {featuresContent}
             </div>
           </div>

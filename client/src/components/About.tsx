@@ -75,34 +75,45 @@ const About = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-6 md:mb-10">
             {mounted && isMobile ? (
-              <button
-                onClick={() => {
-                  const contentDiv = document.getElementById('about-content');
-                  if (contentDiv) {
-                    contentDiv.style.display = contentDiv.style.display === 'none' ? 'block' : 'none';
-                  }
-                }}
-                className="flex items-center justify-center gap-2 mx-auto"
-              >
+              <>
+                <button
+                  onClick={() => {
+                    const contentDiv = document.getElementById('about-content');
+                    if (contentDiv) {
+                      const isCurrentlyHidden = contentDiv.style.display === 'none' || !contentDiv.style.display;
+                      contentDiv.style.display = isCurrentlyHidden ? 'block' : 'none';
+                    }
+                  }}
+                  className="flex items-center justify-center gap-2 mx-auto"
+                  aria-expanded="false"
+                  aria-controls="about-content"
+                >
+                  <h2 className="text-3xl md:text-4xl font-['Inter'] font-bold mb-3 tracking-tight text-[#1D1D1F]">
+                    {t("about.title")}
+                  </h2>
+                  <ChevronDown className="h-6 w-6 text-[#D41414]" />
+                </button>
+                <div className="h-1 w-16 bg-[#D41414] mx-auto my-4 rounded-full"></div>
+                <p className="text-xl text-[#4B5563] max-w-2xl mx-auto mt-4 font-light">
+                  {t("about.subtitle")}
+                </p>
+              </>
+            ) : (
+              <>
                 <h2 className="text-3xl md:text-4xl font-['Inter'] font-bold mb-3 tracking-tight text-[#1D1D1F]">
                   {t("about.title")}
                 </h2>
-                <ChevronDown className="h-6 w-6 text-[#D41414]" />
-              </button>
-            ) : (
-              <h2 className="text-3xl md:text-4xl font-['Inter'] font-bold mb-3 tracking-tight text-[#1D1D1F]">
-                {t("about.title")}
-              </h2>
+                <div className="h-1 w-16 bg-[#D41414] mx-auto my-4 rounded-full"></div>
+                <p className="text-xl text-[#4B5563] max-w-2xl mx-auto mt-4 font-light">
+                  {t("about.subtitle")}
+                </p>
+              </>
             )}
-            <div className="h-1 w-16 bg-[#D41414] mx-auto my-4 rounded-full"></div>
-            <p className="text-xl text-[#4B5563] max-w-2xl mx-auto mt-4 font-light">
-              {t("about.subtitle")}
-            </p>
           </div>
           
           {mounted && isMobile ? (
             <div className="w-full">
-              <div id="about-content" className="pt-6 w-full">
+              <div id="about-content" className="pt-6 w-full" style={{ display: 'none' }}>
                 {aboutContent}
               </div>
             </div>

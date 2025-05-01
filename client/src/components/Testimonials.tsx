@@ -119,36 +119,46 @@ const Testimonials = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 md:mb-10">
           {mounted && isMobile ? (
-            <button
-              onClick={() => {
-                const contentDiv = document.getElementById('testimonials-content');
-                if (contentDiv) {
-                  contentDiv.style.display = contentDiv.style.display === 'none' ? 'block' : 'none';
-                }
-              }}
-              className="flex items-center justify-center gap-2 mx-auto"
-            >
+            <>
+              <button
+                onClick={() => {
+                  const contentDiv = document.getElementById('testimonials-content');
+                  if (contentDiv) {
+                    const isCurrentlyHidden = contentDiv.style.display === 'none' || !contentDiv.style.display;
+                    contentDiv.style.display = isCurrentlyHidden ? 'block' : 'none';
+                  }
+                }}
+                className="flex items-center justify-center gap-2 mx-auto"
+                aria-expanded="false"
+                aria-controls="testimonials-content"
+              >
+                <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 relative inline-block">
+                  {t("testimonials.title")}
+                  <span className="absolute left-0 right-0 bottom-[-4px] h-0.5 bg-[#3D9C42]/30"></span>
+                </h2>
+                <ChevronDown className="h-6 w-6 text-[#3D9C42]" />
+              </button>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto mt-4">
+                {t("testimonials.subtitle")}
+              </p>
+            </>
+          ) : (
+            <>
               <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 relative inline-block">
                 {t("testimonials.title")}
                 <span className="absolute left-0 right-0 bottom-[-4px] h-0.5 bg-[#3D9C42]/30"></span>
               </h2>
-              <ChevronDown className="h-6 w-6 text-[#3D9C42]" />
-            </button>
-          ) : (
-            <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 relative inline-block">
-              {t("testimonials.title")}
-              <span className="absolute left-0 right-0 bottom-[-4px] h-0.5 bg-[#3D9C42]/30"></span>
-            </h2>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto mt-4">
+                {t("testimonials.subtitle")}
+              </p>
+            </>
           )}
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto mt-4">
-            {t("testimonials.subtitle")}
-          </p>
         </div>
         
         {/* Conditionally render collapsible content on mobile */}
         {mounted && isMobile ? (
           <div className="w-full">
-            <div id="testimonials-content" className="pt-6 w-full">
+            <div id="testimonials-content" className="pt-6 w-full" style={{ display: 'none' }}>
               {testimonialsGrid}
             </div>
           </div>

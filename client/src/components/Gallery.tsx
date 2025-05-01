@@ -181,36 +181,46 @@ const Gallery = () => {
       <div className="w-full px-0 sm:px-4">
         <div className="text-center mb-8">
           {mounted && isMobile ? (
-            <button
-              onClick={() => {
-                const contentDiv = document.getElementById('gallery-content');
-                if (contentDiv) {
-                  contentDiv.style.display = contentDiv.style.display === 'none' ? 'block' : 'none';
-                }
-              }}
-              className="flex items-center justify-center gap-2 mx-auto"
-            >
+            <>
+              <button
+                onClick={() => {
+                  const contentDiv = document.getElementById('gallery-content');
+                  if (contentDiv) {
+                    const isCurrentlyHidden = contentDiv.style.display === 'none' || !contentDiv.style.display;
+                    contentDiv.style.display = isCurrentlyHidden ? 'block' : 'none';
+                  }
+                }}
+                className="flex items-center justify-center gap-2 mx-auto"
+                aria-expanded="false"
+                aria-controls="gallery-content"
+              >
+                <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 relative inline-block">
+                  {t("gallery.title")}
+                  <span className="absolute left-0 right-0 bottom-[-4px] h-0.5 bg-[#D41414]/30"></span>
+                </h2>
+                <ChevronDown className="h-6 w-6 text-[#D41414]" />
+              </button>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-3">
+                {t("gallery.subtitle")}
+              </p>
+            </>
+          ) : (
+            <>
               <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 relative inline-block">
                 {t("gallery.title")}
                 <span className="absolute left-0 right-0 bottom-[-4px] h-0.5 bg-[#D41414]/30"></span>
               </h2>
-              <ChevronDown className="h-6 w-6 text-[#D41414]" />
-            </button>
-          ) : (
-            <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 relative inline-block">
-              {t("gallery.title")}
-              <span className="absolute left-0 right-0 bottom-[-4px] h-0.5 bg-[#D41414]/30"></span>
-            </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-3">
+                {t("gallery.subtitle")}
+              </p>
+            </>
           )}
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-3">
-            {t("gallery.subtitle")}
-          </p>
         </div>
 
         {/* Conditionally render collapsible content on mobile */}
         {mounted && isMobile ? (
           <div className="w-full">
-            <div id="gallery-content" className="pt-6 w-full">
+            <div id="gallery-content" className="pt-6 w-full" style={{ display: 'none' }}>
               {galleryGrid}
             </div>
           </div>
