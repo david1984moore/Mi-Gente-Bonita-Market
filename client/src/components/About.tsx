@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-scroll";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { MobileToggle } from "@/components/ui/mobile-toggle";
 import storefront from "../assets/store-photos/storefront.png";
 import customerTomatoes from "../assets/store-photos/customer-tomatoes.png";
 import { useState, useEffect } from "react";
@@ -85,9 +84,24 @@ const About = () => {
           </div>
           
           {mounted && isMobile ? (
-            <MobileToggle title={t("common.showContent")} defaultOpen={true}>
-              {aboutContent}
-            </MobileToggle>
+            <div className="w-full">
+              <button
+                onClick={() => {
+                  const contentDiv = document.getElementById('about-content');
+                  if (contentDiv) {
+                    contentDiv.style.display = contentDiv.style.display === 'none' ? 'block' : 'none';
+                  }
+                }}
+                className="w-full py-3 flex items-center justify-center gap-1 text-base font-semibold bg-[#F8F8F8] hover:bg-[#F0F0F0] rounded-md text-[#1D1D1F]"
+              >
+                <span>{t("common.showContent")}</span>
+                <ChevronDown className="h-4 w-4" />
+              </button>
+              
+              <div id="about-content" className="pt-6 w-full" style={{ display: 'none' }}>
+                {aboutContent}
+              </div>
+            </div>
           ) : (
             aboutContent
           )}

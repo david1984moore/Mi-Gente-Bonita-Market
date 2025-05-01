@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from "react";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { MobileToggle } from "@/components/ui/mobile-toggle";
+import SimpleToggle from "@/components/ui/simple-toggle";
 import groceryAisle from "../assets/store-photos/grocery-aisle.png";
 import freshProduce from "../assets/store-photos/fresh-produce.png";
 import freshLemons from "../assets/store-photos/fresh-lemons.png";
@@ -191,9 +191,24 @@ const Gallery = () => {
 
         {/* Conditionally render collapsible content on mobile */}
         {mounted && isMobile ? (
-          <MobileToggle title={t("common.showContent")} defaultOpen={true}>
-            {galleryGrid}
-          </MobileToggle>
+          <div className="w-full">
+            <button
+              onClick={() => {
+                const contentDiv = document.getElementById('gallery-content');
+                if (contentDiv) {
+                  contentDiv.style.display = contentDiv.style.display === 'none' ? 'block' : 'none';
+                }
+              }}
+              className="w-full py-3 flex items-center justify-center gap-1 text-base font-semibold bg-[#F8F8F8] hover:bg-[#F0F0F0] rounded-md text-[#1D1D1F]"
+            >
+              <span>{t("common.showContent")}</span>
+              <ChevronDown className="h-4 w-4" />
+            </button>
+            
+            <div id="gallery-content" className="pt-6 w-full" style={{ display: 'none' }}>
+              {galleryGrid}
+            </div>
+          </div>
         ) : (
           galleryGrid
         )}
