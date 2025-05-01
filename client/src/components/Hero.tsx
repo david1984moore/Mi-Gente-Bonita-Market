@@ -84,7 +84,7 @@ const Hero = () => {
   return (
     <div ref={heroRef} className="relative overflow-hidden" style={{ height: '100vh', paddingTop: '1rem' }}>
       {/* Darker shade overlay for text readability */}
-      <div className="absolute inset-0 bg-black/50 z-5"></div>
+      <div className="absolute inset-0 bg-black/60 z-5"></div>
       
       {/* Active images layer - both visible during transition */}
       {images.map((image, index) => (
@@ -103,9 +103,16 @@ const Hero = () => {
       ))}
       
       {/* Enhanced cinematic dark vignette for better text visibility */}
-      <div className="absolute inset-0 z-15 opacity-60 pointer-events-none" 
+      <div className="absolute inset-0 z-15 opacity-80 pointer-events-none" 
            style={{ 
-             background: 'radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.4) 65%, rgba(0,0,0,0.6) 100%)'
+             background: 'radial-gradient(circle at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 65%, rgba(0,0,0,0.8) 100%)'
+           }}>
+      </div>
+      
+      {/* Additional linear gradient for better contrast behind text */}
+      <div className="absolute inset-0 z-16 opacity-50 pointer-events-none"
+           style={{
+             background: 'linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 40%, transparent 60%, rgba(0,0,0,0.6) 100%)'
            }}>
       </div>
       
@@ -119,15 +126,19 @@ const Hero = () => {
               {/* Content layout with Welcome to visible - no background */}
               <div className="relative z-10 flex flex-col items-center py-6 px-6 mb-10 -mt-12">
                 <div className="overflow-hidden w-full mb-1">
-                  <h1 className="text-xl sm:text-2xl md:text-4xl font-['Inter'] font-bold text-white tracking-tight animate-fade-in-down text-shadow-md">
+                  <h1 className="text-xl sm:text-2xl md:text-4xl font-['Inter'] font-extrabold text-white tracking-tight animate-fade-in-down"
+                      style={{ textShadow: '0 1px 1px black, 0 2px 3px black, 0 3px 5px black', letterSpacing: '0.03em' }}>
                     {t("hero.welcome")}
                   </h1>
                 </div>
                 
                 <div className="overflow-hidden mb-4 md:mb-6 w-full">
                   <div className="relative inline-block">
-                    <h2 className="text-[#FFDE59] text-3xl sm:text-4xl md:text-6xl font-['Inter'] font-bold tracking-tight animate-fade-in-up"
-                        style={{ textShadow: '0 1px 3px rgba(0,0,0,0.6), 0 2px 5px rgba(0,0,0,0.5)' }}>
+                    <h2 className="text-[#FFE970] text-3xl sm:text-4xl md:text-6xl font-['Inter'] font-extrabold tracking-tight animate-fade-in-up"
+                        style={{ 
+                          textShadow: '0 1px 1px black, 0 2px 2px black, 0 4px 4px rgba(0,0,0,0.9), 0 6px 8px rgba(0,0,0,0.8)', 
+                          letterSpacing: '0.02em'
+                        }}>
                       Mi Gente Bonita Market
                     </h2>
                     
