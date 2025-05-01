@@ -160,7 +160,7 @@ const Hero = () => {
                 
                 {/* Stylish CTA button */}
                 <Link
-                  to="about"
+                  to="contact"
                   spy={true}
                   smooth={true}
                   offset={-70}
@@ -170,8 +170,7 @@ const Hero = () => {
                   <button 
                     className="animate-fade-in-up animation-delay-500 cta-button bg-[#D41414]/90 text-white hover:bg-[#D41414] px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-500 group font-medium tracking-wide"
                   >
-                    {t("hero.exploreBtn")}
-                    <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300 inline-block">→</span>
+                    Hours of Operation
                   </button>
                 </Link>
               </div>
