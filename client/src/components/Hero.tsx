@@ -125,57 +125,26 @@ const Hero = () => {
             <div className="md:col-span-8 md:col-start-3 text-center relative">
               {/* Content layout with Welcome to visible - no background */}
               <div className="relative z-10 flex flex-col items-center py-6 px-6 mb-10 -mt-12">
-                {/* Small decorative Mexican-style flourish */}
-                <div className="mb-2 opacity-80">
-                  <div className="flex items-center">
-                    <div className="h-[2px] w-[20px] md:w-[30px] bg-gradient-to-r from-transparent to-[#FFDE59]"></div>
-                    <div className="mx-3 text-[#FFDE59] text-2xl" style={{ transform: 'scaleX(1.2)' }}>✼</div>
-                    <div className="h-[2px] w-[20px] md:w-[30px] bg-gradient-to-l from-transparent to-[#FFDE59]"></div>
-                  </div>
-                </div>
-                
                 <div className="overflow-hidden w-full mb-1">
-                  <h1 className="text-xl sm:text-2xl md:text-4xl font-['Libre_Baskerville'] text-white tracking-tight animate-fade-in-down"
-                      style={{ 
-                        textShadow: '0 1px 1px black, 0 2px 3px black, 0 3px 5px black', 
-                        letterSpacing: '0.04em',
-                        fontWeight: '800',
-                        WebkitTextStroke: '0.2px white'
-                      }}>
+                  <h1 className="text-xl sm:text-2xl md:text-4xl font-['Inter'] font-extrabold text-white tracking-tight animate-fade-in-down"
+                      style={{ textShadow: '0 1px 1px black, 0 2px 3px black, 0 3px 5px black', letterSpacing: '0.03em' }}>
                     {t("hero.welcome")}
                   </h1>
                 </div>
                 
                 <div className="overflow-hidden mb-4 md:mb-6 w-full">
                   <div className="relative inline-block">
-                    <h2 className="text-[#FFE057] text-3xl sm:text-4xl md:text-6xl font-['Libre_Baskerville'] tracking-tight animate-fade-in-up"
+                    <h2 className="text-[#FFE970] text-3xl sm:text-4xl md:text-6xl font-['Inter'] font-extrabold tracking-tight animate-fade-in-up"
                         style={{ 
                           textShadow: '0 1px 1px black, 0 2px 2px black, 0 4px 4px rgba(0,0,0,0.9), 0 6px 8px rgba(0,0,0,0.8)', 
-                          letterSpacing: '0.03em',
-                          fontWeight: '900',
-                          color: '#FFE057',
-                          WebkitTextStroke: '0.5px #D41414',
-                          fontVariationSettings: '"wght" 900',
-                          transform: 'scaleY(1.05)'
+                          letterSpacing: '0.02em'
                         }}>
                       Mi Gente Bonita Market
                     </h2>
                     
-                    {/* Mexican-inspired decorative border/underline */}
+                    {/* Modern underline effect */}
                     <div className="absolute -bottom-2 left-0 w-full h-[3px] animate-pulse-slow">
-                      <div className="h-full w-full bg-gradient-to-r from-[#D41414]/80 via-[#FFDE59] to-[#D41414]/80 rounded-sm"></div>
-                    </div>
-                    <div className="absolute -bottom-5 left-0 w-full h-[1px] animate-pulse-slow" style={{ animationDelay: '0.5s' }}>
-                      <div className="h-full w-[70%] mx-auto bg-gradient-to-r from-transparent via-[#FFDE59]/90 to-transparent"></div>
-                    </div>
-                    
-                    {/* Traditional Mexican decorative motif */}
-                    <div className="absolute -bottom-12 left-0 w-full flex justify-center opacity-80">
-                      <div className="flex items-center">
-                        <div className="text-[#D41414] mx-1">❦</div>
-                        <div className="text-[#FFDE59] mx-1">✿</div>
-                        <div className="text-[#D41414] mx-1">❦</div>
-                      </div>
+                      <div className="h-full w-full bg-gradient-to-r from-transparent via-[#FFDE59] to-transparent rounded-full"></div>
                     </div>
                   </div>
                 </div>
@@ -183,22 +152,17 @@ const Hero = () => {
                 <div className="overflow-hidden mb-6 md:mb-8 w-full">
                 </div>
                 
-                {/* Mexican-style CTA button */}
+                {/* Stylish CTA button */}
                 <Link
                   to="contact"
                   spy={true}
                   smooth={true}
                   offset={-70}
                   duration={800}
-                  className="inline-block mt-2"
+                  className="inline-block"
                 >
                   <button 
-                    className="animate-fade-in-up animation-delay-500 cta-button bg-[#D41414]/90 text-white hover:bg-[#D41414] px-7 py-3 text-base font-['Libre_Baskerville'] border-[1px] border-[#FFDE59]/70 rounded-sm shadow-lg hover:shadow-xl transition-all duration-500 group tracking-wide"
-                    style={{
-                      letterSpacing: '0.06em',
-                      fontWeight: '700',
-                      boxShadow: '0 4px 8px rgba(0,0,0,0.3)'
-                    }}
+                    className="animate-fade-in-up animation-delay-500 cta-button bg-[#D41414]/90 text-white hover:bg-[#D41414] px-6 py-3 text-base rounded-full shadow-lg hover:shadow-xl transition-all duration-500 group font-medium tracking-wide"
                   >
                     {t("contact.hours.title")}
                   </button>
