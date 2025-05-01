@@ -586,3 +586,19 @@ html {
   @apply bg-white/90 backdrop-blur-md border border-white/20 shadow-xl;
 }
 
+/* Faded glass effect with no border line */
+.faded-glass {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.1) 40%,
+    rgba(0, 0, 0, 0.05) 60%,
+    rgba(0, 0, 0, 0.02) 80%,
+    transparent 100%
+  );
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease-in-out;
+}
+
