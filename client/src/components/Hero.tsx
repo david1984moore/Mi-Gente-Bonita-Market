@@ -125,13 +125,25 @@ const Hero = () => {
                   smooth={true}
                   offset={-70}
                   duration={500}
-                  className="group"
+                  className="inline-block"
                 >
-                  <Button 
-                    className="bg-[#D41414] hover:bg-[#D41414]/80 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 text-base tracking-wider shadow-lg hover:shadow-xl animate-in fade-in duration-700 delay-150 hover:scale-105 hover:translate-y-[-2px]"
-                  >
-                    Discover More
-                  </Button>
+                  <div className="relative group animate-in fade-in duration-700 delay-150">
+                    <div className="absolute -inset-0.5 bg-gradient-to-r from-[#FFD700] to-[#D41414] rounded-full blur opacity-30 group-hover:opacity-100 transition duration-500 group-hover:duration-200"></div>
+                    <button 
+                      className="relative bg-[#D41414] text-white font-medium py-3 px-8 rounded-full shadow-md transition-all duration-300 text-base tracking-wider group-hover:bg-[#D41414]/90 flex items-center justify-center"
+                    >
+                      <span>Discover More</span>
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        className="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" 
+                        fill="none" 
+                        viewBox="0 0 24 24" 
+                        stroke="currentColor"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </button>
+                  </div>
                 </Link>
               </div>
           </div>
