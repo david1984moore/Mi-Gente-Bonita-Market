@@ -135,7 +135,7 @@ const Testimonials = () => {
                 <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 tracking-tight text-[#1D1D1F]">
                   {t("testimonials.title")}
                 </h2>
-                <ChevronDown className="h-6 w-6 text-[#3D9C42]" />
+                <ChevronDown className="h-6 w-6 text-[#D41414]" />
               </button>
               <div className="h-1 w-16 bg-[#D41414] mx-auto my-4 rounded-full"></div>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto mt-4">
