@@ -126,26 +126,34 @@ const Hero = () => {
               {/* Content layout with Welcome to visible - no background */}
               <div className="relative z-10 flex flex-col items-center py-6 px-6 mb-10 -mt-12">
                 <div className="overflow-hidden w-full mb-1">
-                  <h1 className="text-xl sm:text-2xl md:text-4xl font-['Inter'] font-extrabold text-white tracking-tight animate-fade-in-down"
-                      style={{ textShadow: '0 1px 1px black, 0 2px 3px black, 0 3px 5px black', letterSpacing: '0.03em' }}>
+                  <h1 className="text-xl sm:text-2xl md:text-4xl font-['Libre_Baskerville'] text-white tracking-tight animate-fade-in-down"
+                      style={{ 
+                        textShadow: '0 1px 1px black, 0 2px 3px black, 0 3px 5px black', 
+                        letterSpacing: '0.05em'
+                      }}>
                     {t("hero.welcome")}
                   </h1>
                 </div>
                 
                 <div className="overflow-hidden mb-4 md:mb-6 w-full">
                   <div className="relative inline-block">
-                    <h2 className="text-[#FFE970] text-3xl sm:text-4xl md:text-6xl font-['Inter'] font-extrabold tracking-tight animate-fade-in-up"
+                    <h2 className="text-[#FFDE59] text-3xl sm:text-4xl md:text-6xl font-['Oleo_Script'] tracking-wide animate-fade-in-up"
                         style={{ 
                           textShadow: '0 1px 1px black, 0 2px 2px black, 0 4px 4px rgba(0,0,0,0.9), 0 6px 8px rgba(0,0,0,0.8)', 
-                          letterSpacing: '0.02em'
+                          letterSpacing: '0.02em',
+                          transform: 'rotate(-2deg)'
                         }}>
                       Mi Gente Bonita Market
                     </h2>
                     
-                    {/* Modern underline effect */}
-                    <div className="absolute -bottom-2 left-0 w-full h-[3px] animate-pulse-slow">
+                    {/* Decorative border effect */}
+                    <div className="absolute -bottom-6 left-0 w-full h-[3px] animate-pulse-slow">
                       <div className="h-full w-full bg-gradient-to-r from-transparent via-[#FFDE59] to-transparent rounded-full"></div>
                     </div>
+                    
+                    {/* Traditional Mexican style decorative elements */}
+                    <div className="absolute -left-10 -top-6 text-[#FFDE59] text-2xl" style={{ transform: 'rotate(-15deg)' }}>✻</div>
+                    <div className="absolute -right-10 -top-6 text-[#FFDE59] text-2xl" style={{ transform: 'rotate(15deg)' }}>✻</div>
                   </div>
                 </div>
                 
@@ -159,12 +167,26 @@ const Hero = () => {
                   smooth={true}
                   offset={-70}
                   duration={800}
-                  className="inline-block"
+                  className="inline-block mt-4"
                 >
                   <button 
-                    className="animate-fade-in-up animation-delay-500 cta-button bg-[#D41414]/90 text-white hover:bg-[#D41414] px-6 py-3 text-base rounded-full shadow-lg hover:shadow-xl transition-all duration-500 group font-medium tracking-wide"
+                    className="animate-fade-in-up animation-delay-500 cta-button relative bg-[#D41414]/90 text-white hover:bg-[#D41414] px-8 py-3 text-lg font-['Libre_Baskerville'] shadow-lg hover:shadow-xl transition-all duration-500 group tracking-wide border-2 border-[#FFDE59]/80"
+                    style={{ 
+                      borderRadius: '0.5rem',
+                      boxShadow: '0 4px 6px rgba(0,0,0,0.3)'
+                    }}
                   >
-                    {t("contact.hours.title")}
+                    <span className="relative z-10">{t("contact.hours.title")}</span>
+                    
+                    {/* Traditional Mexican-style decorative border on hover */}
+                    <span className="absolute inset-0 border-2 border-transparent group-hover:border-[#FFDE59] transition-all duration-300"
+                          style={{ borderRadius: '0.3rem', transform: 'scale(1.05)' }}></span>
+                    
+                    {/* Decorative corners */}
+                    <span className="absolute -left-1 -top-1 w-3 h-3 border-t-2 border-l-2 border-[#FFDE59]"></span>
+                    <span className="absolute -right-1 -top-1 w-3 h-3 border-t-2 border-r-2 border-[#FFDE59]"></span>
+                    <span className="absolute -left-1 -bottom-1 w-3 h-3 border-b-2 border-l-2 border-[#FFDE59]"></span>
+                    <span className="absolute -right-1 -bottom-1 w-3 h-3 border-b-2 border-r-2 border-[#FFDE59]"></span>
                   </button>
                 </Link>
               </div>
