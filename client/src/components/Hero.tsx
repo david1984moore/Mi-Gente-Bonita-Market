@@ -120,32 +120,7 @@ const Hero = () => {
               <p className="text-base sm:text-lg md:text-xl text-white mb-8 sm:mb-10 tracking-tight font-normal text-shadow-md hero-text-secondary max-w-xl mx-auto">
                 {t("hero.tagline")}
               </p>
-              <div className="flex gap-4 justify-center">
-                <Link
-                  to="about"
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                  className="inline-block"
-                >
-                  <div className="animate-in fade-in duration-700 delay-150">
-                    <Button 
-                      className="bg-gradient-to-r from-[#D41414] to-[#F1340F] text-white font-medium py-3 px-8 rounded-md shadow-lg hover:shadow-xl transition-all duration-300 text-base tracking-tight flex items-center justify-center group relative border-none hover:brightness-110 cta-button"
-                      onClick={() => {
-                        // Tactile feedback on click
-                        if (window.navigator.vibrate) {
-                          window.navigator.vibrate(50);
-                        }
-                      }}
-                    >
-                      <span className="relative z-10 group-hover:translate-x-1 transition-transform duration-300 ease-in-out font-semibold">
-                        {t("hero.discoverMore")}
-                      </span>
-                    </Button>
-                  </div>
-                </Link>
-              </div>
+
           </div>
         </div>
       </section>
