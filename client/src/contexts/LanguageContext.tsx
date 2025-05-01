@@ -217,10 +217,28 @@ const translations = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState<Language>('es'); // Default to Spanish
+  // Initialize with stored language or default to Spanish
+  const [language, setLanguage] = useState<Language>(() => {
+    try {
+      const storedLang = localStorage.getItem('language') as Language;
+      return storedLang === 'en' ? 'en' : 'es'; // Default to Spanish if not found or invalid
+    } catch (e) {
+      // If localStorage is not available (e.g., SSR or permissions issue)
+      return 'es';
+    }
+  });
 
   const toggleLanguage = () => {
-    setLanguage(prev => prev === 'es' ? 'en' : 'es');
+    setLanguage(prev => {
+      const newLang = prev === 'es' ? 'en' : 'es';
+      // Store the language preference with error handling
+      try {
+        localStorage.setItem('language', newLang);
+      } catch (e) {
+        console.warn('Could not store language preference', e);
+      }
+      return newLang;
+    });
   };
 
   const t = (key: string) => {
