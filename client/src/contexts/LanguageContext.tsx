@@ -60,6 +60,10 @@ const translations = {
     es: "Descubre Más",
     en: "Discover More"
   },
+  "hero.exploreBtn": {
+    es: "Explora Nuestro Mercado",
+    en: "Explore Our Market"
+  },
   
   // About
   "about.title": {

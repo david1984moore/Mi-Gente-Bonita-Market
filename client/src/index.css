@@ -547,3 +547,42 @@ html {
   z-index: 10;
 }
 
+/* Animation delay utility classes */
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+
+.animation-delay-700 {
+  animation-delay: 700ms;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1000ms;
+}
+
+/* Modern hero glass effect */
+.glass-hero {
+  @apply bg-white/5 backdrop-blur-sm border border-white/10 shadow-lg;
+}
+
+/* Modern frosted panel effect */
+.frosted-panel {
+  @apply bg-white/90 backdrop-blur-md border border-white/20 shadow-xl;
+}
+

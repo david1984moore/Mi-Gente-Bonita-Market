@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-scroll";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { ChevronDown } from "lucide-react";
 import freshNopales from "../assets/store-photos/fresh-nopales.png";
 import groceryAisle from "../assets/store-photos/grocery-aisle.png";
 import freshProduce from "../assets/store-photos/fresh-produce.png";
@@ -14,7 +15,10 @@ const Hero = () => {
   const [nextImageIndex, setNextImageIndex] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [scrollIndicatorVisible, setScrollIndicatorVisible] = useState(true);
   const { t } = useLanguage();
+  
+  const heroRef = useRef<HTMLDivElement>(null);
   
   const images = [
     { 
@@ -58,12 +62,18 @@ const Hero = () => {
     });
   }, []);
 
-  // Preload images for smoother transitions
+  // Hide scroll indicator when user scrolls down
   useEffect(() => {
-    images.forEach(image => {
-      const img = new Image();
-      img.src = image.src;
-    });
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setScrollIndicatorVisible(false);
+      } else {
+        setScrollIndicatorVisible(true);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
@@ -88,14 +98,17 @@ const Hero = () => {
   }, [nextImageIndex, images.length]);
 
   return (
-    <div className="relative overflow-hidden" style={{ height: '92vh', paddingTop: '0' }}>
+    <div ref={heroRef} className="relative overflow-hidden" style={{ height: '100vh', paddingTop: '0' }}>
+      {/* Modern gradient overlay for images */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60 z-5"></div>
+      
       {/* Active images layer - both visible during transition */}
       {images.map((image, index) => (
         <div 
           key={index}
           className="absolute inset-0 hero-slide"
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.4)), url(${image.src})`,
+            backgroundImage: `url(${image.src})`,
             backgroundSize: 'cover',
             backgroundPosition: image.position,
             opacity: index === currentImageIndex ? (isTransitioning ? 0 : 1) : (index === nextImageIndex ? 1 : 0),
@@ -105,28 +118,94 @@ const Hero = () => {
         />
       ))}
       
+      {/* Cinematic dark vignette for depth */}
+      <div className="absolute inset-0 z-15 opacity-50 pointer-events-none" 
+           style={{ 
+             background: 'radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.4) 85%, rgba(0,0,0,0.6) 100%)'
+           }}>
+      </div>
+      
       <section 
         id="home" 
-        className="relative z-20 flex items-center justify-center pt-20 sm:pt-24 md:pt-28 h-full mb-none"
+        className="relative z-20 flex items-center justify-center h-full mb-none px-4"
       >
-        <div className="container mx-auto px-6 text-center">
-          <div className="max-w-3xl mx-auto relative z-10 animate-in slide-in-from-bottom duration-700">
-              <h1 className="text-2xl sm:text-3xl md:text-5xl font-['Inter'] font-bold text-white mb-2 md:mb-3 tracking-tight text-shadow-md hero-text-primary">
-                {t("hero.welcome")}
-              </h1>
-              <h2 className="text-[#FFDE59] text-3xl sm:text-4xl md:text-6xl font-['Inter'] font-bold mb-5 md:mb-6 tracking-tight text-shadow-md hero-title-highlight drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">
-                Mi Gente Bonita Market
-              </h2>
-              <p className="text-base sm:text-lg md:text-xl text-white mb-8 sm:mb-10 tracking-tight font-normal text-shadow-md hero-text-secondary max-w-xl mx-auto">
-                {t("hero.tagline")}
-              </p>
-
+        <div className="w-full max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            <div className="md:col-span-8 md:col-start-3 text-center relative">
+              {/* Modern, animated reveal content */}
+              <div className="relative z-10 flex flex-col items-center">
+                <div className="overflow-hidden mb-3 md:mb-5 w-full">
+                  <h1 className="text-2xl sm:text-3xl md:text-5xl font-['Inter'] font-bold text-white tracking-tight animate-fade-in-down">
+                    {t("hero.welcome")}
+                  </h1>
+                </div>
+                
+                <div className="overflow-hidden mb-6 md:mb-8 w-full">
+                  <div className="relative inline-block">
+                    <h2 className="text-[#FFDE59] text-3xl sm:text-4xl md:text-7xl font-['Inter'] font-bold tracking-tight text-shadow-lg animate-fade-in-up drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+                      Mi Gente Bonita Market
+                    </h2>
+                    
+                    {/* Modern underline effect */}
+                    <div className="absolute -bottom-2 left-0 w-full h-[3px] animate-pulse-slow">
+                      <div className="h-full w-full bg-gradient-to-r from-transparent via-[#FFDE59] to-transparent rounded-full"></div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="overflow-hidden mb-10 md:mb-12 w-full">
+                  <p className="text-base sm:text-xl md:text-2xl text-white tracking-tight font-light animate-fade-in-up animation-delay-300 max-w-2xl mx-auto leading-relaxed">
+                    {t("hero.tagline")}
+                  </p>
+                </div>
+                
+                {/* Stylish CTA button */}
+                <Link
+                  to="about"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={800}
+                >
+                  <Button 
+                    className="animate-fade-in-up animation-delay-500 cta-button bg-[#D41414]/90 text-white hover:bg-[#D41414] px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-500 group"
+                  >
+                    {t("hero.exploreBtn")}
+                    <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
+                  </Button>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
       
-      {/* Simple divider */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-white z-10"></div>
+      {/* Modern scroll indicator */}
+      {scrollIndicatorVisible && (
+        <div className="absolute bottom-16 left-0 right-0 z-20 flex justify-center animate-bounce transition-opacity duration-500">
+          <Link
+            to="about"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={800}
+            className="text-white hover:text-[#FFDE59] transition-colors duration-300 cursor-pointer p-2"
+          >
+            <ChevronDown className="h-8 w-8" />
+          </Link>
+        </div>
+      )}
+      
+      {/* Modern wave divider */}
+      <div className="absolute bottom-0 left-0 right-0 z-10 text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 180" preserveAspectRatio="none" className="w-full h-auto">
+          <path 
+            fill="currentColor" 
+            fillOpacity="1" 
+            d="M0,128L48,122.7C96,117,192,107,288,96C384,85,480,75,576,90.7C672,107,768,149,864,154.7C960,160,1056,128,1152,112C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+          ></path>
+        </svg>
+      </div>
     </div>
   );
 };
