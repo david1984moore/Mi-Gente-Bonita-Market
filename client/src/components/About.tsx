@@ -1,20 +1,22 @@
 import { MapPin, Facebook, Clock, ShoppingCart, Users, Flag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-scroll";
+import { useLanguage } from "@/contexts/LanguageContext";
 import storefront from "../assets/store-photos/storefront.png";
 import customerTomatoes from "../assets/store-photos/customer-tomatoes.png";
 
 const About = () => {
+  const { t } = useLanguage();
   return (
     <section id="about" className="pt-8 pb-10 md:pt-10 md:pb-12 bg-gradient-to-b from-[#F8FDF9] to-white section-connector">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 relative inline-block">
-              About Our Market
+              {t("about.title")}
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto mt-4">
-              Serving our community with pride since 2023
+              {t("about.subtitle")}
             </p>
           </div>
           
@@ -44,16 +46,16 @@ const About = () => {
             <div className="order-1 lg:order-2">
               <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
                 <h3 className="text-2xl font-['Poppins'] font-bold mb-6 text-[#3D9C42] relative inline-block">
-                  Our Story
+                  {t("about.storyTitle")}
                   <span className="absolute left-0 right-0 bottom-[-4px] h-0.5 bg-[#3D9C42]/30"></span>
                 </h3>
                 
                 <p className="mb-6 text-gray-700 leading-relaxed">
-                  Mi Gente Bonita Market was founded with a simple mission: to bring authentic Latino products to our community in Delaware. What started as a small family business has grown into a beloved neighborhood market with two locations in Wilmington and Newark.
+                  {t("about.storyPart1")}
                 </p>
                 
                 <p className="mb-8 text-gray-700 leading-relaxed">
-                  We take pride in offering a wide variety of products imported directly from Latin America, along with freshly prepared foods that remind our customers of home. Our market serves as both a grocery store and a cultural hub where our community can connect.
+                  {t("about.storyPart2")}
                 </p>
                 
                 
@@ -68,7 +70,7 @@ const About = () => {
                     className="group"
                   >
                     <Button className="bg-[#D41414] hover:bg-[#B51212] text-white py-2 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 inline-flex items-center group-hover:translate-y-[-2px]">
-                      <MapPin className="h-4 w-4 mr-2" /> Visit Us
+                      <MapPin className="h-4 w-4 mr-2" /> {t("about.visitUs")}
                     </Button>
                   </Link>
                 </div>

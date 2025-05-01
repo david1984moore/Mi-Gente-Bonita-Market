@@ -13,6 +13,8 @@ const Navbar = () => {
   // Create a ref for the mobile menu
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
+  // Use language context
+  const { language, toggleLanguage, t } = useLanguage();
 
   // Function to toggle menu with proper focus handling
   const toggleMenu = () => {
@@ -69,10 +71,10 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { to: "about", label: "About", icon: null },
-    { to: "gallery", label: "Products", icon: null },
-    { to: "testimonials", label: "Reviews", icon: null },
-    { to: "contact", label: "Contact", icon: <Phone className="h-4 w-4" /> },
+    { to: "about", label: t("navbar.about"), icon: null },
+    { to: "gallery", label: t("navbar.products"), icon: null },
+    { to: "testimonials", label: t("navbar.reviews"), icon: null },
+    { to: "contact", label: t("navbar.contact"), icon: <Phone className="h-4 w-4" /> },
   ];
 
   return (
@@ -146,11 +148,22 @@ const Navbar = () => {
             }`}
           >
             <Phone className="h-4 w-4 mr-1" />
-            <span className="uppercase">Contact</span>
+            <span className="uppercase">{t("navbar.contact")}</span>
             {activeSection === "contact" && (
               <span className="absolute -bottom-1.5 left-0 w-full h-[2.5px] bg-gradient-to-r from-[#D41414]/30 via-[#D41414] to-[#D41414]/30 rounded-full"></span>
             )}
           </Link>
+
+          {/* Language toggle button */}
+          <button
+            onClick={toggleLanguage}
+            className="flex items-center justify-center p-2 bg-[#1D3557] hover:bg-[#152538] text-white rounded-full transition-colors duration-300 ml-2"
+            title={language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+            aria-label={language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+          >
+            <Globe className="h-4 w-4" />
+            <span className="ml-1 text-xs font-bold">{language === 'es' ? 'EN' : 'ES'}</span>
+          </button>
         </div>
       </nav>
       
@@ -176,14 +189,26 @@ const Navbar = () => {
               style={{ position: 'fixed' }}
             >
               <div className="flex justify-between items-center p-4 border-b sticky top-0 bg-white z-10">
-                <h3 className="font-bold text-lg text-[#D41414]">Menu</h3>
-                <button 
-                  onClick={toggleMenu}
-                  className="text-gray-500 hover:text-[#D41414] focus:outline-none"
-                  aria-label="Close navigation menu"
-                >
-                  <X className="h-6 w-6" />
-                </button>
+                <h3 className="font-bold text-lg text-[#D41414]">{t("navbar.menu")}</h3>
+                <div className="flex items-center gap-2">
+                  {/* Language toggle for mobile */}
+                  <button
+                    onClick={toggleLanguage}
+                    className="flex items-center justify-center p-2 bg-[#1D3557] hover:bg-[#152538] text-white rounded-full transition-colors duration-300"
+                    title={language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+                    aria-label={language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+                  >
+                    <Globe className="h-4 w-4" />
+                    <span className="ml-1 text-xs font-bold">{language === 'es' ? 'EN' : 'ES'}</span>
+                  </button>
+                  <button 
+                    onClick={toggleMenu}
+                    className="text-gray-500 hover:text-[#D41414] focus:outline-none"
+                    aria-label="Close navigation menu"
+                  >
+                    <X className="h-6 w-6" />
+                  </button>
+                </div>
               </div>
               
               <div className="px-4 py-6 space-y-6 flex-1 overflow-y-auto pb-20">
@@ -216,7 +241,7 @@ const Navbar = () => {
                     onClick={toggleMenu}
                   >
                     <Phone className="h-5 w-5 mr-2" />
-                    <span>Call Us</span>
+                    <span>{t("navbar.callUs")}</span>
                   </a>
                   
                   <a
@@ -227,7 +252,7 @@ const Navbar = () => {
                     onClick={toggleMenu}
                   >
                     <MapPin className="h-5 w-5 mr-2" />
-                    <span>Get Directions</span>
+                    <span>{t("navbar.getDirections")}</span>
                   </a>
                   
                   <a

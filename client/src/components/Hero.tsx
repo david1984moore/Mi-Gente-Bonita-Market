@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 import freshNopales from "../assets/store-photos/fresh-nopales.png";
 import groceryAisle from "../assets/store-photos/grocery-aisle.png";
 import freshProduce from "../assets/store-photos/fresh-produce.png";
@@ -13,6 +14,7 @@ const Hero = () => {
   const [nextImageIndex, setNextImageIndex] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [imagesLoaded, setImagesLoaded] = useState(false);
+  const { t } = useLanguage();
   
   const images = [
     { 
@@ -110,13 +112,13 @@ const Hero = () => {
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-2xl mx-auto relative z-10 animate-in slide-in-from-bottom duration-700">
               <h1 className="text-2xl sm:text-3xl md:text-5xl font-['Poppins'] font-bold text-white mb-2 md:mb-3 tracking-wide text-shadow-lg hero-text-primary">
-                Bienvenidos a
+                {t("hero.welcome")}
               </h1>
               <h2 className="text-[#FFD700] text-3xl sm:text-4xl md:text-6xl font-['Poppins'] font-bold mb-5 md:mb-6 tracking-wider text-shadow-lg hero-title-highlight drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]">
                 Mi Gente Bonita Market
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-white mb-8 sm:mb-10 tracking-wide font-medium text-shadow-lg hero-text-secondary max-w-xl mx-auto">
-                Your trusted source for authentic Latino products
+                {t("hero.tagline")}
               </p>
               <div className="flex gap-4 justify-center">
                 <Link
@@ -138,7 +140,7 @@ const Hero = () => {
                       }}
                     >
                       <span className="relative z-10 group-hover:scale-105 transition-transform duration-300 ease-in-out">
-                        Discover More
+                        {t("hero.discoverMore")}
                       </span>
                       <span className="absolute inset-0 bg-radial-gradient from-[#FFD700]/40 via-[#D41414]/0 to-[#D41414]/0 opacity-0 group-hover:opacity-100 scale-0 group-hover:scale-100 transition-all duration-500 ease-out"></span>
                     </Button>
