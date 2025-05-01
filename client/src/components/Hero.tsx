@@ -109,40 +109,15 @@ const Hero = () => {
       >
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-2xl mx-auto relative z-10">
-            {/* Enhanced glass effect container with decorative border */}
-            <div className="bg-black/40 p-6 sm:p-9 rounded-xl backdrop-blur-md border border-white/15 shadow-[0_10px_50px_rgba(0,0,0,0.3)] animate-in slide-in-from-bottom duration-700 relative overflow-hidden">
-              {/* Subtle accent corners */}
-              <div className="absolute top-0 left-0 w-10 h-10 border-t-2 border-l-2 border-[#FFD700]/50 rounded-tl-lg"></div>
-              <div className="absolute top-0 right-0 w-10 h-10 border-t-2 border-r-2 border-[#FFD700]/50 rounded-tr-lg"></div>
-              <div className="absolute bottom-0 left-0 w-10 h-10 border-b-2 border-l-2 border-[#FFD700]/50 rounded-bl-lg"></div>
-              <div className="absolute bottom-0 right-0 w-10 h-10 border-b-2 border-r-2 border-[#FFD700]/50 rounded-br-lg"></div>
-              
-              {/* Main heading with enhanced styling */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-['Poppins'] font-bold text-white mb-3 md:mb-5 tracking-wide text-shadow-lg elegant-text hero-text-primary">
-                <span className="inline-block mt-1 relative">
-                  Bienvenidos a
-                  <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-20 h-[1px] bg-white/40"></span>
-                </span>
-                <br /> 
-                <span 
-                  className="text-[#FFD700] inline-block mt-2 md:mt-3 hero-title-highlight relative"
-                  style={{ animation: 'textGlow 3.5s ease-in-out infinite' }}
-                >
-                  Mi Gente Bonita Market
-                  {/* Decorative line below the main title */}
-                  <span className="absolute -bottom-2 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#FFD700] to-transparent"></span>
-                </span>
+            {/* Modern glass effect container */}
+            <div className="bg-black/30 p-6 sm:p-8 rounded-xl backdrop-blur-sm border border-white/10 shadow-2xl animate-in slide-in-from-bottom duration-700">
+              <h1 className="text-2xl sm:text-3xl md:text-5xl font-['Poppins'] font-bold text-white mb-3 md:mb-4 tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,1)] elegant-text hero-text-primary">
+                <span className="inline-block mt-1">Bienvenidos a</span><br /> 
+                <span className="text-[#FFD700] inline-block mt-1 md:mt-2 hero-title-highlight drop-shadow-[0_2px_5px_rgba(0,0,0,1)]">Mi Gente Bonita Market</span>
               </h1>
-              
-              {/* Enhanced subtitle with better spacing and animation */}
-              <p className="text-base sm:text-lg md:text-xl text-white/95 mb-7 sm:mb-9 tracking-wider font-medium drop-shadow-[0_2px_5px_rgba(0,0,0,1)] elegant-text hero-text-secondary max-w-xl mx-auto relative">
-                <span className="relative">
-                  Your trusted source for authentic Latino products
-                  <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-[1px] bg-white/30"></span>
-                </span>
+              <p className="text-base sm:text-lg md:text-xl text-white/95 mb-6 sm:mb-8 tracking-wider font-medium drop-shadow-[0_2px_5px_rgba(0,0,0,1)] elegant-text hero-text-secondary max-w-xl mx-auto">
+                Your trusted source for authentic Latino products
               </p>
-              
-              {/* Button with enhanced hover effect */}
               <div className="flex gap-4 justify-center">
                 <Link
                   to="about"
@@ -150,11 +125,10 @@ const Hero = () => {
                   smooth={true}
                   offset={-70}
                   duration={500}
-                  className="group relative"
+                  className="group"
                 >
-                  <div className="absolute -inset-0.5 bg-gradient-to-r from-[#FFD700] to-[#D41414] opacity-75 rounded-lg blur-sm group-hover:opacity-100 transition duration-300"></div>
                   <Button 
-                    className="relative bg-[#D41414] hover:bg-[#D41414]/90 text-white font-medium py-2.5 px-7 rounded-lg transition duration-300 text-base tracking-wider shadow-lg hover:shadow-xl group-hover:translate-y-[-2px]"
+                    className="bg-[#D41414]/90 hover:bg-[#D41414] text-white font-medium py-2.5 px-6 rounded-lg transition duration-300 text-base tracking-wider shadow-lg hover:shadow-xl group-hover:translate-y-[-2px]"
                   >
                     Discover More
                   </Button>
