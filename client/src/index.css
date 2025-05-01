@@ -18,6 +18,11 @@
   animation: pulse-border 1.5s infinite;
 }
 
+/* Radial gradient for buttons */
+.bg-radial-gradient {
+  background: radial-gradient(circle, var(--from, rgba(255, 215, 0, 0.4)) 0%, var(--via, rgba(212, 20, 20, 0)) 50%, var(--to, rgba(212, 20, 20, 0)) 100%);
+}
+
 :root {
   --background: 0 0% 100%;
   --foreground: 220 14% 10%;

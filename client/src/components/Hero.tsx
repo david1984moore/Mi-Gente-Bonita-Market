@@ -137,10 +137,10 @@ const Hero = () => {
                         }
                       }}
                     >
-                      <span className="relative z-10 group-hover:translate-x-1 transition-transform duration-300 ease-in-out">
+                      <span className="relative z-10 group-hover:scale-105 transition-transform duration-300 ease-in-out">
                         Discover More
                       </span>
-                      <span className="absolute inset-0 bg-gradient-to-r from-[#D41414]/0 via-[#D41414]/0 to-[#FFD700]/30 opacity-0 group-hover:opacity-100 transform group-hover:translate-x-full transition-all duration-700 ease-in-out"></span>
+                      <span className="absolute inset-0 bg-radial-gradient from-[#FFD700]/40 via-[#D41414]/0 to-[#D41414]/0 opacity-0 group-hover:opacity-100 scale-0 group-hover:scale-100 transition-all duration-500 ease-out"></span>
                     </Button>
                   </div>
                 </Link>
