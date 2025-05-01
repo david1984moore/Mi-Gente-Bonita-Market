@@ -128,7 +128,7 @@ const Hero = () => {
                   className="group"
                 >
                   <Button 
-                    className="bg-[#D41414] hover:bg-[#D41414]/90 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 text-base tracking-wider shadow-lg hover:shadow-xl group-hover:translate-y-[-2px] animate-in fade-in duration-700 delay-150"
+                    className="bg-[#D41414] hover:bg-[#D41414]/90 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 text-base tracking-wider shadow-lg hover:shadow-xl transform hover:scale-105 group-hover:translate-y-[-2px] relative overflow-hidden animate-in fade-in duration-700 delay-150 after:absolute after:inset-0 after:z-[-1] after:bg-gradient-to-r after:from-[#D41414]/80 after:to-[#D41414] after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500"
                   >
                     Discover More
                   </Button>
