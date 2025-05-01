@@ -83,8 +83,8 @@ const Hero = () => {
 
   return (
     <div ref={heroRef} className="relative overflow-hidden" style={{ height: '100vh', paddingTop: '1rem' }}>
-      {/* Enhanced gradient overlay for better text visibility */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70 z-5"></div>
+      {/* Darker shade overlay for text readability */}
+      <div className="absolute inset-0 bg-black/50 z-5"></div>
       
       {/* Active images layer - both visible during transition */}
       {images.map((image, index) => (
@@ -103,9 +103,9 @@ const Hero = () => {
       ))}
       
       {/* Enhanced cinematic dark vignette for better text visibility */}
-      <div className="absolute inset-0 z-15 opacity-70 pointer-events-none" 
+      <div className="absolute inset-0 z-15 opacity-60 pointer-events-none" 
            style={{ 
-             background: 'radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.5) 65%, rgba(0,0,0,0.7) 100%)'
+             background: 'radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.4) 65%, rgba(0,0,0,0.6) 100%)'
            }}>
       </div>
       
@@ -116,8 +116,8 @@ const Hero = () => {
         <div className="w-full max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             <div className="md:col-span-8 md:col-start-3 text-center relative">
-              {/* Content layout with Welcome to visible */}
-              <div className="relative z-10 flex flex-col items-center bg-black/30 py-6 px-6 rounded-xl mb-10 -mt-12">
+              {/* Content layout with Welcome to visible - no background */}
+              <div className="relative z-10 flex flex-col items-center py-6 px-6 mb-10 -mt-12">
                 <div className="overflow-hidden w-full mb-1">
                   <h1 className="text-xl sm:text-2xl md:text-4xl font-['Inter'] font-bold text-white tracking-tight animate-fade-in-down text-shadow-md">
                     {t("hero.welcome")}
