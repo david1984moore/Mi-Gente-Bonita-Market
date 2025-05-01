@@ -327,6 +327,10 @@ html {
   letter-spacing: 0.02em;
 }
 
+.letter-spacing-wider {
+  letter-spacing: 0.04em;
+}
+
 .hero-text-primary {
   animation: fadeInUp 1s ease-out forwards;
 }
@@ -578,7 +582,24 @@ html {
 
 /* Modern hero glass effect */
 .glass-hero {
-  @apply bg-white/5 backdrop-blur-sm border border-white/10 shadow-lg;
+  @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-xl;
+  position: relative;
+  transition: all 0.5s ease;
+}
+
+.glass-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  opacity: 0.7;
+  z-index: -1;
+  border-radius: inherit;
+}
+
+.glass-hero:hover {
+  @apply bg-white/15;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 /* Modern frosted panel effect */
