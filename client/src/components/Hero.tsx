@@ -128,11 +128,20 @@ const Hero = () => {
                   className="inline-block"
                 >
                   <div className="animate-in fade-in duration-700 delay-150">
-                    <button 
-                      className="bg-[#D41414] text-white font-medium py-3 px-8 rounded-full shadow-md hover:shadow-md transition-all duration-300 text-base tracking-wider hover:bg-[#D41414]/90 flex items-center justify-center"
+                    <Button 
+                      className="bg-[#D41414] text-white font-medium py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-base tracking-wider hover:bg-[#D41414]/90 flex items-center justify-center group relative overflow-hidden"
+                      onClick={() => {
+                        // Tactile feedback on click
+                        if (window.navigator.vibrate) {
+                          window.navigator.vibrate(50);
+                        }
+                      }}
                     >
-                      <span>Discover More</span>
-                    </button>
+                      <span className="relative z-10 group-hover:translate-x-1 transition-transform duration-300 ease-in-out">
+                        Discover More
+                      </span>
+                      <span className="absolute inset-0 bg-gradient-to-r from-[#D41414]/0 via-[#D41414]/0 to-[#FFD700]/30 opacity-0 group-hover:opacity-100 transform group-hover:translate-x-full transition-all duration-700 ease-in-out"></span>
+                    </Button>
                   </div>
                 </Link>
               </div>
