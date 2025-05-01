@@ -126,13 +126,8 @@ const Hero = () => {
                 
                 <div className="overflow-hidden mb-4 md:mb-6 w-full">
                   <div className="relative inline-block">
-                    <h2 className="gold-gradient-text text-3xl sm:text-4xl md:text-6xl font-['Inter'] font-bold tracking-wider animate-fade-in-up"
-                        style={{ 
-                          letterSpacing: '0.03em',
-                          padding: '0.1em 0',
-                          textShadow: '0 1px 1px rgba(0,0,0,0.3)',
-                          transform: 'perspective(500px) translateZ(10px)',
-                        }}>
+                    <h2 className="text-[#FFDE59] text-3xl sm:text-4xl md:text-6xl font-['Inter'] font-bold tracking-tight animate-fade-in-up"
+                        style={{ textShadow: '0 1px 3px rgba(0,0,0,0.6), 0 2px 5px rgba(0,0,0,0.5)' }}>
                       Mi Gente Bonita Market
                     </h2>
                     
