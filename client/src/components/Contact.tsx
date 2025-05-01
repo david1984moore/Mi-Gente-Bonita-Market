@@ -21,9 +21,6 @@ const Contact = () => {
             {t("contact.title")}
           </h2>
           <div className="h-1 w-16 bg-[#D41414] mx-auto my-4 rounded-full"></div>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto mt-4">
-            {t("contact.subtitle")}
-          </p>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
