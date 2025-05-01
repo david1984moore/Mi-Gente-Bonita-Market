@@ -95,8 +95,8 @@ const Contact = () => {
                   <div>
                     <h4 className="font-bold text-lg mb-2 text-gray-800">{t("contact.hours.title")}</h4>
                     <div>
-                      <p className="text-gray-700 text-base leading-tight">{t("contact.hours.everyday")}: 8:30 AM - 9:00 PM</p>
-                      <p className="text-gray-700 text-base leading-tight">{t("contact.hours.everyday")}: 8:30 AM - 8:00 PM</p>
+                      <p className="text-gray-700 text-base leading-tight">{t("contact.hours.weekdays")}: 8:30 AM - 9:00 PM</p>
+                      <p className="text-gray-700 text-base leading-tight">{t("contact.hours.sunday")}: 8:30 AM - 8:00 PM</p>
                     </div>
                   </div>
                 </div>
