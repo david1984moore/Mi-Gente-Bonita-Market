@@ -2,12 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { 
-  Accordion, 
-  AccordionContent, 
-  AccordionItem, 
-  AccordionTrigger 
-} from "@/components/ui/accordion";
+import { MobileToggle } from "@/components/ui/mobile-toggle";
 import groceryAisle from "../assets/store-photos/grocery-aisle.png";
 import freshProduce from "../assets/store-photos/fresh-produce.png";
 import freshLemons from "../assets/store-photos/fresh-lemons.png";
@@ -196,16 +191,9 @@ const Gallery = () => {
 
         {/* Conditionally render collapsible content on mobile */}
         {mounted && isMobile ? (
-          <Accordion type="single" collapsible defaultValue="gallery-content">
-            <AccordionItem value="gallery-content" className="border-b-0">
-              <AccordionTrigger className="py-3 text-center justify-center text-base font-semibold bg-[#F8F8F8] hover:bg-[#F0F0F0] rounded-md text-[#1D1D1F]">
-                {t("common.showContent")}
-              </AccordionTrigger>
-              <AccordionContent className="pt-6">
-                {galleryGrid}
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+          <MobileToggle title={t("common.showContent")} defaultOpen={true}>
+            {galleryGrid}
+          </MobileToggle>
         ) : (
           galleryGrid
         )}

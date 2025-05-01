@@ -2,12 +2,7 @@ import { Star, StarHalf, Quote } from "lucide-react";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { 
-  Accordion, 
-  AccordionContent, 
-  AccordionItem, 
-  AccordionTrigger 
-} from "@/components/ui/accordion";
+import { MobileToggle } from "@/components/ui/mobile-toggle";
 import { useState, useEffect } from "react";
 
 interface TestimonialProps {

@@ -1,12 +1,7 @@
 import { ShoppingBasket, Utensils, Heart, MapPin } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { 
-  Accordion, 
-  AccordionContent, 
-  AccordionItem, 
-  AccordionTrigger 
-} from "@/components/ui/accordion";
+import { MobileToggle } from "@/components/ui/mobile-toggle";
 import { useState, useEffect } from "react";
 
 interface FeatureProps {
@@ -90,16 +85,9 @@ const Features = () => {
         </div>
         
         {mounted && isMobile ? (
-          <Accordion type="single" collapsible defaultValue="features-content">
-            <AccordionItem value="features-content" className="border-b-0">
-              <AccordionTrigger className="py-3 text-center justify-center text-base font-semibold bg-[#F8F8F8] hover:bg-[#F0F0F0] rounded-md text-[#1D1D1F]">
-                {t("common.showContent")}
-              </AccordionTrigger>
-              <AccordionContent className="pt-6">
-                {featuresContent}
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+          <MobileToggle title={t("common.showContent")} defaultOpen={true}>
+            {featuresContent}
+          </MobileToggle>
         ) : (
           featuresContent
         )}

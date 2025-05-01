@@ -3,12 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-scroll";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { 
-  Accordion, 
-  AccordionContent, 
-  AccordionItem, 
-  AccordionTrigger 
-} from "@/components/ui/accordion";
+import { MobileToggle } from "@/components/ui/mobile-toggle";
 import storefront from "../assets/store-photos/storefront.png";
 import customerTomatoes from "../assets/store-photos/customer-tomatoes.png";
 import { useState, useEffect } from "react";
@@ -90,16 +85,9 @@ const About = () => {
           </div>
           
           {mounted && isMobile ? (
-            <Accordion type="single" collapsible defaultValue="about-content">
-              <AccordionItem value="about-content" className="border-b-0">
-                <AccordionTrigger className="py-3 text-center justify-center text-base font-semibold bg-[#F8F8F8] hover:bg-[#F0F0F0] rounded-md text-[#1D1D1F]">
-                  {t("common.showContent")}
-                </AccordionTrigger>
-                <AccordionContent className="pt-6">
-                  {aboutContent}
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+            <MobileToggle title={t("common.showContent")} defaultOpen={true}>
+              {aboutContent}
+            </MobileToggle>
           ) : (
             aboutContent
           )}
