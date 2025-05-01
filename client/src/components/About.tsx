@@ -38,10 +38,6 @@ const About = () => {
       
       <div className="order-1 lg:order-2">
         <div className="bg-white p-0 sm:p-2">
-          <h3 className="text-2xl font-['Inter'] font-bold mb-6 text-[#1D1D1F] relative">
-            {t("about.storyTitle")}
-          </h3>
-          
           <p className="mb-6 text-[#4B5563] leading-relaxed text-base">
             {t("about.storyPart1")}
           </p>
