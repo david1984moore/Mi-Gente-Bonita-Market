@@ -10,6 +10,10 @@ type LanguageContextType = {
 
 const translations = {
   // Navbar
+  "navbar.home": {
+    es: "Inicio",
+    en: "Home"
+  },
   "navbar.about": {
     es: "Acerca De",
     en: "About"

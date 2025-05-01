@@ -1,9 +1,11 @@
 import { Link } from "react-scroll";
 import { Logo } from "../assets/logo";
 import { Facebook, Phone, MapPin, Heart, ArrowUp } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
   const year = new Date().getFullYear();
+  const { t } = useLanguage();
   
   const scrollToTop = () => {
     window.scrollTo({
@@ -50,7 +52,7 @@ const Footer = () => {
             {/* Quick Links */}
             <div>
               <h3 className="text-lg font-bold mb-4 relative inline-block">
-                Quick Links
+                {t("navbar.menu")}
                 <span className="absolute left-0 bottom-[-6px] w-12 h-0.5 bg-white/30"></span>
               </h3>
               <ul className="space-y-3 mt-6">
@@ -64,7 +66,7 @@ const Footer = () => {
                     className="text-white/90 hover:text-white hover:translate-x-1 transition-all duration-300 cursor-pointer flex items-center"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-[#FFD700] mr-2"></span>
-                    Home
+                    {t("navbar.home")}
                   </Link>
                 </li>
                 
@@ -78,7 +80,7 @@ const Footer = () => {
                     className="text-white/90 hover:text-white hover:translate-x-1 transition-all duration-300 cursor-pointer flex items-center"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-[#FFD700] mr-2"></span>
-                    About
+                    {t("navbar.about")}
                   </Link>
                 </li>
                 <li>
@@ -91,7 +93,7 @@ const Footer = () => {
                     className="text-white/90 hover:text-white hover:translate-x-1 transition-all duration-300 cursor-pointer flex items-center"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-[#FFD700] mr-2"></span>
-                    Products
+                    {t("navbar.products")}
                   </Link>
                 </li>
                 <li>
