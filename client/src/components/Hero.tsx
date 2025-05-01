@@ -126,26 +126,111 @@ const Hero = () => {
               {/* Content layout with Welcome to visible - no background */}
               <div className="relative z-10 flex flex-col items-center py-6 px-6 mb-10 -mt-12">
                 <div className="overflow-hidden w-full mb-1">
-                  <h1 className="text-xl sm:text-2xl md:text-4xl font-['Inter'] font-extrabold text-white tracking-tight animate-fade-in-down"
-                      style={{ textShadow: '0 1px 1px black, 0 2px 3px black, 0 3px 5px black', letterSpacing: '0.03em' }}>
-                    {t("hero.welcome")}
+                  <h1 className="text-xl sm:text-2xl md:text-4xl font-serif font-bold text-white tracking-tight animate-fade-in-down"
+                      style={{ 
+                        textShadow: '0 1px 1px black, 0 2px 3px black, 0 3px 5px black', 
+                        letterSpacing: '0.05em'
+                      }}>
+                    <span className="inline-block px-4 py-1 bg-[#58180B]/80 border-t border-b border-[#FFD700]/40 transform -rotate-1">
+                      {t("hero.welcome")}
+                    </span>
                   </h1>
                 </div>
                 
                 <div className="overflow-hidden mb-4 md:mb-6 w-full">
-                  <div className="relative inline-block">
-                    <h2 className="text-[#FFE970] text-3xl sm:text-4xl md:text-6xl font-['Inter'] font-extrabold tracking-tight animate-fade-in-up"
-                        style={{ 
-                          textShadow: '0 1px 1px black, 0 2px 2px black, 0 4px 4px rgba(0,0,0,0.9), 0 6px 8px rgba(0,0,0,0.8)', 
-                          letterSpacing: '0.02em'
-                        }}>
-                      Mi Gente Bonita Market
-                    </h2>
+                  <div className="relative mx-auto max-w-5xl px-8 py-6 rounded-lg" 
+                      style={{ 
+                        background: 'linear-gradient(to right, rgba(88,24,11,0.8), rgba(140, 0, 0, 0.8), rgba(88,24,11,0.8))',
+                        border: '4px double #FFD700',
+                        boxShadow: '0 8px 24px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,215,0,0.3) inset',
+                        transform: 'rotate(-1deg)'
+                      }}>
                     
-                    {/* Modern underline effect */}
-                    <div className="absolute -bottom-2 left-0 w-full h-[3px] animate-pulse-slow">
-                      <div className="h-full w-full bg-gradient-to-r from-transparent via-[#FFDE59] to-transparent rounded-full"></div>
+                    {/* Vintage decorative elements - top */}
+                    <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-24 h-6 flex justify-center items-center">
+                      <div className="w-full h-0.5 bg-[#FFD700]"></div>
+                      <div className="absolute w-2 h-2 bg-[#FFD700] rounded-full left-0 top-1/2 transform -translate-y-1/2"></div>
+                      <div className="absolute w-2 h-2 bg-[#FFD700] rounded-full right-0 top-1/2 transform -translate-y-1/2"></div>
                     </div>
+                    
+                    {/* "Mi Gente Bonita" part */}
+                    <div className="mb-2 relative pt-4">
+                      <h2 className="text-[#FFD700] text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-wide animate-fade-in-up"
+                          style={{ 
+                            fontFamily: 'serif',
+                            textShadow: '0 2px 2px rgba(139, 0, 0, 0.9), 0 4px 4px rgba(0,0,0,0.7), 0 6px 8px rgba(0,0,0,0.5)',
+                            letterSpacing: '0.05em',
+                            textTransform: 'uppercase'
+                          }}>
+                        Mi Gente Bonita
+                      </h2>
+                      
+                      {/* Decorative swirl after text */}
+                      <div className="absolute right-4 top-6 w-10 h-8 flex justify-center items-center opacity-70">
+                        <div style={{ 
+                          width: '20px', 
+                          height: '20px', 
+                          borderRight: '3px solid #FFD700', 
+                          borderTop: '3px solid #FFD700', 
+                          borderTopRightRadius: '100%' 
+                        }}></div>
+                      </div>
+                    </div>
+                    
+                    {/* Divider between words */}
+                    <div className="w-3/4 mx-auto h-0.5 mb-2 bg-gradient-to-r from-transparent via-[#FFD700] to-transparent opacity-70"></div>
+                    
+                    {/* "Market" part */}
+                    <div className="relative pb-4">
+                      <h2 className="text-[#FFD700] text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-wide animate-fade-in-up"
+                          style={{ 
+                            fontFamily: 'serif',
+                            textShadow: '0 2px 2px rgba(139, 0, 0, 0.9), 0 4px 4px rgba(0,0,0,0.7), 0 6px 8px rgba(0,0,0,0.5)',
+                            letterSpacing: '0.06em',
+                            textTransform: 'uppercase'
+                          }}>
+                        Market
+                      </h2>
+                      
+                      {/* Decorative swirl before text */}
+                      <div className="absolute left-4 top-2 w-10 h-8 flex justify-center items-center opacity-70">
+                        <div style={{ 
+                          width: '20px', 
+                          height: '20px', 
+                          borderLeft: '3px solid #FFD700', 
+                          borderBottom: '3px solid #FFD700', 
+                          borderBottomLeftRadius: '100%' 
+                        }}></div>
+                      </div>
+                    </div>
+                    
+                    {/* Vintage decorative elements - bottom */}
+                    <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-6 flex justify-center items-center">
+                      <div className="w-full h-0.5 bg-[#FFD700]"></div>
+                      <div className="absolute w-2 h-2 bg-[#FFD700] rounded-full left-0 top-1/2 transform -translate-y-1/2"></div>
+                      <div className="absolute w-2 h-2 bg-[#FFD700] rounded-full right-0 top-1/2 transform -translate-y-1/2"></div>
+                    </div>
+                    
+                    {/* Aged/worn effect overlay */}
+                    <div className="absolute inset-0 opacity-10 z-10 pointer-events-none" 
+                         style={{ 
+                           backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 400 400\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")',
+                           backgroundSize: 'cover',
+                           mixBlendMode: 'overlay'
+                         }}>
+                    </div>
+                     
+                    {/* Main border decorative accents */}
+                    <div className="absolute top-0 left-3 right-3 h-1.5 bg-gradient-to-r from-transparent via-[#FFD700] to-transparent"></div>
+                    <div className="absolute bottom-0 left-3 right-3 h-1.5 bg-gradient-to-r from-transparent via-[#FFD700] to-transparent"></div>
+                    <div className="absolute top-3 bottom-3 left-0 w-1.5 bg-gradient-to-b from-transparent via-[#FFD700] to-transparent"></div>
+                    <div className="absolute top-3 bottom-3 right-0 w-1.5 bg-gradient-to-b from-transparent via-[#FFD700] to-transparent"></div>
+                    
+                    {/* Corner decorations */}
+                    <div className="absolute top-1 left-1 w-4 h-4 border-t-2 border-l-2 border-[#FFD700]"></div>
+                    <div className="absolute top-1 right-1 w-4 h-4 border-t-2 border-r-2 border-[#FFD700]"></div>
+                    <div className="absolute bottom-1 left-1 w-4 h-4 border-b-2 border-l-2 border-[#FFD700]"></div>
+                    <div className="absolute bottom-1 right-1 w-4 h-4 border-b-2 border-r-2 border-[#FFD700]"></div>
                   </div>
                 </div>
                 
