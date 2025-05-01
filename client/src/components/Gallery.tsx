@@ -1,6 +1,13 @@
 import { useState, useRef, useEffect } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { 
+  Accordion, 
+  AccordionContent, 
+  AccordionItem, 
+  AccordionTrigger 
+} from "@/components/ui/accordion";
 import groceryAisle from "../assets/store-photos/grocery-aisle.png";
 import freshProduce from "../assets/store-photos/fresh-produce.png";
 import freshLemons from "../assets/store-photos/fresh-lemons.png";
@@ -16,6 +23,13 @@ const Gallery = () => {
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const [isLoaded, setIsLoaded] = useState<boolean[]>(Array(8).fill(false));
   const { t } = useLanguage();
+  const isMobile = useIsMobile();
+  const [mounted, setMounted] = useState(false);
+  
+  // We need to wait for client-side hydration to prevent hydration mismatch
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   
   // Refs for intersection observer
   const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -139,6 +153,34 @@ const Gallery = () => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [selectedImage, selectedIndex]);
 
+  // Gallery grid component
+  const galleryGrid = (
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 mx-auto max-w-full">
+      {images.map((image, index) => (
+        <div 
+          key={index} 
+          ref={(el) => { imageRefs.current[index] = el }}
+          className={`${image.span} ${index === 0 || index === 6 ? 'h-56 md:h-64' : 'h-44 md:h-56'} overflow-hidden rounded-xl cursor-pointer group relative 
+                     transform transition-all duration-500 ease-out hover:z-10 hover:scale-[1.02] 
+                     ${isLoaded[index] ? 'translate-y-0 opacity-100 shadow-lg' : 'translate-y-8 opacity-0'}`}
+          onClick={() => openModal(image.src, index)}
+          style={{ transitionDelay: `${index * 70}ms` }}
+        >
+          <div className="w-full h-full relative bg-gray-100">
+            <img 
+              src={image.src} 
+              alt={image.alt}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              style={{ objectPosition: image.objectPosition }}
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+
   return (
     <section id="gallery" className="pt-4 pb-12 md:pt-6 md:pb-14 bg-gradient-to-b from-white to-gray-50 w-full section-connector">
       <div className="w-full px-0 sm:px-4">
@@ -152,31 +194,21 @@ const Gallery = () => {
           </p>
         </div>
 
-        {/* Gallery grid layout */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 mx-auto max-w-full">
-          {images.map((image, index) => (
-            <div 
-              key={index} 
-              ref={(el) => { imageRefs.current[index] = el }}
-              className={`${image.span} ${index === 0 || index === 6 ? 'h-56 md:h-64' : 'h-44 md:h-56'} overflow-hidden rounded-xl cursor-pointer group relative 
-                         transform transition-all duration-500 ease-out hover:z-10 hover:scale-[1.02] 
-                         ${isLoaded[index] ? 'translate-y-0 opacity-100 shadow-lg' : 'translate-y-8 opacity-0'}`}
-              onClick={() => openModal(image.src, index)}
-              style={{ transitionDelay: `${index * 70}ms` }}
-            >
-              <div className="w-full h-full relative bg-gray-100">
-                <img 
-                  src={image.src} 
-                  alt={image.alt}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  style={{ objectPosition: image.objectPosition }}
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-            </div>
-          ))}
-        </div>
+        {/* Conditionally render collapsible content on mobile */}
+        {mounted && isMobile ? (
+          <Accordion type="single" collapsible defaultValue="">
+            <AccordionItem value="gallery-content" className="border-b-0">
+              <AccordionTrigger className="py-3 text-center justify-center text-base font-semibold bg-[#F8F8F8] hover:bg-[#F0F0F0] rounded-md text-[#1D1D1F]">
+                {t("common.showContent")}
+              </AccordionTrigger>
+              <AccordionContent className="pt-6">
+                {galleryGrid}
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        ) : (
+          galleryGrid
+        )}
 
         {/* Modal with navigation */}
         {selectedImage && (

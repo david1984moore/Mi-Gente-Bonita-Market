@@ -1,6 +1,14 @@
 import { Star, StarHalf, Quote } from "lucide-react";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { 
+  Accordion, 
+  AccordionContent, 
+  AccordionItem, 
+  AccordionTrigger 
+} from "@/components/ui/accordion";
+import { useState, useEffect } from "react";
 
 interface TestimonialProps {
   rating: number;
@@ -55,6 +63,13 @@ const Testimonial = ({ rating, text, name, initials, backgroundColor }: Testimon
 
 const Testimonials = () => {
   const { t } = useLanguage();
+  const isMobile = useIsMobile();
+  const [mounted, setMounted] = useState(false);
+  
+  // We need to wait for client-side hydration to prevent hydration mismatch
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   
   const testimonials = [
     {
@@ -80,6 +95,22 @@ const Testimonials = () => {
     }
   ];
 
+  // Testimonials grid component
+  const testimonialsGrid = (
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+      {testimonials.map((testimonial, index) => (
+        <Testimonial
+          key={index}
+          rating={testimonial.rating}
+          text={testimonial.text}
+          name={testimonial.name}
+          initials={testimonial.initials}
+          backgroundColor={testimonial.backgroundColor}
+        />
+      ))}
+    </div>
+  );
+
   return (
     <section id="testimonials" className="py-10 bg-gray-50 section-connector">
       {/* Add a visual divider at the top of the section */}
@@ -92,7 +123,7 @@ const Testimonials = () => {
       </div>
       
       <div className="container mx-auto px-4">
-        <div className="text-center mb-10">
+        <div className="text-center mb-8 md:mb-10">
           <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 relative inline-block">
             {t("testimonials.title")}
             <span className="absolute left-0 right-0 bottom-[-4px] h-0.5 bg-[#3D9C42]/30"></span>
@@ -102,18 +133,21 @@ const Testimonials = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
-          {testimonials.map((testimonial, index) => (
-            <Testimonial
-              key={index}
-              rating={testimonial.rating}
-              text={testimonial.text}
-              name={testimonial.name}
-              initials={testimonial.initials}
-              backgroundColor={testimonial.backgroundColor}
-            />
-          ))}
-        </div>
+        {/* Conditionally render collapsible content on mobile */}
+        {mounted && isMobile ? (
+          <Accordion type="single" collapsible defaultValue="">
+            <AccordionItem value="testimonials-content" className="border-b-0">
+              <AccordionTrigger className="py-3 text-center justify-center text-base font-semibold bg-[#F8F8F8] hover:bg-[#F0F0F0] rounded-md text-[#1D1D1F]">
+                {t("common.showContent")}
+              </AccordionTrigger>
+              <AccordionContent className="pt-6">
+                {testimonialsGrid}
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        ) : (
+          testimonialsGrid
+        )}
       </div>
     </section>
   );
