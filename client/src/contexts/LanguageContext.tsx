@@ -135,8 +135,8 @@ const translations = {
     en: "Our Products"
   },
   "gallery.subtitle": {
-    es: "Explora nuestra variada selección de productos importados de toda América Latina",
-    en: "Explore our varied selection of products imported from all over Latin America"
+    es: "",
+    en: ""
   },
   "gallery.close": {
     es: "Cerrar",
