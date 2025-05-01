@@ -586,3 +586,61 @@ html {
   @apply bg-white/90 backdrop-blur-md border border-white/20 shadow-xl;
 }
 
+/* Enhanced text effects for hero section */
+@keyframes golden-text-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.7));
+  }
+}
+
+@keyframes text-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.text-golden-glow {
+  animation: golden-text-pulse 3s infinite;
+}
+
+.text-shimmer {
+  background: linear-gradient(
+    90deg, 
+    rgba(255, 215, 0, 0.8) 0%, 
+    rgba(255, 255, 215, 1) 25%, 
+    rgba(255, 215, 0, 0.8) 50%, 
+    rgba(255, 255, 215, 1) 75%, 
+    rgba(255, 215, 0, 0.8) 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: text-shimmer 5s linear infinite;
+}
+
+.text-3d {
+  text-shadow: 
+    1px 1px 0 rgba(0, 0, 0, 0.5),
+    2px 2px 0 rgba(0, 0, 0, 0.4),
+    3px 3px 0 rgba(0, 0, 0, 0.3),
+    4px 4px 0 rgba(0, 0, 0, 0.2),
+    5px 5px 0 rgba(0, 0, 0, 0.1),
+    6px 6px 10px rgba(0, 0, 0, 0.8);
+}
+
+.text-golden-outline {
+  -webkit-text-stroke: 1px rgba(255, 215, 0, 0.8);
+  text-stroke: 1px rgba(255, 215, 0, 0.8);
+  color: transparent;
+  background: linear-gradient(to bottom, #ffd700, #ffc107);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
