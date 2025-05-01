@@ -90,7 +90,7 @@ const About = () => {
           </div>
           
           {mounted && isMobile ? (
-            <Accordion type="single" collapsible defaultValue="">
+            <Accordion type="single" collapsible defaultValue="about-content">
               <AccordionItem value="about-content" className="border-b-0">
                 <AccordionTrigger className="py-3 text-center justify-center text-base font-semibold bg-[#F8F8F8] hover:bg-[#F0F0F0] rounded-md text-[#1D1D1F]">
                   {t("common.showContent")}
