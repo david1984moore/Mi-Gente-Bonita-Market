@@ -151,7 +151,7 @@ const Hero = () => {
       </section>
       
       {/* Simple divider */}
-      <div className="absolute bottom-0 left-0 right-0 h-10 bg-white z-10"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-white z-10"></div>
     </div>
   );
 };

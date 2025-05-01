@@ -8,10 +8,10 @@ import customerTomatoes from "../assets/store-photos/customer-tomatoes.png";
 const About = () => {
   const { t } = useLanguage();
   return (
-    <section id="about" className="pt-16 pb-20 md:pt-20 md:pb-24 bg-white section-connector">
+    <section id="about" className="pt-10 pb-20 md:pt-12 md:pb-24 bg-white section-connector">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-['Inter'] font-bold mb-3 tracking-tight text-[#1D1D1F]">
               {t("about.title")}
             </h2>
