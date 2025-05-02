@@ -1,6 +1,7 @@
 import { MapPin, Phone, Clock, Globe, Facebook, ExternalLink, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import logoImage from "../assets/logo.png";
 
 const Contact = () => {
   const { t } = useLanguage();
@@ -27,7 +28,7 @@ const Contact = () => {
           <div className="bg-white rounded-2xl shadow-xl lg:col-span-2 overflow-hidden transform transition-all duration-300 hover:shadow-2xl border border-gray-100 flex flex-col h-auto min-h-[500px] md:h-[600px]">
             <div className="bg-gradient-to-r from-[#E24949] to-[#B83434] text-white p-4 flex justify-center items-center">
               <img 
-                src="/src/assets/logo.png"
+                src={logoImage}
                 alt="Mi Gente Bonita Market"
                 className="h-16 w-auto"
               />
