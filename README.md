@@ -32,7 +32,7 @@ A responsive single-page website for Mi Gente Bonita Market featuring interactiv
 1. Clone the repository:
 ```bash
 git clone <your-repo-url>
-cd mi-gente-bonita-market
+cd mi-gente-bonita-market  
 ```
 
 2. Install dependencies:
