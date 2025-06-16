@@ -1,191 +1,97 @@
-import { useState, useEffect, useRef } from "react";
 import { Link } from "react-scroll";
 import { useLanguage } from "@/contexts/LanguageContext";
-import freshNopales from "../assets/store-photos/fresh-nopales.png";
-import groceryAisle from "../assets/store-photos/grocery-aisle.png";
-import freshProduce from "../assets/store-photos/fresh-produce.png";
-import freshLemons from "../assets/store-photos/fresh-lemons.png";
-import citrusFruitsDisplay from "../assets/store-photos/citrus-fruits-display.png";
-import snackShelves from "../assets/store-photos/snack-shelves.png";
+import { ShoppingBag, MapPin, Clock } from "lucide-react";
 
 const Hero = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [nextImageIndex, setNextImageIndex] = useState(1);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [imagesLoaded, setImagesLoaded] = useState(false);
   const { t } = useLanguage();
-  
-  const heroRef = useRef<HTMLDivElement>(null);
-  
-  const images = [
-    { 
-      src: freshNopales,
-      position: 'center' // Showcase fresh cactus paddles (nopales)
-    },
-    { 
-      src: citrusFruitsDisplay,
-      position: 'center' // Showcase colorful citrus fruits display
-    },
-    { 
-      src: groceryAisle,
-      position: 'center' // Showcase the grocery aisle
-    },
-    { 
-      src: snackShelves,
-      position: 'center' // Display colorful snack selection shelves
-    },
-    { 
-      src: freshProduce,
-      position: 'center' // Display the fresh produce selection
-    },
-    { 
-      src: freshLemons,
-      position: 'center' // Highlight the fresh citrus fruits
-    }
-  ];
-  
-  // Preload images for smoother transitions
-  useEffect(() => {
-    const imagePromises = images.map((image) => {
-      return new Promise((resolve) => {
-        const img = new Image();
-        img.src = image.src;
-        img.onload = () => resolve(img);
-      });
-    });
-    
-    Promise.all(imagePromises).then(() => {
-      setImagesLoaded(true);
-    });
-  }, []);
-
-  // Image transition effect
-  useEffect(() => {
-    const transitionInterval = 8000; // Total time between transitions
-    const fadeTime = 3000; // Longer crossfade for smoother transition
-    
-    const interval = setInterval(() => {
-      // Start transition
-      setIsTransitioning(true);
-      
-      // After fadeTime, complete the transition
-      const timer = setTimeout(() => {
-        setCurrentImageIndex(nextImageIndex);
-        setNextImageIndex((nextImageIndex + 1) % images.length);
-        setIsTransitioning(false);
-      }, fadeTime);
-      
-      return () => clearTimeout(timer);
-    }, transitionInterval);
-    
-    return () => clearInterval(interval);
-  }, [nextImageIndex, images.length]);
 
   return (
-    <div ref={heroRef} className="relative overflow-hidden" style={{ height: '100vh', paddingTop: '1rem' }}>
-      {/* Darker shade overlay for text readability */}
-      <div className="absolute inset-0 bg-black/60 z-5"></div>
-      
-      {/* Active images layer - both visible during transition */}
-      {images.map((image, index) => (
-        <div 
-          key={index}
-          className="absolute inset-0 hero-slide"
-          style={{
-            backgroundImage: `url(${image.src})`,
-            backgroundSize: 'cover',
-            backgroundPosition: image.position,
-            opacity: index === currentImageIndex ? (isTransitioning ? 0 : 1) : (index === nextImageIndex ? 1 : 0),
-            zIndex: index === currentImageIndex ? 10 : (index === nextImageIndex ? 5 : 0),
-            transition: 'opacity 3s cubic-bezier(0.4, 0.0, 0.2, 1)', // Smooth cubic-bezier transition
-          }}
-        />
-      ))}
-      
-      {/* Enhanced cinematic dark vignette for better text visibility */}
-      <div className="absolute inset-0 z-15 opacity-80 pointer-events-none" 
-           style={{ 
-             background: 'radial-gradient(circle at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 65%, rgba(0,0,0,0.8) 100%)'
-           }}>
+    <div className="relative min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
+      {/* Subtle animated background pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_500px_at_50%_200px,#3b82f6,transparent)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_80%_80%,#d41414,transparent)]"></div>
       </div>
       
-      {/* Additional linear gradient for better contrast behind text */}
-      <div className="absolute inset-0 z-16 opacity-50 pointer-events-none"
-           style={{
-             background: 'linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 40%, transparent 60%, rgba(0,0,0,0.6) 100%)'
-           }}>
-      </div>
-      
-      <section 
-        id="home" 
-        className="relative z-20 flex items-center justify-center h-[calc(100%-80px)] mb-none px-4 pt-32 sm:pt-36 md:pt-28"
-      >
-        <div className="w-full max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-            <div className="md:col-span-8 md:col-start-3 text-center relative">
-              {/* Content layout with Welcome to visible - no background */}
-              <div className="relative z-10 flex flex-col items-center py-6 px-6 mb-10 -mt-12">
-                <div className="overflow-hidden w-full mb-1">
-                  <h1 className="text-xl sm:text-2xl md:text-4xl font-['Inter'] font-extrabold text-white tracking-tight animate-fade-in-down"
-                      style={{ textShadow: '0 1px 1px black, 0 2px 3px black, 0 3px 5px black', letterSpacing: '0.03em' }}>
-                    {t("hero.welcome")}
-                  </h1>
-                </div>
-                
-                <div className="overflow-hidden mb-4 md:mb-6 w-full">
-                  <div className="relative inline-block">
-                    <h2 className="text-[#FFE970] text-3xl sm:text-4xl md:text-6xl font-['Inter'] font-extrabold tracking-tight animate-fade-in-up"
-                        style={{ 
-                          textShadow: '0 1px 1px black, 0 2px 2px black, 0 4px 4px rgba(0,0,0,0.9), 0 6px 8px rgba(0,0,0,0.8)', 
-                          letterSpacing: '0.02em'
-                        }}>
-                      Mi Gente Bonita Market
-                    </h2>
-                    
-                    {/* Modern underline effect */}
-                    <div className="absolute -bottom-2 left-0 w-full h-[3px] animate-pulse-slow">
-                      <div className="h-full w-full bg-gradient-to-r from-transparent via-[#FFDE59] to-transparent rounded-full"></div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="overflow-hidden mb-6 md:mb-8 w-full">
-                </div>
-                
-                {/* Stylish CTA button */}
-                <Link
-                  to="contact"
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={800}
-                  className="inline-block"
-                >
-                  <button 
-                    className="animate-fade-in-up animation-delay-500 cta-button bg-[#D41414]/90 text-white hover:bg-[#D41414] px-6 py-3 text-base rounded-full shadow-lg hover:shadow-xl transition-all duration-500 group font-medium tracking-wide"
-                  >
-                    {t("contact.hours.title")}
-                  </button>
-                </Link>
+      {/* Content */}
+      <section id="home" className="relative z-10 flex items-center justify-center min-h-screen px-4 pt-20">
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Main heading */}
+          <div className="mb-8">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-4 tracking-tight">
+              Mi Gente Bonita
+              <span className="block text-[#FFE970] bg-gradient-to-r from-[#FFE970] via-[#FFDE59] to-[#FFE970] bg-clip-text text-transparent">
+                Market
+              </span>
+            </h1>
+            <p className="text-xl md:text-2xl text-slate-300 font-light max-w-2xl mx-auto leading-relaxed">
+              {t("hero.welcome")} - Your authentic Latin grocery experience in Delaware
+            </p>
+          </div>
+          
+          {/* Feature highlights */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-3xl mx-auto">
+            <div className="flex flex-col items-center p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300">
+              <div className="w-12 h-12 bg-[#D41414] rounded-full flex items-center justify-center mb-4">
+                <ShoppingBag className="w-6 h-6 text-white" />
               </div>
+              <h3 className="text-white font-semibold mb-2">Fresh Products</h3>
+              <p className="text-slate-400 text-sm text-center">Authentic Latin ingredients & fresh produce daily</p>
             </div>
+            
+            <div className="flex flex-col items-center p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300">
+              <div className="w-12 h-12 bg-[#D41414] rounded-full flex items-center justify-center mb-4">
+                <MapPin className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-white font-semibold mb-2">Multiple Locations</h3>
+              <p className="text-slate-400 text-sm text-center">Convenient stores across Delaware</p>
+            </div>
+            
+            <div className="flex flex-col items-center p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300">
+              <div className="w-12 h-12 bg-[#D41414] rounded-full flex items-center justify-center mb-4">
+                <Clock className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-white font-semibold mb-2">Extended Hours</h3>
+              <p className="text-slate-400 text-sm text-center">Open daily to serve our community</p>
+            </div>
+          </div>
+          
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link
+              to="contact"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={800}
+              className="inline-block"
+            >
+              <button className="bg-[#D41414] hover:bg-[#B91C1C] text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                Find Store Hours
+              </button>
+            </Link>
+            
+            <Link
+              to="gallery"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={800}
+              className="inline-block"
+            >
+              <button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-slate-900 transition-all duration-300">
+                View Gallery
+              </button>
+            </Link>
           </div>
         </div>
       </section>
       
-      {/* Modern wave divider - increased z-index and height to fully cover content */}
-      <div className="absolute bottom-0 left-0 right-0 z-30 text-white pointer-events-none">
-        <div className="relative">
-          {/* Extra padding space to ensure wave fully covers any content */}
-          <div className="absolute bottom-0 left-0 right-0 h-10 bg-white z-10"></div>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220" preserveAspectRatio="none" className="w-full h-auto relative z-20">
-            <path 
-              fill="currentColor" 
-              fillOpacity="1" 
-              d="M0,128L48,122.7C96,117,192,107,288,96C384,85,480,75,576,90.7C672,107,768,149,864,154.7C960,160,1056,128,1152,112C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-            ></path>
-          </svg>
-        </div>
+      {/* Clean bottom divider */}
+      <div className="absolute bottom-0 left-0 right-0">
+        <svg className="w-full h-24 text-white" preserveAspectRatio="none" viewBox="0 0 1200 120">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="currentColor"></path>
+        </svg>
       </div>
     </div>
   );
