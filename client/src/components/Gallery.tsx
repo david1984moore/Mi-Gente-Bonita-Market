@@ -1,8 +1,6 @@
 import { useState, useRef, useEffect } from "react";
-import { X, ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useIsMobile } from "@/hooks/use-mobile";
-import SimpleToggle from "@/components/ui/simple-toggle";
 import groceryAisle from "../assets/store-photos/grocery-aisle.png";
 import freshProduce from "../assets/store-photos/fresh-produce.png";
 import freshLemons from "../assets/store-photos/fresh-lemons.png";
@@ -16,94 +14,77 @@ import citrusFruitsDisplay from "../assets/store-photos/citrus-fruits-display.pn
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
-  const [isLoaded, setIsLoaded] = useState<boolean[]>(Array(8).fill(false));
+  const [currentSlideIndex, setCurrentSlideIndex] = useState<number>(0);
+  const [isPlaying, setIsPlaying] = useState<boolean>(true);
   const { t } = useLanguage();
-  const isMobile = useIsMobile();
-  const [mounted, setMounted] = useState(false);
-  
-  // We need to wait for client-side hydration to prevent hydration mismatch
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-  
-  // Refs for intersection observer
-  const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const images = [
     { 
       src: groceryAisle, 
       alt: "Selection of authentic Latino groceries and Goya products",
-      objectPosition: "center",
-      span: "col-span-2"
+      objectPosition: "center"
     },
     { 
       src: citrusFruitsDisplay, 
       alt: "Fresh oranges and limes display",
-      objectPosition: "center",
-      span: "col-span-1"
+      objectPosition: "center"
     },
     { 
       src: freshProduce, 
       alt: "Fresh vegetables and produce from our market",
-      objectPosition: "center",
-      span: "col-span-1"
+      objectPosition: "center"
     },
     { 
       src: freshLemons, 
       alt: "Fresh lemons and citrus fruits",
-      objectPosition: "center",
-      span: "col-span-1"
+      objectPosition: "center"
     },
     { 
       src: freshTomatoesPeppers, 
       alt: "Fresh tomatoes and peppers in crates",
-      objectPosition: "center",
-      span: "col-span-1"
+      objectPosition: "center"
     },
     { 
       src: cactusPaddles, 
       alt: "Fresh cactus paddles (nopales) display",
-      objectPosition: "center",
-      span: "col-span-1"
+      objectPosition: "center"
     },
-    
     { 
       src: tajinSeasoning, 
       alt: "Tajin seasoning bottles - popular Mexican seasoning",
-      objectPosition: "center",
-      span: "col-span-1"
+      objectPosition: "center"
     },
+    { 
+      src: produceSection, 
+      alt: "Colorful produce section display",
+      objectPosition: "center"
+    },
+    { 
+      src: snacksAisle, 
+      alt: "Snacks and packaged goods aisle",
+      objectPosition: "center"
+    }
   ];
 
-  // Set up intersection observer for animation
+  // Auto-advance slideshow
   useEffect(() => {
-    const observers = imageRefs.current.map((ref, index) => {
-      if (!ref) return null;
-      
-      const observer = new IntersectionObserver(
-        (entries) => {
-          if (entries[0].isIntersecting) {
-            // Mark this image as loaded with a slight delay for staggered effect
-            setTimeout(() => {
-              setIsLoaded(prev => {
-                const newState = [...prev];
-                newState[index] = true;
-                return newState;
-              });
-            }, index * 100);
-          }
-        },
-        { threshold: 0.1 }
-      );
-      
-      observer.observe(ref);
-      return observer;
-    });
-    
+    if (isPlaying) {
+      intervalRef.current = setInterval(() => {
+        setCurrentSlideIndex((prev) => (prev + 1) % images.length);
+      }, 4000); // Change slide every 4 seconds
+    } else {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    }
+
     return () => {
-      observers.forEach((observer) => observer?.disconnect());
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
     };
-  }, []);
+  }, [isPlaying, images.length]);
 
   const openModal = (src: string, index: number) => {
     setSelectedImage(src);
@@ -125,7 +106,15 @@ const Gallery = () => {
       setSelectedImage(images[prevIndex].src);
     }
   };
-  
+
+  const goToSlide = (index: number) => {
+    setCurrentSlideIndex(index);
+  };
+
+  const togglePlayPause = () => {
+    setIsPlaying(!isPlaying);
+  };
+
   // Add keyboard support for navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -148,95 +137,98 @@ const Gallery = () => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [selectedImage, selectedIndex]);
 
-  // Gallery grid component
-  const galleryGrid = (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 mx-auto max-w-full">
-      {images.map((image, index) => (
-        <div 
-          key={index} 
-          ref={(el) => { imageRefs.current[index] = el }}
-          className={`${image.span} ${index === 0 || index === 6 ? 'h-56 md:h-64' : 'h-44 md:h-56'} overflow-hidden rounded-xl cursor-pointer group relative 
-                     transform transition-all duration-500 ease-out hover:z-10 hover:scale-[1.02] 
-                     ${isLoaded[index] ? 'translate-y-0 opacity-100 shadow-lg' : 'translate-y-0 opacity-100 shadow-lg'}`}
-          onClick={() => openModal(image.src, index)}
-          style={{ transitionDelay: `${index * 70}ms` }}
-        >
-          <div className="w-full h-full relative bg-gray-100">
-            <img 
-              src={image.src} 
-              alt={image.alt}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              style={{ objectPosition: image.objectPosition }}
-              loading="eager" // Changed from lazy to eager to ensure images load immediately
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-
   return (
-    <section id="gallery" className="pt-4 pb-12 md:pt-6 md:pb-14 bg-gradient-to-b from-white to-gray-50 w-full section-connector">
-      <div className="w-full px-0 sm:px-4">
-        <div className="text-center mb-8">
-          {mounted && isMobile ? (
-            <>
-              <button
-                onClick={() => {
-                  const contentDiv = document.getElementById('gallery-content');
-                  if (contentDiv) {
-                    const isCurrentlyHidden = contentDiv.style.display === 'none' || !contentDiv.style.display;
-                    contentDiv.style.display = isCurrentlyHidden ? 'block' : 'none';
-                    
-                    // If we're showing the content, force a refresh of the images
-                    if (isCurrentlyHidden) {
-                      setTimeout(() => {
-                        // Reset the isLoaded state to trigger animations
-                        setIsLoaded(Array(images.length).fill(true));
-                      }, 50);
-                    }
-                  }
-                }}
-                className="flex items-center justify-center gap-2 mx-auto"
-                aria-expanded="false"
-                aria-controls="gallery-content"
-              >
-                <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 tracking-tight text-[#1D1D1F]">
-                  {t("gallery.title")}
-                </h2>
-                <ChevronDown className="h-6 w-6 text-[#D41414]" />
-              </button>
-              <div className="h-1 w-16 bg-[#D41414] mx-auto my-4 rounded-full"></div>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-3">
-                {t("gallery.subtitle")}
-              </p>
-            </>
-          ) : (
-            <>
-              <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 tracking-tight text-[#1D1D1F]">
-                {t("gallery.title")}
-              </h2>
-              <div className="h-1 w-16 bg-[#D41414] mx-auto my-4 rounded-full"></div>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-3">
-                {t("gallery.subtitle")}
-              </p>
-            </>
-          )}
+    <section id="gallery" className="pt-8 pb-16 bg-gradient-to-b from-white to-gray-50 w-full">
+      <div className="w-full px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight text-[#1D1D1F]">
+            {t("gallery.title")}
+          </h2>
+          <div className="h-1 w-16 bg-[#D41414] mx-auto my-4 rounded-full"></div>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-3">
+            {t("gallery.subtitle")}
+          </p>
         </div>
 
-        {/* Conditionally render collapsible content on mobile */}
-        {mounted && isMobile ? (
-          <div className="w-full">
-            <div id="gallery-content" className="pt-6 w-full" style={{ display: 'none' }}>
-              {galleryGrid}
-            </div>
-          </div>
-        ) : (
-          galleryGrid
-        )}
+        {/* Slideshow Container */}
+        <div className="max-w-6xl mx-auto relative">
+          {/* Main Slideshow */}
+          <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+            {images.map((image, index) => (
+              <div
+                key={index}
+                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out cursor-pointer ${
+                  index === currentSlideIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                }`}
+                onClick={() => openModal(image.src, index)}
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: image.objectPosition }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+                <div className="absolute bottom-4 left-4 text-white">
+                  <p className="text-lg font-semibold drop-shadow-lg">{image.alt}</p>
+                </div>
+              </div>
+            ))}
+            
+            {/* Navigation Arrows */}
+            <button
+              onClick={() => setCurrentSlideIndex((prev) => (prev - 1 + images.length) % images.length)}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 z-20"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            
+            <button
+              onClick={() => setCurrentSlideIndex((prev) => (prev + 1) % images.length)}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 z-20"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
 
-        {/* Modal with navigation */}
+            {/* Play/Pause Button */}
+            <button
+              onClick={togglePlayPause}
+              className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 z-20"
+            >
+              {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
+            </button>
+          </div>
+
+          {/* Thumbnail Navigation */}
+          <div className="flex justify-center mt-6 space-x-2 overflow-x-auto pb-2">
+            {images.map((image, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
+                  index === currentSlideIndex 
+                    ? 'border-[#D41414] shadow-lg scale-110' 
+                    : 'border-gray-300 hover:border-gray-400'
+                }`}
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-full object-cover"
+                />
+              </button>
+            ))}
+          </div>
+
+          {/* Slide Counter */}
+          <div className="text-center mt-4">
+            <span className="text-gray-500 text-sm">
+              {currentSlideIndex + 1} of {images.length}
+            </span>
+          </div>
+        </div>
+
+        {/* Modal for Zoomed View */}
         {selectedImage && (
           <div 
             className="fixed inset-0 bg-black/90 backdrop-blur-md flex flex-col z-50 pt-16 pb-8 px-4 animate-in fade-in duration-300 cursor-pointer"
