@@ -24,7 +24,7 @@ const Hero = () => {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 font-light max-w-2xl mx-auto leading-relaxed">
-              {t("hero.welcome")} - Your authentic Latin grocery experience in Delaware
+              {t("hero.tagline")}
             </p>
           </div>
           
@@ -41,7 +41,7 @@ const Hero = () => {
               className="inline-block"
             >
               <button className="bg-[#D41414] hover:bg-[#B91C1C] text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                Find Store Hours
+                {t("contact.hours.title")}
               </button>
             </Link>
             
@@ -54,7 +54,7 @@ const Hero = () => {
               className="inline-block"
             >
               <button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-slate-900 transition-all duration-300">
-                View Gallery
+                {t("gallery.title")}
               </button>
             </Link>
           </div>

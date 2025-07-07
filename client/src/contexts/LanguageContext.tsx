@@ -53,8 +53,8 @@ const translations = {
     en: "Welcome to"
   },
   "hero.tagline": {
-    es: "Tu fuente confiable para productos latinos auténticos",
-    en: "Your trusted source for authentic Latino products"
+    es: "Tu experiencia auténtica de supermercado latino en Delaware",
+    en: "Your authentic Latin grocery experience in Delaware"
   },
   "hero.discoverMore": {
     es: "Descubre Más",
