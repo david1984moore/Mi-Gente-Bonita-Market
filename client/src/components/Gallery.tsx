@@ -9,6 +9,17 @@ import cactusPaddles from "../assets/store-photos/cactus-paddles-display.png";
 import tajinSeasoning from "../assets/store-photos/tajin-seasoning-bottles.png";
 import produceSection from "../assets/store-photos/produce-section-colorful.png";
 import citrusFruitsDisplay from "../assets/store-photos/citrus-fruits-display.png";
+import drinks from "@assets/drinks_1759971076901.jpeg";
+import frontOfStore from "@assets/front of store_1759971076902.jpeg";
+import meat from "@assets/meat_1759971076903.jpeg";
+import products1 from "@assets/products 1_1759971076904.jpeg";
+import products2 from "@assets/products 2_1759971076905.jpeg";
+import products3 from "@assets/products 3_1759971076906.jpeg";
+import products4 from "@assets/products 4_1759971076906.jpeg";
+import products5 from "@assets/products 5_1759971076907.jpeg";
+import productsOnShelves from "@assets/products on shelves_1759971076907.jpeg";
+import stuffInShelves2 from "@assets/stuff in shelves 2_1759971076908.jpeg";
+import stuffInShelves from "@assets/stuff in shelves_1759971076908.jpeg";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -57,6 +68,61 @@ const Gallery = () => {
     { 
       src: produceSection, 
       alt: "Colorful produce section display",
+      objectPosition: "center"
+    },
+    { 
+      src: drinks, 
+      alt: "Drinks section",
+      objectPosition: "center"
+    },
+    { 
+      src: frontOfStore, 
+      alt: "Front of store",
+      objectPosition: "center"
+    },
+    { 
+      src: meat, 
+      alt: "Meat section",
+      objectPosition: "center"
+    },
+    { 
+      src: products1, 
+      alt: "Products display",
+      objectPosition: "center"
+    },
+    { 
+      src: products2, 
+      alt: "Products display",
+      objectPosition: "center"
+    },
+    { 
+      src: products3, 
+      alt: "Products display",
+      objectPosition: "center"
+    },
+    { 
+      src: products4, 
+      alt: "Products display",
+      objectPosition: "center"
+    },
+    { 
+      src: products5, 
+      alt: "Products display",
+      objectPosition: "center"
+    },
+    { 
+      src: productsOnShelves, 
+      alt: "Products on shelves",
+      objectPosition: "center"
+    },
+    { 
+      src: stuffInShelves2, 
+      alt: "Store shelves display",
+      objectPosition: "center"
+    },
+    { 
+      src: stuffInShelves, 
+      alt: "Store shelves display",
       objectPosition: "center"
     }
   ];
