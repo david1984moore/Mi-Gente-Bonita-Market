@@ -163,8 +163,8 @@ const translations = {
     en: "Visit our stores in Delaware"
   },
   "contact.location1.title": {
-    es: "Ubicación de Wilmington",
-    en: "Wilmington Location"
+    es: "Ubicaciones",
+    en: "Locations"
   },
   "contact.location2.title": {
     es: "Ubicación de Newark",
