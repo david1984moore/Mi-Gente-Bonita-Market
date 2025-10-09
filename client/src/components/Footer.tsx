@@ -1,6 +1,6 @@
 import { Link } from "react-scroll";
 import { Logo } from "../assets/logo";
-import { Facebook, Heart, ArrowUp, Instagram } from "lucide-react";
+import { Facebook, ArrowUp, Instagram } from "lucide-react";
 import { SiTiktok } from "react-icons/si";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -134,8 +134,7 @@ const Footer = () => {
           <div className="border-t border-gray-800 mt-12 pt-8 text-center">
             <p className="text-gray-400 flex items-center justify-center text-xs">
               &copy; {year} Mi Gente Bonita Market. {t("footer.rights")}. 
-              <Heart className="h-3 w-3 mx-1.5 text-[#D41414] inline" /> 
-              {t("footer.developed")} {t("footer.community")}
+              Developed by Applicreations.com
             </p>
           </div>
         </div>
