@@ -26,10 +26,23 @@
     --dark-color: var(--noche);
   }
   
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
   body {
     font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+  
+  #root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
   }
 }
 

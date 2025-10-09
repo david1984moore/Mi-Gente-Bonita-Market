@@ -195,7 +195,7 @@ const Gallery = () => {
   return (
     <>
       <section id="gallery" className="pt-8 pb-16 zone-gallery w-full">
-      <div className="w-full px-1 lg:px-4">
+      <div className="w-full px-0 lg:px-4">
         <ScrollReveal direction="up" delay={0}>
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-extrabold mb-3 text-[#1D1D1F]">
