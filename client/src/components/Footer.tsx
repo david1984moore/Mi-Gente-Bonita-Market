@@ -117,7 +117,7 @@ const Footer = () => {
             </div>
           </div>
           
-          <div className="border-t border-gray-800 mt-12 pt-8 text-center">
+          <div className="mt-12 pt-8 text-center">
             <p className="text-gray-400 flex flex-wrap items-center justify-center text-xs gap-1">
               <span>&copy; {year} Mi Gente Bonita Market. {t("footer.rights")}.</span>
               <span className="whitespace-nowrap">
