@@ -76,13 +76,27 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-lg mb-2 text-gray-800">{t("contact.callUs")}</h4>
-                    <p className="text-gray-700 text-base">(302) 691-3048</p>
-                    <a 
-                      href="tel:3026913048" 
-                      className="inline-flex items-center text-[#3D9C42] hover:text-[#2A6D2E] mt-1 transition-colors duration-300 text-sm"
-                    >
-                      {t("contact.callUs")}
-                    </a>
+                    <div className="mb-3">
+                      <p className="text-gray-700 font-semibold text-base">Newark:</p>
+                      <p className="text-gray-700 text-base leading-tight">(302) 601-6900</p>
+                      <a 
+                        href="tel:3026016900" 
+                        className="inline-flex items-center text-[#3D9C42] hover:text-[#2A6D2E] mt-1 transition-colors duration-300 text-sm"
+                      >
+                        {t("contact.callUs")}
+                      </a>
+                    </div>
+                    
+                    <div>
+                      <p className="text-gray-700 font-semibold text-base">Wilmington:</p>
+                      <p className="text-gray-700 text-base leading-tight">(302) 691-3048</p>
+                      <a 
+                        href="tel:3026913048" 
+                        className="inline-flex items-center text-[#3D9C42] hover:text-[#2A6D2E] mt-1 transition-colors duration-300 text-sm"
+                      >
+                        {t("contact.callUs")}
+                      </a>
+                    </div>
                   </div>
                 </div>
                 
