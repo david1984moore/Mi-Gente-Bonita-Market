@@ -73,7 +73,7 @@ const Navbar = () => {
 
   return (
     <header 
-      className="fixed w-full bg-white/90 backdrop-blur-md shadow-sm py-2 z-[60] transition-all duration-300"
+      className="fixed w-full bg-white/90 backdrop-blur-md shadow-sm py-1.5 z-[60] transition-all duration-300"
     >
       <nav className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
@@ -85,7 +85,7 @@ const Navbar = () => {
           duration={500}
           className="flex items-center cursor-pointer"
         >
-          <Logo className="transition-all duration-300 h-10 w-auto" />
+          <Logo className="transition-all duration-300 h-9 w-auto" />
         </Link>
         
         {/* Mobile menu button - Using the highest z-index to be always clickable */}
