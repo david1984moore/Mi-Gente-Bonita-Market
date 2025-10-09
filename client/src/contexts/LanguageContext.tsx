@@ -220,6 +220,10 @@ const translations = {
     es: "Desarrollado con",
     en: "Developed with"
   },
+  "footer.developedBy": {
+    es: "Desarrollado por",
+    en: "Developed by"
+  },
   "footer.community": {
     es: "amor para nuestra comunidad",
     en: "love for our community"
