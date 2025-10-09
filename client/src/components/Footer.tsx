@@ -132,9 +132,19 @@ const Footer = () => {
           </div>
           
           <div className="border-t border-gray-800 mt-12 pt-8 text-center">
-            <p className="text-gray-400 flex items-center justify-center text-xs">
+            <p className="text-gray-400 flex items-center justify-center text-xs gap-1">
               &copy; {year} Mi Gente Bonita Market. {t("footer.rights")}. 
-              Developed by Applicreations.com
+              Developed by{" "}
+              <a 
+                href="https://applicreations.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-gray-300 hover:text-white transition-colors duration-300"
+                data-testid="link-applicreations"
+              >
+                <span className="text-sm">🦋</span>
+                Applicreations.com
+              </a>
             </p>
           </div>
         </div>
