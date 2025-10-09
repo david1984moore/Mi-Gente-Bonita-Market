@@ -57,7 +57,7 @@ const Hero = () => {
               duration={800}
               className="inline-block"
             >
-              <button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-slate-900 transition-all duration-300">
+              <button className="bg-white border-2 border-white text-slate-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-slate-100 transition-all duration-300">
                 {t("gallery.title")}
               </button>
             </Link>
