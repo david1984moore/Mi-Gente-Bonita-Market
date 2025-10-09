@@ -30,6 +30,7 @@
     font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
 }
 
@@ -168,6 +169,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px; /* Ensures scrolling stops at right position with fixed navbar */
+  overflow-x: hidden;
 }
 
 /* Enhanced text shadow for hero */
