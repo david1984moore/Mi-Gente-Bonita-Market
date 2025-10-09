@@ -1,16 +1,20 @@
 import { Link } from "react-scroll";
 import { useLanguage } from "@/contexts/LanguageContext";
+import limesBackground from "@assets/limes_1759971097571.jpeg";
 
 const Hero = () => {
   const { t } = useLanguage();
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
-      {/* Subtle animated background pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_500px_at_50%_200px,#3b82f6,transparent)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_80%_80%,#d41414,transparent)]"></div>
-      </div>
+    <div className="relative min-h-screen overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${limesBackground})` }}
+      />
+      
+      {/* Dim overlay for better text visibility */}
+      <div className="absolute inset-0 bg-black/60" />
       
       {/* Content */}
       <section id="home" className="relative z-10 flex items-center justify-center min-h-screen px-4 pt-20">

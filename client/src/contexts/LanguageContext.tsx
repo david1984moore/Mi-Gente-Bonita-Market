@@ -53,8 +53,8 @@ const translations = {
     en: "Welcome to"
   },
   "hero.tagline": {
-    es: "Tu experiencia auténtica de supermercado latino en Delaware",
-    en: "Your authentic Latin grocery experience in Delaware"
+    es: "Tu experiencia auténtica de supermercado multicultural en Delaware",
+    en: "Your authentic multi-cultural grocery experience in Delaware"
   },
   "hero.discoverMore": {
     es: "Descubre Más",
