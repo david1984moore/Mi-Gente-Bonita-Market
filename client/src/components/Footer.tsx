@@ -1,6 +1,6 @@
 import { Link } from "react-scroll";
 import { Logo } from "../assets/logo";
-import { Facebook, ArrowUp, Instagram } from "lucide-react";
+import { Facebook, Instagram } from "lucide-react";
 import { SiTiktok } from "react-icons/si";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -8,24 +8,8 @@ const Footer = () => {
   const year = new Date().getFullYear();
   const { t } = useLanguage();
   
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  };
-  
   return (
     <footer className="relative" style={{marginTop: '-1px'}}>
-      {/* Scroll to top button */}
-      <button 
-        onClick={scrollToTop}
-        className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white text-[#1D1D1F] hover:text-[#D41414] p-2.5 rounded-md shadow-md hover:shadow-lg transition-all duration-300 focus:outline-none group z-10"
-        aria-label="Scroll to top"
-      >
-        <ArrowUp className="h-5 w-5 group-hover:translate-y-[-2px] transition-transform duration-300" />
-      </button>
-      
       {/* Modern footer with subtle gradient */}
       <div className="bg-gradient-to-br from-[#1D1D1F] to-[#2D2D2F] text-white pt-16 pb-10">
         <div className="container mx-auto px-6">
