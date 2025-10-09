@@ -267,13 +267,6 @@ const Gallery = () => {
               </button>
             ))}
           </div>
-
-          {/* Slide Counter */}
-          <div className="text-center mt-4">
-            <span className="text-gray-500 text-sm">
-              {currentSlideIndex + 1} of {images.length}
-            </span>
-          </div>
         </div>
 
         {/* Modal for Zoomed View */}
@@ -330,12 +323,8 @@ const Gallery = () => {
               </div>
             </div>
             
-            {/* Footer with counter */}
-            <div className="flex justify-between items-center mt-4 px-2">
-              <div className="bg-black/60 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-white/90 text-xs sm:text-sm font-medium border border-white/20">
-                {selectedIndex + 1} of {images.length}
-              </div>
-              
+            {/* Footer */}
+            <div className="flex justify-end items-center mt-4 px-2">
               <button
                 onClick={closeModal}
                 className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md shadow-lg border border-white/50"
