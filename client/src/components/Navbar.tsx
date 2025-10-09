@@ -75,7 +75,7 @@ const Navbar = () => {
     <header 
       className="fixed w-full bg-white/90 backdrop-blur-md shadow-sm py-1 z-[60] transition-all duration-300"
     >
-      <nav className="container mx-auto px-6 flex items-center justify-between">
+      <nav className="w-full px-4 sm:px-6 lg:px-8 flex items-center justify-between max-w-7xl mx-auto">
         {/* Logo */}
         <Link
           to="home"
