@@ -744,31 +744,6 @@ html {
   background-repeat: no-repeat;
 }
 
-.azulejo-corner {
-  position: relative;
-}
-
-.azulejo-corner::before,
-.azulejo-corner::after {
-  content: '';
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border: 2px solid;
-  border-radius: 2px;
-}
-
-.azulejo-corner::before {
-  top: -8px;
-  left: -8px;
-  border-color: #D41414 transparent transparent #D41414;
-}
-
-.azulejo-corner::after {
-  bottom: -8px;
-  right: -8px;
-  border-color: transparent #FFB800 #FFB800 transparent;
-}
 
 /* Mercado Vivo - Texture Overlays */
 .texture-basket {
