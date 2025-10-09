@@ -37,7 +37,7 @@ const About = () => {
       </div>
       
       <div className="order-1 lg:order-2">
-        <div className="bg-[#F5E6D3] p-0 sm:p-2 rounded-lg shadow-mercado-red azulejo-corner texture-basket">
+        <div className="bg-[#F5E6D3] p-6 sm:p-8 md:p-10 rounded-lg shadow-mercado-red azulejo-corner texture-basket">
           <p className="mb-6 text-[#4B5563] leading-relaxed text-base">
             {t("about.storyPart1")}
           </p>
