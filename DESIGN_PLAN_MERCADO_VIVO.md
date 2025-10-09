@@ -562,81 +562,72 @@ const countdown = getTimeUntil(nextStateChange);
 
 ## 📅 Implementation Roadmap
 
-### **Phase 1: Foundation + Soul** (Days 1-3)
+### ⚡ **Realistic 1-Day Implementation Plan**
 
-**Day 1:**
+This is primarily CSS and layout work - no complex integrations or backend changes. Total focused work time: **~5 hours**
+
+---
+
+### **Session 1: Foundation** (1 hour)
+
 - [ ] Implement Mercado color palette (CSS custom properties)
-- [ ] Set up typography system with variable fonts
-- [ ] Create texture library (SVG patterns, overlays)
+- [ ] Update typography system (weights, fluid sizing, letter-spacing)
+- [ ] Replace white backgrounds with warm masa cream
+- [ ] Set up 3-tier shadow system with brand color tints
 
-**Day 2:**
-- [ ] Build asymmetric layout framework
-- [ ] Implement chromatic zone system
-- [ ] Create papel picado divider components
-
-**Day 3:**
-- [ ] Map emotional journey to sections
-- [ ] Set up cultural iconography
-- [ ] Implement azulejo border patterns
-
-**Deliverable:** Visual foundation with cultural authenticity
+**Output:** Warm, vibrant color foundation with proper depth
 
 ---
 
-### **Phase 2: Visual Identity** (Days 4-6)
+### **Session 2: Visual Transformation** (1.5 hours)
 
-**Day 4:**
-- [ ] Build abundance grid layout (masonry)
-- [ ] Implement 3-tier shadow system
-- [ ] Add strategic glassmorphism (nav, overlays)
+- [ ] Build asymmetric layouts & floating card system
+- [ ] Implement chromatic zones per section
+- [ ] Add strategic glassmorphism (navbar when scrolled, gallery overlays)
+- [ ] Apply texture overlays at subtle opacity (5-10%)
 
-**Day 5:**
-- [ ] Create sensory translation effects
-- [ ] Implement gradient system
-- [ ] Build custom market-inspired icons
-
-**Day 6:**
-- [ ] Add texture overlays to sections
-- [ ] Implement floating card system
-- [ ] Create section peek/overlap effects
-
-**Deliverable:** Distinctive Mercado Vivo visual identity
+**Output:** Distinctive Mercado Vivo visual identity
 
 ---
 
-### **Phase 3: Living Content** (Days 7-8)
+### **Session 3: Cultural Polish** (1 hour)
 
-**Day 7:**
-- [ ] Build sticky mobile action bar
-- [ ] Implement live status indicator
-- [ ] Add countdown timers (hours, restock)
-- [ ] Create "fresh daily" indicators
+- [ ] Create and add papel picado SVG dividers between sections
+- [ ] Add pattern accents (azulejo-inspired borders on cards)
+- [ ] Implement gradient treatments on hero text and CTAs
+- [ ] Style elements with market-inspired touches
 
-**Day 8:**
-- [ ] Implement scroll choreography
-- [ ] Add interactive storytelling motion
-- [ ] Create micro-narrative animations
-- [ ] Build Ken Burns gallery effect
-
-**Deliverable:** Dynamic, living market experience
+**Output:** Culturally authentic, modern aesthetic
 
 ---
 
-### **Phase 4: Polish + Performance** (Days 9-10)
+### **Session 4: Motion & Mobile** (1.5 hours)
 
-**Day 9:**
-- [ ] Implement progressive enhancement
-- [ ] Optimize images (WebP, srcset, lazy loading)
-- [ ] Add reduced-motion support
-- [ ] Accessibility audit + fixes
+- [ ] Implement scroll choreography (parallax, reveals, transitions)
+- [ ] Add purposeful micro-interactions (hover states, pulses, jiggles)
+- [ ] Build mobile sticky action bar (Call | Directions | Hours)
+- [ ] Performance optimization (GPU acceleration, reduced motion support)
+- [ ] Cross-device testing and final polish
 
-**Day 10:**
-- [ ] Cross-device testing (iOS, Android, Desktop)
-- [ ] Performance optimization (Core Web Vitals)
-- [ ] Cultural authenticity review
-- [ ] Final QA and polish
+**Output:** Polished, performant, mobile-optimized experience
 
-**Deliverable:** Production-ready, performant experience
+---
+
+### **What We're NOT Doing:**
+❌ Custom photography shoots (use existing images)  
+❌ Complex integrations (Google Reviews API, live feeds)  
+❌ Content rewrites (keep existing copy)  
+❌ Backend changes or database work  
+
+### **What We ARE Doing:**
+✅ Visual transformation (colors, layout, depth, textures)  
+✅ Cultural authenticity (patterns, dividers, market aesthetic)  
+✅ Modern interactions (motion, hover states, scroll effects)  
+✅ Mobile-first improvements (sticky bar, touch targets)  
+✅ Performance optimization (CSS-only, GPU accelerated)
+
+**Total Time:** ~5 hours of focused implementation  
+**Deliverable:** Production-ready modern mercado experience
 
 ---
 
