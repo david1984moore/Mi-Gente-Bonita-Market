@@ -43,10 +43,10 @@ const Contact = () => {
                   <div>
                     <h4 className="font-bold text-lg mb-2 text-gray-800">{t("contact.location1.title")}</h4>
                     <div className="mb-3">
-                      <p className="text-gray-700 font-semibold text-base">Wilmington:</p>
-                      <p className="text-gray-700 text-base leading-tight">2125 W Newport Pike, Wilmington, DE 19804</p>
+                      <p className="text-gray-700 font-semibold text-base">Newark:</p>
+                      <p className="text-gray-700 text-base leading-tight">1300 Capitol Trail, Newark, DE 19711</p>
                       <a 
-                        href="https://maps.google.com/?q=2125+W+Newport+Pike,+Wilmington,+DE+19804" 
+                        href="https://maps.google.com/?q=1300+Capitol+Tr,+Newark,+DE+19711" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="inline-flex items-center text-[#D41414] hover:text-[#891414] mt-1 transition-colors duration-300 text-sm"
@@ -56,10 +56,10 @@ const Contact = () => {
                     </div>
                     
                     <div>
-                      <p className="text-gray-700 font-semibold text-base">Newark:</p>
-                      <p className="text-gray-700 text-base leading-tight">1300 Capitol Trail, Newark, DE 19711</p>
+                      <p className="text-gray-700 font-semibold text-base">Wilmington:</p>
+                      <p className="text-gray-700 text-base leading-tight">2125 W Newport Pike, Wilmington, DE 19804</p>
                       <a 
-                        href="https://maps.google.com/?q=1300+Capitol+Tr,+Newark,+DE+19711" 
+                        href="https://maps.google.com/?q=2125+W+Newport+Pike,+Wilmington,+DE+19804" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="inline-flex items-center text-[#D41414] hover:text-[#891414] mt-1 transition-colors duration-300 text-sm"
@@ -93,8 +93,7 @@ const Contact = () => {
                   <div>
                     <h4 className="font-bold text-lg mb-2 text-gray-800">{t("contact.hours.title")}</h4>
                     <div>
-                      <p className="text-gray-700 text-base leading-tight">{t("contact.hours.weekdays")}: 8:30 AM - 9:00 PM</p>
-                      <p className="text-gray-700 text-base leading-tight">{t("contact.hours.sunday")}: 8:30 AM - 8:00 PM</p>
+                      <p className="text-gray-700 text-base leading-tight">{t("contact.hours.everyday")}: 8am - 9pm</p>
                     </div>
                   </div>
                 </div>
