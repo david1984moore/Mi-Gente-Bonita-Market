@@ -15,7 +15,6 @@ import frontOfStore from "@assets/front of store_1759971076902.jpeg";
 import meat from "@assets/meat_1759971076903.jpeg";
 import products1 from "@assets/products 1_1759971076904.jpeg";
 import products2 from "@assets/products 2_1759971076905.jpeg";
-import products3 from "@assets/products 3_1759971076906.jpeg";
 import products4 from "@assets/products 4_1759971076906.jpeg";
 import products5 from "@assets/products 5_1759971076907.jpeg";
 import productsOnShelves from "@assets/products on shelves_1759971076907.jpeg";
@@ -92,11 +91,6 @@ const Gallery = () => {
     },
     { 
       src: products2, 
-      alt: "Products display",
-      objectPosition: "center"
-    },
-    { 
-      src: products3, 
       alt: "Products display",
       objectPosition: "center"
     },

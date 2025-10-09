@@ -131,8 +131,8 @@ const translations = {
   
   // Gallery
   "gallery.title": {
-    es: "Nuestros Productos",
-    en: "Our Products"
+    es: "Productos",
+    en: "Products"
   },
   "gallery.subtitle": {
     es: "",
