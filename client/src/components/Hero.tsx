@@ -27,7 +27,7 @@ const Hero = () => {
                 Market
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-slate-300 font-light max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-slate-300 font-normal max-w-2xl mx-auto leading-relaxed">
               {t("hero.tagline")}
             </p>
           </div>
