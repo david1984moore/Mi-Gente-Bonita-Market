@@ -6,7 +6,7 @@ import logoImage from "../assets/logo.png";
 const Contact = () => {
   const { t } = useLanguage();
   return (
-    <section id="contact" className="pt-8 pb-24 md:pb-16 md:pt-10 bg-gradient-to-b from-gray-50 to-gray-100 relative section-connector">
+    <section id="contact" className="pt-8 pb-24 md:pb-16 md:pt-10 zone-contact relative section-connector">
       {/* Add a wave divider at the top of the section */}
       <div className="w-full overflow-hidden">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" 
@@ -25,7 +25,7 @@ const Contact = () => {
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
-          <div className="bg-white rounded-2xl shadow-xl lg:col-span-2 overflow-hidden transform transition-all duration-300 hover:shadow-2xl border border-gray-100 flex flex-col h-auto min-h-[500px] md:h-[600px]">
+          <div className="bg-[#F5E6D3] rounded-2xl shadow-mercado-green lg:col-span-2 overflow-hidden transform transition-all duration-300 hover:shadow-2xl border border-gray-100 flex flex-col h-auto min-h-[500px] md:h-[600px]">
             <div className="bg-gradient-to-r from-[#E24949] to-[#B83434] text-white p-4 flex justify-center items-center">
               <img 
                 src={logoImage}

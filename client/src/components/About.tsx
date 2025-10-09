@@ -25,7 +25,7 @@ const About = () => {
           <div className="absolute -top-5 -left-5 w-24 h-24 bg-[#D41414]/5 rounded-2xl -z-10 rotate-6"></div>
           <div className="absolute -bottom-5 -right-5 w-32 h-32 bg-[#FFDE59]/10 rounded-2xl -z-10 -rotate-3"></div>
           
-          <div className="relative z-10 overflow-hidden rounded-md shadow-sm transform transition-all duration-500 hover:shadow-xl group">
+          <div className="relative z-10 overflow-hidden rounded-md shadow-mercado-orange transform transition-all duration-500 hover:shadow-xl group">
             <img 
               src={storefront} 
               alt="Mi Gente Bonita Market storefront with owners" 
@@ -37,7 +37,7 @@ const About = () => {
       </div>
       
       <div className="order-1 lg:order-2">
-        <div className="bg-white p-0 sm:p-2">
+        <div className="bg-[#F5E6D3] p-0 sm:p-2 rounded-lg shadow-mercado-red">
           <p className="mb-6 text-[#4B5563] leading-relaxed text-base">
             {t("about.storyPart1")}
           </p>
@@ -66,7 +66,7 @@ const About = () => {
   );
   
   return (
-    <section id="about" className="pt-10 pb-20 md:pt-12 md:pb-24 bg-white section-connector">
+    <section id="about" className="pt-10 pb-20 md:pt-12 md:pb-24 zone-about section-connector">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-6 md:mb-10">

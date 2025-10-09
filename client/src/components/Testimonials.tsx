@@ -30,7 +30,7 @@ const Testimonial = ({ rating, text, name, initials, backgroundColor }: Testimon
   };
 
   return (
-    <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 relative">
+    <div className="bg-[#F5E6D3] p-8 rounded-2xl shadow-mercado-red hover:shadow-mercado-red-lg transition-all duration-300 relative">
       {/* Decorative quote icon */}
       <div className="absolute top-0 right-0 transform translate-x-[-20px] translate-y-[-15px]">
         <Quote className="h-14 w-14 text-gray-100 transform rotate-180" />
@@ -106,7 +106,7 @@ const Testimonials = () => {
   );
 
   return (
-    <section id="testimonials" className="py-10 bg-gray-50 section-connector">
+    <section id="testimonials" className="py-10 zone-testimonials section-connector">
       {/* Add a visual divider at the top of the section */}
       <div className="w-full overflow-hidden">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" 

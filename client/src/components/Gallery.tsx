@@ -198,7 +198,7 @@ const Gallery = () => {
   }, [selectedImage, selectedIndex]);
 
   return (
-    <section id="gallery" className="pt-8 pb-16 bg-gradient-to-b from-white to-gray-50 w-full">
+    <section id="gallery" className="pt-8 pb-16 zone-gallery w-full">
       <div className="w-full px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight text-[#1D1D1F]">
@@ -213,7 +213,7 @@ const Gallery = () => {
         {/* Slideshow Container */}
         <div className="max-w-6xl mx-auto relative">
           {/* Main Slideshow */}
-          <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+          <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-mercado-yellow">
             {images.map((image, index) => (
               <div
                 key={index}
