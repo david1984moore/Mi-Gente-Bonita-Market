@@ -1,4 +1,4 @@
-import { MapPin, Phone, Clock, Globe, Facebook, ExternalLink, Mail } from "lucide-react";
+import { MapPin, Phone, Clock, Globe, Facebook, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import logoImage from "../assets/logo.png";
@@ -36,27 +36,27 @@ const Contact = () => {
                     <h4 className="font-bold text-base mb-1.5 text-gray-800">{t("contact.location1.title")}</h4>
                     <div className="mb-2.5">
                       <p className="text-gray-700 font-semibold text-sm">Newark:</p>
-                      <p className="text-gray-700 text-sm leading-snug">1300 Capitol Trail, Newark, DE 19711</p>
                       <a 
-                        href="https://maps.google.com/?q=1300+Capitol+Tr,+Newark,+DE+19711" 
+                        href="https://maps.google.com/?q=1300+Capitol+Trail,+Newark,+DE+19711" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center text-[#D41414] hover:text-[#891414] mt-0.5 transition-colors duration-300 text-xs"
+                        className="text-[#D41414] hover:text-[#891414] hover:underline text-sm leading-snug transition-colors duration-300 cursor-pointer"
+                        data-testid="link-address-newark"
                       >
-                        {t("contact.getDirections")} <ExternalLink className="ml-1 h-3 w-3" />
+                        1300 Capitol Trail, Newark, DE 19711
                       </a>
                     </div>
                     
                     <div>
                       <p className="text-gray-700 font-semibold text-sm">Wilmington:</p>
-                      <p className="text-gray-700 text-sm leading-snug">2125 W Newport Pike, Wilmington, DE 19804</p>
                       <a 
                         href="https://maps.google.com/?q=2125+W+Newport+Pike,+Wilmington,+DE+19804" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center text-[#D41414] hover:text-[#891414] mt-0.5 transition-colors duration-300 text-xs"
+                        className="text-[#D41414] hover:text-[#891414] hover:underline text-sm leading-snug transition-colors duration-300 cursor-pointer"
+                        data-testid="link-address-wilmington"
                       >
-                        {t("contact.getDirections")} <ExternalLink className="ml-1 h-3 w-3" />
+                        2125 W Newport Pike, Wilmington, DE 19804
                       </a>
                     </div>
                   </div>
@@ -70,23 +70,23 @@ const Contact = () => {
                     <h4 className="font-bold text-base mb-1.5 text-gray-800">{t("contact.callUs")}</h4>
                     <div className="mb-2.5">
                       <p className="text-gray-700 font-semibold text-sm">Newark:</p>
-                      <p className="text-gray-700 text-sm leading-snug">(302) 601-6900</p>
                       <a 
-                        href="tel:3026016900" 
-                        className="inline-flex items-center text-[#3D9C42] hover:text-[#2A6D2E] mt-0.5 transition-colors duration-300 text-xs"
+                        href="tel:3026016900"
+                        className="text-[#3D9C42] hover:text-[#2A6D2E] hover:underline text-sm leading-snug transition-colors duration-300 cursor-pointer"
+                        data-testid="link-phone-newark"
                       >
-                        {t("contact.callUs")}
+                        (302) 601-6900
                       </a>
                     </div>
                     
                     <div>
                       <p className="text-gray-700 font-semibold text-sm">Wilmington:</p>
-                      <p className="text-gray-700 text-sm leading-snug">(302) 691-3048</p>
                       <a 
-                        href="tel:3026913048" 
-                        className="inline-flex items-center text-[#3D9C42] hover:text-[#2A6D2E] mt-0.5 transition-colors duration-300 text-xs"
+                        href="tel:3026913048"
+                        className="text-[#3D9C42] hover:text-[#2A6D2E] hover:underline text-sm leading-snug transition-colors duration-300 cursor-pointer"
+                        data-testid="link-phone-wilmington"
                       >
-                        {t("contact.callUs")}
+                        (302) 691-3048
                       </a>
                     </div>
                   </div>
