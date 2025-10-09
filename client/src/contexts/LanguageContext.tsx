@@ -26,10 +26,6 @@ const translations = {
     es: "Reseñas",
     en: "Reviews"
   },
-  "navbar.testimonials": {
-    es: "Testimonios",
-    en: "Testimonials"
-  },
   "navbar.contact": {
     es: "Contacto",
     en: "Contact"
@@ -149,8 +145,8 @@ const translations = {
   
   // Testimonials
   "testimonials.title": {
-    es: "Testimonios",
-    en: "Testimonials"
+    es: "Reseñas",
+    en: "Reviews"
   },
   "testimonials.subtitle": {
     es: "",

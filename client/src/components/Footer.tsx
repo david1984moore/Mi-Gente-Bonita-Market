@@ -101,7 +101,7 @@ const Footer = () => {
                     className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer flex items-center text-base justify-center md:justify-start"
                   >
                     <span className="w-1 h-1 rounded-full bg-[#FFDE59] mr-2"></span>
-                    {t("navbar.testimonials")}
+                    {t("navbar.reviews")}
                   </Link>
                 </li>
               </ul>
