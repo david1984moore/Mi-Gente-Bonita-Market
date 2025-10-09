@@ -34,35 +34,35 @@ const Contact = () => {
               />
             </div>
             
-            <div className="px-6 py-6 flex-1">
-              <div className="space-y-5">
+            <div className="px-6 py-5 flex-1">
+              <div className="space-y-4">
                 <div className="flex items-start">
                   <div className="bg-[#FEE8E8] text-[#D41414] p-2 rounded-lg mr-3 flex-shrink-0 w-10 h-10 flex items-center justify-center">
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg mb-2 text-gray-800">{t("contact.location1.title")}</h4>
-                    <div className="mb-3">
-                      <p className="text-gray-700 font-semibold text-base">Newark:</p>
-                      <p className="text-gray-700 text-base leading-tight">1300 Capitol Trail, Newark, DE 19711</p>
+                    <h4 className="font-bold text-base mb-1.5 text-gray-800">{t("contact.location1.title")}</h4>
+                    <div className="mb-2.5">
+                      <p className="text-gray-700 font-semibold text-sm">Newark:</p>
+                      <p className="text-gray-700 text-sm leading-snug">1300 Capitol Trail, Newark, DE 19711</p>
                       <a 
                         href="https://maps.google.com/?q=1300+Capitol+Tr,+Newark,+DE+19711" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center text-[#D41414] hover:text-[#891414] mt-1 transition-colors duration-300 text-sm"
+                        className="inline-flex items-center text-[#D41414] hover:text-[#891414] mt-0.5 transition-colors duration-300 text-xs"
                       >
                         {t("contact.getDirections")} <ExternalLink className="ml-1 h-3 w-3" />
                       </a>
                     </div>
                     
                     <div>
-                      <p className="text-gray-700 font-semibold text-base">Wilmington:</p>
-                      <p className="text-gray-700 text-base leading-tight">2125 W Newport Pike, Wilmington, DE 19804</p>
+                      <p className="text-gray-700 font-semibold text-sm">Wilmington:</p>
+                      <p className="text-gray-700 text-sm leading-snug">2125 W Newport Pike, Wilmington, DE 19804</p>
                       <a 
                         href="https://maps.google.com/?q=2125+W+Newport+Pike,+Wilmington,+DE+19804" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center text-[#D41414] hover:text-[#891414] mt-1 transition-colors duration-300 text-sm"
+                        className="inline-flex items-center text-[#D41414] hover:text-[#891414] mt-0.5 transition-colors duration-300 text-xs"
                       >
                         {t("contact.getDirections")} <ExternalLink className="ml-1 h-3 w-3" />
                       </a>
@@ -70,29 +70,29 @@ const Contact = () => {
                   </div>
                 </div>
                 
-                <div className="flex items-start mt-4">
+                <div className="flex items-start">
                   <div className="bg-[#EDF9EE] text-[#3D9C42] p-2 rounded-lg mr-3 flex-shrink-0 w-10 h-10 flex items-center justify-center">
                     <Phone className="h-5 w-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg mb-2 text-gray-800">{t("contact.callUs")}</h4>
-                    <div className="mb-3">
-                      <p className="text-gray-700 font-semibold text-base">Newark:</p>
-                      <p className="text-gray-700 text-base leading-tight">(302) 601-6900</p>
+                    <h4 className="font-bold text-base mb-1.5 text-gray-800">{t("contact.callUs")}</h4>
+                    <div className="mb-2.5">
+                      <p className="text-gray-700 font-semibold text-sm">Newark:</p>
+                      <p className="text-gray-700 text-sm leading-snug">(302) 601-6900</p>
                       <a 
                         href="tel:3026016900" 
-                        className="inline-flex items-center text-[#3D9C42] hover:text-[#2A6D2E] mt-1 transition-colors duration-300 text-sm"
+                        className="inline-flex items-center text-[#3D9C42] hover:text-[#2A6D2E] mt-0.5 transition-colors duration-300 text-xs"
                       >
                         {t("contact.callUs")}
                       </a>
                     </div>
                     
                     <div>
-                      <p className="text-gray-700 font-semibold text-base">Wilmington:</p>
-                      <p className="text-gray-700 text-base leading-tight">(302) 691-3048</p>
+                      <p className="text-gray-700 font-semibold text-sm">Wilmington:</p>
+                      <p className="text-gray-700 text-sm leading-snug">(302) 691-3048</p>
                       <a 
                         href="tel:3026913048" 
-                        className="inline-flex items-center text-[#3D9C42] hover:text-[#2A6D2E] mt-1 transition-colors duration-300 text-sm"
+                        className="inline-flex items-center text-[#3D9C42] hover:text-[#2A6D2E] mt-0.5 transition-colors duration-300 text-xs"
                       >
                         {t("contact.callUs")}
                       </a>
@@ -100,14 +100,14 @@ const Contact = () => {
                   </div>
                 </div>
                 
-                <div className="flex items-start mt-4">
+                <div className="flex items-start">
                   <div className="bg-[#FFF9E6] text-[#C7A500] p-2 rounded-lg mr-3 flex-shrink-0 w-10 h-10 flex items-center justify-center">
                     <Clock className="h-5 w-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg mb-2 text-gray-800">{t("contact.hours.title")}</h4>
+                    <h4 className="font-bold text-base mb-1.5 text-gray-800">{t("contact.hours.title")}</h4>
                     <div>
-                      <p className="text-gray-700 text-base leading-tight">{t("contact.hours.everyday")}: 8am - 9pm</p>
+                      <p className="text-gray-700 text-sm leading-snug">{t("contact.hours.everyday")}: 8am - 9pm</p>
                     </div>
                   </div>
                 </div>
