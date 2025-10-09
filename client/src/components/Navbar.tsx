@@ -238,7 +238,7 @@ const Navbar = () => {
                   </a>
                   
                   <a
-                    href="https://maps.google.com/?q=2125+W+Newport+Pike,+Wilmington,+DE+19804"
+                    href="https://maps.google.com/?q=1300+Capitol+Trail,+Newark,+DE+19711"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center w-full bg-[#1D1D1F] hover:bg-[#333] text-white py-2.5 px-4 rounded-lg transition-colors duration-300"
