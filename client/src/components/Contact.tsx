@@ -6,7 +6,9 @@ import logoImage from "../assets/logo.png";
 const Contact = () => {
   const { t } = useLanguage();
   return (
-    <section id="contact" className="pt-8 pb-24 md:pb-16 md:pt-10 zone-contact relative section-connector">
+    <>
+      <div className="papel-picado-divider"></div>
+      <section id="contact" className="pt-8 pb-24 md:pb-16 md:pt-10 zone-contact relative section-connector">
       {/* Add a wave divider at the top of the section */}
       <div className="w-full overflow-hidden">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" 
@@ -18,14 +20,14 @@ const Contact = () => {
       
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3 tracking-tight text-[#1D1D1F]">
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-3 text-[#1D1D1F]">
             {t("contact.title")}
           </h2>
           <div className="h-1 w-16 bg-[#D41414] mx-auto my-4 rounded-full"></div>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
-          <div className="bg-[#F5E6D3] rounded-2xl shadow-mercado-green lg:col-span-2 overflow-hidden transform transition-all duration-300 hover:shadow-2xl border border-gray-100 flex flex-col h-auto min-h-[500px] md:h-[600px]">
+          <div className="bg-[#F5E6D3] rounded-2xl shadow-mercado-green lg:col-span-2 overflow-hidden transform transition-all duration-300 hover:shadow-2xl border border-gray-100 flex flex-col h-auto min-h-[500px] md:h-[600px] azulejo-corner">
             <div className="bg-gradient-to-r from-[#E24949] to-[#B83434] text-white p-4 flex justify-center items-center">
               <img 
                 src={logoImage}
@@ -136,6 +138,7 @@ const Contact = () => {
       {/* Full green background extension that matches footer */}
       <div className="absolute bottom-0 left-0 w-full bg-[#3D9C42]" style={{height: '80px', transform: 'translateY(79px)'}}></div>
     </section>
+    </>
   );
 };
 

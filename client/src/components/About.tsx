@@ -37,7 +37,7 @@ const About = () => {
       </div>
       
       <div className="order-1 lg:order-2">
-        <div className="bg-[#F5E6D3] p-0 sm:p-2 rounded-lg shadow-mercado-red">
+        <div className="bg-[#F5E6D3] p-0 sm:p-2 rounded-lg shadow-mercado-red azulejo-corner texture-basket">
           <p className="mb-6 text-[#4B5563] leading-relaxed text-base">
             {t("about.storyPart1")}
           </p>
@@ -66,7 +66,9 @@ const About = () => {
   );
   
   return (
-    <section id="about" className="pt-10 pb-20 md:pt-12 md:pb-24 zone-about section-connector">
+    <>
+      <div className="papel-picado-divider"></div>
+      <section id="about" className="pt-10 pb-20 md:pt-12 md:pb-24 zone-about section-connector">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-6 md:mb-10">
@@ -84,7 +86,7 @@ const About = () => {
                   aria-expanded="false"
                   aria-controls="about-content"
                 >
-                  <h2 className="text-3xl md:text-4xl font-['Inter'] font-bold mb-3 tracking-tight text-[#1D1D1F]">
+                  <h2 className="text-3xl md:text-4xl font-extrabold mb-3 text-[#1D1D1F]">
                     {t("about.title")}
                   </h2>
                   <ChevronDown className="h-6 w-6 text-[#D41414]" />
@@ -96,7 +98,7 @@ const About = () => {
               </>
             ) : (
               <>
-                <h2 className="text-3xl md:text-4xl font-['Inter'] font-bold mb-3 tracking-tight text-[#1D1D1F]">
+                <h2 className="text-3xl md:text-4xl font-extrabold mb-3 text-[#1D1D1F]">
                   {t("about.title")}
                 </h2>
                 <div className="h-1 w-16 bg-[#D41414] mx-auto my-4 rounded-full"></div>
@@ -119,6 +121,7 @@ const About = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
