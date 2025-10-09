@@ -1,5 +1,4 @@
 import { Link } from "react-scroll";
-import { Logo } from "../assets/logo";
 import { Facebook, Instagram } from "lucide-react";
 import { SiTiktok } from "react-icons/si";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -17,9 +16,6 @@ const Footer = () => {
             {/* Logo and About */}
             <div className="text-center md:text-left">
               <div className="mb-6">
-                <div className="font-['Inter'] font-medium text-xl mb-5 flex items-center justify-center md:justify-start">
-                  <Logo className="h-12 w-auto bg-white rounded-md p-1.5 shadow-md" />
-                </div>
                 <p className="text-gray-300 leading-relaxed mb-5 text-sm">
                   {t("footer.serving")}
                 </p>

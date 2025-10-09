@@ -9,5 +9,12 @@ export const Logo = ({ className }: { className?: string }) => {
     });
   };
 
-  return null;
+  return (
+    <img 
+      src={logoImage} 
+      alt="Mi Gente Bonita Market"
+      className={`cursor-pointer ${className || ''}`}
+      onClick={scrollToTop}
+    />
+  );
 };
