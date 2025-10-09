@@ -57,9 +57,9 @@ const Hero = () => {
       <div className="absolute inset-0 opacity-80 zone-hero overflow-hidden" />
       
       {/* Content */}
-      <section id="home" className="relative z-10 flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 pt-40">
+      <section id="home" className="relative z-10 flex items-center justify-center min-h-screen pt-40">
         <motion.div 
-          className="max-w-4xl mx-auto text-center w-full"
+          className="max-w-4xl mx-auto text-center w-full px-2 lg:px-4"
           variants={containerVariants}
           initial="hidden"
           animate="visible"

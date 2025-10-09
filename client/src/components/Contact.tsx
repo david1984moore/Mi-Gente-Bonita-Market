@@ -10,7 +10,7 @@ const Contact = () => {
     <>
       <section id="contact" className="pt-8 pb-24 md:pb-16 md:pt-10 zone-contact relative section-connector">
       
-      <div className="container mx-auto px-4">
+      <div className="w-full mx-auto px-1 lg:px-4 xl:px-6">
         <ScrollReveal direction="up" delay={0}>
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-extrabold mb-3 text-[#1D1D1F]">
