@@ -139,10 +139,9 @@ const Footer = () => {
                 href="https://applicreations.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-gray-300 hover:text-white transition-colors duration-300"
+                className="text-gray-300 hover:text-white transition-colors duration-300"
                 data-testid="link-applicreations"
               >
-                <span className="text-sm">🦋</span>
                 Applicreations.com
               </a>
             </p>
