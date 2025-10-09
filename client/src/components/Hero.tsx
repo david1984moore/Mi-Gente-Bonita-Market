@@ -42,7 +42,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative min-h-screen w-screen">
+    <div className="relative min-h-screen w-full">
       {/* Background Image - overflow-hidden only on background layers */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat overflow-hidden"
@@ -59,7 +59,7 @@ const Hero = () => {
       {/* Content */}
       <section id="home" className="relative z-10 flex items-center justify-center min-h-screen pt-40">
         <motion.div 
-          className="max-w-4xl mx-auto text-center w-full px-2 lg:px-4"
+          className="text-center w-full px-2 lg:px-4"
           variants={containerVariants}
           initial="hidden"
           animate="visible"

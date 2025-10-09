@@ -69,8 +69,7 @@ const About = () => {
   return (
     <>
       <section id="about" className="pt-10 pb-20 md:pt-12 md:pb-24 zone-about section-connector bg-[#F5E6D3]">
-      <div className="w-full mx-auto px-1 lg:px-4 xl:px-6">
-        <div className="max-w-6xl mx-auto">
+      <div className="w-full px-1 lg:px-4 xl:px-6">
           <ScrollReveal direction="up" delay={0}>
             <div className="text-center mb-6 md:mb-10">
               {mounted && isMobile ? (
@@ -119,8 +118,7 @@ const About = () => {
             aboutContent
           )}
         </div>
-      </div>
-    </section>
+      </section>
     </>
   );
 };
