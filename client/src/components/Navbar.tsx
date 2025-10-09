@@ -73,7 +73,7 @@ const Navbar = () => {
 
   return (
     <header 
-      className="fixed w-full bg-white/90 backdrop-blur-md shadow-sm py-1.5 z-[60] transition-all duration-300"
+      className="fixed w-full bg-white/90 backdrop-blur-md shadow-sm py-1 z-[60] transition-all duration-300"
     >
       <nav className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
@@ -98,9 +98,9 @@ const Navbar = () => {
           aria-controls="mobile-menu"
         >
           {isOpen ? (
-            <X className="h-7 w-7" />
+            <X className="h-8 w-8" />
           ) : (
-            <Menu className="h-7 w-7" />
+            <Menu className="h-8 w-8" />
           )}
         </button>
         
