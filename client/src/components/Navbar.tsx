@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-scroll";
-import { Menu, X, Phone, Facebook, MapPin, Globe } from "lucide-react";
+import { Menu, X, Phone, Facebook, MapPin, Globe, Instagram } from "lucide-react";
+import { SiTiktok } from "react-icons/si";
 import { Logo } from "../assets/logo";
 import { Button } from "@/components/ui/button";
 import Portal from "@/components/ui/portal";
@@ -264,6 +265,28 @@ const Navbar = () => {
                   >
                     <Facebook className="h-4 w-4 mr-2" />
                     <span className="font-medium">Facebook</span>
+                  </a>
+                  
+                  <a
+                    href="https://www.instagram.com/explore/locations/105762445384586/mi-gente-bonita-market/?hl=en"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center w-full bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#F77737] hover:opacity-90 text-white py-2.5 px-4 rounded-lg transition-opacity duration-300"
+                    onClick={toggleMenu}
+                  >
+                    <Instagram className="h-4 w-4 mr-2" />
+                    <span className="font-medium">Instagram</span>
+                  </a>
+                  
+                  <a
+                    href="https://www.tiktok.com/place/Mi-Gente-Bonita-Market-21568226272493734?language=en"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center w-full bg-[#000000] hover:bg-[#1a1a1a] text-white py-2.5 px-4 rounded-lg transition-colors duration-300"
+                    onClick={toggleMenu}
+                  >
+                    <SiTiktok className="h-4 w-4 mr-2" />
+                    <span className="font-medium">TikTok</span>
                   </a>
                 </div>
               </div>

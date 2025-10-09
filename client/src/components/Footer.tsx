@@ -1,6 +1,7 @@
 import { Link } from "react-scroll";
 import { Logo } from "../assets/logo";
-import { Facebook, Phone, MapPin, Heart, ArrowUp } from "lucide-react";
+import { Facebook, Phone, MapPin, Heart, ArrowUp, Instagram } from "lucide-react";
+import { SiTiktok } from "react-icons/si";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
@@ -38,14 +39,32 @@ const Footer = () => {
                 <p className="text-gray-300 leading-relaxed mb-5 text-sm">
                   {t("footer.serving")}
                 </p>
-                <a
-                  href="https://www.facebook.com/people/Mi-Gente-Bonita-Market/100078536995749/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-white/10 hover:bg-white/15 p-2.5 rounded-md transition-all duration-300 group"
-                >
-                  <Facebook className="h-5 w-5 text-white group-hover:text-[#1877F2] transition-colors duration-300" />
-                </a>
+                <div className="flex gap-3">
+                  <a
+                    href="https://www.facebook.com/people/Mi-Gente-Bonita-Market/100078536995749/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center bg-white/10 hover:bg-white/15 p-2.5 rounded-md transition-all duration-300 group"
+                  >
+                    <Facebook className="h-5 w-5 text-white group-hover:text-[#1877F2] transition-colors duration-300" />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/explore/locations/105762445384586/mi-gente-bonita-market/?hl=en"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center bg-white/10 hover:bg-white/15 p-2.5 rounded-md transition-all duration-300 group"
+                  >
+                    <Instagram className="h-5 w-5 text-white group-hover:text-[#E4405F] transition-colors duration-300" />
+                  </a>
+                  <a
+                    href="https://www.tiktok.com/place/Mi-Gente-Bonita-Market-21568226272493734?language=en"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center bg-white/10 hover:bg-white/15 p-2.5 rounded-md transition-all duration-300 group"
+                  >
+                    <SiTiktok className="h-5 w-5 text-white group-hover:text-[#000000] transition-colors duration-300" />
+                  </a>
+                </div>
               </div>
             </div>
             
