@@ -14,7 +14,7 @@ function App() {
     <TooltipProvider>
       <Toaster />
       <LanguageProvider>
-        <div className="font-['Inter'] bg-[#F5E6D3] text-[#1D1D1F]">
+        <div className="font-['Inter'] bg-[#F5E6D3] text-[#1D1D1F] w-full min-h-screen">
           <Navbar />
           <Hero />
           <About />
