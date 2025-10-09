@@ -106,6 +106,17 @@ const Navbar = () => {
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-7 lg:space-x-9">
+          {/* Language toggle button */}
+          <button
+            onClick={toggleLanguage}
+            className="flex items-center justify-center p-3 bg-[#1D1D1F] hover:bg-[#333] text-white rounded-md transition-colors duration-300"
+            title={language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+            aria-label={language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+          >
+            <Globe className="h-5 w-5" />
+            <span className="ml-1.5 text-sm font-semibold">{language === 'es' ? 'EN' : 'ES'}</span>
+          </button>
+          
           {/* Regular nav items */}
           {navItems.filter(item => item.to !== "features" && item.to !== "contact").map((item) => (
             <Link
@@ -117,8 +128,8 @@ const Navbar = () => {
               duration={500}
               className={`nav-link relative text-sm tracking-wide transition-all duration-300 cursor-pointer ${
                 activeSection === item.to
-                  ? 'text-[#D41414] font-medium' 
-                  : 'text-[#1D1D1F] hover:text-[#D41414] font-normal'
+                  ? 'text-[#D41414] font-bold' 
+                  : 'text-[#1D1D1F] hover:text-[#D41414] font-semibold'
               }`}
             >
               <span>{item.label}</span>
@@ -137,8 +148,8 @@ const Navbar = () => {
             duration={500}
             className={`flex items-center nav-link relative text-sm tracking-wide transition-all duration-300 cursor-pointer ${
               activeSection === "contact"
-                ? 'text-[#D41414] font-medium' 
-                : 'text-[#1D1D1F] hover:text-[#D41414] font-normal'
+                ? 'text-[#D41414] font-bold' 
+                : 'text-[#1D1D1F] hover:text-[#D41414] font-semibold'
             }`}
           >
             <Phone className="h-3.5 w-3.5 mr-1.5" />
@@ -147,17 +158,6 @@ const Navbar = () => {
               <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-[#D41414] rounded-full"></span>
             )}
           </Link>
-
-          {/* Language toggle button */}
-          <button
-            onClick={toggleLanguage}
-            className="flex items-center justify-center p-1.5 bg-[#1D1D1F] hover:bg-[#333] text-white rounded-md transition-colors duration-300 ml-2"
-            title={language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
-            aria-label={language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
-          >
-            <Globe className="h-3.5 w-3.5" />
-            <span className="ml-1 text-xs font-medium">{language === 'es' ? 'EN' : 'ES'}</span>
-          </button>
         </div>
       </nav>
       
@@ -183,26 +183,25 @@ const Navbar = () => {
               style={{ position: 'fixed' }}
             >
               <div className="flex justify-between items-center p-5 sticky top-0 bg-white/90 backdrop-blur-md z-10 border-b border-gray-100">
-                <h3 className="font-medium text-base text-[#1D1D1F]">{t("navbar.menu")}</h3>
                 <div className="flex items-center gap-3">
                   {/* Language toggle for mobile */}
                   <button
                     onClick={toggleLanguage}
-                    className="flex items-center justify-center p-1.5 bg-[#1D1D1F] hover:bg-[#333] text-white rounded-md transition-colors duration-300"
+                    className="flex items-center justify-center p-3 bg-[#1D1D1F] hover:bg-[#333] text-white rounded-md transition-colors duration-300"
                     title={language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
                     aria-label={language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
                   >
-                    <Globe className="h-3.5 w-3.5" />
-                    <span className="ml-1 text-xs font-medium">{language === 'es' ? 'EN' : 'ES'}</span>
-                  </button>
-                  <button 
-                    onClick={toggleMenu}
-                    className="text-[#1D1D1F] hover:text-[#D41414] focus:outline-none"
-                    aria-label="Close navigation menu"
-                  >
-                    <X className="h-5 w-5" />
+                    <Globe className="h-5 w-5" />
+                    <span className="ml-1.5 text-sm font-semibold">{language === 'es' ? 'EN' : 'ES'}</span>
                   </button>
                 </div>
+                <button 
+                  onClick={toggleMenu}
+                  className="text-[#1D1D1F] hover:text-[#D41414] focus:outline-none"
+                  aria-label="Close navigation menu"
+                >
+                  <X className="h-5 w-5" />
+                </button>
               </div>
               
               <div className="px-5 py-6 space-y-5 flex-1 overflow-y-auto pb-20">
@@ -216,8 +215,8 @@ const Navbar = () => {
                     duration={500}
                     className={`block p-2.5 transition-all duration-300 relative rounded-md ${
                       activeSection === item.to
-                        ? 'text-[#D41414] font-medium bg-[#FEF2F2] pl-4' 
-                        : 'text-[#1D1D1F] hover:text-[#D41414] hover:pl-4 font-normal hover:bg-gray-50'
+                        ? 'text-[#D41414] font-bold bg-[#FEF2F2] pl-4' 
+                        : 'text-[#1D1D1F] hover:text-[#D41414] hover:pl-4 font-semibold hover:bg-gray-50'
                     }`}
                     onClick={toggleMenu}
                   >
