@@ -113,18 +113,20 @@ const Footer = () => {
           </div>
           
           <div className="border-t border-gray-800 mt-12 pt-8 text-center">
-            <p className="text-gray-400 flex items-center justify-center text-xs gap-1">
-              &copy; {year} Mi Gente Bonita Market. {t("footer.rights")}.{" "}
-              {t("footer.developedBy")}{" "}
-              <a 
-                href="https://applicreations.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white transition-colors duration-300"
-                data-testid="link-applicreations"
-              >
-                Applicreations.com
-              </a>
+            <p className="text-gray-400 flex flex-wrap items-center justify-center text-xs gap-1">
+              <span>&copy; {year} Mi Gente Bonita Market. {t("footer.rights")}.</span>
+              <span className="whitespace-nowrap">
+                {t("footer.developedBy")}{" "}
+                <a 
+                  href="https://applicreations.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-white transition-colors duration-300"
+                  data-testid="link-applicreations"
+                >
+                  Applicreations.com
+                </a>
+              </span>
             </p>
           </div>
         </div>
