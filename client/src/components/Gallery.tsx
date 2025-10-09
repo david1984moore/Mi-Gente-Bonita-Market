@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { X, ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import ScrollReveal from "./ScrollReveal";
 import groceryAisle from "../assets/store-photos/grocery-aisle.png";
 import freshProduce from "../assets/store-photos/fresh-produce.png";
 import freshLemons from "../assets/store-photos/fresh-lemons.png";
@@ -201,14 +202,16 @@ const Gallery = () => {
     <>
       <section id="gallery" className="pt-8 pb-16 zone-gallery w-full">
       <div className="w-full px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-3 text-[#1D1D1F]">
-            {t("gallery.title")}
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-4">
-            {t("gallery.subtitle")}
-          </p>
-        </div>
+        <ScrollReveal direction="up" delay={0}>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-extrabold mb-3 text-[#1D1D1F]">
+              {t("gallery.title")}
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-4">
+              {t("gallery.subtitle")}
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* Slideshow Container */}
         <div className="max-w-6xl mx-auto relative">

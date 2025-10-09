@@ -2,6 +2,7 @@ import { MapPin, Phone, Clock, Globe, Facebook, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import logoImage from "../assets/logo.png";
+import ScrollReveal from "./ScrollReveal";
 
 const Contact = () => {
   const { t } = useLanguage();
@@ -10,14 +11,16 @@ const Contact = () => {
       <section id="contact" className="pt-8 pb-24 md:pb-16 md:pt-10 zone-contact relative section-connector">
       
       <div className="container mx-auto px-4">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-3 text-[#1D1D1F]">
-            {t("contact.title")}
-          </h2>
-        </div>
+        <ScrollReveal direction="up" delay={0}>
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-extrabold mb-3 text-[#1D1D1F]">
+              {t("contact.title")}
+            </h2>
+          </div>
+        </ScrollReveal>
         
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
-          <div className="bg-[#F5E6D3] rounded-2xl shadow-mercado-green lg:col-span-2 overflow-hidden transform transition-all duration-300 hover:shadow-2xl border border-gray-100 flex flex-col h-auto min-h-[500px] md:h-[600px] azulejo-corner">
+          <ScrollReveal direction="left" delay={0.2} className="bg-[#F5E6D3] rounded-2xl shadow-mercado-green lg:col-span-2 overflow-hidden transform transition-all duration-300 hover:shadow-2xl border border-gray-100 flex flex-col h-auto min-h-[500px] md:h-[600px] azulejo-corner">
             <div className="bg-gradient-to-r from-[#E24949] to-[#B83434] text-white p-4 flex justify-center items-center">
               <img 
                 src={logoImage}
@@ -105,9 +108,10 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
           
-          <div className="rounded-2xl overflow-hidden shadow-xl lg:col-span-3 border border-gray-100 relative h-[400px] sm:h-[500px] md:h-[600px]">
+          <ScrollReveal direction="right" delay={0.2}>
+            <div className="rounded-2xl overflow-hidden shadow-xl lg:col-span-3 border border-gray-100 relative h-[400px] sm:h-[500px] md:h-[600px]">
             <iframe 
               src="https://maps.google.com/maps?q=1300+Capitol+Trail,+Newark,+DE+19711&t=&z=13&ie=UTF8&iwloc=&output=embed" 
               width="100%" 
@@ -121,7 +125,8 @@ const Contact = () => {
             ></iframe>
             
             {/* Map overlay - removed buttons as requested */}
-          </div>
+            </div>
+          </ScrollReveal>
         </div>
       </div>
       

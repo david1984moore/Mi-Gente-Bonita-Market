@@ -3,6 +3,7 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useState, useEffect } from "react";
+import ScrollReveal from "./ScrollReveal";
 
 interface TestimonialProps {
   rating: number;
@@ -93,14 +94,19 @@ const Testimonials = () => {
   const testimonialsGrid = (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
       {testimonials.map((testimonial, index) => (
-        <Testimonial
-          key={index}
-          rating={testimonial.rating}
-          text={testimonial.text}
-          name={testimonial.name}
-          initials={testimonial.initials}
-          backgroundColor={testimonial.backgroundColor}
-        />
+        <ScrollReveal 
+          key={index} 
+          direction="up" 
+          delay={index * 0.2}
+        >
+          <Testimonial
+            rating={testimonial.rating}
+            text={testimonial.text}
+            name={testimonial.name}
+            initials={testimonial.initials}
+            backgroundColor={testimonial.backgroundColor}
+          />
+        </ScrollReveal>
       ))}
     </div>
   );
@@ -110,17 +116,18 @@ const Testimonials = () => {
       <section id="testimonials" className="py-10 zone-testimonials section-connector">
       
       <div className="container mx-auto px-4">
-        <div className="text-center mb-8 md:mb-10">
-          {mounted && isMobile ? (
-            <>
-              <button
-                onClick={() => {
-                  const contentDiv = document.getElementById('testimonials-content');
-                  if (contentDiv) {
-                    const isCurrentlyHidden = contentDiv.style.display === 'none' || !contentDiv.style.display;
-                    contentDiv.style.display = isCurrentlyHidden ? 'block' : 'none';
-                  }
-                }}
+        <ScrollReveal direction="up" delay={0}>
+          <div className="text-center mb-8 md:mb-10">
+            {mounted && isMobile ? (
+              <>
+                <button
+                  onClick={() => {
+                    const contentDiv = document.getElementById('testimonials-content');
+                    if (contentDiv) {
+                      const isCurrentlyHidden = contentDiv.style.display === 'none' || !contentDiv.style.display;
+                      contentDiv.style.display = isCurrentlyHidden ? 'block' : 'none';
+                    }
+                  }}
                 className="flex items-center justify-center gap-2 mx-auto"
                 aria-expanded="false"
                 aria-controls="testimonials-content"
@@ -144,7 +151,8 @@ const Testimonials = () => {
               </p>
             </>
           )}
-        </div>
+          </div>
+        </ScrollReveal>
         
         {/* Conditionally render collapsible content on mobile */}
         {mounted && isMobile ? (
