@@ -67,14 +67,14 @@ const Hero = () => {
           {/* Main heading */}
           <div className="mb-8">
             <motion.h1 
-              className="text-5xl md:text-7xl lg:text-8xl font-black mb-4" 
-              style={{ letterSpacing: '-0.04em' }}
+              className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-4" 
+              style={{ letterSpacing: '0' }}
               variants={itemVariants}
             >
               <span className="text-white opacity-90">Mi</span>{' '}
-              <span className="text-white text-[1.15em]">GENTE</span>{' '}
+              <span className="text-white md:text-[1.15em]">GENTE</span>{' '}
               <span className="text-white">Bonita</span>
-              <span className="block text-gradient-market tracking-wider mt-2">
+              <span className="block text-gradient-market tracking-normal md:tracking-wider mt-2">
                 MARKET
               </span>
             </motion.h1>
