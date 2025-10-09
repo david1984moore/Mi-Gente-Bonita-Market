@@ -1,6 +1,6 @@
 import { Link } from "react-scroll";
 import { Logo } from "../assets/logo";
-import { Facebook, Phone, MapPin, Heart, ArrowUp, Instagram } from "lucide-react";
+import { Facebook, Heart, ArrowUp, Instagram } from "lucide-react";
 import { SiTiktok } from "react-icons/si";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -29,17 +29,17 @@ const Footer = () => {
       {/* Modern footer with subtle gradient */}
       <div className="bg-gradient-to-br from-[#1D1D1F] to-[#2D2D2F] text-white pt-16 pb-10">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             {/* Logo and About */}
-            <div>
+            <div className="text-center md:text-left">
               <div className="mb-6">
-                <div className="font-['Inter'] font-medium text-xl mb-5 flex items-center">
+                <div className="font-['Inter'] font-medium text-xl mb-5 flex items-center justify-center md:justify-start">
                   <Logo className="h-12 w-auto bg-white rounded-md p-1.5 shadow-md" />
                 </div>
                 <p className="text-gray-300 leading-relaxed mb-5 text-sm">
                   {t("footer.serving")}
                 </p>
-                <div className="flex gap-3">
+                <div className="flex gap-3 justify-center md:justify-start">
                   <a
                     href="https://www.facebook.com/people/Mi-Gente-Bonita-Market/100078536995749/"
                     target="_blank"
@@ -69,7 +69,7 @@ const Footer = () => {
             </div>
             
             {/* Quick Links */}
-            <div>
+            <div className="text-center md:text-left">
               <h3 className="text-base font-medium mb-5 text-white/90">
                 {t("navbar.menu")}
               </h3>
@@ -81,7 +81,7 @@ const Footer = () => {
                     smooth={true}
                     offset={-70}
                     duration={500}
-                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer flex items-center text-sm"
+                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer flex items-center text-sm justify-center md:justify-start"
                   >
                     <span className="w-1 h-1 rounded-full bg-[#FFDE59] mr-2"></span>
                     {t("navbar.home")}
@@ -95,7 +95,7 @@ const Footer = () => {
                     smooth={true}
                     offset={-70}
                     duration={500}
-                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer flex items-center text-sm"
+                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer flex items-center text-sm justify-center md:justify-start"
                   >
                     <span className="w-1 h-1 rounded-full bg-[#FFDE59] mr-2"></span>
                     {t("navbar.about")}
@@ -108,7 +108,7 @@ const Footer = () => {
                     smooth={true}
                     offset={-70}
                     duration={500}
-                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer flex items-center text-sm"
+                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer flex items-center text-sm justify-center md:justify-start"
                   >
                     <span className="w-1 h-1 rounded-full bg-[#FFDE59] mr-2"></span>
                     {t("navbar.products")}
@@ -121,57 +121,11 @@ const Footer = () => {
                     smooth={true}
                     offset={-70}
                     duration={500}
-                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer flex items-center text-sm"
+                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer flex items-center text-sm justify-center md:justify-start"
                   >
                     <span className="w-1 h-1 rounded-full bg-[#FFDE59] mr-2"></span>
                     {t("navbar.testimonials")}
                   </Link>
-                </li>
-              </ul>
-            </div>
-            
-            {/* Contact Info */}
-            <div>
-              <h3 className="text-base font-medium mb-5 text-white/90">
-                {t("navbar.contact")}
-              </h3>
-              <ul className="space-y-4">
-                <li className="flex">
-                  <MapPin className="h-4 w-4 mr-3 flex-shrink-0 mt-0.5 text-[#D41414]" />
-                  <div className="text-sm">
-                    <div className="font-medium text-white/90 mb-0.5">{t("contact.location.wilmington")}:</div>
-                    <span className="text-gray-300">2125 W Newport Pike, Wilmington, DE 19804</span>
-                  </div>
-                </li>
-                <li className="flex">
-                  <MapPin className="h-4 w-4 mr-3 flex-shrink-0 mt-0.5 text-[#D41414]" />
-                  <div className="text-sm">
-                    <div className="font-medium text-white/90 mb-0.5">{t("contact.location.newark")}:</div>
-                    <span className="text-gray-300">1300 Capitol Tr, Newark, DE 19711</span>
-                  </div>
-                </li>
-                <li className="flex items-center">
-                  <Phone className="h-4 w-4 mr-3 flex-shrink-0 text-[#D41414]" />
-                  <a href="tel:3026913048" className="text-gray-300 hover:text-white transition-colors duration-300 text-sm">
-                    (302) 691-3048
-                  </a>
-                </li>
-              </ul>
-            </div>
-            
-            {/* Business Hours */}
-            <div>
-              <h3 className="text-base font-medium mb-5 text-white/90">
-                {t("contact.hours.title")}
-              </h3>
-              <ul className="space-y-2">
-                <li className="flex justify-between text-sm">
-                  <span className="text-gray-300">{t("contact.hours.weekdays")}:</span>
-                  <span className="text-white font-medium">8:30 AM - 9:00 PM</span>
-                </li>
-                <li className="flex justify-between text-sm">
-                  <span className="text-gray-300">{t("contact.hours.sunday")}:</span>
-                  <span className="text-white font-medium">8:30 AM - 8:00 PM</span>
                 </li>
               </ul>
             </div>
