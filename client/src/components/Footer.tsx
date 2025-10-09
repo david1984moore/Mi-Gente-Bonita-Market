@@ -130,7 +130,7 @@ const Footer = () => {
           
           <div className="border-t border-gray-800 mt-12 pt-8 text-center">
             <p className="text-gray-400 flex items-center justify-center text-xs gap-1">
-              &copy; {year} Mi Gente Bonita Market. {t("footer.rights")}. 
+              &copy; {year} Mi Gente Bonita Market. {t("footer.rights")}.{" "}
               {t("footer.developedBy")}{" "}
               <a 
                 href="https://applicreations.com" 
