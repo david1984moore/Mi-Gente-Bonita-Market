@@ -113,7 +113,7 @@ const Testimonials = () => {
 
   return (
     <>
-      <section id="testimonials" className="py-10 zone-testimonials section-connector">
+      <section id="testimonials" className="py-10 zone-testimonials section-connector bg-[#F5E6D3]">
       
       <div className="w-full mx-auto px-1 lg:px-4 xl:px-6">
         <ScrollReveal direction="up" delay={0}>

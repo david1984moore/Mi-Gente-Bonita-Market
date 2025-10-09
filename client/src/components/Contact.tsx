@@ -8,7 +8,7 @@ const Contact = () => {
   const { t } = useLanguage();
   return (
     <>
-      <section id="contact" className="pt-8 pb-24 md:pb-16 md:pt-10 zone-contact relative section-connector">
+      <section id="contact" className="pt-8 pb-24 md:pb-16 md:pt-10 zone-contact relative section-connector bg-[#F5E6D3]">
       
       <div className="w-full mx-auto px-1 lg:px-4 xl:px-6">
         <ScrollReveal direction="up" delay={0}>

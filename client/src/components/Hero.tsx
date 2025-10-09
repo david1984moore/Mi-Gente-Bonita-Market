@@ -42,7 +42,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative min-h-screen w-full">
+    <div className="relative min-h-screen w-screen">
       {/* Background Image - overflow-hidden only on background layers */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat overflow-hidden"
