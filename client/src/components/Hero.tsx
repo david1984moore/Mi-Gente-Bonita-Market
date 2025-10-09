@@ -1,29 +1,17 @@
-import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import { useLanguage } from "@/contexts/LanguageContext";
 import limesBackground from "@assets/limes_1759971097571.jpeg";
 
 const Hero = () => {
   const { t } = useLanguage();
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <div className="relative min-h-screen overflow-hidden">
-      {/* Background Image with Parallax */}
+      {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-100"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ 
-          backgroundImage: `url(${limesBackground})`,
-          transform: `translateY(${scrollY * -0.3}px)`
+          backgroundImage: `url(${limesBackground})`
         }}
       />
       
@@ -31,7 +19,7 @@ const Hero = () => {
       <div className="absolute inset-0 opacity-80 zone-hero" />
       
       {/* Content */}
-      <section id="home" className="relative z-10 flex items-center justify-center min-h-screen px-4 pt-20">
+      <section id="home" className="relative z-10 flex items-center justify-center min-h-screen px-4 pt-40">
         <div className="max-w-4xl mx-auto text-center">
           {/* Main heading */}
           <div className="mb-8">

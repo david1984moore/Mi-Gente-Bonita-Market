@@ -199,15 +199,13 @@ const Gallery = () => {
 
   return (
     <>
-      <div className="papel-picado-divider"></div>
       <section id="gallery" className="pt-8 pb-16 zone-gallery w-full">
       <div className="w-full px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-extrabold mb-3 text-[#1D1D1F]">
             {t("gallery.title")}
           </h2>
-          <div className="h-1 w-16 bg-[#D41414] mx-auto my-4 rounded-full"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-3">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-4">
             {t("gallery.subtitle")}
           </p>
         </div>

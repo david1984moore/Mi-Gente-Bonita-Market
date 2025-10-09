@@ -94,16 +94,14 @@ const Features = () => {
                 <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3">Why Choose Us</h2>
                 <ChevronDown className="h-6 w-6 text-[#D41414]" />
               </button>
-              <div className="h-1 w-16 bg-[#D41414] mx-auto my-4 rounded-full" style={{backgroundColor: '#D41414'}}></div>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto mt-4">
                 Our store offers the finest selection of Latino products in Delaware.
               </p>
             </>
           ) : (
             <>
               <h2 className="text-3xl md:text-4xl font-['Poppins'] font-bold mb-3">Why Choose Us</h2>
-              <div className="h-1 w-16 bg-[#D41414] mx-auto my-4 rounded-full" style={{backgroundColor: '#D41414'}}></div>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto mt-4">
                 Our store offers the finest selection of Latino products in Delaware.
               </p>
             </>

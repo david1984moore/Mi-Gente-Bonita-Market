@@ -67,7 +67,6 @@ const About = () => {
   
   return (
     <>
-      <div className="papel-picado-divider"></div>
       <section id="about" className="pt-10 pb-20 md:pt-12 md:pb-24 zone-about section-connector">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
@@ -91,7 +90,6 @@ const About = () => {
                   </h2>
                   <ChevronDown className="h-6 w-6 text-[#D41414]" />
                 </button>
-                <div className="h-1 w-16 bg-[#D41414] mx-auto my-4 rounded-full"></div>
                 <p className="text-xl text-[#4B5563] max-w-2xl mx-auto mt-4 font-light">
                   {t("about.subtitle")}
                 </p>
@@ -101,7 +99,6 @@ const About = () => {
                 <h2 className="text-3xl md:text-4xl font-extrabold mb-3 text-[#1D1D1F]">
                   {t("about.title")}
                 </h2>
-                <div className="h-1 w-16 bg-[#D41414] mx-auto my-4 rounded-full"></div>
                 <p className="text-xl text-[#4B5563] max-w-2xl mx-auto mt-4 font-light">
                   {t("about.subtitle")}
                 </p>

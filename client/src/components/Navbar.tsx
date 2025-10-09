@@ -9,7 +9,6 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   // Create a ref for the mobile menu
   const mobileMenuRef = useRef<HTMLDivElement>(null);
@@ -39,12 +38,6 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-
       // Determine active section for highlight nav item
       const sections = ["home", "features", "about", "gallery", "testimonials", "contact"];
       const currentSection = sections.find(section => {
@@ -80,7 +73,7 @@ const Navbar = () => {
 
   return (
     <header 
-      className={`fixed w-full ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-3' : 'bg-white/80 backdrop-blur-sm py-4'} z-[60] transition-all duration-300`}
+      className="fixed w-full bg-white/90 backdrop-blur-md shadow-sm py-3 z-[60] transition-all duration-300"
     >
       <nav className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
@@ -92,7 +85,7 @@ const Navbar = () => {
           duration={500}
           className="flex items-center cursor-pointer"
         >
-          <Logo className={`transition-all duration-300 ${scrolled ? 'h-12' : 'h-14'} w-auto`} />
+          <Logo className="transition-all duration-300 h-12 w-auto" />
         </Link>
         
         {/* Mobile menu button - Using the highest z-index to be always clickable */}

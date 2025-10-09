@@ -7,23 +7,13 @@ const Contact = () => {
   const { t } = useLanguage();
   return (
     <>
-      <div className="papel-picado-divider"></div>
       <section id="contact" className="pt-8 pb-24 md:pb-16 md:pt-10 zone-contact relative section-connector">
-      {/* Add a wave divider at the top of the section */}
-      <div className="w-full overflow-hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" 
-             className="text-gray-50 relative block h-8 w-full" style={{transform: 'rotateY(180deg)'}}>
-          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" 
-                fill="currentColor"></path>
-        </svg>
-      </div>
       
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-extrabold mb-3 text-[#1D1D1F]">
             {t("contact.title")}
           </h2>
-          <div className="h-1 w-16 bg-[#D41414] mx-auto my-4 rounded-full"></div>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
