@@ -100,6 +100,19 @@ const Footer = () => {
                     {t("navbar.reviews")}
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    to="contact"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer flex items-center text-lg font-bold justify-center md:justify-start"
+                    data-testid="link-contact-footer"
+                  >
+                    {t("navbar.contact")}
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
