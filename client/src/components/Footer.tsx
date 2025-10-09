@@ -70,9 +70,6 @@ const Footer = () => {
             
             {/* Quick Links */}
             <div className="text-center md:text-left">
-              <h3 className="text-base font-medium mb-5 text-white/90">
-                {t("navbar.menu")}
-              </h3>
               <ul className="space-y-3">
                 <li>
                   <Link
@@ -81,7 +78,7 @@ const Footer = () => {
                     smooth={true}
                     offset={-70}
                     duration={500}
-                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer flex items-center text-sm justify-center md:justify-start"
+                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer flex items-center text-base justify-center md:justify-start"
                   >
                     <span className="w-1 h-1 rounded-full bg-[#FFDE59] mr-2"></span>
                     {t("navbar.home")}
@@ -95,7 +92,7 @@ const Footer = () => {
                     smooth={true}
                     offset={-70}
                     duration={500}
-                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer flex items-center text-sm justify-center md:justify-start"
+                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer flex items-center text-base justify-center md:justify-start"
                   >
                     <span className="w-1 h-1 rounded-full bg-[#FFDE59] mr-2"></span>
                     {t("navbar.about")}
@@ -108,7 +105,7 @@ const Footer = () => {
                     smooth={true}
                     offset={-70}
                     duration={500}
-                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer flex items-center text-sm justify-center md:justify-start"
+                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer flex items-center text-base justify-center md:justify-start"
                   >
                     <span className="w-1 h-1 rounded-full bg-[#FFDE59] mr-2"></span>
                     {t("navbar.products")}
@@ -121,7 +118,7 @@ const Footer = () => {
                     smooth={true}
                     offset={-70}
                     duration={500}
-                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer flex items-center text-sm justify-center md:justify-start"
+                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer flex items-center text-base justify-center md:justify-start"
                   >
                     <span className="w-1 h-1 rounded-full bg-[#FFDE59] mr-2"></span>
                     {t("navbar.testimonials")}
