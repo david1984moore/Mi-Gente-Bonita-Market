@@ -262,7 +262,7 @@ const Gallery = () => {
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
+                className={`flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden border-2 transition-all duration-300 p-0 ${
                   index === currentSlideIndex 
                     ? 'border-[#D41414] shadow-lg scale-110' 
                     : 'border-gray-300 hover:border-gray-400'
@@ -271,7 +271,7 @@ const Gallery = () => {
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-center block"
                 />
               </button>
             ))}
