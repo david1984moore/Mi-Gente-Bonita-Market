@@ -79,8 +79,8 @@ const translations = {
     en: "Our Story"
   },
   "about.storyPart1": {
-    es: "Mi Gente Bonita Market fue fundado con una misión simple: llevar productos auténticos a nuestra comunidad en Delaware. Lo que comenzó como un pequeño negocio familiar se ha convertido en un mercado de barrio muy querido con dos ubicaciones en Newark y Wilmington.",
-    en: "Mi Gente Bonita Market was founded with a simple mission: to bring authentic products to our community in Delaware. What started as a small family business has grown into a beloved neighborhood market with two locations in Newark and Wilmington."
+    es: "Mi Gente Bonita Market fue fundado en 2023 con una misión simple: llevar productos auténticos a nuestra comunidad en Delaware. Lo que comenzó como un pequeño negocio familiar se ha convertido en un mercado de barrio muy querido con dos ubicaciones en Newark y Wilmington.",
+    en: "Mi Gente Bonita Market was founded in 2023 with a simple mission: to bring authentic products to our community in Delaware. What started as a small family business has grown into a beloved neighborhood market with two locations in Newark and Wilmington."
   },
   "about.storyPart2": {
     es: "Nos enorgullecemos de ofrecer una amplia variedad de productos importados y domésticos, junto con alimentos recién preparados que recuerdan a nuestros clientes su hogar. Nuestro mercado sirve tanto como tienda de comestibles como centro cultural donde nuestra comunidad puede conectarse.",
