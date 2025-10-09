@@ -83,8 +83,8 @@ const translations = {
     en: "Mi Gente Bonita Market was founded with a simple mission: to bring authentic products to our community in Delaware. What started as a small family business has grown into a beloved neighborhood market with two locations in Newark and Wilmington."
   },
   "about.storyPart2": {
-    es: "Nos enorgullecemos de ofrecer una amplia variedad de productos importados directamente de América Latina, junto con alimentos recién preparados que recuerdan a nuestros clientes su hogar. Nuestro mercado sirve tanto como tienda de comestibles como centro cultural donde nuestra comunidad puede conectarse.",
-    en: "We take pride in offering a wide variety of products imported directly from Latin America, along with freshly prepared foods that remind our customers of home. Our market serves as both a grocery store and a cultural hub where our community can connect."
+    es: "Nos enorgullecemos de ofrecer una amplia variedad de productos importados y domésticos, junto con alimentos recién preparados que recuerdan a nuestros clientes su hogar. Nuestro mercado sirve tanto como tienda de comestibles como centro cultural donde nuestra comunidad puede conectarse.",
+    en: "We take pride in offering a wide variety of imported and domestic products, along with freshly prepared foods that remind our customers of home. Our market serves as both a grocery store and a cultural hub where our community can connect."
   },
   "about.visitUs": {
     es: "Visítanos",
