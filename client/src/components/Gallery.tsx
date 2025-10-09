@@ -20,7 +20,6 @@ import products4 from "@assets/products 4_1759971076906.jpeg";
 import products5 from "@assets/products 5_1759971076907.jpeg";
 import productsOnShelves from "@assets/products on shelves_1759971076907.jpeg";
 import stuffInShelves2 from "@assets/stuff in shelves 2_1759971076908.jpeg";
-import stuffInShelves from "@assets/stuff in shelves_1759971076908.jpeg";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -118,11 +117,6 @@ const Gallery = () => {
     },
     { 
       src: stuffInShelves2, 
-      alt: "Store shelves display",
-      objectPosition: "center"
-    },
-    { 
-      src: stuffInShelves, 
       alt: "Store shelves display",
       objectPosition: "center"
     }
