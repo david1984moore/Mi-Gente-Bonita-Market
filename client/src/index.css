@@ -603,7 +603,7 @@ html {
 
 /* Mercado Vivo - Chromatic Zone System */
 .zone-hero {
-  background: linear-gradient(135deg, #D41414 0%, #FF6B35 50%, #FFB800 100%);
+  background: linear-gradient(135deg, #D41414 0%, #E82E2E 40%, #FFB800 100%);
 }
 
 .zone-about {
