@@ -5,7 +5,6 @@ import Gallery from "./components/Gallery";
 import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import MobileStickyBar from "./components/MobileStickyBar";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/toaster";
 import { LanguageProvider } from "./contexts/LanguageContext";
@@ -23,7 +22,6 @@ function App() {
           <Testimonials />
           <Contact />
           <Footer />
-          <MobileStickyBar />
         </div>
       </LanguageProvider>
     </TooltipProvider>
