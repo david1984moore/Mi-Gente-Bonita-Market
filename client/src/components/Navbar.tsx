@@ -92,7 +92,7 @@ const Navbar = () => {
         <button 
           ref={menuButtonRef}
           onClick={toggleMenu} 
-          className="md:hidden p-2 rounded-md text-[#1D1D1F] hover:text-[#D41414] transition-colors duration-300 focus:outline-none relative z-[10000]"
+          className="md:hidden p-2 rounded-md text-[#D41414] transition-colors duration-300 focus:outline-none relative z-[10000]"
           aria-label="Toggle navigation menu"
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
