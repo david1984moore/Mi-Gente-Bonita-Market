@@ -229,7 +229,7 @@ const Navbar = () => {
                 
                 <div className="pt-5 space-y-3">
                   <a
-                    href="tel:3026913048"
+                    href="tel:3026016900"
                     className="flex items-center justify-center w-full bg-[#D41414] hover:bg-[#B01212] text-white py-2.5 px-4 rounded-lg transition-colors duration-300"
                     onClick={toggleMenu}
                   >
