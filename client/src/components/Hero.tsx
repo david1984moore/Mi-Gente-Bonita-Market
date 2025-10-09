@@ -59,7 +59,7 @@ const Hero = () => {
       {/* Content */}
       <section id="home" className="relative z-10 flex items-center justify-center min-h-screen pt-40">
         <motion.div 
-          className="max-w-4xl mx-auto text-center w-full px-0 lg:px-4"
+          className="max-w-4xl mx-auto text-center w-full px-2 lg:px-4"
           variants={containerVariants}
           initial="hidden"
           animate="visible"

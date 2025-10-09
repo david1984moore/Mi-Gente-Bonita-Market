@@ -11,7 +11,7 @@ const Footer = () => {
     <footer className="relative" style={{marginTop: '-1px'}}>
       {/* Modern footer with subtle gradient */}
       <div className="bg-gradient-to-br from-[#1D1D1F] to-[#2D2D2F] text-white pt-16 pb-10">
-        <div className="w-full mx-auto px-0 lg:px-4 xl:px-6">
+        <div className="w-full mx-auto px-1 lg:px-4 xl:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             {/* Logo and About */}
             <div className="text-center md:text-left">

@@ -115,7 +115,7 @@ const Testimonials = () => {
     <>
       <section id="testimonials" className="py-10 zone-testimonials section-connector">
       
-      <div className="w-full mx-auto px-0 lg:px-4 xl:px-6">
+      <div className="w-full mx-auto px-1 lg:px-4 xl:px-6">
         <ScrollReveal direction="up" delay={0}>
           <div className="text-center mb-8 md:mb-10">
             {mounted && isMobile ? (
