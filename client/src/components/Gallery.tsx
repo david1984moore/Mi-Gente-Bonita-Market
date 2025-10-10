@@ -246,6 +246,7 @@ const Gallery = () => {
                 <img
                   src={image.src}
                   alt={image.alt}
+                  loading="lazy"
                   className="w-full h-full object-cover"
                   style={{ objectPosition: image.objectPosition }}
                 />
@@ -292,6 +293,7 @@ const Gallery = () => {
                 <img
                   src={image.src}
                   alt={image.alt}
+                  loading="lazy"
                   className="w-full h-full object-cover object-center block"
                 />
               </button>

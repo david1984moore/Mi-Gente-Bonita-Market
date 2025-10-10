@@ -30,6 +30,7 @@ const About = () => {
             <img 
               src={storefront} 
               alt="Mi Gente Bonita Market storefront with owners" 
+              loading="lazy"
               className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
