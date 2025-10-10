@@ -23,7 +23,7 @@ import newStorePhoto from "@assets/a3459d46-8940-4784-b39f-45d38344dfe8_17601112
 import storePhoto11 from "@assets/844a1985-192a-4c11-86b0-aee14cf304f4_1760111458633.jpeg";
 import storePhoto16 from "@assets/6eba131d-0c28-44fd-8472-60ecf24b15a6_1760111676457.jpeg";
 import storePhoto17 from "@assets/f0e151c4-490d-4734-9e63-2e310d2addeb_1760111676457.jpeg";
-import storePhoto18 from "@assets/abff7128-392c-4617-a4a6-865a41e429dc_1760111676457.jpeg";
+import storePhoto18 from "@assets/304d78dd-cc23-4a47-ae32-fb172decb6a8_1760113351843.jpeg";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
