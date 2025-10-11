@@ -2,6 +2,7 @@ import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import limesBackground from "@assets/limes_1759971097571.jpeg";
+import limesBackgroundWebP from "@assets/limes_1759971097571.jpeg.webp";
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -43,16 +44,18 @@ const Hero = () => {
 
   return (
     <div className="relative min-h-screen w-full -mt-[1px]">
-      {/* Background Image - overflow-hidden only on background layers */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat overflow-hidden"
-        style={{ 
-          backgroundImage: `url(${limesBackground})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center center',
-          top: '-1px'
-        }}
-      />
+      {/* Background Image - using picture element for WebP support */}
+      <picture className="absolute inset-0 overflow-hidden" style={{ top: '-1px' }}>
+        <source srcSet={limesBackgroundWebP} type="image/webp" />
+        <img 
+          src={limesBackground}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ top: '-1px' }}
+          fetchPriority="high"
+          decoding="async"
+        />
+      </picture>
       
       {/* Mercado Vivo gradient overlay */}
       <div className="absolute inset-0 opacity-80 zone-hero overflow-hidden" style={{ top: '-1px' }} />
