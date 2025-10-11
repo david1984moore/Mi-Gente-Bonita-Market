@@ -10,7 +10,7 @@ export const Logo = ({ className }: { className?: string }) => {
         src={logoImage} 
         alt="Mi Gente Bonita Market"
         className={className || ''}
-        fetchPriority="high"
+        fetchpriority="high"
         decoding="async"
       />
     </picture>

@@ -52,7 +52,7 @@ const Hero = () => {
           alt=""
           className="absolute inset-0 w-full h-full object-cover"
           style={{ top: '-1px' }}
-          fetchPriority="high"
+          fetchpriority="high"
           decoding="async"
         />
       </picture>
