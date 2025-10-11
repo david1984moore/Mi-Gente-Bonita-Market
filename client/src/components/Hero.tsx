@@ -44,18 +44,15 @@ const Hero = () => {
 
   return (
     <div className="relative min-h-screen w-full -mt-[1px]">
-      {/* Background Image - using picture element for WebP support */}
-      <picture className="absolute inset-0 overflow-hidden" style={{ top: '-1px' }}>
-        <source srcSet={limesBackgroundWebP} type="image/webp" />
-        <img 
-          src={limesBackground}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ top: '-1px' }}
-          fetchpriority="high"
-          decoding="async"
-        />
-      </picture>
+      {/* Background Image - using CSS background for better performance and no flash */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat overflow-hidden"
+        style={{ 
+          backgroundImage: `image-set(url(${limesBackgroundWebP}) type("image/webp"), url(${limesBackground}) type("image/jpeg"))`,
+          WebkitBackgroundImage: `-webkit-image-set(url(${limesBackgroundWebP}) 1x, url(${limesBackground}) 1x)`,
+          top: '-1px'
+        }}
+      />
       
       {/* Mercado Vivo gradient overlay */}
       <div className="absolute inset-0 opacity-80 zone-hero overflow-hidden" style={{ top: '-1px' }} />
