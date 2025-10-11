@@ -1,6 +1,7 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+import { setCacheHeaders } from "./cache-middleware";
 
 const app = express();
 app.use(express.json());
@@ -51,8 +52,12 @@ app.use((req, res, next) => {
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
   if (app.get("env") === "development") {
+    // Add caching headers for development assets too
+    app.use(setCacheHeaders);
     await setupVite(app, server);
   } else {
+    // Add caching headers for production static assets
+    app.use(setCacheHeaders);
     serveStatic(app);
   }
 
