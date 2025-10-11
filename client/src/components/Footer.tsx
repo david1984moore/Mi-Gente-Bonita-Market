@@ -50,7 +50,7 @@ const Footer = () => {
             
             {/* Quick Links */}
             <div className="text-center md:text-left">
-              <ul className="space-y-3">
+              <ul className="space-y-3 flex flex-col items-center md:items-start">
                 <li>
                   <Link
                     to="home"
@@ -58,7 +58,7 @@ const Footer = () => {
                     smooth={true}
                     offset={-70}
                     duration={500}
-                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer flex items-center text-lg font-bold justify-center md:justify-start"
+                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer inline-block text-lg font-bold"
                   >
                     {t("navbar.home")}
                   </Link>
@@ -71,7 +71,7 @@ const Footer = () => {
                     smooth={true}
                     offset={-70}
                     duration={500}
-                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer flex items-center text-lg font-bold justify-center md:justify-start"
+                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer inline-block text-lg font-bold"
                   >
                     {t("navbar.about")}
                   </Link>
@@ -83,7 +83,7 @@ const Footer = () => {
                     smooth={true}
                     offset={-70}
                     duration={500}
-                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer flex items-center text-lg font-bold justify-center md:justify-start"
+                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer inline-block text-lg font-bold"
                   >
                     {t("navbar.products")}
                   </Link>
@@ -95,7 +95,7 @@ const Footer = () => {
                     smooth={true}
                     offset={-70}
                     duration={500}
-                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer flex items-center text-lg font-bold justify-center md:justify-start"
+                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer inline-block text-lg font-bold"
                   >
                     {t("navbar.reviews")}
                   </Link>
@@ -107,7 +107,7 @@ const Footer = () => {
                     smooth={true}
                     offset={-70}
                     duration={500}
-                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer flex items-center text-lg font-bold justify-center md:justify-start"
+                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer inline-block text-lg font-bold"
                     data-testid="link-contact-footer"
                   >
                     {t("navbar.contact")}
