@@ -50,64 +50,64 @@ const Footer = () => {
             
             {/* Quick Links */}
             <div className="text-center md:text-left">
-              <ul className="space-y-3 flex flex-col items-center md:items-start">
-                <li>
+              <ul className="space-y-3">
+                <li className="text-center md:text-left">
                   <Link
                     to="home"
                     spy={true}
                     smooth={true}
                     offset={-70}
                     duration={500}
-                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer inline-block text-lg font-bold"
+                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer text-lg font-bold inline-block"
                   >
                     {t("navbar.home")}
                   </Link>
                 </li>
                 
-                <li>
+                <li className="text-center md:text-left">
                   <Link
                     to="about"
                     spy={true}
                     smooth={true}
                     offset={-70}
                     duration={500}
-                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer inline-block text-lg font-bold"
+                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer text-lg font-bold inline-block"
                   >
                     {t("navbar.about")}
                   </Link>
                 </li>
-                <li>
+                <li className="text-center md:text-left">
                   <Link
                     to="gallery"
                     spy={true}
                     smooth={true}
                     offset={-70}
                     duration={500}
-                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer inline-block text-lg font-bold"
+                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer text-lg font-bold inline-block"
                   >
                     {t("navbar.products")}
                   </Link>
                 </li>
-                <li>
+                <li className="text-center md:text-left">
                   <Link
                     to="testimonials"
                     spy={true}
                     smooth={true}
                     offset={-70}
                     duration={500}
-                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer inline-block text-lg font-bold"
+                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer text-lg font-bold inline-block"
                   >
                     {t("navbar.reviews")}
                   </Link>
                 </li>
-                <li>
+                <li className="text-center md:text-left">
                   <Link
                     to="contact"
                     spy={true}
                     smooth={true}
                     offset={-70}
                     duration={500}
-                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer inline-block text-lg font-bold"
+                    className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer text-lg font-bold inline-block"
                     data-testid="link-contact-footer"
                   >
                     {t("navbar.contact")}
