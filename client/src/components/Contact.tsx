@@ -10,7 +10,7 @@ const Contact = () => {
     <>
       <section id="contact" className="pt-8 pb-24 md:pb-16 md:pt-10 zone-contact relative section-connector bg-[#F5E6D3]">
       
-      <div className="w-full mx-auto px-1 lg:px-4 xl:px-6">
+      <div className="w-full mx-auto px-1 lg:px-6 xl:px-8 2xl:px-12">
         <ScrollReveal direction="up" delay={0}>
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-extrabold mb-3 text-[#1D1D1F]">
@@ -19,8 +19,8 @@ const Contact = () => {
           </div>
         </ScrollReveal>
         
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
-          <ScrollReveal direction="left" delay={0.2} className="bg-[#F5E6D3] rounded-2xl shadow-mercado-green lg:col-span-2 overflow-hidden transform transition-all duration-300 hover:shadow-2xl border border-gray-100 flex flex-col h-auto min-h-[500px] md:h-[600px] azulejo-corner">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
+          <ScrollReveal direction="left" delay={0.2} className="bg-[#F5E6D3] rounded-2xl shadow-mercado-green lg:col-span-4 overflow-hidden transform transition-all duration-300 hover:shadow-2xl border border-gray-100 flex flex-col h-auto min-h-[500px] md:h-[600px] azulejo-corner">
             <div className="bg-gradient-to-r from-[#E24949] to-[#B83434] text-white p-4 flex justify-center items-center">
               <img 
                 src={logoImage}
@@ -110,8 +110,8 @@ const Contact = () => {
             </div>
           </ScrollReveal>
           
-          <ScrollReveal direction="right" delay={0.2}>
-            <div className="rounded-2xl overflow-hidden shadow-xl lg:col-span-3 border border-gray-100 relative h-[400px] sm:h-[500px] md:h-[600px] isolate">
+          <ScrollReveal direction="right" delay={0.2} className="lg:col-span-8">
+            <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100 relative h-[400px] sm:h-[500px] md:h-[600px] isolate">
             <iframe 
               src="https://maps.google.com/maps?q=1300+Capitol+Trail,+Newark,+DE+19711&t=&z=13&ie=UTF8&iwloc=&output=embed" 
               width="100%" 
