@@ -42,22 +42,23 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative min-h-screen w-full">
+    <div className="relative min-h-screen w-full -mt-[1px]">
       {/* Background Image - overflow-hidden only on background layers */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat overflow-hidden"
         style={{ 
           backgroundImage: `url(${limesBackground})`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center center'
+          backgroundPosition: 'center center',
+          top: '-1px'
         }}
       />
       
       {/* Mercado Vivo gradient overlay */}
-      <div className="absolute inset-0 opacity-80 zone-hero overflow-hidden" />
+      <div className="absolute inset-0 opacity-80 zone-hero overflow-hidden" style={{ top: '-1px' }} />
       
       {/* Content */}
-      <section id="home" className="relative z-10 flex items-center justify-center min-h-screen pt-40">
+      <section id="home" className="relative z-10 flex items-center justify-center min-h-screen pt-24">
         <motion.div 
           className="text-center w-full px-2 lg:px-4"
           variants={containerVariants}
