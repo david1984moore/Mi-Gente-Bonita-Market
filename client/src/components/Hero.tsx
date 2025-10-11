@@ -102,6 +102,8 @@ const Hero = () => {
                 smooth={true}
                 offset={-70}
                 duration={800}
+                isDynamic={true}
+                hashSpy={false}
                 className="inline-block"
               >
                 <button className="relative bg-[#D41414] hover:bg-[#B91C1C] text-white px-8 py-4 rounded-full font-semibold text-lg shadow-mercado-red-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
@@ -117,6 +119,8 @@ const Hero = () => {
                 smooth={true}
                 offset={-70}
                 duration={800}
+                isDynamic={true}
+                hashSpy={false}
                 className="inline-block"
               >
                 <button className="relative bg-[#D41414] hover:bg-[#B91C1C] text-white px-8 py-4 rounded-full font-semibold text-lg shadow-mercado-red-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">

@@ -83,6 +83,8 @@ const Navbar = () => {
           smooth={true}
           offset={-70}
           duration={500}
+          isDynamic={true}
+          hashSpy={false}
           className="flex items-center cursor-pointer"
         >
           <Logo className="transition-all duration-300 h-9 w-auto" />
@@ -126,6 +128,8 @@ const Navbar = () => {
               smooth={true}
               offset={-70}
               duration={500}
+              isDynamic={true}
+              hashSpy={false}
               className={`nav-link relative text-sm tracking-wide transition-all duration-300 cursor-pointer ${
                 activeSection === item.to
                   ? 'text-[#D41414] font-bold' 
@@ -146,6 +150,8 @@ const Navbar = () => {
             smooth={true}
             offset={-70}
             duration={500}
+            isDynamic={true}
+            hashSpy={false}
             className={`flex items-center nav-link relative text-sm tracking-wide transition-all duration-300 cursor-pointer ${
               activeSection === "contact"
                 ? 'text-[#D41414] font-bold' 
@@ -213,6 +219,8 @@ const Navbar = () => {
                     smooth={true}
                     offset={-70}
                     duration={500}
+                    isDynamic={true}
+                    hashSpy={false}
                     className={`block p-2.5 transition-all duration-300 relative rounded-md ${
                       activeSection === item.to
                         ? 'text-[#D41414] font-bold bg-[#FEF2F2] pl-4' 

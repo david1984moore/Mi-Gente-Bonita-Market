@@ -58,6 +58,8 @@ const Footer = () => {
                     smooth={true}
                     offset={-70}
                     duration={500}
+                    isDynamic={true}
+                    hashSpy={false}
                     className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer text-lg font-bold inline-block"
                   >
                     {t("navbar.home")}
@@ -71,6 +73,8 @@ const Footer = () => {
                     smooth={true}
                     offset={-70}
                     duration={500}
+                    isDynamic={true}
+                    hashSpy={false}
                     className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer text-lg font-bold inline-block"
                   >
                     {t("navbar.about")}
@@ -83,6 +87,8 @@ const Footer = () => {
                     smooth={true}
                     offset={-70}
                     duration={500}
+                    isDynamic={true}
+                    hashSpy={false}
                     className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer text-lg font-bold inline-block"
                   >
                     {t("navbar.products")}
@@ -95,6 +101,8 @@ const Footer = () => {
                     smooth={true}
                     offset={-70}
                     duration={500}
+                    isDynamic={true}
+                    hashSpy={false}
                     className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer text-lg font-bold inline-block"
                   >
                     {t("navbar.reviews")}
@@ -107,6 +115,8 @@ const Footer = () => {
                     smooth={true}
                     offset={-70}
                     duration={500}
+                    isDynamic={true}
+                    hashSpy={false}
                     className="text-gray-300 hover:text-white hover:translate-x-0.5 transition-all duration-300 cursor-pointer text-lg font-bold inline-block"
                     data-testid="link-contact-footer"
                   >

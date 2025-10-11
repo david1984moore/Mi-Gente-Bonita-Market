@@ -55,6 +55,8 @@ const About = () => {
               smooth={true}
               offset={-70}
               duration={500}
+              isDynamic={true}
+              hashSpy={false}
               className="group"
             >
               <Button className="bg-[#D41414] hover:bg-[#B01212] text-white py-2 px-6 rounded-md shadow-sm hover:shadow-md transition-all duration-300 inline-flex items-center">
