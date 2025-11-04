@@ -813,3 +813,37 @@ html {
   }
 }
 
+/* Pure CSS ScrollReveal Animations - Ultra Smooth & Professional */
+.scroll-reveal {
+  will-change: transform;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Initial hidden states */
+.scroll-reveal-up {
+  transform: translateY(20px) translateZ(0);
+}
+
+.scroll-reveal-down {
+  transform: translateY(-20px) translateZ(0);
+}
+
+.scroll-reveal-left {
+  transform: translateX(-20px) translateZ(0);
+}
+
+.scroll-reveal-right {
+  transform: translateX(20px) translateZ(0);
+}
+
+.scroll-reveal-scale {
+  transform: scale(0.95) translateZ(0);
+}
+
+/* Visible state - all directions */
+.scroll-reveal-visible {
+  transform: translateY(0) translateX(0) scale(1) translateZ(0);
+  will-change: auto;
+}
+
