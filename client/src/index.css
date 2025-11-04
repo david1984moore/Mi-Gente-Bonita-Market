@@ -822,28 +822,28 @@ html {
 
 /* Initial hidden states */
 .scroll-reveal-up {
-  transform: translateY(20px) translateZ(0);
+  transform: translateY(20px) translateZ(0) !important;
 }
 
 .scroll-reveal-down {
-  transform: translateY(-20px) translateZ(0);
+  transform: translateY(-20px) translateZ(0) !important;
 }
 
 .scroll-reveal-left {
-  transform: translateX(-20px) translateZ(0);
+  transform: translateX(-20px) translateZ(0) !important;
 }
 
 .scroll-reveal-right {
-  transform: translateX(20px) translateZ(0);
+  transform: translateX(20px) translateZ(0) !important;
 }
 
 .scroll-reveal-scale {
-  transform: scale(0.95) translateZ(0);
+  transform: scale(0.95) translateZ(0) !important;
 }
 
 /* Visible state - all directions */
 .scroll-reveal-visible {
-  transform: translateY(0) translateX(0) scale(1) translateZ(0);
+  transform: translate3d(0, 0, 0) scale(1) !important;
   will-change: auto;
 }
 
