@@ -19,18 +19,12 @@ const ScrollReveal = ({
 
   useEffect(() => {
     const element = ref.current;
-    if (!element) {
-      console.log('[ScrollReveal] No element ref');
-      return;
-    }
-
-    console.log('[ScrollReveal] Setting up observer for', direction, 'direction');
+    if (!element) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            console.log('[ScrollReveal] Element intersecting, adding visible class');
             element.classList.add('scroll-reveal-visible');
             observer.unobserve(element);
           }
@@ -43,7 +37,6 @@ const ScrollReveal = ({
     );
 
     observer.observe(element);
-    console.log('[ScrollReveal] Observer set up, current classes:', element.className);
 
     return () => observer.disconnect();
   }, [direction]);
