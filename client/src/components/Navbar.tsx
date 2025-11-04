@@ -37,24 +37,34 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      // Determine active section for highlight nav item
-      const sections = ["home", "features", "about", "gallery", "testimonials", "contact"];
-      const currentSection = sections.find(section => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
-        }
-        return false;
-      });
+    let ticking = false;
 
-      if (currentSection) {
-        setActiveSection(currentSection);
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          // Determine active section for highlight nav item
+          const sections = ["home", "features", "about", "gallery", "testimonials", "contact"];
+          const currentSection = sections.find(section => {
+            const element = document.getElementById(section);
+            if (element) {
+              const rect = element.getBoundingClientRect();
+              return rect.top <= 100 && rect.bottom >= 100;
+            }
+            return false;
+          });
+
+          if (currentSection) {
+            setActiveSection(currentSection);
+          }
+          
+          ticking = false;
+        });
+        
+        ticking = true;
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true } as AddEventListenerOptions);
     
     return () => {
       window.removeEventListener("scroll", handleScroll);

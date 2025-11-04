@@ -19,10 +19,11 @@ const Hero = () => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 20, z: 0 },
     visible: {
       opacity: 1,
       y: 0,
+      z: 0,
       transition: {
         duration: 0.8,
         ease: "easeOut"
@@ -31,10 +32,11 @@ const Hero = () => {
   };
 
   const buttonVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
+    hidden: { opacity: 0, scale: 0.8, z: 0 },
     visible: {
       opacity: 1,
       scale: 1,
+      z: 0,
       transition: {
         duration: 0.5,
         ease: "easeOut"

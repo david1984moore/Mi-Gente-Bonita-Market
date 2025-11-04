@@ -31,6 +31,10 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
 @keyframes pulse-border {
@@ -133,7 +137,7 @@
   }
 
   body {
-    @apply font-sans antialiased text-foreground scroll-smooth;
+    @apply font-sans antialiased text-foreground;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -177,7 +181,6 @@ html, body, #root {
 }
 
 html {
-  scroll-behavior: smooth;
   scroll-padding-top: 80px; /* Ensures scrolling stops at right position with fixed navbar */
 }
 
