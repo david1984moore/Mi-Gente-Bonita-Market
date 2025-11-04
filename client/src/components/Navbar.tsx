@@ -268,7 +268,7 @@ const Navbar = () => {
                   </a>
                   
                   <a
-                    href="https://www.facebook.com/people/Mi-Gente-Bonita-Market/100078536995749/"
+                    href="https://www.facebook.com/100078536995749/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center w-full bg-[#1877F2] hover:bg-[#0A59C0] text-white py-2.5 px-4 rounded-lg transition-colors duration-300"
