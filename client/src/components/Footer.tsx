@@ -21,7 +21,7 @@ const Footer = () => {
                 </p>
                 <div className="flex gap-3 justify-center md:justify-start">
                   <a
-                    href="https://www.facebook.com/100078536995749/"
+                    href="https://www.facebook.com/profile.php?id=100078536995749"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center bg-white/10 hover:bg-white/15 p-2.5 rounded-md transition-all duration-300 group"
