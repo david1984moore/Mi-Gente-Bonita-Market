@@ -158,6 +158,7 @@
   /* Common section styles */
   section {
     @apply py-12 md:py-16;
+    scroll-margin-top: 80px; /* Offset for fixed navbar */
   }
   
   /* Section heading styles */
