@@ -13,19 +13,20 @@ export async function registerServiceWorker() {
 
       console.log('[SW] Service Worker registered successfully:', registration.scope);
 
-      // Check for updates periodically
+      // Check for updates less frequently (once per day instead of every minute)
       setInterval(() => {
         registration.update();
-      }, 60000); // Check every minute
+      }, 24 * 60 * 60 * 1000); // Check once per day
 
-      // Listen for updates
+      // Listen for updates but don't auto-reload
       registration.addEventListener('updatefound', () => {
         const newWorker = registration.installing;
         if (newWorker) {
           newWorker.addEventListener('statechange', () => {
             if (newWorker.state === 'activated') {
-              console.log('[SW] New Service Worker activated, reloading page');
-              window.location.reload();
+              console.log('[SW] New Service Worker activated and ready');
+              // Don't auto-reload - let the user continue browsing
+              // The new service worker will take effect on next page load
             }
           });
         }

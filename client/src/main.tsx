@@ -5,7 +5,7 @@ import { registerServiceWorker } from "./registerServiceWorker";
 
 createRoot(document.getElementById("root")!).render(<App />);
 
-// Register service worker for aggressive image caching
-if (import.meta.env.PROD || import.meta.env.DEV) {
+// Register service worker for aggressive image caching (production only)
+if (import.meta.env.PROD) {
   registerServiceWorker();
 }
